@@ -1,10 +1,79 @@
 [gd_scene format=3 uid="uid://daq2mfhca6x4i"]
 
 [ext_resource type="Script" uid="uid://bweqccgogc5cm" path="res://characters/player/player.gd" id="1_508ok"]
+[ext_resource type="Texture2D" uid="uid://3qn8tmj1g3v3" path="res://assets/art/Angel Sprite.png" id="2_xxgcw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b886q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_508ok"]
+
+[sub_resource type="Animation" id="Animation_5dc8e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_508ok"]
+resource_name = "walk_back"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_xxgcw"]
+resource_name = "walk_front"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_exd8k"]
+resource_name = "walk_side"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5dc8e"]
+_data = {
+&"RESET": SubResource("Animation_5dc8e"),
+&"walk_back": SubResource("Animation_508ok"),
+&"walk_front": SubResource("Animation_xxgcw"),
+&"walk_side": SubResource("Animation_exd8k")
+}
 
 [node name="Player" type="CharacterBody2D" unique_id=1625059339]
 collision_layer = 17
@@ -26,5 +95,13 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder" unique_id=1995619904]
 position = Vector2(22, 1)
 shape = SubResource("CircleShape2D_508ok")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=255172161]
+texture = ExtResource("2_xxgcw")
+hframes = 3
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1839428740]
+libraries/ = SubResource("AnimationLibrary_5dc8e")
 
 [connection signal="area_entered" from="Direction/ActionableFinder" to="." method="_on_actionable_finder_area_entered"]
