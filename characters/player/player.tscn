@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://daq2mfhca6x4i"]
+
+[ext_resource type="Script" uid="uid://bweqccgogc5cm" path="res://characters/player/player.gd" id="1_508ok"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b886q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_508ok"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1625059339]
+collision_layer = 17
+script = ExtResource("1_508ok")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1164017105]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=898724088]
+shape = SubResource("CapsuleShape2D_b886q")
+
+[node name="Direction" type="Marker2D" parent="." unique_id=1593219104]
+
+[node name="ActionableFinder" type="Area2D" parent="Direction" unique_id=2034240136]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder" unique_id=1995619904]
+position = Vector2(22, 1)
+shape = SubResource("CircleShape2D_508ok")
+
+[connection signal="area_entered" from="Direction/ActionableFinder" to="." method="_on_actionable_finder_area_entered"]

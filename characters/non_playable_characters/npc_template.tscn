@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://rsnt70rexvfx"]
+
+[ext_resource type="Script" uid="uid://d1tcwou6ignom" path="res://characters/non_playable_characters/npc_template.gd" id="1_0kepv"]
+[ext_resource type="PackedScene" uid="uid://dpx5utaqfpjqh" path="res://assets/resources/actionables.tscn" id="2_oh4vy"]
+[ext_resource type="Resource" uid="uid://c2g0u5dx5knhx" path="res://dialogue/test/test_dialogue.dialogue" id="3_oibqo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g8a0h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oibqo"]
+radius = 51.009804
+
+[node name="NPCTemplate" type="Node2D" unique_id=1874870281]
+script = ExtResource("1_0kepv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1027805365]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1998056977]
+shape = SubResource("CircleShape2D_g8a0h")
+
+[node name="Actionables" parent="." unique_id=1485619256 instance=ExtResource("2_oh4vy")]
+dialogue = ExtResource("3_oibqo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables" unique_id=282372716]
+shape = SubResource("CircleShape2D_oibqo")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b0gbbjbvjdj7d"]
+
+[ext_resource type="PackedScene" uid="uid://daq2mfhca6x4i" path="res://characters/player/player.tscn" id="1_044q5"]
+[ext_resource type="PackedScene" uid="uid://rsnt70rexvfx" path="res://characters/non_playable_characters/npc_template.tscn" id="2_2kab8"]
+[ext_resource type="PackedScene" uid="uid://b306nkmalxrth" path="res://assets/resources/scene_changer.tscn" id="3_p2nh5"]
+[ext_resource type="PackedScene" uid="uid://bkcs86fppush0" path="res://levels/test_world/test_world_2.tscn" id="4_qq5pa"]
+
+[node name="TestWorld" type="Node2D" unique_id=239745446]
+
+[node name="Player" parent="." unique_id=1625059339 instance=ExtResource("1_044q5")]
+position = Vector2(171, 94)
+
+[node name="NPCTemplate" parent="." unique_id=1874870281 instance=ExtResource("2_2kab8")]
+position = Vector2(260, 78)
+
+[node name="SceneChanger" parent="." unique_id=1238518030 instance=ExtResource("3_p2nh5")]
+position = Vector2(136, 250)
+target_scene = ExtResource("4_qq5pa")
