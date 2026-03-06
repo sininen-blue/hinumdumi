@@ -1,9 +1,18 @@
 [gd_scene format=3 uid="uid://bkcs86fppush0"]
 
 [ext_resource type="Texture2D" uid="uid://dyu24t4wh7ill" path="res://icon.svg" id="1_djsmg"]
+[ext_resource type="PackedScene" uid="uid://b306nkmalxrth" path="res://interactables/scene_changer.tscn" id="2_vm2k5"]
+[ext_resource type="PackedScene" uid="uid://daq2mfhca6x4i" path="res://characters/player/player.tscn" id="4_8clii"]
 
 [node name="TestWorld2" type="Node2D" unique_id=457717063]
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1103426317]
 position = Vector2(85, 75)
 texture = ExtResource("1_djsmg")
+
+[node name="SceneChanger" parent="." unique_id=1238518030 instance=ExtResource("2_vm2k5")]
+position = Vector2(294, 251)
+target_scene_path = "uid://ojvn282ftno6"
+
+[node name="Player" parent="." unique_id=1625059339 instance=ExtResource("4_8clii")]
+position = Vector2(250, 126)

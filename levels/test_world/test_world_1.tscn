@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://ojvn282ftno6"]
 
 [ext_resource type="Texture2D" uid="uid://dyu24t4wh7ill" path="res://icon.svg" id="1_ybvi2"]
+[ext_resource type="PackedScene" uid="uid://daq2mfhca6x4i" path="res://characters/player/player.tscn" id="2_ad4t1"]
+[ext_resource type="PackedScene" uid="uid://b306nkmalxrth" path="res://interactables/scene_changer.tscn" id="3_8oqs3"]
+[ext_resource type="PackedScene" uid="uid://rsnt70rexvfx" path="res://characters/non_playable_characters/npc_template.tscn" id="4_8oqs3"]
 
 [node name="TestWorld1" type="Node2D" unique_id=1640773531]
 
@@ -11,3 +14,13 @@ texture = ExtResource("1_ybvi2")
 [node name="Icon2" type="Sprite2D" parent="." unique_id=1294329992]
 position = Vector2(330, 166)
 texture = ExtResource("1_ybvi2")
+
+[node name="Player" parent="." unique_id=1625059339 instance=ExtResource("2_ad4t1")]
+position = Vector2(66, 54)
+
+[node name="SceneChanger" parent="." unique_id=1238518030 instance=ExtResource("3_8oqs3")]
+position = Vector2(197, 236)
+target_scene_path = "uid://bkcs86fppush0"
+
+[node name="NPCTemplate" parent="." unique_id=1874870281 instance=ExtResource("4_8oqs3")]
+position = Vector2(467, 30)

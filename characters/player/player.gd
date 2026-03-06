@@ -6,9 +6,9 @@ var is_talking: bool = false
 
 @onready var sprite: Sprite2D = $Sprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var pivot: Marker2D = $Pivot
 
-# TODO: sprite rendering
-# TODO: animation handler
+
 # TODO: scene changing transition
 # TODO: dialogue box proper
 # TODO: check if items work in state
@@ -17,15 +17,19 @@ var is_talking: bool = false
 
 func _physics_process(_delta: float) -> void:
 	var direction: Vector2 = Input.get_vector("move_right", "move_left", "move_up", "move_down")
+	pivot.look_at(position + direction)
 	
 	if direction != Vector2.ZERO:
 		sprite.flip_h = direction.x > 0
-	if direction == Vector2.DOWN:
-		animation_player.play("walk_front")
-	if direction == Vector2.UP:
-		animation_player.play("walk_back")
-	if direction.x > 0 or direction.y > 0:
+	else:
+		animation_player.play("idle")
+	
+	if abs(direction.x) > 0:
 		animation_player.play("walk_side")
+	elif direction == Vector2.DOWN:
+		animation_player.play("walk_front")
+	elif direction == Vector2.UP:
+		animation_player.play("walk_back")
 	
 	if is_talking:
 		direction = Vector2.ZERO

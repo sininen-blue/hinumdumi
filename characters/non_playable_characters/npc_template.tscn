@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_g8a0h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oibqo"]
-radius = 51.009804
+radius = 9.848858
 
 [node name="NPCTemplate" type="Node2D" unique_id=1874870281]
 script = ExtResource("1_0kepv")
@@ -20,6 +20,7 @@ collision_mask = 0
 shape = SubResource("CircleShape2D_g8a0h")
 
 [node name="Actionables" parent="." unique_id=1485619256 instance=ExtResource("2_oh4vy")]
+position = Vector2(-1, 5)
 dialogue = ExtResource("3_oibqo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables" unique_id=282372716]

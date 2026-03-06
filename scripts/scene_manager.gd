@@ -14,3 +14,4 @@ func change_scene_to(target: PackedScene) -> void:
 	
 	var new_node: Node = target.instantiate()
 	self.add_child.call_deferred(new_node)
+	current_node = new_node
