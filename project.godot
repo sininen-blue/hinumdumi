@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="mon monde"
-run/main_scene="uid://b0gbbjbvjdj7d"
+run/main_scene="uid://emnykh7mhkvx"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DialogueManager="*uid://c3rodes2l3gxb"
 State="*uid://dn5tpkyidosac"
+SceneManager="*uid://cxib82nyae3le"
 
 [dialogue_manager]
 

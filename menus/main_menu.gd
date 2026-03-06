@@ -1,6 +1,6 @@
 extends Control
 
-@export var play_scene: PackedScene
+@export var target_scene: PackedScene
 
 func _on_texture_button_pressed() -> void:
-	get_tree().change_scene_to_packed(play_scene)
+	SceneManager.change_scene_to(target_scene)
