@@ -14,8 +14,6 @@ enum State {IDLE, MOVING, TALKING}
 var current_state: int = State.IDLE
 
 # TODO: scene changing transition
-# TODO: dialogue box proper
-# TODO: check if items work in state
 # TODO: first minigame
 
 

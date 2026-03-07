@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dyu24t4wh7ill" path="res://icon.svg" id="1_ybvi2"]
 [ext_resource type="PackedScene" uid="uid://daq2mfhca6x4i" path="res://characters/player/player.tscn" id="2_ad4t1"]
 [ext_resource type="PackedScene" uid="uid://b306nkmalxrth" path="res://interactables/scene_changer.tscn" id="3_8oqs3"]
+[ext_resource type="PackedScene" uid="uid://bbgvlydctqy45" path="res://characters/pet/pet.tscn" id="3_r58tw"]
+[ext_resource type="PackedScene" uid="uid://cp35iglls30h" path="res://characters/pet/pet_handler.tscn" id="4_05hy6"]
 [ext_resource type="PackedScene" uid="uid://rsnt70rexvfx" path="res://characters/non_playable_characters/npc_template.tscn" id="4_8oqs3"]
 
 [node name="TestWorld1" type="Node2D" unique_id=1640773531]
@@ -14,6 +16,14 @@ texture = ExtResource("1_ybvi2")
 [node name="Icon2" type="Sprite2D" parent="." unique_id=1294329992]
 position = Vector2(330, 166)
 texture = ExtResource("1_ybvi2")
+
+[node name="Pet" parent="." unique_id=1527820664 node_paths=PackedStringArray("handler") instance=ExtResource("3_r58tw")]
+position = Vector2(203, 116)
+handler = NodePath("../PetHandler")
+
+[node name="PetHandler" parent="." unique_id=2127994657 node_paths=PackedStringArray("target_node") instance=ExtResource("4_05hy6")]
+position = Vector2(66, 54)
+target_node = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=1625059339 instance=ExtResource("2_ad4t1")]
 position = Vector2(66, 54)

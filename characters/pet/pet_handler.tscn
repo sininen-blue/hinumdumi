@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cp35iglls30h"]
+
+[ext_resource type="Script" uid="uid://ne0usmvvp85m" path="res://characters/pet/pet_handler.gd" id="1_tmx21"]
+[ext_resource type="Texture2D" uid="uid://dyu24t4wh7ill" path="res://icon.svg" id="2_kmbxn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lgw37"]
+
+[node name="PetHandler" type="Node2D" unique_id=2127994657]
+script = ExtResource("1_tmx21")
+
+[node name="TargetCollision" type="Area2D" parent="." unique_id=1174605066]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TargetCollision" unique_id=789458978]
+shape = SubResource("CircleShape2D_lgw37")
+
+[node name="Icon" type="Sprite2D" parent="TargetCollision" unique_id=307036494]
+position = Vector2(-1.0000019, -4.000002)
+scale = Vector2(0.05859375, 0.234375)
+texture = ExtResource("2_kmbxn")
+
+[node name="BackupTimer" type="Timer" parent="." unique_id=1000631023]
+wait_time = 1.5
+autostart = true
+
+[connection signal="area_entered" from="TargetCollision" to="." method="_on_target_collision_area_entered"]
+[connection signal="timeout" from="BackupTimer" to="." method="_on_backup_timer_timeout"]

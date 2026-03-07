@@ -1,4 +1,3 @@
 extends Node
 
-
-var status: String = ""
+var inventory: Dictionary = {}
