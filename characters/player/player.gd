@@ -1,13 +1,17 @@
 extends CharacterBody2D
 
 @export var speed: float = 200
-
-var is_talking: bool = false
+@export var accel: float = 20
+@export var decel: float = 20
 
 @onready var sprite: Sprite2D = $Sprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var pivot: Marker2D = $Pivot
 
+var direction: Vector2 = Vector2.ZERO
+
+enum State {IDLE, MOVING, TALKING}
+var current_state: int = State.IDLE
 
 # TODO: scene changing transition
 # TODO: dialogue box proper
@@ -16,32 +20,51 @@ var is_talking: bool = false
 
 
 func _physics_process(_delta: float) -> void:
-	var direction: Vector2 = Input.get_vector("move_right", "move_left", "move_up", "move_down")
-	pivot.look_at(position + direction)
+	direction = Input.get_vector("move_right", "move_left", "move_up", "move_down")
 	
-	if direction != Vector2.ZERO:
-		sprite.flip_h = direction.x > 0
-	else:
-		animation_player.play("idle")
+	_handle_states()
+	_handle_animations()
 	
-	if abs(direction.x) > 0:
-		animation_player.play("walk_side")
-	elif direction == Vector2.DOWN:
-		animation_player.play("walk_front")
-	elif direction == Vector2.UP:
-		animation_player.play("walk_back")
-	
-	if is_talking:
-		direction = Vector2.ZERO
-	velocity = direction * speed
 	move_and_slide()
 
+func _handle_states() -> void:
+	match current_state:
+		State.IDLE:
+			velocity = velocity.move_toward(Vector2.ZERO, decel)
+			
+			if direction != Vector2.ZERO:
+				current_state = State.MOVING
+		State.MOVING:
+			pivot.look_at(position + direction)
+			velocity = velocity.move_toward(direction * speed, accel)
+			
+			if direction == Vector2.ZERO:
+				current_state = State.IDLE
+		State.TALKING:
+			velocity = velocity.move_toward(Vector2.ZERO, decel * 2)
+
+
+func _handle_animations() -> void:
+	match current_state:
+		State.IDLE:
+			animation_player.play("idle")
+		State.MOVING:
+			sprite.flip_h = direction.x > 0
+			
+			if abs(direction.x) > 0:
+				animation_player.play("walk_side")
+			elif direction == Vector2.DOWN:
+				animation_player.play("walk_front")
+			elif direction == Vector2.UP:
+				animation_player.play("walk_back")
+		State.TALKING:
+			pass
 
 func _on_actionable_finder_area_entered(area: Area2D) -> void:
+	current_state = State.TALKING
 	DialogueManager.connect("dialogue_ended", _finished_dialogue)
-	is_talking = true
 	area.action()
 
 func _finished_dialogue(_resource: Resource) ->void:
-	is_talking = false
+	current_state = State.IDLE
 	DialogueManager.disconnect("dialogue_ended", _finished_dialogue)

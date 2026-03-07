@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://rsnt70rexvfx"]
 
 [ext_resource type="Script" uid="uid://d1tcwou6ignom" path="res://characters/non_playable_characters/npc_template.gd" id="1_0kepv"]
-[ext_resource type="PackedScene" uid="uid://dpx5utaqfpjqh" path="res://assets/resources/actionables.tscn" id="2_oh4vy"]
+[ext_resource type="PackedScene" uid="uid://dpx5utaqfpjqh" path="res://interactables/actionables.tscn" id="2_oh4vy"]
 [ext_resource type="Resource" uid="uid://c2g0u5dx5knhx" path="res://dialogue/test/test_dialogue.dialogue" id="3_oibqo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g8a0h"]
