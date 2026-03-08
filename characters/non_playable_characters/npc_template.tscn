@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d1tcwou6ignom" path="res://characters/non_playable_characters/npc_template.gd" id="1_0kepv"]
 [ext_resource type="PackedScene" uid="uid://dpx5utaqfpjqh" path="res://interactables/actionables.tscn" id="2_oh4vy"]
 [ext_resource type="Resource" uid="uid://c2g0u5dx5knhx" path="res://dialogue/test/test_dialogue.dialogue" id="3_oibqo"]
+[ext_resource type="Texture2D" uid="uid://dyu24t4wh7ill" path="res://icon.svg" id="4_n0h32"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g8a0h"]
 
@@ -25,3 +26,8 @@ dialogue = ExtResource("3_oibqo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables" unique_id=282372716]
 shape = SubResource("CircleShape2D_oibqo")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1984730807]
+position = Vector2(2.9999962, -11.000002)
+scale = Vector2(0.0703125, 0.328125)
+texture = ExtResource("4_n0h32")

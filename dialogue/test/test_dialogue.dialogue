@@ -1,9 +1,10 @@
 ~ start
-Nathan: Hello
-- How are you
-	Nathan: SOmearstoiearnsotieanrst.
-- Second one
-	Nathan: You picked the second one.rs
-- End the conversation => END
-Nathan: For more information see the online documentation.
+if State.has_looked_at_picture == false:
+	Frame: test
+	set State.has_looked_at_picture = true
+else:
+	Frame: you've seen this before
+
+
+
 => END
