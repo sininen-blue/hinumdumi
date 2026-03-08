@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://chdi4k23vhskk"]
+
+[ext_resource type="Texture2D" uid="uid://dl4qtghecpei5" path="res://assets/art/Angel-room-interior.png" id="1_y187p"]
+[ext_resource type="PackedScene" uid="uid://daq2mfhca6x4i" path="res://characters/player/player.tscn" id="2_rrf2h"]
+[ext_resource type="PackedScene" uid="uid://b306nkmalxrth" path="res://interactables/scene_changer.tscn" id="3_e56do"]
+
+[node name="AngelRoomInterior" type="Node2D" unique_id=420168661]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=54530546]
+offset_left = -94.0
+offset_top = -42.0
+offset_right = 348.0
+offset_bottom = 190.0
+color = Color(0.66, 0.44880003, 0.59312004, 1)
+
+[node name="AngelRoomInterior" type="Sprite2D" parent="." unique_id=1351335156]
+position = Vector2(142, 54)
+texture = ExtResource("1_y187p")
+
+[node name="Player" parent="." unique_id=1625059339 instance=ExtResource("2_rrf2h")]
+position = Vector2(141, 61)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2099540482]
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=844054820]
+polygon = PackedVector2Array(107, 43, 112, 43, 112, 66, 130, 66, 130, 49, 166, 49, 166, 82, 145.54071, 82, 146, 84, 135, 84, 135, 82, 106, 82, 106, 44, 70, 44, 63, 116, 253, 132, 234, -17, 73, -5, 71, 38)
+
+[node name="SceneChanger" parent="." unique_id=1238518030 instance=ExtResource("3_e56do")]
+position = Vector2(140, 100)
+target_scene_path = "uid://ojvn282ftno6"

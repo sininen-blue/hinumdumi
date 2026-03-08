@@ -1,8 +1,136 @@
 [gd_scene format=3 uid="uid://bbgvlydctqy45"]
 
 [ext_resource type="Script" uid="uid://c7ivhydddwq3d" path="res://characters/pet/pet.gd" id="1_rss5u"]
+[ext_resource type="Texture2D" uid="uid://c4r42fteotlda" path="res://assets/art/Mr. Frog.png" id="2_1fl6c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1fl6c"]
+
+[sub_resource type="Animation" id="Animation_dx34k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1fl6c"]
+resource_name = "hop"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333333, 0.31, 0.5, 0.69000006, 0.76666665, 1.0600001, 1.3000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.715), Vector2(0.86, 1.32), Vector2(1, 1), Vector2(0.975, 1.1), Vector2(1, 1), Vector2(1.13, 0.845), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13333333, 0.31, 0.5, 0.68000007, 1.0600001, 1.3000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, 0), Vector2(-1, 2.12), Vector2(-1, -4.945), Vector2(-1, -6.955), Vector2(-1, 0), Vector2(-1, 0.945), Vector2(-1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qt3s7"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.22, 0.77),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.86), Vector2(1, 1.154)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.22, 0.77),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, 0), Vector2(-1, 0.89), Vector2(-1, -0.063)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qt3s7"]
+_data = {
+&"RESET": SubResource("Animation_dx34k"),
+&"hop": SubResource("Animation_1fl6c"),
+&"idle": SubResource("Animation_qt3s7")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rss5u"]
 
@@ -14,8 +142,12 @@ shape = SubResource("CircleShape2D_1fl6c")
 disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=271086413]
+position = Vector2(-1, 0)
+texture = ExtResource("2_1fl6c")
+hframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=720539133]
+libraries/ = SubResource("AnimationLibrary_qt3s7")
 
 [node name="PetTargetCollision" type="Area2D" parent="." unique_id=2017165401]
 collision_layer = 2
