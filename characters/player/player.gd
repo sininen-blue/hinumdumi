@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var speed: float = 100
 @export var accel: float = 20
@@ -33,7 +34,7 @@ func _handle_states() -> void:
 			if direction != Vector2.ZERO:
 				current_state = State.MOVING
 		State.MOVING:
-			pivot.look_at(position + direction)
+			pivot.look_at(pivot.position + position + direction)
 			velocity = velocity.move_toward(direction * speed, accel)
 			
 			if direction == Vector2.ZERO:
@@ -66,3 +67,6 @@ func _on_actionable_finder_area_entered(area: Area2D) -> void:
 func _finished_dialogue(_resource: Resource) ->void:
 	current_state = State.IDLE
 	DialogueManager.disconnect("dialogue_ended", _finished_dialogue)
+
+func spin():
+	print("speen")

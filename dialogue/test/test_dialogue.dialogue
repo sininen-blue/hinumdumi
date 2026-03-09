@@ -1,6 +1,8 @@
 ~ start
 if State.has_looked_at_picture == false:
 	Frame: test
+	- test
+	do State.player.spin()
 	set State.has_looked_at_picture = true
 else:
 	Frame: you've seen this before

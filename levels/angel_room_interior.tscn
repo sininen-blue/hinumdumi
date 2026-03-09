@@ -1,16 +1,54 @@
 [gd_scene format=3 uid="uid://chdi4k23vhskk"]
 
+[ext_resource type="PackedScene" uid="uid://c8me6xafrukv3" path="res://dialogue/Popups/popups.tscn" id="1_ndwso"]
 [ext_resource type="Texture2D" uid="uid://dl4qtghecpei5" path="res://assets/art/Angel-room-interior.png" id="1_y187p"]
+[ext_resource type="Texture2D" uid="uid://dyu24t4wh7ill" path="res://icon.svg" id="2_p8xy8"]
 [ext_resource type="PackedScene" uid="uid://daq2mfhca6x4i" path="res://characters/player/player.tscn" id="2_rrf2h"]
 [ext_resource type="PackedScene" uid="uid://b306nkmalxrth" path="res://interactables/scene_changer.tscn" id="3_e56do"]
-[ext_resource type="PackedScene" uid="uid://rsnt70rexvfx" path="res://characters/non_playable_characters/npc_template.tscn" id="4_o3we3"]
+[ext_resource type="PackedScene" uid="uid://dpx5utaqfpjqh" path="res://interactables/actionables.tscn" id="4_o3we3"]
+[ext_resource type="Resource" uid="uid://bebinvgy0qxr3" path="res://dialogue/picture_frame.dialogue" id="5_twcm0"]
 
-[sub_resource type="Environment" id="Environment_o3we3"]
+[sub_resource type="Gradient" id="Gradient_o3we3"]
+offsets = PackedFloat32Array(0, 0.64457834)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_twcm0"]
+gradient = SubResource("Gradient_o3we3")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ndwso"]
+polygon = PackedVector2Array(116, 43, 126, 43, 126, 47, 116, 47)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_twcm0"]
+polygon = PackedVector2Array(116, 30, 170, 30, 170, 52, 166, 52, 166, 34, 116, 34)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_o3we3"]
+polygon = PackedVector2Array(116, 30, 129, 30, 129, 34, 120, 34, 120, 92, 116, 92)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o3we3"]
+radius = 7.071068
 
 [node name="AngelRoomInterior" type="Node2D" unique_id=420168661]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=335808549]
-environment = SubResource("Environment_o3we3")
+[node name="UI" type="CanvasLayer" parent="." unique_id=462177337]
+
+[node name="Popups" parent="UI" unique_id=122606163 instance=ExtResource("1_ndwso")]
+
+[node name="PictureFrame" type="TextureRect" parent="UI/Popups" unique_id=78224612]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -98.0
+offset_right = 65.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_p8xy8")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=54530546]
 offset_left = -94.0
@@ -23,6 +61,45 @@ color = Color(0.66, 0.44880003, 0.59312004, 1)
 position = Vector2(142, 54)
 texture = ExtResource("1_y187p")
 
+[node name="Desklight" type="PointLight2D" parent="." unique_id=1192869916]
+position = Vector2(137, 38)
+scale = Vector2(0.36746195, 0.36746195)
+energy = 0.7
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_twcm0")
+
+[node name="Roomlight" type="PointLight2D" parent="." unique_id=775336766]
+position = Vector2(140, 63)
+scale = Vector2(1.0234375, 1.0234375)
+color = Color(1, 0.44, 0.44, 1)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_twcm0")
+
+[node name="Sunlight" type="PointLight2D" parent="." unique_id=216489814]
+position = Vector2(120, 33)
+scale = Vector2(2.328125, 2.328125)
+color = Color(1, 0.9335, 0.81, 1)
+energy = 0.7
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 5.0
+texture = SubResource("GradientTexture2D_twcm0")
+
+[node name="WallShadows" type="Node2D" parent="." unique_id=763641615]
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="WallShadows" unique_id=1422043592]
+position = Vector2(-1, -22)
+occluder = SubResource("OccluderPolygon2D_ndwso")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="WallShadows" unique_id=401222521]
+position = Vector2(9, -9)
+occluder = SubResource("OccluderPolygon2D_twcm0")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="WallShadows" unique_id=971579971]
+position = Vector2(-14, -9)
+occluder = SubResource("OccluderPolygon2D_o3we3")
+
 [node name="Player" parent="." unique_id=1625059339 instance=ExtResource("2_rrf2h")]
 position = Vector2(141, 61)
 
@@ -30,11 +107,19 @@ position = Vector2(141, 61)
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=844054820]
-polygon = PackedVector2Array(106, 43, 112, 43, 112, 66, 130, 66, 130, 47, 166, 47, 166, 82, 147, 82, 147, 84, 134, 84, 134, 82, 106, 82, 106, 45, 102, 45, 102, 86, 179, 86, 179, 21, 102, 21, 102, 43)
+polygon = PackedVector2Array(106, 43, 112, 43, 112, 66, 130, 66, 130, 46, 168, 46, 168, 81, 147, 82, 147, 84, 134, 84, 134, 82, 106, 82, 106, 45, 102, 45, 102, 86, 179, 86, 179, 21, 102, 21, 102, 43)
 
 [node name="SceneChanger" parent="." unique_id=1238518030 instance=ExtResource("3_e56do")]
 position = Vector2(140, 100)
 target_scene_path = "uid://ojvn282ftno6"
 
-[node name="NPCTemplate" parent="." unique_id=1874870281 instance=ExtResource("4_o3we3")]
-position = Vector2(169, 30)
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=551837186]
+energy = 0.3
+blend_mode = 1
+
+[node name="Actionables" parent="." unique_id=1485619256 instance=ExtResource("4_o3we3")]
+position = Vector2(166, 32)
+dialogue = ExtResource("5_twcm0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables" unique_id=889035901]
+shape = SubResource("CircleShape2D_o3we3")

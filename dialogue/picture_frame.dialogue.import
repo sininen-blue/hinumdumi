@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bebinvgy0qxr3"
+path="res://.godot/imported/picture_frame.dialogue-37a1d0e8f2f7df760dab11a544438f74.tres"
+
+[deps]
+
+source_file="res://dialogue/picture_frame.dialogue"
+dest_files=["res://.godot/imported/picture_frame.dialogue-37a1d0e8f2f7df760dab11a544438f74.tres"]
+
+[params]
+
+defaults=true
