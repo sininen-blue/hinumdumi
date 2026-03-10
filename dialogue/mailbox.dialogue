@@ -1,0 +1,48 @@
+~ start
+if State.mailbox.is_empty() == true:
+	You don't have any mail right now
+else:
+	It seems like you have mail
+	=> mailbox
+=> END
+
+~ mailbox
+while true:
+	do State.current_message_line = 0
+	
+	It's a letter from {{ State.mail_get_message_sender() }}
+	if State.mail_has_next() and State.mail_has_prev():
+		- Read
+			=> message
+		- See next mail
+			set State.current_mail_index += 1
+		- See previous mail
+			set State.current_mail_index -= 1
+		- Exit
+			=> END
+	elif State.mail_has_next(): 
+		- Read
+			=> message
+		- See next mail
+			set State.current_mail_index += 1
+		- Exit
+			=> END
+	elif State.mail_has_prev():
+		- Read
+			=> message
+		- See previous mail
+			set State.current_mail_index -= 1
+		- Exit
+			=> END
+	else !State.mail_has_prev() and !State.mail_has_next():
+		- Read
+			=> message
+		- Exit
+			=> END
+=> END
+
+~ message
+while State.message_has_next():
+	{{ State.message_get_content() }}
+	do State.current_message_line += 1
+=> mailbox

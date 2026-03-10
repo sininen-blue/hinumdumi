@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://byoyymx0y0tx0"]
+
+[ext_resource type="Script" uid="uid://c5xvhtdsd86pk" path="res://interactables/mail/mail.gd" id="1_epb13"]
+[ext_resource type="Texture2D" uid="uid://dyu24t4wh7ill" path="res://icon.svg" id="1_eyrlx"]
+[ext_resource type="Resource" uid="uid://b4dv2drseo55b" path="res://dialogue/mail.dialogue" id="2_dkdyv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b6a2r"]
+
+[node name="Mail" type="Area2D" unique_id=1434759213]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_epb13")
+dialogue = ExtResource("2_dkdyv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1392717245]
+shape = SubResource("CircleShape2D_b6a2r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=916788245]
+position = Vector2(-3.8146973e-06, -2.0000038)
+scale = Vector2(0.0859375, 0.1484375)
+texture = ExtResource("1_eyrlx")

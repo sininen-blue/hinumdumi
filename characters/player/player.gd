@@ -67,6 +67,3 @@ func _on_actionable_finder_area_entered(area: Area2D) -> void:
 func _finished_dialogue(_resource: Resource) ->void:
 	current_state = State.IDLE
 	DialogueManager.disconnect("dialogue_ended", _finished_dialogue)
-
-func spin():
-	print("speen")

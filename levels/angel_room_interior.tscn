@@ -2,11 +2,51 @@
 
 [ext_resource type="PackedScene" uid="uid://c8me6xafrukv3" path="res://dialogue/Popups/popups.tscn" id="1_ndwso"]
 [ext_resource type="Texture2D" uid="uid://dl4qtghecpei5" path="res://assets/art/Angel-room-interior.png" id="1_y187p"]
-[ext_resource type="Texture2D" uid="uid://dyu24t4wh7ill" path="res://icon.svg" id="2_p8xy8"]
+[ext_resource type="Script" uid="uid://bd4jfhlaqcgmd" path="res://scripts/temp.gd" id="2_p8xy8"]
 [ext_resource type="PackedScene" uid="uid://daq2mfhca6x4i" path="res://characters/player/player.tscn" id="2_rrf2h"]
 [ext_resource type="PackedScene" uid="uid://b306nkmalxrth" path="res://interactables/scene_changer.tscn" id="3_e56do"]
+[ext_resource type="PackedScene" uid="uid://7jggkfg7mjb7" path="res://assets/3d/picture_frame.glb" id="3_q3t3u"]
 [ext_resource type="PackedScene" uid="uid://dpx5utaqfpjqh" path="res://interactables/actionables.tscn" id="4_o3we3"]
 [ext_resource type="Resource" uid="uid://bebinvgy0qxr3" path="res://dialogue/picture_frame.dialogue" id="5_twcm0"]
+
+[sub_resource type="Animation" id="Animation_p8xy8"]
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("picture_frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.3333333),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-0.022424817, -1.4556116, -0.3406272), Vector3(-0.022424817, -1.1858617, -0.3406272)]
+}
+
+[sub_resource type="Animation" id="Animation_q3t3u"]
+resource_name = "play"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("picture_frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.3333333),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-0.022424817, -1.4556116, -0.3406272), Vector3(-0.022424817, -1.1858617, -0.3406272)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p8xy8"]
+_data = {
+&"RESET": SubResource("Animation_p8xy8"),
+&"play": SubResource("Animation_q3t3u")
+}
 
 [sub_resource type="Gradient" id="Gradient_o3we3"]
 offsets = PackedFloat32Array(0, 0.64457834)
@@ -34,21 +74,35 @@ radius = 7.071068
 [node name="UI" type="CanvasLayer" parent="." unique_id=462177337]
 
 [node name="Popups" parent="UI" unique_id=122606163 instance=ExtResource("1_ndwso")]
+visible = false
 
-[node name="PictureFrame" type="TextureRect" parent="UI/Popups" unique_id=78224612]
+[node name="PictureFrame" type="SubViewportContainer" parent="UI/Popups" unique_id=1161173851]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -63.0
-offset_top = -98.0
-offset_right = 65.0
-offset_bottom = 30.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_p8xy8")
+
+[node name="SubViewport" type="SubViewport" parent="UI/Popups/PictureFrame" unique_id=1404162466]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 0
+
+[node name="picture_frame" parent="UI/Popups/PictureFrame/SubViewport" unique_id=2080316493 instance=ExtResource("3_q3t3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022424817, -1.4556116, -0.3406272)
+
+[node name="Camera3D" type="Camera3D" parent="UI/Popups/PictureFrame/SubViewport" unique_id=1917247667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20269084, 6.2516384)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="UI/Popups/PictureFrame/SubViewport" unique_id=453648814]
+transform = Transform3D(1, 0, 0, 0, 0.03519603, 0.99938047, 0, -0.99938047, 0.03519603, 0, 4.269703, -1.4079859)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="UI/Popups/PictureFrame/SubViewport" unique_id=1300624435]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Popups/PictureFrame/SubViewport" unique_id=340933309]
+libraries/ = SubResource("AnimationLibrary_p8xy8")
+script = ExtResource("2_p8xy8")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=54530546]
 offset_left = -94.0
@@ -111,7 +165,7 @@ polygon = PackedVector2Array(106, 43, 112, 43, 112, 66, 130, 66, 130, 46, 168, 4
 
 [node name="SceneChanger" parent="." unique_id=1238518030 instance=ExtResource("3_e56do")]
 position = Vector2(140, 100)
-target_scene_path = "uid://ojvn282ftno6"
+target_scene_path = "uid://bgfload3jvowf"
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=551837186]
 energy = 0.3

@@ -2,6 +2,7 @@ extends Node
 
 @export var default_scene: PackedScene
 @export var current_node: Node
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	var node: Node = default_scene.instantiate()
@@ -13,14 +14,17 @@ func _ready() -> void:
 
 
 func change_scene_to(target: PackedScene) -> void:
+	animation_player.play("fade_in")
+	await animation_player.animation_finished
+	
 	current_node.queue_free()
+	animation_player.play("fade_out")
 	
 	var new_node: Node = target.instantiate()
 	self.add_child.call_deferred(new_node)
 	current_node = new_node
 	State.player = find_player()
 	State.popups = find_popup()
-
 
 func find_player() -> Player:
 	var children: Array[Node] = current_node.get_children()

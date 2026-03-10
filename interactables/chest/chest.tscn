@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d2q4kpr41kejc"]
+
+[ext_resource type="Script" uid="uid://cbdvyi44unlas" path="res://interactables/chest/chest.gd" id="1_or81j"]
+[ext_resource type="Texture2D" uid="uid://dyu24t4wh7ill" path="res://icon.svg" id="2_2bxje"]
+[ext_resource type="Resource" uid="uid://cghxg6e4otrjh" path="res://dialogue/chest.dialogue" id="2_pmapc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_or81j"]
+
+[node name="Chest" type="Area2D" unique_id=1838305616]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_or81j")
+dialogue = ExtResource("2_pmapc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2020555678]
+shape = SubResource("CircleShape2D_or81j")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=466412806]
+position = Vector2(0.5, -4.4999995)
+scale = Vector2(0.1328125, 0.0546875)
+texture = ExtResource("2_2bxje")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=587178906]
+position = Vector2(0, 4)
+scale = Vector2(0.1328125, 0.08203126)
+texture = ExtResource("2_2bxje")

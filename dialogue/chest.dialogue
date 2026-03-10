@@ -1,0 +1,9 @@
+~ start
+do State.popups.toggle(State.current_item_node)
+You found a {{ State.current_item }}
+
+do State.popups.toggle(State.current_item_node)
+set State.current_item = ""
+
+
+=> END

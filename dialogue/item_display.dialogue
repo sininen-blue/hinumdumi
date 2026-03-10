@@ -1,0 +1,14 @@
+~ start
+if State.inventory.get(State.current_item) == true:
+	do State.popups.toggle(State.current_item_node)
+	Here you see a {{ State.current_item }}
+
+	Other extra details here
+	do State.popups.toggle(State.current_item_node)
+	set State.current_item = ""
+else:
+	This display case is empty
+	
+
+
+=> END

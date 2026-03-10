@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://6tcn5gvyinl2"
+path="res://.godot/imported/mailbox.dialogue-65ab5016ab5d41e223244b4b9d331026.tres"
+
+[deps]
+
+source_file="res://dialogue/mailbox.dialogue"
+dest_files=["res://.godot/imported/mailbox.dialogue-65ab5016ab5d41e223244b4b9d331026.tres"]
+
+[params]
+
+defaults=true

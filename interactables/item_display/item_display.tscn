@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://7bowxiltmvb3"]
+
+[ext_resource type="Script" uid="uid://d4asdk5pnr2uw" path="res://interactables/item_display/item_display.gd" id="1_a7gww"]
+[ext_resource type="Texture2D" uid="uid://dyu24t4wh7ill" path="res://icon.svg" id="1_g5bpw"]
+[ext_resource type="PackedScene" uid="uid://dynwge2375pmg" path="res://dialogue/balloon/balloon.tscn" id="2_bxvkp"]
+[ext_resource type="Resource" uid="uid://odq2n3rso8sj" path="res://dialogue/item_display.dialogue" id="3_vvuq4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ipw2o"]
+
+[node name="ItemDisplay" type="Area2D" unique_id=998092885]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_a7gww")
+balloon = ExtResource("2_bxvkp")
+dialogue = ExtResource("3_vvuq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=53972673]
+shape = SubResource("CircleShape2D_ipw2o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=553464928]
+position = Vector2(0, -1.0000001)
+scale = Vector2(0.05859375, 0.19140624)
+texture = ExtResource("1_g5bpw")

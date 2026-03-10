@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dnlf6dglysbjh"]
 
 [ext_resource type="Script" uid="uid://uv30gv81k0pi" path="res://menus/main_menu.gd" id="1_8gy84"]
-[ext_resource type="PackedScene" uid="uid://ojvn282ftno6" path="res://levels/test_world/test_world_1.tscn" id="2_yjgyn"]
+[ext_resource type="PackedScene" uid="uid://chdi4k23vhskk" path="res://levels/angel_room_interior.tscn" id="2_yjgyn"]
 [ext_resource type="Texture2D" uid="uid://dyu24t4wh7ill" path="res://icon.svg" id="3_yjgyn"]
 
 [node name="MainMenu" type="Control" unique_id=443547464]
@@ -14,16 +14,19 @@ grow_vertical = 2
 script = ExtResource("1_8gy84")
 target_scene = ExtResource("2_yjgyn")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1726350078]
-position = Vector2(280, 109)
-texture = ExtResource("3_yjgyn")
-
 [node name="TextureButton" type="TextureButton" parent="." unique_id=106607392]
-layout_mode = 0
-offset_left = 49.0
-offset_top = 32.0
-offset_right = 177.0
-offset_bottom = 160.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = -29.0
+offset_right = 147.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("3_yjgyn")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
