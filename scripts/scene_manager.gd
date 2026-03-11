@@ -3,6 +3,7 @@ extends Node
 @export var default_scene: PackedScene
 @export var current_node: Node
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var music: AudioStreamPlayer = $Music
 
 func _ready() -> void:
 	var node: Node = default_scene.instantiate()
@@ -11,6 +12,8 @@ func _ready() -> void:
 	current_node = node
 	State.player = find_player()
 	State.popups = find_popup()
+	
+	music.play()
 
 
 func change_scene_to(target: PackedScene) -> void:

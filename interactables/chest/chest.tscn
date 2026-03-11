@@ -1,10 +1,98 @@
 [gd_scene format=3 uid="uid://d2q4kpr41kejc"]
 
 [ext_resource type="Script" uid="uid://cbdvyi44unlas" path="res://interactables/chest/chest.gd" id="1_or81j"]
-[ext_resource type="Texture2D" uid="uid://dyu24t4wh7ill" path="res://icon.svg" id="2_2bxje"]
 [ext_resource type="Resource" uid="uid://cghxg6e4otrjh" path="res://dialogue/chest.dialogue" id="2_pmapc"]
+[ext_resource type="Texture2D" uid="uid://jr866f0h5q1l" path="res://assets/art/chest.png" id="3_pmapc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_or81j"]
+
+[sub_resource type="Animation" id="Animation_rh8pd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
+
+[sub_resource type="Animation" id="Animation_pmapc"]
+resource_name = "open"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.35, 0.53),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.375, 0.8125), Vector2(0.875, 1.1875), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.35, 0.53),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(0, 0.5), Vector2(-1.1920929e-07, -2.4999998), Vector2(0, -1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rh8pd"]
+_data = {
+&"RESET": SubResource("Animation_rh8pd"),
+&"open": SubResource("Animation_pmapc")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pmapc"]
+radius = 7.0
 
 [node name="Chest" type="Area2D" unique_id=1838305616]
 collision_layer = 16
@@ -15,12 +103,15 @@ dialogue = ExtResource("2_pmapc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2020555678]
 shape = SubResource("CircleShape2D_or81j")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=466412806]
-position = Vector2(0.5, -4.4999995)
-scale = Vector2(0.1328125, 0.0546875)
-texture = ExtResource("2_2bxje")
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1451875824]
+position = Vector2(0, -1)
+texture = ExtResource("3_pmapc")
+hframes = 2
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=587178906]
-position = Vector2(0, 4)
-scale = Vector2(0.1328125, 0.08203126)
-texture = ExtResource("2_2bxje")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1869077012]
+libraries/ = SubResource("AnimationLibrary_rh8pd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=685862330]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1127849754]
+shape = SubResource("CircleShape2D_pmapc")

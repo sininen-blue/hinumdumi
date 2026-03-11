@@ -7,6 +7,7 @@ var has_looked_at_picture: bool = false
 var current_item: String = ""
 var current_item_node: String = ""
 var inventory: Dictionary[String, bool] = {}
+var openend_chests: Dictionary[String, bool] = {}
 
 # mail handling
 var current_mail_index: int = 0

@@ -8,10 +8,11 @@ extends Area2D
 
 
 func action() -> void:
-	print(message)
 	var mail: Dictionary = {
 		"sender": sender,
 		"message": message.split("\n")
 	}
 	State.mailbox.append(mail)
 	DialogueManager.show_dialogue_balloon_scene(balloon, dialogue, start)
+	
+	self.call_deferred("queue_free")

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bweqccgogc5cm" path="res://characters/player/player.gd" id="1_508ok"]
 [ext_resource type="Texture2D" uid="uid://3qn8tmj1g3v3" path="res://assets/art/Angel Sprite.png" id="2_xxgcw"]
+[ext_resource type="Texture2D" uid="uid://dcr6tnymc4140" path="res://assets/art/exclamation.png" id="3_exd8k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_508ok"]
 radius = 6.0
@@ -128,22 +129,37 @@ script = ExtResource("1_508ok")
 zoom = Vector2(1.5, 1.5)
 
 [node name="Pivot" type="Marker2D" parent="." unique_id=1593219104]
-position = Vector2(0, 5)
+position = Vector2(0, -5)
 
 [node name="ActionableFinder" type="Area2D" parent="Pivot" unique_id=2034240136]
 collision_layer = 0
 collision_mask = 16
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/ActionableFinder" unique_id=1995619904]
 position = Vector2(10, 0)
 shape = SubResource("CircleShape2D_508ok")
 
+[node name="ActionableDetector" type="Area2D" parent="Pivot" unique_id=760746046]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/ActionableDetector" unique_id=1576307438]
+position = Vector2(10, 0)
+shape = SubResource("CircleShape2D_508ok")
+
 [node name="Sprite" type="Sprite2D" parent="." unique_id=255172161]
+position = Vector2(0, -7)
 texture = ExtResource("2_xxgcw")
 hframes = 3
 
+[node name="Exclamation" type="Sprite2D" parent="." unique_id=1330372071]
+visible = false
+position = Vector2(10, -18)
+texture = ExtResource("3_exd8k")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=898724088]
-position = Vector2(0, 5)
+position = Vector2(0, -3)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_b886q")
 
@@ -151,3 +167,5 @@ shape = SubResource("CapsuleShape2D_b886q")
 libraries/ = SubResource("AnimationLibrary_5dc8e")
 
 [connection signal="area_entered" from="Pivot/ActionableFinder" to="." method="_on_actionable_finder_area_entered"]
+[connection signal="area_entered" from="Pivot/ActionableDetector" to="." method="_on_actionable_detector_area_entered"]
+[connection signal="area_exited" from="Pivot/ActionableDetector" to="." method="_on_actionable_detector_area_exited"]

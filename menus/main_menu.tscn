@@ -2,7 +2,47 @@
 
 [ext_resource type="Script" uid="uid://uv30gv81k0pi" path="res://menus/main_menu.gd" id="1_8gy84"]
 [ext_resource type="PackedScene" uid="uid://chdi4k23vhskk" path="res://levels/angel_room_interior.tscn" id="2_yjgyn"]
-[ext_resource type="Texture2D" uid="uid://dyu24t4wh7ill" path="res://icon.svg" id="3_yjgyn"]
+[ext_resource type="Texture2D" uid="uid://bj1yl78u66m1f" path="res://assets/ui/start_button.png" id="4_oblsv"]
+[ext_resource type="Texture2D" uid="uid://b6fq3kocqgfhl" path="res://assets/ui/main_menu.png" id="4_rqbgu"]
+
+[sub_resource type="Animation" id="Animation_oblsv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMenu:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rqbgu"]
+resource_name = "play"
+length = 1.5
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMenu:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.90000004, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oblsv"]
+_data = {
+&"RESET": SubResource("Animation_oblsv"),
+&"play": SubResource("Animation_rqbgu")
+}
 
 [node name="MainMenu" type="Control" unique_id=443547464]
 layout_mode = 3
@@ -14,19 +54,29 @@ grow_vertical = 2
 script = ExtResource("1_8gy84")
 target_scene = ExtResource("2_yjgyn")
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=106607392]
+[node name="MainMenu" type="Sprite2D" parent="." unique_id=436442261]
+position = Vector2(192, 108.00001)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_rqbgu")
+hframes = 5
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=968139651]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 19.0
-offset_top = -29.0
-offset_right = 147.0
-offset_bottom = 99.0
+offset_left = -21.0
+offset_top = 62.0
+offset_right = 29.0
+offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("3_yjgyn")
+texture_normal = ExtResource("4_oblsv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2014513264]
+libraries/ = SubResource("AnimationLibrary_oblsv")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

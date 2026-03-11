@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cnbg5q6oup1r4"]
+
+[ext_resource type="PackedScene" uid="uid://dpx5utaqfpjqh" path="res://interactables/actionables.tscn" id="1_ot5oa"]
+[ext_resource type="PackedScene" uid="uid://bq33ernuht4uy" path="res://dialogue/portrait_balloon/portrait_balloon.tscn" id="2_f8ad8"]
+[ext_resource type="Texture2D" uid="uid://c4r42fteotlda" path="res://assets/art/Mr. Frog.png" id="3_ot5oa"]
+[ext_resource type="Resource" uid="uid://bmydb24x3dgbv" path="res://dialogue/frog.dialogue" id="3_w3jyj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oibqo"]
+radius = 5.0
+height = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oibqo"]
+radius = 9.848858
+
+[node name="Frog" type="Node2D" unique_id=1874870281]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1027805365]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1998056977]
+position = Vector2(0, 3)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_oibqo")
+
+[node name="Actionables" parent="." unique_id=1485619256 instance=ExtResource("1_ot5oa")]
+position = Vector2(-1, 5)
+balloon = ExtResource("2_f8ad8")
+dialogue = ExtResource("3_w3jyj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables" unique_id=282372716]
+position = Vector2(1, -5)
+shape = SubResource("CircleShape2D_oibqo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1673944986]
+position = Vector2(-1, 0)
+texture = ExtResource("3_ot5oa")
+hframes = 3

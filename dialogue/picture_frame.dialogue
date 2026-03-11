@@ -1,6 +1,6 @@
 ~ start
 Angel: You look at the photo
 do State.popups.toggle("PictureFrame")
-it's a photo of something
+It's a photo of family!
 do State.popups.toggle("PictureFrame")
 => END
