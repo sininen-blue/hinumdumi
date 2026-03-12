@@ -1,14 +1,31 @@
 ~ start
 if State.inventory.get(State.current_item) == true:
 	do State.popups.toggle(State.current_item_node)
-	Here you see a {{ State.current_item }}
-
-	Other extra details here
+	{{ State.current_item }}
+	
+	if State.current_item == "Sunset":
+		the sky burns softly. gold into orange. orange into night
+		some endings are not sad
+		they are proof, that something beautiful happened
+	if State.current_item == "Dream":
+		you do not just dream
+		you chase
+	if State.current_item == "Gift":
+		you smile at the smallest surprises
+	if State.current_item == "Gear":
+		once a dream
+		now real
+	if State.current_item == "CatDog":
+		it wags
+		it purrs
+		and it stays
+	if State.current_item == "Flower":
+		you bloom, and my world grows brighter
+	
 	do State.popups.toggle(State.current_item_node)
 	set State.current_item = ""
 else:
-	This display case is empty
-	
+	The paiting is dull and gray, waiting for its light
 
 
 => END

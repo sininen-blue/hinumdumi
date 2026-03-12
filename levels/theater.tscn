@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://yeuir2q5ljc6"]
+
+[ext_resource type="PackedScene" uid="uid://c8me6xafrukv3" path="res://dialogue/Popups/popups.tscn" id="1_le8ph"]
+[ext_resource type="PackedScene" uid="uid://7jggkfg7mjb7" path="res://assets/3d/picture_frame.glb" id="2_becq2"]
+[ext_resource type="Script" uid="uid://bd4jfhlaqcgmd" path="res://scripts/temp.gd" id="3_6kncs"]
+[ext_resource type="Texture2D" uid="uid://5g3vcx53om6i" path="res://assets/art/theater_interior.png" id="4_le8ph"]
+[ext_resource type="PackedScene" uid="uid://daq2mfhca6x4i" path="res://characters/player/player.tscn" id="5_vb8a8"]
+[ext_resource type="PackedScene" uid="uid://b306nkmalxrth" path="res://interactables/scene_changer.tscn" id="6_hjhbb"]
+
+[sub_resource type="Animation" id="Animation_p8xy8"]
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("picture_frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.3333333),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-0.022424817, -1.4556116, -0.3406272), Vector3(-0.022424817, -1.1858617, -0.3406272)]
+}
+
+[sub_resource type="Animation" id="Animation_q3t3u"]
+resource_name = "play"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("picture_frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.3333333),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-0.022424817, -1.4556116, -0.3406272), Vector3(-0.022424817, -1.1858617, -0.3406272)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xeat5"]
+_data = {
+&"RESET": SubResource("Animation_p8xy8"),
+&"play": SubResource("Animation_q3t3u")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vil2e"]
+size = Vector2(20, 156.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrdio"]
+size = Vector2(104, 29.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlovn"]
+size = Vector2(62.25, 8.875)
+
+[node name="Theater" type="Node2D" unique_id=3337977]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1097896712]
+
+[node name="Popups" parent="UI" unique_id=122606163 instance=ExtResource("1_le8ph")]
+visible = false
+
+[node name="FinalPhoto" type="SubViewportContainer" parent="UI/Popups" unique_id=1910520581]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="UI/Popups/FinalPhoto" unique_id=990000740]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 0
+
+[node name="picture_frame" parent="UI/Popups/FinalPhoto/SubViewport" unique_id=2080316493 instance=ExtResource("2_becq2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022424817, -1.4556116, -0.3406272)
+
+[node name="Camera3D" type="Camera3D" parent="UI/Popups/FinalPhoto/SubViewport" unique_id=590496709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20269084, 6.2516384)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="UI/Popups/FinalPhoto/SubViewport" unique_id=1902086635]
+transform = Transform3D(1, 0, 0, 0, 0.03519603, 0.99938047, 0, -0.99938047, 0.03519603, 0, 4.269703, -1.4079859)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="UI/Popups/FinalPhoto/SubViewport" unique_id=667732065]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Popups/FinalPhoto/SubViewport" unique_id=238816432]
+libraries/ = SubResource("AnimationLibrary_xeat5")
+script = ExtResource("3_6kncs")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=328160769]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -165.0
+offset_top = -184.0
+offset_right = 447.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.72, 0.57744, 0.40320003, 1)
+
+[node name="Theater" type="Sprite2D" parent="." unique_id=1506326062]
+position = Vector2(105, -42)
+texture = ExtResource("4_le8ph")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Theater" unique_id=1474481950]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Theater/StaticBody2D" unique_id=118381260]
+position = Vector2(-62, 1.375)
+shape = SubResource("RectangleShape2D_vil2e")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Theater/StaticBody2D" unique_id=81640963]
+position = Vector2(57, 3)
+shape = SubResource("RectangleShape2D_vil2e")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Theater/StaticBody2D" unique_id=738402697]
+position = Vector2(-2, -33)
+shape = SubResource("RectangleShape2D_yrdio")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Theater/StaticBody2D" unique_id=709993902]
+position = Vector2(-2, 89)
+shape = SubResource("RectangleShape2D_yrdio")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Theater/StaticBody2D" unique_id=1078187690]
+position = Vector2(-2, 62)
+shape = SubResource("RectangleShape2D_jlovn")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Theater/StaticBody2D" unique_id=690606966]
+position = Vector2(-2, 44)
+shape = SubResource("RectangleShape2D_jlovn")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Theater/StaticBody2D" unique_id=412572735]
+position = Vector2(-2, 26.5625)
+shape = SubResource("RectangleShape2D_jlovn")
+
+[node name="Sotrable" type="Node2D" parent="." unique_id=412226108]
+y_sort_enabled = true
+
+[node name="Player" parent="Sotrable" unique_id=1625059339 instance=ExtResource("5_vb8a8")]
+position = Vector2(145, 28)
+camera_zoom = 1.5
+
+[node name="SceneChanger" parent="." unique_id=1238518030 instance=ExtResource("6_hjhbb")]
+position = Vector2(168, 23)
+target_scene_path = "uid://bgfload3jvowf"
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=2071864805]
+energy = 0.2
+blend_mode = 1

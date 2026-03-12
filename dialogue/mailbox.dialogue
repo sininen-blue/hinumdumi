@@ -43,6 +43,6 @@ while true:
 
 ~ message
 while State.message_has_next():
-	{{ State.message_get_content() }}
+	{{State.mail_get_message_sender() }}: {{ State.message_get_content() }}
 	do State.current_message_line += 1
 => mailbox

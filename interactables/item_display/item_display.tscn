@@ -3,9 +3,17 @@
 [ext_resource type="Script" uid="uid://d4asdk5pnr2uw" path="res://interactables/item_display/item_display.gd" id="1_a7gww"]
 [ext_resource type="PackedScene" uid="uid://dynwge2375pmg" path="res://dialogue/balloon/balloon.tscn" id="2_bxvkp"]
 [ext_resource type="Resource" uid="uid://odq2n3rso8sj" path="res://dialogue/item_display.dialogue" id="3_vvuq4"]
-[ext_resource type="Texture2D" uid="uid://jvocs6cuifvu" path="res://assets/art/display_case.png" id="4_vvuq4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ipw2o"]
+
+[sub_resource type="Gradient" id="Gradient_bxvkp"]
+offsets = PackedFloat32Array(0, 0.575)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vvuq4"]
+gradient = SubResource("Gradient_bxvkp")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="ItemDisplay" type="Area2D" unique_id=998092885]
 collision_layer = 16
@@ -17,6 +25,7 @@ dialogue = ExtResource("3_vvuq4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=53972673]
 shape = SubResource("CircleShape2D_ipw2o")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=553464928]
-position = Vector2(0, -1.0000001)
-texture = ExtResource("4_vvuq4")
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=859381140]
+visible = false
+color = Color(1, 1, 0.48235294, 1)
+texture = SubResource("GradientTexture2D_vvuq4")

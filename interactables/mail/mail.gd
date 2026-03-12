@@ -6,6 +6,8 @@ extends Area2D
 @export var sender: String = ""
 @export_multiline var message: String
 
+func _ready() -> void:
+	$AnimationPlayer.play("bob")
 
 func action() -> void:
 	var mail: Dictionary = {

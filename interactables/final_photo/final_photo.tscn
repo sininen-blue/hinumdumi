@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://y05khyb6bhsn"]
+
+[ext_resource type="Script" uid="uid://do58pogq47bsh" path="res://interactables/final_photo/final_photo.gd" id="1_sgd5m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g733e"]
+
+[sub_resource type="Gradient" id="Gradient_bxvkp"]
+offsets = PackedFloat32Array(0, 0.575)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_viu6i"]
+gradient = SubResource("Gradient_bxvkp")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="FinalPhoto" type="Area2D" unique_id=917927134]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_sgd5m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1759680765]
+shape = SubResource("CircleShape2D_g733e")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=881503394]
+visible = false
+color = Color(1, 1, 0.48235294, 1)
+texture = SubResource("GradientTexture2D_viu6i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=40522476]

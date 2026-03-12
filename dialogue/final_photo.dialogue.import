@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://clpumjvugwhc7"
+path="res://.godot/imported/final_photo.dialogue-9554505edf79c738c78afdad1dd7a91e.tres"
+
+[deps]
+
+source_file="res://dialogue/final_photo.dialogue"
+dest_files=["res://.godot/imported/final_photo.dialogue-9554505edf79c738c78afdad1dd7a91e.tres"]
+
+[params]
+
+defaults=true

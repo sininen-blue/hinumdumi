@@ -5,45 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://jr866f0h5q1l" path="res://assets/art/chest.png" id="3_pmapc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_or81j"]
+radius = 9.0
 
 [sub_resource type="Animation" id="Animation_rh8pd"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -1)]
-}
 
 [sub_resource type="Animation" id="Animation_pmapc"]
 resource_name = "open"
@@ -72,18 +37,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.375, 0.8125), Vector2(0.875, 1.1875), Vector2(1, 1)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.35, 0.53),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, -1), Vector2(0, 0.5), Vector2(-1.1920929e-07, -2.4999998), Vector2(0, -1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rh8pd"]
 _data = {
@@ -101,10 +54,13 @@ script = ExtResource("1_or81j")
 dialogue = ExtResource("2_pmapc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2020555678]
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_or81j")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1451875824]
-position = Vector2(0, -1)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(0, -8)
 texture = ExtResource("3_pmapc")
 hframes = 2
 
@@ -112,6 +68,8 @@ hframes = 2
 libraries/ = SubResource("AnimationLibrary_rh8pd")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=685862330]
+position = Vector2(1, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1127849754]
+position = Vector2(-1, -2)
 shape = SubResource("CircleShape2D_pmapc")

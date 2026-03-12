@@ -1,0 +1,8 @@
+~ start
+if State.inventory_get_length() >= 6:
+	The key glows
+	A copy of it is absorbed into you
+else:
+	An object, it looks like a key
+	It seems like it's waiting for light
+=> END

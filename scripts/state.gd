@@ -2,12 +2,19 @@ extends Node
 
 var has_met_frog: bool = false
 var has_looked_at_picture: bool = false
+var has_key: bool = false
+
+# world handling
+var last_local_world_position: Vector2 = Vector2.ZERO
 
 # item handling
 var current_item: String = ""
 var current_item_node: String = ""
 var inventory: Dictionary[String, bool] = {}
 var openend_chests: Dictionary[String, bool] = {}
+
+func inventory_get_length() -> int:
+	return len(inventory)
 
 # mail handling
 var current_mail_index: int = 0

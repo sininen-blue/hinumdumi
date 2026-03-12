@@ -2,7 +2,7 @@
 
 if !State.openend_chests.get(State.current_item): 
 	do State.popups.toggle(State.current_item_node)
-	You found a {{ State.current_item }}
+	You've given light to a {{ State.current_item }}
 
 	do State.popups.toggle(State.current_item_node)
 	set State.openend_chests[State.current_item] = true

@@ -10,6 +10,9 @@ var is_empty: bool = false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+func _ready() -> void:
+	if is_empty:
+		$Sprite.frame = 1
 
 func action() -> void:
 	if is_empty == false:

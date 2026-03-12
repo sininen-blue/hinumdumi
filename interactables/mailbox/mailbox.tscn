@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://c8l0nlta7j3ib"]
 
-[ext_resource type="Texture2D" uid="uid://dyu24t4wh7ill" path="res://icon.svg" id="1_8555f"]
 [ext_resource type="Script" uid="uid://7cittt7o4prg" path="res://interactables/mailbox/mailbox.gd" id="1_hml13"]
 [ext_resource type="Resource" uid="uid://6tcn5gvyinl2" path="res://dialogue/mailbox.dialogue" id="2_nlrb7"]
 
@@ -14,8 +13,3 @@ dialogue = ExtResource("2_nlrb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=884241235]
 shape = SubResource("CircleShape2D_seyae")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=554843066]
-position = Vector2(3, -1)
-scale = Vector2(0.1953125, 0.25)
-texture = ExtResource("1_8555f")

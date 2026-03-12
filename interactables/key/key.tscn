@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c67ryd8qbcm5d"]
+
+[ext_resource type="Script" uid="uid://baclfnavdkcb5" path="res://interactables/key/key.gd" id="1_viu6i"]
+[ext_resource type="PackedScene" uid="uid://dynwge2375pmg" path="res://dialogue/balloon/balloon.tscn" id="2_g733e"]
+[ext_resource type="Resource" uid="uid://tjd38grakbw2" path="res://dialogue/key.dialogue" id="3_ndn8g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g733e"]
+
+[sub_resource type="Gradient" id="Gradient_bxvkp"]
+offsets = PackedFloat32Array(0, 0.575)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_viu6i"]
+gradient = SubResource("Gradient_bxvkp")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Key" type="Area2D" unique_id=917927134]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_viu6i")
+balloon = ExtResource("2_g733e")
+dialogue = ExtResource("3_ndn8g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1759680765]
+shape = SubResource("CircleShape2D_g733e")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=881503394]
+visible = false
+color = Color(1, 1, 0.48235294, 1)
+texture = SubResource("GradientTexture2D_viu6i")

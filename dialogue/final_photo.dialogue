@@ -1,0 +1,10 @@
+~ start
+if State.mail_length() >= 8:
+	You see a photo
+	do State.popups.toggle("FinalPhoto")
+	It's a photo with friends
+	do State.popups.toggle("FinalPhoto")
+else:
+	There's something hidden here
+	It waiting until the mailbux is full
+=> END

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://7jggkfg7mjb7" path="res://assets/3d/picture_frame.glb" id="3_q3t3u"]
 [ext_resource type="PackedScene" uid="uid://dpx5utaqfpjqh" path="res://interactables/actionables.tscn" id="4_o3we3"]
 [ext_resource type="Resource" uid="uid://bebinvgy0qxr3" path="res://dialogue/picture_frame.dialogue" id="5_twcm0"]
+[ext_resource type="PackedScene" uid="uid://d2q4kpr41kejc" path="res://interactables/chest/chest.tscn" id="9_1p0ja"]
 
 [sub_resource type="Animation" id="Animation_p8xy8"]
 length = 5.0
@@ -178,3 +179,7 @@ dialogue = ExtResource("5_twcm0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionables" unique_id=889035901]
 shape = SubResource("CircleShape2D_o3we3")
+
+[node name="Chest" parent="." unique_id=1838305616 instance=ExtResource("9_1p0ja")]
+visible = false
+position = Vector2(121, 72)
