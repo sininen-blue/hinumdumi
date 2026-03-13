@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bignvtdnfd7as"
+path="res://.godot/imported/theater_enter.dialogue-28015f747d8d3da8b68341e4c7016c9e.tres"
+
+[deps]
+
+source_file="res://dialogue/theater_enter.dialogue"
+dest_files=["res://.godot/imported/theater_enter.dialogue-28015f747d8d3da8b68341e4c7016c9e.tres"]
+
+[params]
+
+defaults=true

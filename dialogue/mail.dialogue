@@ -1,5 +1,5 @@
 ~ start
-You found mail from {{ State.mail_get_message_sender() }}
+You found mail from {{ State.mail_get_newest_message_sender() }}
 You grab it and it teleported out of your hand
 You can probably find it at the post office
 => END

@@ -6,5 +6,5 @@ if State.mail_length() >= 8:
 	do State.popups.toggle("FinalPhoto")
 else:
 	There's something hidden here
-	It waiting until the mailbux is full
+	It waiting until the mailbox is full
 => END

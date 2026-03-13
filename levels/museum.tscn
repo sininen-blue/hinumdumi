@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://bo7b4t13hwuro"]
 
 [ext_resource type="PackedScene" uid="uid://c8me6xafrukv3" path="res://dialogue/Popups/popups.tscn" id="1_0j6x7"]
-[ext_resource type="Texture2D" uid="uid://h7sovhw7d8bd" path="res://assets/paintings/sunset.png" id="2_72upa"]
-[ext_resource type="Script" uid="uid://bd4jfhlaqcgmd" path="res://scripts/temp.gd" id="2_gm6ql"]
+[ext_resource type="Texture2D" uid="uid://decqkjltqkjcs" path="res://assets/paintings/Sunset.png" id="2_72upa"]
+[ext_resource type="Texture2D" uid="uid://cgybrtv5mr3am" path="res://assets/paintings/Dream.png" id="3_lk7a2"]
 [ext_resource type="Texture2D" uid="uid://caaap5fgad8xo" path="res://assets/art/museum_interior.png" id="3_vil2e"]
 [ext_resource type="PackedScene" uid="uid://7bowxiltmvb3" path="res://interactables/item_display/item_display.tscn" id="4_0j6x7"]
+[ext_resource type="Texture2D" uid="uid://ccjoai2lauq54" path="res://assets/paintings/Gift.png" id="4_ed7h7"]
 [ext_resource type="PackedScene" uid="uid://daq2mfhca6x4i" path="res://characters/player/player.tscn" id="4_yrdio"]
+[ext_resource type="Texture2D" uid="uid://b0itn0u02dbc5" path="res://assets/paintings/Gear.png" id="5_c2esa"]
 [ext_resource type="PackedScene" uid="uid://b306nkmalxrth" path="res://interactables/scene_changer.tscn" id="5_gm6ql"]
 [ext_resource type="PackedScene" uid="uid://c67ryd8qbcm5d" path="res://interactables/key/key.tscn" id="5_jep7c"]
+[ext_resource type="Texture2D" uid="uid://ufgy2txk0dx4" path="res://assets/paintings/Cat and Dog.png" id="6_7irox"]
 [ext_resource type="Texture2D" uid="uid://cc6ird2n7gc1e" path="res://assets/art/museum_barrier.png" id="6_vil2e"]
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ip8qf"]
+[ext_resource type="Texture2D" uid="uid://k8h1a0kx2s8s" path="res://assets/paintings/Flower.png" id="7_etpr4"]
+[ext_resource type="Texture2D" uid="uid://bjjxoi6cyopb5" path="res://assets/art/key.png" id="11_ed7h7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vil2e"]
 size = Vector2(20, 83)
@@ -26,6 +29,7 @@ size = Vector2(148, 2)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1154517908]
 
 [node name="Popups" parent="CanvasLayer" unique_id=122606163 instance=ExtResource("1_0j6x7")]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="Sunset" type="SubViewportContainer" parent="CanvasLayer/Popups" unique_id=14071716]
@@ -40,6 +44,7 @@ grow_vertical = 2
 [node name="Node" type="Node" parent="CanvasLayer/Popups/Sunset" unique_id=486868278]
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Popups/Sunset/Node" unique_id=558121858]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -52,6 +57,7 @@ offset_bottom = 23.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_72upa")
+stretch_mode = 3
 
 [node name="Dream" type="SubViewportContainer" parent="CanvasLayer/Popups" unique_id=1342213730]
 visible = false
@@ -62,26 +68,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Popups/Dream" unique_id=1495366618]
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 0
+[node name="Node" type="Node" parent="CanvasLayer/Popups/Dream" unique_id=1189732378]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CanvasLayer/Popups/Dream/SubViewport" unique_id=509341437]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69555664, 0)
-size = Vector3(1, 2.3911133, 1)
-
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Popups/Dream/SubViewport" unique_id=902093136]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.2516384)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CanvasLayer/Popups/Dream/SubViewport" unique_id=436601916]
-transform = Transform3D(1, 0, 0, 0, 0.035196025, 0.9993804, 0, -0.9993804, 0.035196025, 0, 4.269703, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Popups/Dream/SubViewport" unique_id=484622892]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Popups/Dream/SubViewport" unique_id=2102127661]
-libraries/ = SubResource("AnimationLibrary_ip8qf")
-script = ExtResource("2_gm6ql")
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Popups/Dream/Node" unique_id=1066546742]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_top = -736.0
+offset_right = 510.0
+offset_bottom = 674.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lk7a2")
+stretch_mode = 3
 
 [node name="Gift" type="SubViewportContainer" parent="CanvasLayer/Popups" unique_id=1691168627]
 visible = false
@@ -92,26 +95,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Popups/Gift" unique_id=1726631663]
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 0
+[node name="Node" type="Node" parent="CanvasLayer/Popups/Gift" unique_id=681675316]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CanvasLayer/Popups/Gift/SubViewport" unique_id=1344641896]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69555664, 0)
-size = Vector3(1, 2.3911133, 1)
-
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Popups/Gift/SubViewport" unique_id=632041891]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.2516384)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CanvasLayer/Popups/Gift/SubViewport" unique_id=2020489746]
-transform = Transform3D(1, 0, 0, 0, 0.035196025, 0.9993804, 0, -0.9993804, 0.035196025, 0, 4.269703, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Popups/Gift/SubViewport" unique_id=668482206]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Popups/Gift/SubViewport" unique_id=1844562568]
-libraries/ = SubResource("AnimationLibrary_ip8qf")
-script = ExtResource("2_gm6ql")
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Popups/Gift/Node" unique_id=1198491394]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -85.0
+offset_right = 114.238525
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ed7h7")
+stretch_mode = 4
 
 [node name="Gear" type="SubViewportContainer" parent="CanvasLayer/Popups" unique_id=525161704]
 visible = false
@@ -122,26 +122,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Popups/Gear" unique_id=568453960]
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 0
+[node name="Node" type="Node" parent="CanvasLayer/Popups/Gear" unique_id=1786966608]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CanvasLayer/Popups/Gear/SubViewport" unique_id=720014162]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69555664, 0)
-size = Vector3(1, 2.3911133, 1)
-
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Popups/Gear/SubViewport" unique_id=1175678711]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.2516384)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CanvasLayer/Popups/Gear/SubViewport" unique_id=358026582]
-transform = Transform3D(1, 0, 0, 0, 0.035196025, 0.9993804, 0, -0.9993804, 0.035196025, 0, 4.269703, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Popups/Gear/SubViewport" unique_id=1051532588]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Popups/Gear/SubViewport" unique_id=2076628364]
-libraries/ = SubResource("AnimationLibrary_ip8qf")
-script = ExtResource("2_gm6ql")
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Popups/Gear/Node" unique_id=797617890]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -103.0
+offset_right = 60.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_c2esa")
+stretch_mode = 4
 
 [node name="CatDog" type="SubViewportContainer" parent="CanvasLayer/Popups" unique_id=2052934520]
 visible = false
@@ -152,26 +149,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Popups/CatDog" unique_id=185691682]
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 0
+[node name="Node" type="Node" parent="CanvasLayer/Popups/CatDog" unique_id=679720742]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CanvasLayer/Popups/CatDog/SubViewport" unique_id=1250904177]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69555664, 0)
-size = Vector3(1, 2.3911133, 1)
-
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Popups/CatDog/SubViewport" unique_id=448552757]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.2516384)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CanvasLayer/Popups/CatDog/SubViewport" unique_id=301992931]
-transform = Transform3D(1, 0, 0, 0, 0.035196025, 0.9993804, 0, -0.9993804, 0.035196025, 0, 4.269703, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Popups/CatDog/SubViewport" unique_id=1337527094]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Popups/CatDog/SubViewport" unique_id=277150510]
-libraries/ = SubResource("AnimationLibrary_ip8qf")
-script = ExtResource("2_gm6ql")
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Popups/CatDog/Node" unique_id=1972831234]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -85.5
+offset_right = 95.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_7irox")
+stretch_mode = 3
 
 [node name="Flower" type="SubViewportContainer" parent="CanvasLayer/Popups" unique_id=766517227]
 visible = false
@@ -182,26 +176,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Popups/Flower" unique_id=774025324]
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 0
+[node name="Node" type="Node" parent="CanvasLayer/Popups/Flower" unique_id=692637577]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CanvasLayer/Popups/Flower/SubViewport" unique_id=194889737]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7194824, 0, 0)
-size = Vector3(2.4389648, 1, 1)
-
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Popups/Flower/SubViewport" unique_id=45220657]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.2516384)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CanvasLayer/Popups/Flower/SubViewport" unique_id=1094629061]
-transform = Transform3D(1, 0, 0, 0, 0.035196025, 0.9993804, 0, -0.9993804, 0.035196025, 0, 4.269703, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Popups/Flower/SubViewport" unique_id=1161279424]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Popups/Flower/SubViewport" unique_id=767459921]
-libraries/ = SubResource("AnimationLibrary_ip8qf")
-script = ExtResource("2_gm6ql")
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Popups/Flower/Node" unique_id=2023176671]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -85.5
+offset_right = 95.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_etpr4")
+stretch_mode = 3
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=328160769]
 anchors_preset = 15
@@ -214,6 +206,7 @@ offset_bottom = 169.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.50928617, 0.50928617, 0.50928617, 1)
+metadata/_edit_lock_ = true
 
 [node name="Museum" type="Sprite2D" parent="." unique_id=1506326062]
 position = Vector2(105, -42)
@@ -239,13 +232,17 @@ shape = SubResource("RectangleShape2D_yrdio")
 
 [node name="ItemDisplays" type="Node" parent="." unique_id=585281982]
 
+[node name="Key" parent="ItemDisplays" unique_id=917927134 instance=ExtResource("5_jep7c")]
+position = Vector2(175, -15)
+
+[node name="Sprite2D" type="Sprite2D" parent="ItemDisplays/Key" unique_id=957401835]
+self_modulate = Color(0.27, 0.27, 0.27, 0.41960785)
+texture = ExtResource("11_ed7h7")
+
 [node name="ItemDisplay" parent="ItemDisplays" unique_id=998092885 instance=ExtResource("4_0j6x7")]
 position = Vector2(33, -61)
 item = "Sunset"
 item_node = "Sunset"
-
-[node name="Key" parent="ItemDisplays/ItemDisplay" unique_id=917927134 instance=ExtResource("5_jep7c")]
-position = Vector2(74, 46)
 
 [node name="ItemDisplay2" parent="ItemDisplays" unique_id=29240104 instance=ExtResource("4_0j6x7")]
 position = Vector2(64, -62)

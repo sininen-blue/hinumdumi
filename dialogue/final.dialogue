@@ -1,0 +1,22 @@
+~ start
+In this small story,
+
+do State.scene_1.toggle()
+there were quiet places, hidden memories, and gentle moments.
+do State.scene_1.toggle()
+
+do State.scene_2.toggle()
+one truth remained. And in the end,
+do State.scene_2.toggle()
+
+do State.scene_3.toggle()
+can feel endless Even a small world
+do State.scene_3.toggle()
+
+do State.scene_4.toggle()
+Jhay: when it is a world of you.
+do State.scene_4.toggle()
+
+
+do State.end_game()
+=> END

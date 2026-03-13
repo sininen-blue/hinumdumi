@@ -11,6 +11,9 @@ extends Area2D
 func _ready() -> void:
 	if len(State.inventory) >= 6:
 		point_light.visible = true
+		self.self_modulate = Color("#ffffff")
+	else:
+		self.self_modulate = Color("#4545456b")
 
 func action() -> void:
 	State.has_key = true

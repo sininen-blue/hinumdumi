@@ -2,20 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://decqkjltqkjcs"
-path="res://.godot/imported/Sunset.png-14bafff3e22b4fd77a698c2b6ad28566.ctex"
+uid="uid://dkfsrgpdirf3m"
+path.s3tc="res://.godot/imported/Kampo Aang_30124842_2014685768782477_8987268888500633600_n.jpg-da9e37a2ab3142b9acf6d272cebdd580.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "5228fe80d168b54f7bd4bc72fc0d0487"
 }
 
 [deps]
 
-source_file="res://assets/paintings/Sunset.png"
-dest_files=["res://.godot/imported/Sunset.png-14bafff3e22b4fd77a698c2b6ad28566.ctex"]
+source_file="res://assets/art/Kampo Aang_30124842_2014685768782477_8987268888500633600_n.jpg"
+dest_files=["res://.godot/imported/Kampo Aang_30124842_2014685768782477_8987268888500633600_n.jpg-da9e37a2ab3142b9acf6d272cebdd580.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +27,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

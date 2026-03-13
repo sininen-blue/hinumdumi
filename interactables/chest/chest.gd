@@ -11,7 +11,7 @@ var is_empty: bool = false
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
-	if is_empty:
+	if State.inventory.get(item):
 		$Sprite.frame = 1
 
 func action() -> void:

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://blu6ohiqectt3"]
+
+[ext_resource type="Texture2D" uid="uid://cd5qndob7ktv3" path="res://assets/art/camille.png" id="1_gha3d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oibqo"]
+radius = 3.0
+height = 10.0
+
+[node name="Camille" type="Node2D" unique_id=1874870281]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1027805365]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1998056977]
+position = Vector2(0, 5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_oibqo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1673944986]
+texture = ExtResource("1_gha3d")

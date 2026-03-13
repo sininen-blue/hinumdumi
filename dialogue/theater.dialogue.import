@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://npbcuks6gayr"
+path="res://.godot/imported/theater.dialogue-c859b6f52f8055ac9a88fcf5d379b887.tres"
+
+[deps]
+
+source_file="res://dialogue/theater.dialogue"
+dest_files=["res://.godot/imported/theater.dialogue-c859b6f52f8055ac9a88fcf5d379b887.tres"]
+
+[params]
+
+defaults=true

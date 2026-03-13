@@ -2,25 +2,28 @@
 
 [ext_resource type="PackedScene" uid="uid://18uywdldq2d7" path="res://assets/resources/ground_tile_map.tscn" id="1_k6jxs"]
 [ext_resource type="PackedScene" uid="uid://c8me6xafrukv3" path="res://dialogue/Popups/popups.tscn" id="1_uegnj"]
-[ext_resource type="Script" uid="uid://bd4jfhlaqcgmd" path="res://scripts/temp.gd" id="2_0pqib"]
 [ext_resource type="PackedScene" uid="uid://daq2mfhca6x4i" path="res://characters/player/player.tscn" id="2_0sglt"]
-[ext_resource type="Texture2D" uid="uid://h7sovhw7d8bd" path="res://assets/paintings/sunset.png" id="2_di3uh"]
 [ext_resource type="PackedScene" uid="uid://d2q4kpr41kejc" path="res://interactables/chest/chest.tscn" id="3_0sglt"]
 [ext_resource type="Texture2D" uid="uid://ccuhum6xikhmv" path="res://assets/art/angel_house.png" id="4_u60cr"]
 [ext_resource type="Texture2D" uid="uid://cbyevunnsijt3" path="res://assets/art/museum_exterior.png" id="5_6s0va"]
 [ext_resource type="PackedScene" uid="uid://b306nkmalxrth" path="res://interactables/scene_changer.tscn" id="6_0pqib"]
+[ext_resource type="PackedScene" uid="uid://bq33ernuht4uy" path="res://dialogue/portrait_balloon/portrait_balloon.tscn" id="6_3fvps"]
+[ext_resource type="Resource" uid="uid://npbcuks6gayr" path="res://dialogue/theater.dialogue" id="6_tmar7"]
+[ext_resource type="Resource" uid="uid://bignvtdnfd7as" path="res://dialogue/theater_enter.dialogue" id="8_ptuj6"]
 [ext_resource type="PackedScene" uid="uid://byoyymx0y0tx0" path="res://interactables/mail/mail.tscn" id="9_8vubn"]
 [ext_resource type="Texture2D" uid="uid://duke0f7siuwox" path="res://assets/art/post_exterior.png" id="10_di3uh"]
 [ext_resource type="PackedScene" uid="uid://cnbg5q6oup1r4" path="res://characters/non_playable_characters/frog.tscn" id="11_6s0va"]
 [ext_resource type="Texture2D" uid="uid://ckwv3tdllebce" path="res://assets/art/theater_exterior.png" id="11_61vbr"]
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ip8qf"]
+[ext_resource type="PackedScene" uid="uid://blu6ohiqectt3" path="res://characters/non_playable_characters/camille.tscn" id="14_2f8bh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_di3uh"]
 size = Vector2(118, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6s0va"]
-size = Vector2(92, 28)
+size = Vector2(61, 23.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptuj6"]
+size = Vector2(99, 27)
 
 [node name="LocalWorld" type="Node2D" unique_id=1696338584]
 
@@ -54,7 +57,6 @@ offset_right = 95.0
 offset_bottom = 23.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_di3uh")
 
 [node name="Dream" type="SubViewportContainer" parent="CanvasLayer/Popups" unique_id=2141020330]
 layout_mode = 1
@@ -64,26 +66,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Popups/Dream" unique_id=1369242410]
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 0
+[node name="Buffer" type="Node" parent="CanvasLayer/Popups/Dream" unique_id=2137776869]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CanvasLayer/Popups/Dream/SubViewport" unique_id=1415525943]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69555664, 0)
-size = Vector3(1, 2.3911133, 1)
-
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Popups/Dream/SubViewport" unique_id=612289967]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.2516384)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CanvasLayer/Popups/Dream/SubViewport" unique_id=4109363]
-transform = Transform3D(1, 0, 0, 0, 0.035196025, 0.9993804, 0, -0.9993804, 0.035196025, 0, 4.269703, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Popups/Dream/SubViewport" unique_id=1589168339]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Popups/Dream/SubViewport" unique_id=1897103629]
-libraries/ = SubResource("AnimationLibrary_ip8qf")
-script = ExtResource("2_0pqib")
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Popups/Dream/Buffer" unique_id=1801833911]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -85.5
+offset_right = 95.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Gift" type="SubViewportContainer" parent="CanvasLayer/Popups" unique_id=2104456470]
 visible = false
@@ -94,26 +91,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Popups/Gift" unique_id=437577162]
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 0
+[node name="Buffer" type="Node" parent="CanvasLayer/Popups/Gift" unique_id=600903268]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CanvasLayer/Popups/Gift/SubViewport" unique_id=932133438]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69555664, 0)
-size = Vector3(1, 2.3911133, 1)
-
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Popups/Gift/SubViewport" unique_id=1395501909]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.2516384)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CanvasLayer/Popups/Gift/SubViewport" unique_id=66442809]
-transform = Transform3D(1, 0, 0, 0, 0.035196025, 0.9993804, 0, -0.9993804, 0.035196025, 0, 4.269703, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Popups/Gift/SubViewport" unique_id=1310238006]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Popups/Gift/SubViewport" unique_id=1646136889]
-libraries/ = SubResource("AnimationLibrary_ip8qf")
-script = ExtResource("2_0pqib")
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Popups/Gift/Buffer" unique_id=411851388]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -85.5
+offset_right = 95.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Gear" type="SubViewportContainer" parent="CanvasLayer/Popups" unique_id=1876443483]
 visible = false
@@ -124,26 +116,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Popups/Gear" unique_id=1208990399]
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 0
+[node name="Buffer" type="Node" parent="CanvasLayer/Popups/Gear" unique_id=1142655190]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CanvasLayer/Popups/Gear/SubViewport" unique_id=2140663158]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69555664, 0)
-size = Vector3(1, 2.3911133, 1)
-
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Popups/Gear/SubViewport" unique_id=1617393229]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.2516384)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CanvasLayer/Popups/Gear/SubViewport" unique_id=187609749]
-transform = Transform3D(1, 0, 0, 0, 0.035196025, 0.9993804, 0, -0.9993804, 0.035196025, 0, 4.269703, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Popups/Gear/SubViewport" unique_id=431845990]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Popups/Gear/SubViewport" unique_id=489095681]
-libraries/ = SubResource("AnimationLibrary_ip8qf")
-script = ExtResource("2_0pqib")
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Popups/Gear/Buffer" unique_id=1403749974]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -85.5
+offset_right = 95.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CatDog" type="SubViewportContainer" parent="CanvasLayer/Popups" unique_id=1425736159]
 visible = false
@@ -154,26 +141,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Popups/CatDog" unique_id=1135741146]
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 0
+[node name="Buffer" type="Node" parent="CanvasLayer/Popups/CatDog" unique_id=401286131]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CanvasLayer/Popups/CatDog/SubViewport" unique_id=1661194962]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69555664, 0)
-size = Vector3(1, 2.3911133, 1)
-
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Popups/CatDog/SubViewport" unique_id=1851756411]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.2516384)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CanvasLayer/Popups/CatDog/SubViewport" unique_id=113008554]
-transform = Transform3D(1, 0, 0, 0, 0.035196025, 0.9993804, 0, -0.9993804, 0.035196025, 0, 4.269703, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Popups/CatDog/SubViewport" unique_id=1238438033]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Popups/CatDog/SubViewport" unique_id=19726957]
-libraries/ = SubResource("AnimationLibrary_ip8qf")
-script = ExtResource("2_0pqib")
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Popups/CatDog/Buffer" unique_id=1247059882]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -85.5
+offset_right = 95.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Flower" type="SubViewportContainer" parent="CanvasLayer/Popups" unique_id=176914078]
 visible = false
@@ -184,26 +166,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Popups/Flower" unique_id=119789195]
-transparent_bg = true
-handle_input_locally = false
-render_target_update_mode = 0
+[node name="Buffer" type="Node" parent="CanvasLayer/Popups/Flower" unique_id=895173616]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CanvasLayer/Popups/Flower/SubViewport" unique_id=1277348088]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7194824, 0, 0)
-size = Vector3(2.4389648, 1, 1)
-
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/Popups/Flower/SubViewport" unique_id=1189276786]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.2516384)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="CanvasLayer/Popups/Flower/SubViewport" unique_id=1524129396]
-transform = Transform3D(1, 0, 0, 0, 0.035196025, 0.9993804, 0, -0.9993804, 0.035196025, 0, 4.269703, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/Popups/Flower/SubViewport" unique_id=328632095]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Popups/Flower/SubViewport" unique_id=1723629940]
-libraries/ = SubResource("AnimationLibrary_ip8qf")
-script = ExtResource("2_0pqib")
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Popups/Flower/Buffer" unique_id=1847854556]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -85.5
+offset_right = 95.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Tiles" type="Node2D" parent="." unique_id=623084611]
 z_index = -2
@@ -237,10 +214,18 @@ target_scene_path = "uid://dn0mhye1w0jbu"
 [node name="TheaterDoor" parent="Doors" unique_id=1506133111 instance=ExtResource("6_0pqib")]
 position = Vector2(23, -158)
 target_scene_path = "uid://yeuir2q5ljc6"
+need_key = true
+balloon = ExtResource("6_3fvps")
+dialogue = ExtResource("6_tmar7")
+enter_dialogue = ExtResource("8_ptuj6")
 
 [node name="TheaterDoor2" parent="Doors" unique_id=1286107505 instance=ExtResource("6_0pqib")]
 position = Vector2(82, -155)
 target_scene_path = "uid://yeuir2q5ljc6"
+need_key = true
+balloon = ExtResource("6_3fvps")
+dialogue = ExtResource("6_tmar7")
+enter_dialogue = ExtResource("8_ptuj6")
 
 [node name="Sortable" type="Node2D" parent="." unique_id=1272715932]
 y_sort_enabled = true
@@ -478,7 +463,7 @@ position = Vector2(-1, -23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sortable/AngelHouse/StaticBody2D" unique_id=1704640437]
 y_sort_enabled = true
-position = Vector2(0.5, 12.5)
+position = Vector2(2.5, 10.25)
 shape = SubResource("RectangleShape2D_6s0va")
 
 [node name="PostExterior" type="Sprite2D" parent="Sortable" unique_id=1082453239]
@@ -508,18 +493,18 @@ position = Vector2(-2, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sortable/TheaterExterior/StaticBody2D" unique_id=254435196]
 y_sort_enabled = true
-position = Vector2(2, 8)
-shape = SubResource("RectangleShape2D_6s0va")
+position = Vector2(1.5, 10.5)
+shape = SubResource("RectangleShape2D_ptuj6")
 
 [node name="NPCs" type="Node2D" parent="Sortable" unique_id=1863035923]
 y_sort_enabled = true
 
-[node name="Jhay" parent="Sortable/NPCs" unique_id=1874870281 instance=ExtResource("11_6s0va")]
+[node name="Toad" parent="Sortable/NPCs" unique_id=1874870281 instance=ExtResource("11_6s0va")]
 position = Vector2(26, 56)
+
+[node name="Camille" parent="Sortable/NPCs" unique_id=1818384259 instance=ExtResource("14_2f8bh")]
+position = Vector2(43, -148)
 
 [node name="Player" parent="Sortable" unique_id=1625059339 instance=ExtResource("2_0sglt")]
 position = Vector2(-7, 9)
 camera_zoom = 1.3
-speed = 200.0
-accel = 200.0
-decel = 200.0

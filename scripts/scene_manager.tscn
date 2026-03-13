@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dl7cnqcc0mmhd" path="res://scripts/scene_manager.gd" id="1_fo3wq"]
 [ext_resource type="PackedScene" uid="uid://dnlf6dglysbjh" path="res://menus/main_menu.tscn" id="2_np254"]
-[ext_resource type="AudioStream" uid="uid://dc5jjdh7i4ixc" path="res://assets/music/intro.wav" id="3_hacf3"]
+[ext_resource type="AudioStream" uid="uid://iuoot4vhutot" path="res://assets/music/menu.wav" id="3_hacf3"]
 
 [sub_resource type="Animation" id="Animation_hacf3"]
 length = 0.001
@@ -124,6 +124,5 @@ libraries/ = SubResource("AnimationLibrary_hacf3")
 
 [node name="Music1" type="AudioStreamPlayer" parent="." unique_id=1634079600]
 stream = ExtResource("3_hacf3")
-volume_db = -68.571
 
 [node name="Music2" type="AudioStreamPlayer" parent="." unique_id=1727172379]

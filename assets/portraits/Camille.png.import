@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://decqkjltqkjcs"
-path="res://.godot/imported/Sunset.png-14bafff3e22b4fd77a698c2b6ad28566.ctex"
+uid="uid://ceub066eom0wi"
+path="res://.godot/imported/Camille.png-343bb6f769c2d079c61aab2111c177b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/paintings/Sunset.png"
-dest_files=["res://.godot/imported/Sunset.png-14bafff3e22b4fd77a698c2b6ad28566.ctex"]
+source_file="res://assets/portraits/Camille.png"
+dest_files=["res://.godot/imported/Camille.png-343bb6f769c2d079c61aab2111c177b0.ctex"]
 
 [params]
 

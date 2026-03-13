@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://decqkjltqkjcs"
-path="res://.godot/imported/Sunset.png-14bafff3e22b4fd77a698c2b6ad28566.ctex"
+uid="uid://ufgy2txk0dx4"
+path="res://.godot/imported/Cat and Dog.png-ea13b2d4c134d718e90382130b88357f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/paintings/Sunset.png"
-dest_files=["res://.godot/imported/Sunset.png-14bafff3e22b4fd77a698c2b6ad28566.ctex"]
+source_file="res://assets/paintings/Cat and Dog.png"
+dest_files=["res://.godot/imported/Cat and Dog.png-ea13b2d4c134d718e90382130b88357f.ctex"]
 
 [params]
 

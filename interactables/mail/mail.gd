@@ -8,6 +8,14 @@ extends Area2D
 
 func _ready() -> void:
 	$AnimationPlayer.play("bob")
+	
+	var mail: Dictionary = {
+		"sender": sender,
+		"message": message.split("\n")
+	}
+	
+	if State.mailbox.has(mail):
+		self.call_deferred("queue_free")
 
 func action() -> void:
 	var mail: Dictionary = {

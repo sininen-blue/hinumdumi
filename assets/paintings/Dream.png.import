@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://decqkjltqkjcs"
-path="res://.godot/imported/Sunset.png-14bafff3e22b4fd77a698c2b6ad28566.ctex"
+uid="uid://cgybrtv5mr3am"
+path="res://.godot/imported/Dream.png-7123aa7fa055e9ae00d57055f29e46fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/paintings/Sunset.png"
-dest_files=["res://.godot/imported/Sunset.png-14bafff3e22b4fd77a698c2b6ad28566.ctex"]
+source_file="res://assets/paintings/Dream.png"
+dest_files=["res://.godot/imported/Dream.png-7123aa7fa055e9ae00d57055f29e46fb.ctex"]
 
 [params]
 

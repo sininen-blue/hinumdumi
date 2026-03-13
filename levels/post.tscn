@@ -1,47 +1,24 @@
 [gd_scene format=3 uid="uid://dn0mhye1w0jbu"]
 
 [ext_resource type="PackedScene" uid="uid://c8me6xafrukv3" path="res://dialogue/Popups/popups.tscn" id="1_su140"]
+[ext_resource type="PackedScene" uid="uid://djfo2314irm3f" path="res://assets/3d/Kampo Aang.glb" id="2_a4k45"]
 [ext_resource type="Texture2D" uid="uid://dqknnd3u4rbnc" path="res://assets/art/post_interior.png" id="2_aqhhk"]
-[ext_resource type="PackedScene" uid="uid://7jggkfg7mjb7" path="res://assets/3d/picture_frame.glb" id="2_bmwmg"]
 [ext_resource type="Script" uid="uid://bd4jfhlaqcgmd" path="res://scripts/temp.gd" id="3_q41qu"]
 [ext_resource type="PackedScene" uid="uid://c8l0nlta7j3ib" path="res://interactables/mailbox/mailbox.tscn" id="5_aqhhk"]
 [ext_resource type="PackedScene" uid="uid://daq2mfhca6x4i" path="res://characters/player/player.tscn" id="7_p13i7"]
 [ext_resource type="PackedScene" uid="uid://y05khyb6bhsn" path="res://interactables/final_photo/final_photo.tscn" id="8_xeat5"]
 [ext_resource type="PackedScene" uid="uid://b306nkmalxrth" path="res://interactables/scene_changer.tscn" id="9_g5qwp"]
 [ext_resource type="Resource" uid="uid://clpumjvugwhc7" path="res://dialogue/final_photo.dialogue" id="9_su140"]
+[ext_resource type="Texture2D" uid="uid://b78d14m5r6el1" path="res://assets/art/scrolll.png" id="10_a4k45"]
 
 [sub_resource type="Animation" id="Animation_p8xy8"]
 length = 5.0
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("picture_frame:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.3333333),
-"transitions": PackedFloat32Array(-2, -2),
-"update": 0,
-"values": [Vector3(-0.022424817, -1.4556116, -0.3406272), Vector3(-0.022424817, -1.1858617, -0.3406272)]
-}
 
 [sub_resource type="Animation" id="Animation_q3t3u"]
 resource_name = "play"
 length = 5.0
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("picture_frame:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.3333333),
-"transitions": PackedFloat32Array(-2, -2),
-"update": 0,
-"values": [Vector3(-0.022424817, -1.4556116, -0.3406272), Vector3(-0.022424817, -1.1858617, -0.3406272)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xeat5"]
 _data = {
@@ -84,8 +61,8 @@ transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 0
 
-[node name="picture_frame" parent="UI/Popups/FinalPhoto/SubViewport" unique_id=2080316493 instance=ExtResource("2_bmwmg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022424817, -1.4556116, -0.3406272)
+[node name="Kampo Aang" parent="UI/Popups/FinalPhoto/SubViewport" unique_id=1166326203 instance=ExtResource("2_a4k45")]
+transform = Transform3D(1, 0, 0, 0, 0.99695694, -0.0779545, 0, 0.0779545, 0.99695694, -0.11975169, -1.2976276, 1.0238183)
 
 [node name="Camera3D" type="Camera3D" parent="UI/Popups/FinalPhoto/SubViewport" unique_id=590496709]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20269084, 6.2516384)
@@ -181,3 +158,7 @@ position = Vector2(134, -60)
 [node name="FinalPhoto" parent="." unique_id=917927134 instance=ExtResource("8_xeat5")]
 position = Vector2(105, -12)
 dialogue = ExtResource("9_su140")
+
+[node name="Scrolll" type="Sprite2D" parent="." unique_id=763479056]
+position = Vector2(105, -11)
+texture = ExtResource("10_a4k45")

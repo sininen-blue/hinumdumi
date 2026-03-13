@@ -28,7 +28,7 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	direction = Input.get_vector("move_right", "move_left", "move_up", "move_down")
+	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	
 	
@@ -91,3 +91,7 @@ func _on_actionable_detector_area_entered(_area: Area2D) -> void:
 func _on_actionable_detector_area_exited(_area: Area2D) -> void:
 	can_interact = false
 	exclamation.visible = false
+
+
+func look_up() -> void:
+	sprite.frame = 1

@@ -1,5 +1,13 @@
 extends Node
 
+# Final cutscene
+var scene_1: TextureRect
+var scene_2: TextureRect
+var scene_3: TextureRect
+var scene_4: Sprite2D
+func end_game():
+	SceneManager.change_scene_to(load("res://menus/main_menu_complete.tscn"))
+
 var has_met_frog: bool = false
 var has_looked_at_picture: bool = false
 var has_key: bool = false
@@ -22,6 +30,8 @@ var mailbox: Array[Dictionary] = []
 
 func mail_get_message_sender() -> String:
 	return mailbox[current_mail_index].get("sender")
+func mail_get_newest_message_sender() -> String:
+	return mailbox[-1].get("sender")
 func mail_length() -> int:
 	return len(mailbox)
 func mail_has_next() -> bool:
