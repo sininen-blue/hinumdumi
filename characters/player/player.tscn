@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://leixn7ybth70"]
+
+[ext_resource type="Script" uid="uid://7wocdaykxcya" path="res://characters/player/player.gd" id="1_exd8k"]
+[ext_resource type="Script" uid="uid://bjrmip7u8swnl" path="res://src/statemachine/state_machine.gd" id="1_xxgcw"]
+[ext_resource type="Script" uid="uid://dhyugj58epewt" path="res://src/statemachine/state.gd" id="2_exd8k"]
+[ext_resource type="Script" uid="uid://dggjbvqb85wdw" path="res://characters/player/idle_state.gd" id="3_5dc8e"]
+[ext_resource type="Script" uid="uid://dm7spsu76df8p" path="res://characters/player/walk_state.gd" id="4_ixbpm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xxgcw"]
+
+[node name="Player" type="CharacterBody3D" unique_id=950809192]
+script = ExtResource("1_exd8k")
+show_extra_info = true
+
+[node name="Hud" type="CanvasLayer" parent="." unique_id=1089950898]
+
+[node name="Screen" type="Control" parent="Hud" unique_id=1488732492]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DebugInfoContainer" type="VBoxContainer" parent="Hud/Screen" unique_id=613012228]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="StateMachine" type="Node" parent="." unique_id=794658559 node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
+script = ExtResource("1_xxgcw")
+initial_state = NodePath("IdleState")
+metadata/_custom_type_script = "uid://bjrmip7u8swnl"
+
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=1472249408 node_paths=PackedStringArray("player")]
+unique_name_in_owner = true
+script = ExtResource("3_5dc8e")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="WalkState" type="Node" parent="StateMachine" unique_id=315206138 node_paths=PackedStringArray("player")]
+unique_name_in_owner = true
+script = ExtResource("4_ixbpm")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="RunState" type="Node" parent="StateMachine" unique_id=267854527]
+unique_name_in_owner = true
+script = ExtResource("2_exd8k")
+metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="CrouchState" type="Node" parent="StateMachine" unique_id=2031842837]
+unique_name_in_owner = true
+script = ExtResource("2_exd8k")
+metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="JumpState" type="Node" parent="StateMachine" unique_id=1471919235]
+unique_name_in_owner = true
+script = ExtResource("2_exd8k")
+metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="HideState" type="Node" parent="StateMachine" unique_id=2041981457]
+unique_name_in_owner = true
+script = ExtResource("2_exd8k")
+metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1615079679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_xxgcw")
+
+[node name="Head" type="Node3D" parent="." unique_id=1819092234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5527782, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=919236445]
+current = true
