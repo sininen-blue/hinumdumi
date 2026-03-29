@@ -1,15 +1,13 @@
 extends State
 
-@export var player: Player
-@export var speed: float = 10
+@export var player: Player 
+@export var speed: float = 15
 @export var accel: float = 2
-@export var stamina_regen: float = 0.5
-@export var stamina_run_threshold: float = 1
+@export var stamina_cost: float = 1
 
 @onready var idle_state: State = %IdleState
 @onready var crouch_state: State = %CrouchState
 @onready var jump_state: State = %JumpState
-@onready var run_state: State = %RunState
 @onready var hide_state: State = %HideState
 
 
@@ -22,7 +20,10 @@ func exit() -> void:
 
 
 func update(delta: float) -> void:
-	player.current_stamina += stamina_regen * delta
+	player.current_stamina -= stamina_cost * delta
+	
+	if player.current_stamina <= 0:
+		state_machine.change_state(state_machine.previous_state)
 	if player.input_dir == Vector2.ZERO:
 		state_machine.change_state(idle_state)
 
@@ -36,11 +37,9 @@ func physics_update(_delta: float) -> void:
 
 
 func handle_input(event: InputEvent) -> void:
-	if event.is_action_pressed("move_jump") and player.is_on_ground:
+	if event.is_action_pressed("move_jump") and player.is_on_floor():
 		state_machine.change_state(jump_state)
-	if event.is_action_pressed("move_crouch") and player.is_on_ground:
+	if event.is_action_pressed("move_crouch") and player.is_on_floor():
 		state_machine.change_state(crouch_state)
-	if event.is_action_pressed("move_run") and player.current_stamina > stamina_run_threshold:
-		state_machine.change_state(run_state)
 	if event.is_action_pressed("interact_hide"):
 		state_machine.change_state(hide_state)

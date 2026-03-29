@@ -5,7 +5,7 @@ class_name Player
 @export var sensitivity: float = 0.1
 
 @export_category("Physics")
-@export var mass: float = 40
+@export var mass: float = 5
 
 @export_category("debug")
 @export var disable_shaders: bool = false
@@ -15,11 +15,20 @@ class_name Player
 @export var enable_quick_reset: bool = false
 
 @export_category("Properties")
-@export var stamina: float = 10
+@export var max_stamina: float = 10
+
+
+var current_stamina: float = max_stamina:
+	set(new_stamina):
+		current_stamina = new_stamina
+		if current_stamina > max_stamina:
+			current_stamina = max_stamina
 
 var input_dir: Vector2
 var direction: Vector3
 var prev_dir: Vector3
+
+var is_on_ground: bool = false
 
 var current_speed: float = 0
 
@@ -27,12 +36,14 @@ var current_speed: float = 0
 
 @onready var state_machine: StateMachine = %StateMachine
 @onready var head: Node3D = $Head
+@onready var ground_cast: RayCast3D = $GroundCast
 
 @onready var debug_info_container: VBoxContainer = %DebugInfoContainer
 @onready var debug_info: Dictionary = {
 	"CurrentState": "null",
 	"PreviousState": "null",
-	"CurrentSpeed": "null"
+	"CurrentSpeed": "null",
+	"CurrentStamina": "null"
 }
 
 func _ready() -> void:
@@ -71,10 +82,13 @@ func _physics_process(delta: float) -> void:
 
 
 func _process(_delta: float) -> void:
+	is_on_ground = ground_cast.is_colliding()
+	
 	debug_info = {
 		"CurrentState": state_machine.get_current_state_name(),
 		"PreviousState": state_machine.get_previous_state_name(),
-		"CurrentSpeed": str(current_speed)
+		"CurrentSpeed": str(current_speed),
+		"CurrentStamina": str(current_stamina)
 	}
 	
 	for debug_label: Label in debug_info_container.get_children():
