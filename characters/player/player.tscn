@@ -5,12 +5,29 @@
 [ext_resource type="Script" uid="uid://dhyugj58epewt" path="res://src/statemachine/state.gd" id="2_exd8k"]
 [ext_resource type="Script" uid="uid://dggjbvqb85wdw" path="res://characters/player/idle_state.gd" id="3_5dc8e"]
 [ext_resource type="Script" uid="uid://dm7spsu76df8p" path="res://characters/player/walk_state.gd" id="4_ixbpm"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xxgcw"]
+[ext_resource type="Script" uid="uid://cry8y257jde36" path="res://characters/player/run_state.gd" id="5_c6leb"]
+[ext_resource type="Script" uid="uid://c4m8v1ojgdbpp" path="res://characters/player/crouch_state.gd" id="6_dirf7"]
+[ext_resource type="Shape3D" uid="uid://tkyj55oh24aj" path="res://characters/player/crouch_shape.tres" id="8_idpv6"]
+[ext_resource type="Script" uid="uid://m61ucfa6stb3" path="res://characters/player/jump_state.gd" id="8_x5dtk"]
+[ext_resource type="Shape3D" uid="uid://cqagiplowr36g" path="res://characters/player/default_player_shape.tres" id="9_rpf03"]
 
 [node name="Player" type="CharacterBody3D" unique_id=950809192]
 script = ExtResource("1_exd8k")
 show_extra_info = true
+
+[node name="GroundCast" type="RayCast3D" parent="." unique_id=1709268914]
+target_position = Vector3(0, -0.1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1615079679]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = ExtResource("9_rpf03")
+
+[node name="Head" type="Node3D" parent="." unique_id=1819092234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5527782, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=919236445]
+current = true
 
 [node name="Hud" type="CanvasLayer" parent="." unique_id=1089950898]
 
@@ -48,32 +65,32 @@ script = ExtResource("4_ixbpm")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
-[node name="RunState" type="Node" parent="StateMachine" unique_id=267854527]
+[node name="RunState" type="Node" parent="StateMachine" unique_id=267854527 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
-script = ExtResource("2_exd8k")
+script = ExtResource("5_c6leb")
+player = NodePath("../..")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
-[node name="CrouchState" type="Node" parent="StateMachine" unique_id=2031842837]
+[node name="CrouchState" type="Node" parent="StateMachine" unique_id=2031842837 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
-script = ExtResource("2_exd8k")
+script = ExtResource("6_dirf7")
+player = NodePath("../..")
+crouch_shape = ExtResource("8_idpv6")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
-[node name="JumpState" type="Node" parent="StateMachine" unique_id=1471919235]
+[node name="JumpState" type="Node" parent="StateMachine" unique_id=1471919235 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
-script = ExtResource("2_exd8k")
+script = ExtResource("8_x5dtk")
+player = NodePath("../..")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="GroundCastToggleTimer" type="Timer" parent="StateMachine/JumpState" unique_id=1397405680]
+wait_time = 0.1
+one_shot = true
 
 [node name="HideState" type="Node" parent="StateMachine" unique_id=2041981457]
 unique_name_in_owner = true
 script = ExtResource("2_exd8k")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1615079679]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_xxgcw")
-
-[node name="Head" type="Node3D" parent="." unique_id=1819092234]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5527782, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=919236445]
-current = true
+[connection signal="timeout" from="StateMachine/JumpState/GroundCastToggleTimer" to="StateMachine/JumpState" method="_on_ground_cast_toggle_timer_timeout"]
