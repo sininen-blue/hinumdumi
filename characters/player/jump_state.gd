@@ -41,7 +41,8 @@ func update(_delta: float) -> void:
 
 
 func physics_update(_delta: float) -> void:
-	player.current_speed = move_toward(player.current_speed, speed, accel)
+	if player.input_dir != Vector2.ZERO:
+		player.current_speed = move_toward(player.current_speed, speed, accel)
 	player.velocity.x = player.direction.x * player.current_speed
 	player.velocity.z = player.direction.z * player.current_speed
 
