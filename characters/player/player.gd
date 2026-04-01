@@ -30,6 +30,8 @@ var prev_dir: Vector3
 
 var is_on_ground: bool = false
 
+var enabled_gravity: bool = true
+
 var current_speed: float = 0
 
 
@@ -77,7 +79,7 @@ func _physics_process(delta: float) -> void:
 	if input_dir != Vector2.ZERO:
 		prev_dir = direction
 
-	if is_on_floor() == false:
+	if not is_on_ground and enabled_gravity:
 		velocity += get_gravity() * delta * mass
 
 
