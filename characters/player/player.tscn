@@ -10,6 +10,7 @@
 [ext_resource type="Shape3D" uid="uid://tkyj55oh24aj" path="res://characters/player/crouch_shape.tres" id="8_idpv6"]
 [ext_resource type="Script" uid="uid://m61ucfa6stb3" path="res://characters/player/jump_state.gd" id="8_x5dtk"]
 [ext_resource type="Shape3D" uid="uid://cqagiplowr36g" path="res://characters/player/default_player_shape.tres" id="9_rpf03"]
+[ext_resource type="Script" uid="uid://cerq1hesr3qgu" path="res://characters/player/debug_flight_state.gd" id="11_3t07l"]
 
 [node name="Player" type="CharacterBody3D" unique_id=950809192]
 script = ExtResource("1_exd8k")
@@ -88,9 +89,23 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 wait_time = 0.1
 one_shot = true
 
+[node name="DebugFlightTimer" type="Timer" parent="StateMachine/JumpState" unique_id=1604985760]
+wait_time = 0.5
+one_shot = true
+
 [node name="HideState" type="Node" parent="StateMachine" unique_id=2041981457]
 unique_name_in_owner = true
 script = ExtResource("2_exd8k")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="DebugFlightState" type="Node" parent="StateMachine" unique_id=215656222 node_paths=PackedStringArray("player")]
+unique_name_in_owner = true
+script = ExtResource("11_3t07l")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="DebugFlightTimer" type="Timer" parent="StateMachine/DebugFlightState" unique_id=851963497]
+wait_time = 0.25
+one_shot = true
 
 [connection signal="timeout" from="StateMachine/JumpState/GroundCastToggleTimer" to="StateMachine/JumpState" method="_on_ground_cast_toggle_timer_timeout"]

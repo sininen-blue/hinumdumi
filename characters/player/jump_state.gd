@@ -11,8 +11,10 @@ extends State
 @onready var jump_state: State = %JumpState
 @onready var run_state: State = %RunState
 @onready var hide_state: State = %HideState
+@onready var debug_flight_state: Node = %DebugFlightState
 
 @onready var ground_cast_toggle_timer: Timer = $GroundCastToggleTimer
+@onready var debug_flight_timer: Timer = $DebugFlightTimer
 
 
 func enter() -> void:
@@ -20,7 +22,7 @@ func enter() -> void:
 	
 	player.ground_cast.enabled = false
 	ground_cast_toggle_timer.start()
-	
+	debug_flight_timer.start()
 	
 	player.velocity.y += jump_force
 
@@ -30,9 +32,8 @@ func exit() -> void:
 
 
 func update(_delta: float) -> void:
-	print(player.is_on_ground)
 	if player.is_on_ground:
-		state_machine.change_state(state_machine.previous_state)
+		state_machine.change_state(idle_state)
 
 
 func physics_update(_delta: float) -> void:
@@ -43,8 +44,9 @@ func physics_update(_delta: float) -> void:
 	player.move_and_slide()
 
 
-func handle_input(_event: InputEvent) -> void:
-	pass
+func handle_input(event: InputEvent) -> void:
+	if event.is_action_pressed("move_jump") and !debug_flight_timer.is_stopped():
+		state_machine.change_state(debug_flight_state)
 
 
 func _on_ground_cast_toggle_timer_timeout() -> void:
