@@ -8,6 +8,7 @@ class_name Player
 @export var mass: float = 5
 
 @export_category("debug")
+@export var third_person: bool = false
 @export var disable_shaders: bool = false
 @export var show_extra_info: bool = false
 @export var enable_fly: bool = false
@@ -39,6 +40,7 @@ var current_speed: float = 0
 @onready var state_machine: StateMachine = %StateMachine
 @onready var head: Node3D = $Head
 @onready var ground_cast: RayCast3D = $GroundCast
+@onready var camera: Camera3D = $Head/Camera3D
 
 @onready var debug_info_container: VBoxContainer = %DebugInfoContainer
 @onready var debug_info: Dictionary = {
@@ -49,6 +51,8 @@ var current_speed: float = 0
 }
 
 func _ready() -> void:
+	if third_person:
+		camera.position.z = 5
 	if show_extra_info:
 		for key: String in debug_info.keys():
 			var debug_label: Label = Label.new()
@@ -57,7 +61,7 @@ func _ready() -> void:
 			debug_info_container.add_child(debug_label)
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * sensitivity
 		head.rotation_degrees.x -= event.relative.y * sensitivity
@@ -78,13 +82,16 @@ func _physics_process(delta: float) -> void:
 
 	if input_dir != Vector2.ZERO:
 		prev_dir = direction
-
+	
 	if not is_on_ground and enabled_gravity:
 		velocity += get_gravity() * delta * mass
 
 
 func _process(_delta: float) -> void:
 	is_on_ground = ground_cast.is_colliding()
+	
+	if enable_inifite_stamina:
+		current_stamina = max_stamina
 	
 	debug_info = {
 		"CurrentState": state_machine.get_current_state_name(),

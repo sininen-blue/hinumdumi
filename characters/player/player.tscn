@@ -14,9 +14,19 @@
 
 [node name="Player" type="CharacterBody3D" unique_id=950809192]
 script = ExtResource("1_exd8k")
+third_person = true
 show_extra_info = true
+enable_fly = true
+enable_inifite_stamina = true
+enable_quick_reset = true
+
+[node name="UncrouchCast" type="RayCast3D" parent="." unique_id=852783276]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0, 1, 0)
 
 [node name="GroundCast" type="RayCast3D" parent="." unique_id=1709268914]
+unique_name_in_owner = true
 target_position = Vector3(0, -0.1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1615079679]
@@ -25,7 +35,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = ExtResource("9_rpf03")
 
 [node name="Head" type="Node3D" parent="." unique_id=1819092234]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5527782, 0)
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=919236445]
 current = true
