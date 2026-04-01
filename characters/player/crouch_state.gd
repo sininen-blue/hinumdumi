@@ -8,7 +8,7 @@ extends State
 
 var previous_shape: Shape3D
 var previous_y_position: float
-var previous_head_height: float
+var previous_head_position: Vector3
 var queue_uncrouch: bool = false
 
 @onready var hide_state: State = %HideState
@@ -21,18 +21,30 @@ func enter() -> void:
 	queue_uncrouch = false
 	previous_shape = collision_shape.shape
 	previous_y_position = collision_shape.position.y
-	previous_head_height = head.position.y
+	previous_head_position = head.position
 	
 	collision_shape.shape = crouch_shape
 	collision_shape.position.y = previous_y_position - (previous_shape.height - crouch_shape.height) / 2
-	head.position.y =  (previous_shape.height - crouch_shape.height) / 2
-
+	
+	var new_head_position: Vector3 = Vector3(
+		previous_head_position.x, 
+		previous_shape.height - crouch_shape.height,
+		previous_head_position.z
+	)
+	var tween: Tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.tween_property(head, "position", new_head_position, 0.25)
 
 
 func exit() -> void:
 	collision_shape.shape = previous_shape
 	collision_shape.position.y = previous_y_position
-	head.position.y = previous_head_height
+	
+	var tween: Tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.tween_property(head, "position", previous_head_position, 0.25)
 
 
 func update(delta: float) -> void:
