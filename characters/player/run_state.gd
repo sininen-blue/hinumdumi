@@ -37,6 +37,8 @@ func physics_update(_delta: float) -> void:
 
 
 func handle_input(event: InputEvent) -> void:
+	if event.is_action_released("move_run"):
+		state_machine.change_state(idle_state)
 	if event.is_action_pressed("move_jump") and player.is_on_floor():
 		state_machine.change_state(jump_state)
 	if event.is_action_pressed("move_crouch") and player.is_on_floor():
