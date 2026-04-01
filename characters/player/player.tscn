@@ -14,6 +14,7 @@
 
 [node name="Player" type="CharacterBody3D" unique_id=950809192]
 script = ExtResource("1_exd8k")
+mass = 2.0
 show_extra_info = true
 enable_fly = true
 enable_inifite_stamina = true
@@ -74,18 +75,23 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 unique_name_in_owner = true
 script = ExtResource("4_ixbpm")
 player = NodePath("../..")
+speed = 3.0
+accel = 1.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="RunState" type="Node" parent="StateMachine" unique_id=267854527 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
 script = ExtResource("5_c6leb")
 player = NodePath("../..")
+speed = 7.0
+accel = 0.1
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="CrouchState" type="Node" parent="StateMachine" unique_id=2031842837 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
 script = ExtResource("6_dirf7")
 player = NodePath("../..")
+speed = 1.0
 crouch_shape = ExtResource("8_idpv6")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
@@ -93,6 +99,8 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 unique_name_in_owner = true
 script = ExtResource("8_x5dtk")
 player = NodePath("../..")
+speed = 3.0
+jump_force = 7.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="GroundCastToggleTimer" type="Timer" parent="StateMachine/JumpState" unique_id=1397405680]
