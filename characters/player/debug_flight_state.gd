@@ -10,6 +10,8 @@ extends State
 
 
 func enter() -> void:
+	player.current_stamina = player.max_stamina
+	
 	player.enabled_gravity = false
 	collision_shape.disabled = true
 

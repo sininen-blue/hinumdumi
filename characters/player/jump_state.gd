@@ -3,7 +3,7 @@ extends State
 @export var player: Player
 @export var speed: float = 10
 @export var accel: float = 0.5
-@export var jump_force: float = 15
+@export var jump_force: float = 12
 @export var stamina_cost: float = 2
 
 @onready var idle_state: State = %IdleState
@@ -18,6 +18,10 @@ extends State
 
 
 func enter() -> void:
+	if player.current_stamina < stamina_cost:
+		state_machine.change_state(state_machine.previous_state)
+		return
+	
 	player.current_stamina -= stamina_cost
 	
 	player.ground_cast.enabled = false
@@ -45,7 +49,7 @@ func physics_update(_delta: float) -> void:
 
 
 func handle_input(event: InputEvent) -> void:
-	if event.is_action_pressed("move_jump") and !debug_flight_timer.is_stopped():
+	if event.is_action_pressed("move_jump") and !debug_flight_timer.is_stopped() and player.enable_fly:
 		state_machine.change_state(debug_flight_state)
 
 
