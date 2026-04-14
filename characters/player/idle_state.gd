@@ -12,8 +12,13 @@ extends State
 @onready var walk_state: State = %WalkState
 @onready var hide_state: State = %HideState
 
+@onready var camera_3d: Camera3D = %Camera3D
+
 func enter() -> void:
-	pass
+	var tween: Tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.tween_property(camera_3d, "position", Vector3.ZERO, 0.5)
 
 
 func exit() -> void:

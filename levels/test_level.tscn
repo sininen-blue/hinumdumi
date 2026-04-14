@@ -12,7 +12,7 @@ ssil_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1985985892]
 environment = SubResource("Environment_46lwt")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=513588388]
+[node name="Ground" type="CSGBox3D" parent="." unique_id=513588388]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.201172, 0, 9.118225)
 use_collision = true
 size = Vector3(50, 1, 50)

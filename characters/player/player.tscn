@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://leixn7ybth70"]
 
 [ext_resource type="Script" uid="uid://7wocdaykxcya" path="res://characters/player/player.gd" id="1_exd8k"]
-[ext_resource type="Script" uid="uid://bjrmip7u8swnl" path="res://src/statemachine/state_machine.gd" id="1_xxgcw"]
 [ext_resource type="Script" uid="uid://dhyugj58epewt" path="res://src/statemachine/state.gd" id="2_exd8k"]
+[ext_resource type="Script" uid="uid://cb2s4et27sehd" path="res://characters/player/state_machine.gd" id="3_3t07l"]
 [ext_resource type="Script" uid="uid://dggjbvqb85wdw" path="res://characters/player/idle_state.gd" id="3_5dc8e"]
 [ext_resource type="Script" uid="uid://dm7spsu76df8p" path="res://characters/player/walk_state.gd" id="4_ixbpm"]
 [ext_resource type="Script" uid="uid://cry8y257jde36" path="res://characters/player/run_state.gd" id="5_c6leb"]
@@ -39,7 +39,12 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=919236445]
+unique_name_in_owner = true
 current = true
+
+[node name="DebugHand" type="CSGBox3D" parent="Head/Camera3D" unique_id=166800245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7299082, -0.3998494, -1.051809)
+size = Vector3(0.2, 0.2, 0.2)
 
 [node name="Hud" type="CanvasLayer" parent="." unique_id=1089950898]
 
@@ -61,7 +66,7 @@ grow_vertical = 2
 
 [node name="StateMachine" type="Node" parent="." unique_id=794658559 node_paths=PackedStringArray("initial_state")]
 unique_name_in_owner = true
-script = ExtResource("1_xxgcw")
+script = ExtResource("3_3t07l")
 initial_state = NodePath("IdleState")
 metadata/_custom_type_script = "uid://bjrmip7u8swnl"
 
@@ -100,7 +105,7 @@ unique_name_in_owner = true
 script = ExtResource("8_x5dtk")
 player = NodePath("../..")
 speed = 3.0
-jump_force = 7.0
+jump_force = 6.5
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="GroundCastToggleTimer" type="Timer" parent="StateMachine/JumpState" unique_id=1397405680]

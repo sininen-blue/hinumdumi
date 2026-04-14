@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c28odgjyd32v4"]
+
+[ext_resource type="Script" uid="uid://b1npju4hjavxb" path="res://interactables/hides/hideable.gd" id="1_2ur0a"]
+
+[node name="Hideable" type="Node3D" unique_id=576549003]
+script = ExtResource("1_2ur0a")

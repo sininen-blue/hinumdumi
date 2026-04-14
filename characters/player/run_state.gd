@@ -4,11 +4,16 @@ extends State
 @export var speed: float = 15
 @export var accel: float = 2
 @export var stamina_cost: float = 1
+@export var headbob_frequency: float = 2
+@export var headbob_strength: float = 0.08
+
+var headbob_time: float = 0
 
 @onready var idle_state: State = %IdleState
 @onready var crouch_state: State = %CrouchState
 @onready var jump_state: State = %JumpState
 @onready var hide_state: State = %HideState
+@onready var camera_3d: Camera3D = %Camera3D
 
 
 func enter() -> void:
@@ -20,6 +25,10 @@ func exit() -> void:
 
 
 func update(delta: float) -> void:
+	headbob_time += player.velocity.length() * float(player.is_on_ground) * delta
+	var target: Vector3 = state_machine.headbob(headbob_time, headbob_frequency, headbob_strength)
+	camera_3d.transform.origin = camera_3d.transform.origin.move_toward(target, 1)
+	
 	player.current_stamina -= stamina_cost * delta
 	
 	if player.current_stamina <= 0:
