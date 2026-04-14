@@ -2,6 +2,7 @@ extends State
 
 @export var monster: Monster
 
+
 func enter() -> void:
 	pass
 

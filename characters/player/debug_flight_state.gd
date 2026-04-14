@@ -11,7 +11,7 @@ extends State
 
 func enter() -> void:
 	player.current_stamina = player.max_stamina
-	
+
 	player.enabled_gravity = false
 	collision_shape.disabled = true
 
@@ -29,14 +29,14 @@ func physics_update(delta: float) -> void:
 	player.current_speed = move_toward(player.current_speed, speed, accel)
 	player.velocity.x = player.direction.x * player.current_speed
 	player.velocity.z = player.direction.z * player.current_speed
-	
+
 	if Input.is_action_pressed("move_jump"):
 		player.velocity.y += hover_force * delta
 	elif Input.is_action_pressed("move_crouch"):
 		player.velocity.y -= hover_force * delta
 	else:
 		player.velocity.y = 0
-	
+
 	player.move_and_slide()
 
 

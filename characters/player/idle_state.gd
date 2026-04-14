@@ -1,6 +1,6 @@
 extends State
 
-@export var player: Player 
+@export var player: Player
 @export var decel: float = 1
 @export var stamina_regen: float = 1
 @export var stamina_run_threshold: float = 1
@@ -11,8 +11,8 @@ extends State
 @onready var run_state: State = %RunState
 @onready var walk_state: State = %WalkState
 @onready var hide_state: State = %HideState
-
 @onready var camera_3d: Camera3D = %Camera3D
+
 
 func enter() -> void:
 	var tween: Tween = create_tween()
@@ -27,7 +27,7 @@ func exit() -> void:
 
 func update(delta: float) -> void:
 	player.current_stamina += stamina_regen * delta
-	
+
 	if player.direction != Vector3.ZERO:
 		state_machine.change_state(walk_state)
 

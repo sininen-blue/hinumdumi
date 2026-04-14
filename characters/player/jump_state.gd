@@ -12,7 +12,6 @@ extends State
 @onready var run_state: State = %RunState
 @onready var hide_state: State = %HideState
 @onready var debug_flight_state: Node = %DebugFlightState
-
 @onready var ground_cast_toggle_timer: Timer = $GroundCastToggleTimer
 @onready var debug_flight_timer: Timer = $DebugFlightTimer
 
@@ -21,13 +20,13 @@ func enter() -> void:
 	if player.current_stamina < stamina_cost:
 		state_machine.change_state(state_machine.previous_state)
 		return
-	
+
 	player.current_stamina -= stamina_cost
-	
+
 	player.ground_cast.enabled = false
 	ground_cast_toggle_timer.start()
 	debug_flight_timer.start()
-	
+
 	player.velocity.y += jump_force
 
 
