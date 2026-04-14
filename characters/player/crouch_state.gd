@@ -5,6 +5,7 @@ extends State
 @export var accel: float = 1
 @export var stamina_regen: float = 1.5
 @export var crouch_shape: Shape3D
+@export var crouch_speed: float = 0.6
 
 var previous_shape: Shape3D
 var previous_y_position: float
@@ -34,7 +35,7 @@ func enter() -> void:
 	var tween: Tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_BACK)
-	tween.tween_property(head, "position", new_head_position, 0.25)
+	tween.tween_property(head, "position", new_head_position, crouch_speed)
 
 
 func exit() -> void:
@@ -44,7 +45,7 @@ func exit() -> void:
 	var tween: Tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_BACK)
-	tween.tween_property(head, "position", previous_head_position, 0.25)
+	tween.tween_property(head, "position", previous_head_position, crouch_speed)
 
 
 func update(delta: float) -> void:

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dbdp6yu5bgt1b"]
+
+[ext_resource type="Script" uid="uid://bk504v50325ek" path="res://characters/monster/monster.gd" id="1_7ouai"]
+[ext_resource type="Script" uid="uid://bjrmip7u8swnl" path="res://src/statemachine/state_machine.gd" id="1_nyvr2"]
+[ext_resource type="Script" uid="uid://dhyugj58epewt" path="res://src/statemachine/state.gd" id="2_7ouai"]
+[ext_resource type="Script" uid="uid://b1dl6kr3n5ex8" path="res://characters/monster/wander.gd" id="3_xm3rn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xm3rn"]
+height = 2.5
+
+[node name="Monster" type="CharacterBody3D" unique_id=2116566352]
+script = ExtResource("1_7ouai")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1891105574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_xm3rn")
+
+[node name="MonsterNavigationAgent" type="NavigationAgent3D" parent="." unique_id=2142026948]
+
+[node name="StateMachine" type="Node" parent="." unique_id=630183888]
+script = ExtResource("1_nyvr2")
+metadata/_custom_type_script = "uid://bjrmip7u8swnl"
+
+[node name="Wander" type="Node" parent="StateMachine" unique_id=1202060671]
+script = ExtResource("3_xm3rn")
+metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="Scanning" type="Node" parent="StateMachine" unique_id=2021815502]
+script = ExtResource("2_7ouai")
+metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="Investigate" type="Node" parent="StateMachine" unique_id=1444443692]
+script = ExtResource("2_7ouai")
+metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="Hunt" type="Node" parent="StateMachine" unique_id=1998318133]
+script = ExtResource("2_7ouai")
+metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="Lunge" type="Node" parent="StateMachine" unique_id=2119255039]
+script = ExtResource("2_7ouai")
+metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="Swipe" type="Node" parent="StateMachine" unique_id=1142394308]
+script = ExtResource("2_7ouai")
+metadata/_custom_type_script = "uid://dhyugj58epewt"
