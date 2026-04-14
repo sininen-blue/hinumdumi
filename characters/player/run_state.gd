@@ -1,6 +1,6 @@
 extends State
 
-@export var player: Player 
+@export var player: Player
 @export var speed: float = 15
 @export var accel: float = 2
 @export var stamina_cost: float = 1
@@ -28,9 +28,9 @@ func update(delta: float) -> void:
 	headbob_time += player.velocity.length() * float(player.is_on_ground) * delta
 	var target: Vector3 = state_machine.headbob(headbob_time, headbob_frequency, headbob_strength)
 	camera_3d.transform.origin = camera_3d.transform.origin.move_toward(target, 1)
-	
+
 	player.current_stamina -= stamina_cost * delta
-	
+
 	if player.current_stamina <= 0:
 		state_machine.change_state(state_machine.previous_state)
 	if player.input_dir == Vector2.ZERO:

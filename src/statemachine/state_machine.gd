@@ -1,12 +1,12 @@
-extends Node
 class_name StateMachine
-
+extends Node
 
 @export var initial_state: State
 
 var current_state: State
 var previous_state: State
-var states: Dictionary = {}
+var states: Dictionary = { }
+
 
 func _ready() -> void:
 	var children: Array[Node] = get_children()
@@ -14,7 +14,7 @@ func _ready() -> void:
 		if child is State:
 			states[child] = child
 			child.state_machine = self
-	
+
 	if initial_state:
 		change_state(initial_state)
 
@@ -38,18 +38,19 @@ func change_state(new_state: State) -> void:
 	if current_state:
 		previous_state = current_state
 		current_state.exit()
-	
+
 	current_state = states.get(new_state)
-	
+
 	if current_state:
-		current_state.enter() 
+		current_state.enter()
 
 
 func get_current_state_name() -> String:
 	if current_state:
 		return current_state.name
 	return "unavailable"
-	
+
+
 func get_previous_state_name() -> String:
 	if previous_state:
 		return previous_state.name
