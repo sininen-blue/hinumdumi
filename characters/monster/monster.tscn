@@ -22,25 +22,33 @@ script = ExtResource("1_nyvr2")
 metadata/_custom_type_script = "uid://bjrmip7u8swnl"
 
 [node name="Wander" type="Node" parent="StateMachine" unique_id=1202060671]
+unique_name_in_owner = true
 script = ExtResource("3_xm3rn")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Scanning" type="Node" parent="StateMachine" unique_id=2021815502]
+unique_name_in_owner = true
 script = ExtResource("2_7ouai")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Investigate" type="Node" parent="StateMachine" unique_id=1444443692]
+unique_name_in_owner = true
 script = ExtResource("2_7ouai")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Hunt" type="Node" parent="StateMachine" unique_id=1998318133]
+unique_name_in_owner = true
 script = ExtResource("2_7ouai")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Lunge" type="Node" parent="StateMachine" unique_id=2119255039]
+unique_name_in_owner = true
 script = ExtResource("2_7ouai")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Swipe" type="Node" parent="StateMachine" unique_id=1142394308]
+unique_name_in_owner = true
 script = ExtResource("2_7ouai")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[connection signal="navigation_finished" from="MonsterNavigationAgent" to="StateMachine/Wander" method="_on_monster_navigation_agent_navigation_finished"]
