@@ -2,12 +2,12 @@ extends State
 
 @export var monster: Monster
 @export var nav: NavigationAgent3D
-@export var speed: float = 300
+@export var speed: float = 2
 
 var next_path_position: Vector3 = Vector3.ZERO
 var direction: Vector3 = Vector3.ZERO
 
-@onready var points: Array[Node3D] = monster.wander_points
+@onready var points: Array[InterestPoint] = monster.wander_points
 @onready var scanning: State = %Scanning
 
 
