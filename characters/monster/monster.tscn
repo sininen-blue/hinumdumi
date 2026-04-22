@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bjrmip7u8swnl" path="res://src/statemachine/state_machine.gd" id="1_nyvr2"]
 [ext_resource type="Script" uid="uid://dhyugj58epewt" path="res://src/statemachine/state.gd" id="2_7ouai"]
 [ext_resource type="Script" uid="uid://b1dl6kr3n5ex8" path="res://characters/monster/wander.gd" id="3_xm3rn"]
+[ext_resource type="Script" uid="uid://dblxk48co5xmx" path="res://characters/monster/scanning.gd" id="4_11k15"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xm3rn"]
 height = 2.5
@@ -23,6 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 shape = SubResource("CapsuleShape3D_xm3rn")
 
 [node name="MonsterNavigationAgent" type="NavigationAgent3D" parent="." unique_id=2142026948]
+target_desired_distance = 2.0
 debug_enabled = true
 
 [node name="StateMachine" type="Node" parent="." unique_id=630183888 node_paths=PackedStringArray("initial_state")]
@@ -35,12 +37,18 @@ unique_name_in_owner = true
 script = ExtResource("3_xm3rn")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
+speed = 50.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
-[node name="Scanning" type="Node" parent="StateMachine" unique_id=2021815502]
+[node name="Scanning" type="Node" parent="StateMachine" unique_id=2021815502 node_paths=PackedStringArray("monster")]
 unique_name_in_owner = true
-script = ExtResource("2_7ouai")
+script = ExtResource("4_11k15")
+monster = NodePath("../..")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="ScanTimer" type="Timer" parent="StateMachine/Scanning" unique_id=1388949173]
+wait_time = 0.2
+one_shot = true
 
 [node name="Investigate" type="Node" parent="StateMachine" unique_id=1444443692]
 unique_name_in_owner = true
@@ -63,3 +71,4 @@ script = ExtResource("2_7ouai")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [connection signal="navigation_finished" from="MonsterNavigationAgent" to="StateMachine/Wander" method="_on_monster_navigation_agent_navigation_finished"]
+[connection signal="timeout" from="StateMachine/Scanning/ScanTimer" to="StateMachine/Scanning" method="_on_scan_timer_timeout"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bugnsdr23tp7d"]
 
 [node name="NavigationObstacleStub" type="NavigationObstacle3D" unique_id=1440936965]
+radius = 1.0
 height = 3.0
 vertices = PackedVector3Array(-1.5, 0, 1.5, 1.5, 0, 1.5, 1.5, 0, -1.5, -1.507, 0, -1.5)
 
