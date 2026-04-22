@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bugnsdr23tp7d"]
+
+[node name="NavigationObstacleStub" type="NavigationObstacle3D" unique_id=1440936965]
+height = 3.0
+vertices = PackedVector3Array(-1.5, 0, 1.5, 1.5, 0, 1.5, 1.5, 0, -1.5, -1.507, 0, -1.5)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=228978580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+use_collision = true
+size = Vector3(3, 3, 3)

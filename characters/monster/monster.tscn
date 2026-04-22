@@ -5,25 +5,36 @@
 [ext_resource type="Script" uid="uid://dhyugj58epewt" path="res://src/statemachine/state.gd" id="2_7ouai"]
 [ext_resource type="Script" uid="uid://b1dl6kr3n5ex8" path="res://characters/monster/wander.gd" id="3_xm3rn"]
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xm3rn"]
+height = 2.5
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xm3rn"]
 height = 2.5
 
 [node name="Monster" type="CharacterBody3D" unique_id=2116566352]
 script = ExtResource("1_7ouai")
 
+[node name="DebugMesh" type="CSGMesh3D" parent="." unique_id=1874683917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+mesh = SubResource("CapsuleMesh_xm3rn")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1891105574]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 shape = SubResource("CapsuleShape3D_xm3rn")
 
 [node name="MonsterNavigationAgent" type="NavigationAgent3D" parent="." unique_id=2142026948]
+debug_enabled = true
 
-[node name="StateMachine" type="Node" parent="." unique_id=630183888]
+[node name="StateMachine" type="Node" parent="." unique_id=630183888 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_nyvr2")
+initial_state = NodePath("Wander")
 metadata/_custom_type_script = "uid://bjrmip7u8swnl"
 
-[node name="Wander" type="Node" parent="StateMachine" unique_id=1202060671]
+[node name="Wander" type="Node" parent="StateMachine" unique_id=1202060671 node_paths=PackedStringArray("monster", "nav")]
 unique_name_in_owner = true
 script = ExtResource("3_xm3rn")
+monster = NodePath("../..")
+nav = NodePath("../../MonsterNavigationAgent")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Scanning" type="Node" parent="StateMachine" unique_id=2021815502]
