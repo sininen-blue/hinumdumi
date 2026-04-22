@@ -43,6 +43,7 @@ var current_speed: float = 0
 func _ready() -> void:
 	if third_person:
 		camera.position.z = 5
+		
 	if show_extra_info:
 		for key: String in debug_info.keys():
 			var debug_label: Label = Label.new()
