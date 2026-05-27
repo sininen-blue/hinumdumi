@@ -30,10 +30,14 @@ var is_on_ground: bool = false
 var enabled_gravity: bool = true
 var current_speed: float = 0
 
+@onready var right_hand: Node3D = %RightHand
+@onready var left_hand: Node3D = %LeftHand
+
 @onready var state_machine: StateMachine = %StateMachine
 @onready var head: Node3D = $Head
 @onready var ground_cast: RayCast3D = $GroundCast
 @onready var camera: Camera3D = $Head/Camera3D
+@onready var interaction_cast: RayCast3D = $Head/InteractionCast
 @onready var debug_info_container: VBoxContainer = %DebugInfoContainer
 @onready var debug_info: Dictionary = {
 	"CurrentState": "null",
@@ -44,6 +48,9 @@ var current_speed: float = 0
 
 
 func _ready() -> void:
+	PlayerInventory.left_hand = left_hand
+	PlayerInventory.right_hand = right_hand
+
 	if third_person:
 		camera.position.z = 5
 
@@ -89,6 +96,9 @@ func _input(event: InputEvent) -> void:
 		head.rotation_degrees.x -= event.relative.y * sensitivity
 		head.rotation_degrees.x = clamp(head.rotation_degrees.x, -80, 80)
 
+	if event.is_action_pressed("interact"):
+		interact()
+
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if event.is_action_pressed("mouse_left"):
@@ -104,3 +114,10 @@ func _input(event: InputEvent) -> void:
 
 func kill() -> void:
 	pass
+
+
+func interact() -> void:
+	var collided: Object = interaction_cast.get_collider()
+	if not collided:
+		return
+	collided.interact()
