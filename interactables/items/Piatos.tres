@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bnwb6eo5yt56w"]
+
+[ext_resource type="Script" uid="uid://b6rk0uffidg5l" path="res://src/items/item.gd" id="1_gnm1m"]
+[ext_resource type="PackedScene" uid="uid://cbsuyeodh5w11" path="res://src/items/item_placeholder.tscn" id="1_sya14"]
+
+[resource]
+script = ExtResource("1_gnm1m")
+name = "Piatos"
+metadata/_custom_type_script = "uid://b6rk0uffidg5l"

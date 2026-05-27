@@ -3,16 +3,17 @@
 [ext_resource type="Script" uid="uid://7wocdaykxcya" path="res://characters/player/player.gd" id="1_exd8k"]
 [ext_resource type="Script" uid="uid://dhyugj58epewt" path="res://src/statemachine/state.gd" id="2_exd8k"]
 [ext_resource type="Script" uid="uid://cb2s4et27sehd" path="res://characters/player/state_machine.gd" id="3_3t07l"]
-[ext_resource type="Script" uid="uid://dggjbvqb85wdw" path="res://characters/player/idle_state.gd" id="3_5dc8e"]
-[ext_resource type="Script" uid="uid://dm7spsu76df8p" path="res://characters/player/walk_state.gd" id="4_ixbpm"]
-[ext_resource type="Script" uid="uid://cry8y257jde36" path="res://characters/player/run_state.gd" id="5_c6leb"]
-[ext_resource type="Script" uid="uid://c4m8v1ojgdbpp" path="res://characters/player/crouch_state.gd" id="6_dirf7"]
+[ext_resource type="Script" uid="uid://dggjbvqb85wdw" path="res://characters/player/states/idle_state.gd" id="3_5dc8e"]
+[ext_resource type="Script" uid="uid://dm7spsu76df8p" path="res://characters/player/states/walk_state.gd" id="4_ixbpm"]
+[ext_resource type="Script" uid="uid://cry8y257jde36" path="res://characters/player/states/run_state.gd" id="5_c6leb"]
+[ext_resource type="Script" uid="uid://c4m8v1ojgdbpp" path="res://characters/player/states/crouch_state.gd" id="6_dirf7"]
 [ext_resource type="Shape3D" uid="uid://tkyj55oh24aj" path="res://characters/player/crouch_shape.tres" id="8_idpv6"]
-[ext_resource type="Script" uid="uid://m61ucfa6stb3" path="res://characters/player/jump_state.gd" id="8_x5dtk"]
+[ext_resource type="Script" uid="uid://m61ucfa6stb3" path="res://characters/player/states/jump_state.gd" id="8_x5dtk"]
 [ext_resource type="Shape3D" uid="uid://cqagiplowr36g" path="res://characters/player/default_player_shape.tres" id="9_rpf03"]
-[ext_resource type="Script" uid="uid://cerq1hesr3qgu" path="res://characters/player/debug_flight_state.gd" id="11_3t07l"]
+[ext_resource type="Script" uid="uid://cerq1hesr3qgu" path="res://characters/player/states/debug_flight_state.gd" id="11_3t07l"]
 
 [node name="Player" type="CharacterBody3D" unique_id=950809192]
+collision_layer = 2
 script = ExtResource("1_exd8k")
 mass = 2.0
 show_extra_info = true
@@ -37,6 +38,9 @@ shape = ExtResource("9_rpf03")
 [node name="Head" type="Node3D" parent="." unique_id=1819092234]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="InteractionCast" type="RayCast3D" parent="Head" unique_id=1682129743]
+target_position = Vector3(0, 0, -10)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=919236445]
 unique_name_in_owner = true

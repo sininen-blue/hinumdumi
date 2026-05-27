@@ -1,13 +1,13 @@
 extends State
 
 @export var monster: Monster
-@onready var scan_timer: Timer = $ScanTimer
 
-@onready var wander: Node = %Wander
+@onready var swipe_cooldown: Timer = $SwipeCooldown
+@onready var hunt: Node = %Hunt
 
 
 func enter() -> void:
-	scan_timer.start()
+	swipe_cooldown.start()
 
 
 func exit() -> void:
@@ -22,5 +22,5 @@ func physics_update(delta: float) -> void:
 	pass
 
 
-func _on_scan_timer_timeout() -> void:
-	state_machine.change_state(wander)
+func swipe_finished() -> void:
+	state_machine.change_state(hunt)
