@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody3D
 
+signal noise_created(noise_level: float)
+
 @export_category("Camera")
 @export var sensitivity: float = 0.1
 @export_category("Physics")
@@ -12,6 +14,7 @@ extends CharacterBody3D
 @export var enable_fly: bool = false
 @export var enable_inifite_stamina: bool = false
 @export var enable_quick_reset: bool = false
+@export var enable_debug_noise: bool = false
 @export_category("Properties")
 @export var max_stamina: float = 10
 
@@ -43,7 +46,7 @@ var current_speed: float = 0
 func _ready() -> void:
 	if third_person:
 		camera.position.z = 5
-		
+
 	if show_extra_info:
 		for key: String in debug_info.keys():
 			var debug_label: Label = Label.new()
@@ -93,6 +96,10 @@ func _input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("debug_reset") and enable_quick_reset:
 		get_tree().reload_current_scene()
+
+	if event.is_action_pressed("debug_make_noise") and enable_debug_noise:
+		noise_created.emit(9999)
+		print("Made noise")
 
 
 func kill() -> void:

@@ -4,11 +4,14 @@ extends State
 @export var nav: NavigationAgent3D
 @export var speed: float = 2
 
+var player: Player
 var interest_points: Array[InterestPoint] = []
 var next_path_position: Vector3 = Vector3.ZERO
 var direction: Vector3 = Vector3.ZERO
 
 @onready var scanning: State = %Scanning
+@onready var hunt: Node = %Hunt
+@onready var investigate: Node = %Investigate
 
 
 func _ready() -> void:
@@ -81,3 +84,25 @@ func _get_target_point() -> Vector3:
 
 func _on_monster_navigation_agent_navigation_finished() -> void:
 	state_machine.change_state(scanning)
+
+
+func _on_head_found_player() -> void:
+	state_machine.change_state(hunt)
+
+
+func _on_hearing_area_body_entered(body: Node3D) -> void:
+	if body is Player:
+		player = body
+		player.noise_created.connect(_on_player_noise_created)
+
+
+func _on_hearing_area_body_exited(body: Node3D) -> void:
+	if body is Player:
+		player.noise_created.disconnect(_on_player_noise_created)
+		player = null
+
+
+func _on_player_noise_created(noise_level: float) -> void:
+	if noise_level > 3: # TODO: temp value
+		state_machine.last_known_position = player.global_position
+		state_machine.change_state(investigate)

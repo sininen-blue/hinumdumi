@@ -5,6 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://dbdp6yu5bgt1b" path="res://characters/monster/monster.tscn" id="3_gmgay"]
 [ext_resource type="PackedScene" uid="uid://by0k7k6tu31h4" path="res://levels/wander_points.tscn" id="4_w7r7j"]
 [ext_resource type="PackedScene" uid="uid://cbjk2tbvb3xsk" path="res://characters/monster/interest_point/interest_point.tscn" id="5_o6mel"]
+[ext_resource type="PackedScene" uid="uid://crkyxq5wvvqt5" path="res://interactables/shop/shop.tscn" id="6_e7anx"]
+[ext_resource type="Script" uid="uid://b6rk0uffidg5l" path="res://src/items/item.gd" id="7_ur00s"]
+[ext_resource type="Resource" uid="uid://cibahbmjhia64" path="res://interactables/items/Rice.tres" id="8_4n8tn"]
+[ext_resource type="PackedScene" uid="uid://dkxterlqgopgk" path="res://interactables/shop/shoppable_item.tscn" id="9_ly3hx"]
+[ext_resource type="Resource" uid="uid://dduxxviuf6umn" path="res://interactables/items/Salt.tres" id="9_wkb0e"]
+[ext_resource type="Resource" uid="uid://dqln4etsscmsq" path="res://interactables/items/Soy Sauce.tres" id="10_wkb0e"]
 
 [sub_resource type="Environment" id="Environment_46lwt"]
 ssr_enabled = true
@@ -18,6 +24,9 @@ agent_radius = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46lwt"]
 albedo_color = Color(0.26344, 0.37, 0.10359999, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6mel"]
+albedo_color = Color(0.49, 0.48526335, 0.34790003, 1)
 
 [node name="TestLevel" type="Node3D" unique_id=901906191]
 
@@ -172,13 +181,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0.5, -23)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0.5, -23)
 
 [node name="TestGround" type="CSGBox3D" parent="." unique_id=513588388]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.201172, 0, 9.118225)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.201172, 0, 9.118225)
 use_collision = true
-size = Vector3(50, 1, 50)
+size = Vector3(34, 1, 50)
+
+[node name="ShopGround" type="CSGBox3D" parent="." unique_id=2063467481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.798828, 0, 9.118225)
+use_collision = true
+size = Vector3(26, 1, 50)
+material = SubResource("StandardMaterial3D_o6mel")
 
 [node name="Player" parent="." unique_id=950809192 instance=ExtResource("1_46lwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0837781, 4.069775, 3.1566958)
-third_person = true
+enable_debug_noise = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1170301654]
 transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 14.098588, 49.86589)
@@ -189,6 +204,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.39999998, 66)
 wander_points = NodePath("../WanderPoints")
 
 [node name="WanderPoints" parent="." unique_id=1158355714 instance=ExtResource("4_w7r7j")]
+metadata/_edit_lock_ = true
 
 [node name="InterestPoint10" parent="WanderPoints" unique_id=549054796 instance=ExtResource("5_o6mel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97, 0, 59)
@@ -225,3 +241,18 @@ debug = true
 [node name="InterestPoint18" parent="WanderPoints" unique_id=962126930 instance=ExtResource("5_o6mel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 78)
 debug = true
+
+[node name="Shops" type="Node3D" parent="." unique_id=900725069]
+metadata/_edit_lock_ = true
+
+[node name="Shopkeep" parent="Shops" unique_id=913437893 instance=ExtResource("6_e7anx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2, 0)
+inventory = Dictionary[ExtResource("7_ur00s"), int]({
+ExtResource("8_4n8tn"): 1,
+ExtResource("9_wkb0e"): 1,
+ExtResource("10_wkb0e"): 2
+})
+
+[node name="ShoppableItem" parent="." unique_id=264745181 instance=ExtResource("9_ly3hx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.682247, 1, -12.679103)
+amount = 3
