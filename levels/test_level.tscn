@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dkxterlqgopgk" path="res://interactables/shop/shoppable_item.tscn" id="9_ly3hx"]
 [ext_resource type="Resource" uid="uid://dduxxviuf6umn" path="res://interactables/items/Salt.tres" id="9_wkb0e"]
 [ext_resource type="Resource" uid="uid://dqln4etsscmsq" path="res://interactables/items/Soy Sauce.tres" id="10_wkb0e"]
+[ext_resource type="Resource" uid="uid://bhsq474tgbqxa" path="res://interactables/items/Vinegar.tres" id="12_axl34"]
 
 [sub_resource type="Environment" id="Environment_46lwt"]
 ssr_enabled = true
@@ -249,8 +250,9 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2, 0)
 inventory = Dictionary[ExtResource("7_ur00s"), int]({
 ExtResource("8_4n8tn"): 1,
-ExtResource("9_wkb0e"): 1,
-ExtResource("10_wkb0e"): 2
+ExtResource("9_wkb0e"): 2,
+ExtResource("10_wkb0e"): 3,
+ExtResource("12_axl34"): 4
 })
 
 [node name="ShoppableItem" parent="." unique_id=264745181 instance=ExtResource("9_ly3hx")]

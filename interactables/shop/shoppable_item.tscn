@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dkxterlqgopgk"]
 
 [ext_resource type="Script" uid="uid://mb1dn5pi4e0k" path="res://interactables/shop/shoppable_item.gd" id="1_ylcqf"]
+[ext_resource type="Script" uid="uid://c7rh18x7usf6y" path="res://interactables/shop/interact_area.gd" id="2_up48b"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3v00k"]
 
@@ -10,6 +11,7 @@ script = ExtResource("1_ylcqf")
 [node name="InteractArea" type="Area3D" parent="." unique_id=1878260335]
 collision_layer = 4
 collision_mask = 0
+script = ExtResource("2_up48b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=635442556]
 shape = SubResource("SphereShape3D_3v00k")

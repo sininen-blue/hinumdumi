@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dhyugj58epewt" path="res://src/statemachine/state.gd" id="2_exd8k"]
 [ext_resource type="Script" uid="uid://cb2s4et27sehd" path="res://characters/player/state_machine.gd" id="3_3t07l"]
 [ext_resource type="Script" uid="uid://dggjbvqb85wdw" path="res://characters/player/states/idle_state.gd" id="3_5dc8e"]
+[ext_resource type="Script" uid="uid://cb2k8pff3hwwf" path="res://characters/player/hand.gd" id="3_on558"]
 [ext_resource type="Script" uid="uid://dm7spsu76df8p" path="res://characters/player/states/walk_state.gd" id="4_ixbpm"]
 [ext_resource type="Script" uid="uid://cry8y257jde36" path="res://characters/player/states/run_state.gd" id="5_c6leb"]
 [ext_resource type="Script" uid="uid://c4m8v1ojgdbpp" path="res://characters/player/states/crouch_state.gd" id="6_dirf7"]
@@ -35,20 +36,39 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = ExtResource("9_rpf03")
 
+[node name="DebugLeftHand" type="CSGBox3D" parent="." unique_id=166800245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8700918, 0.6001506, -0.80180895)
+size = Vector3(0.2, 0.2, 0.7)
+
+[node name="DebugRightHand" type="CSGBox3D" parent="." unique_id=1307978379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7299082, 0.6001506, -0.80180895)
+size = Vector3(0.2, 0.2, 0.7)
+
+[node name="LeftHand" type="Node3D" parent="." unique_id=1501267161]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.7, -1)
+script = ExtResource("3_on558")
+metadata/_custom_type_script = "uid://cb2k8pff3hwwf"
+
+[node name="RightHand" type="Node3D" parent="." unique_id=1830775166]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.7, -1)
+script = ExtResource("3_on558")
+metadata/_custom_type_script = "uid://cb2k8pff3hwwf"
+
 [node name="Head" type="Node3D" parent="." unique_id=1819092234]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="InteractionCast" type="RayCast3D" parent="Head" unique_id=1682129743]
 target_position = Vector3(0, 0, -10)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=919236445]
 unique_name_in_owner = true
 current = true
-
-[node name="DebugHand" type="CSGBox3D" parent="Head/Camera3D" unique_id=166800245]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7299082, -0.3998494, -1.051809)
-size = Vector3(0.2, 0.2, 0.2)
 
 [node name="Hud" type="CanvasLayer" parent="." unique_id=1089950898]
 
