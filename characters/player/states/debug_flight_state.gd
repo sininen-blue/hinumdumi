@@ -17,6 +17,7 @@ func enter() -> void:
 
 
 func exit() -> void:
+	player.current_speed = 0
 	player.enabled_gravity = true
 	collision_shape.disabled = false
 

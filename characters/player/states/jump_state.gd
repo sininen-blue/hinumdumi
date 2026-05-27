@@ -36,6 +36,9 @@ func exit() -> void:
 
 func update(_delta: float) -> void:
 	if player.is_on_ground:
+		if state_machine.previous_state != debug_flight_state:
+			state_machine.change_state(state_machine.previous_state)
+			return
 		state_machine.change_state(idle_state)
 
 
