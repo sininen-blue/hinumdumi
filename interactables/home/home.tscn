@@ -1,12 +1,35 @@
 [gd_scene format=3 uid="uid://bmigjydjonpfr"]
 
+[ext_resource type="Script" uid="uid://cu2kxag7ujk24" path="res://interactables/home/home.gd" id="1_3xue1"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_udn2t"]
 size = Vector3(3, 3, 3)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xue1"]
+albedo_color = Color(0.19379999, 0.35189998, 0.51, 1)
+
 [node name="Home" type="Node3D" unique_id=219637577]
+script = ExtResource("1_3xue1")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=312791524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1002061988]
 shape = SubResource("BoxShape3D_udn2t")
+
+[node name="Debug" type="Node3D" parent="." unique_id=477155867]
+
+[node name="DebugLabel" type="Label3D" parent="Debug" unique_id=459198911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1, 0)
+billboard = 2
+text = "Test Home"
+
+[node name="DebugModel" type="CSGBox3D" parent="Debug" unique_id=1551166234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099999994, 0)
+size = Vector3(3, 0.2, 3)
+material = SubResource("StandardMaterial3D_3xue1")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

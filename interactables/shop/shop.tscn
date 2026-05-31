@@ -6,6 +6,9 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_rplqf"]
 radius = 3.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p68ca"]
+albedo_color = Color(1, 0.639, 0.43, 1)
+
 [node name="Shopkeep" type="Node3D" unique_id=913437893]
 script = ExtResource("1_viryw")
 shoppableItem = ExtResource("2_p68ca")
@@ -17,15 +20,23 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ShoppableArea" unique_id=939099808]
 shape = SubResource("SphereShape3D_rplqf")
 
-[node name="DebugLabel" type="Label3D" parent="." unique_id=453247010]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-billboard = 2
-
 [node name="DisplayOrigin" type="Node3D" parent="." unique_id=1823539743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
 
 [node name="DialogueOrigin" type="Node3D" parent="." unique_id=1852645961]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Debug" type="Node3D" parent="." unique_id=1956959714]
+
+[node name="DebugLabel" type="Label3D" parent="Debug" unique_id=453247010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+billboard = 2
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Debug" unique_id=2121356285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025000036, 0)
+radius = 3.0
+height = 0.15
+material = SubResource("StandardMaterial3D_p68ca")
 
 [connection signal="body_entered" from="ShoppableArea" to="." method="_on_shoppable_area_body_entered"]
 [connection signal="body_exited" from="ShoppableArea" to="." method="_on_shoppable_area_body_exited"]
