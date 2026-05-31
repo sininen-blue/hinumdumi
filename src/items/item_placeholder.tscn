@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://cbsuyeodh5w11"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mma1"]
+transparency = 1
+albedo_color = Color(0.66999996, 1, 0.8295, 0.27058825)
+
 [node name="ItemPlaceholder" type="Node3D" unique_id=1727741488]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1132113454]
 size = Vector3(0.5, 0.5, 0.5)
+material = SubResource("StandardMaterial3D_5mma1")

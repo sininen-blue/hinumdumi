@@ -12,7 +12,7 @@ const SHOPPABLE_ITEM: PackedScene = preload("res://interactables/shop/shoppable_
 
 var player: Player
 
-@onready var debug_label: Label3D = $DebugLabel
+@onready var debug_label: Label3D = $Debug/DebugLabel
 @onready var display_origin: Node3D = $DisplayOrigin
 
 
@@ -29,7 +29,6 @@ func _ready() -> void:
 
 		display_origin.add_child(shoppable)
 
-	# NOTE: even numbered items are offset to the left
 	arrange_items()
 
 
@@ -38,15 +37,14 @@ func _process(_delta: float) -> void:
 
 
 func buy(shoppable: ShoppableItem) -> void:
-	var stock: int = inventory.get(shoppable.item)
+	var stock: int = inventory.get(shoppable.item, 0)
 	if stock > 0:
 		inventory[shoppable.item] -= 1
-		PlayerInventory.add_item(shoppable.item)
-		shoppable.remove_stock()
-
 		if inventory[shoppable.item] <= 0:
 			inventory.erase(shoppable.item)
-			shoppable.call_deferred("queue_free")
+
+		var target: Hand = PlayerInventory.add_item(shoppable.item)
+		shoppable.remove_stock(target)
 
 
 func toggle_display():

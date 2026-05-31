@@ -5,7 +5,8 @@ extends Node
 @export var right_hand: Hand
 
 
-func add_item(item: Item) -> void:
+# adds an item to the inventory and picks a hand to represent it
+func add_item(item: Item) -> Hand:
 	if inventory.get(item, null) == null:
 		inventory[item] = 0
 
@@ -14,8 +15,10 @@ func add_item(item: Item) -> void:
 	var total_items: int = inventory.values().reduce(sum)
 	if total_items % 2 == 0:
 		left_hand.add_item(item)
+		return left_hand
 	else:
 		right_hand.add_item(item)
+		return right_hand
 
 
 func remove_item(item: Item) -> void:
@@ -26,6 +29,11 @@ func remove_item(item: Item) -> void:
 	inventory[item] -= 1
 	if inventory[item] <= 0:
 		inventory.erase(item)
+
+	if left_hand.has_item(item):
+		left_hand.remove_item(item)
+	else:
+		right_hand.remove_item(item)
 
 
 func sum(accum: int, number: int) -> int:

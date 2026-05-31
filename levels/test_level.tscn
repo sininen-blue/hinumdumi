@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://dduxxviuf6umn" path="res://interactables/items/Salt.tres" id="9_wkb0e"]
 [ext_resource type="Resource" uid="uid://dqln4etsscmsq" path="res://interactables/items/Soy Sauce.tres" id="10_wkb0e"]
 [ext_resource type="Resource" uid="uid://bhsq474tgbqxa" path="res://interactables/items/Vinegar.tres" id="12_axl34"]
+[ext_resource type="PackedScene" uid="uid://bmigjydjonpfr" path="res://interactables/home/home.tscn" id="13_axl34"]
 
 [sub_resource type="Environment" id="Environment_46lwt"]
 ssr_enabled = true
@@ -247,7 +248,7 @@ debug = true
 metadata/_edit_lock_ = true
 
 [node name="Shopkeep" parent="Shops" unique_id=913437893 instance=ExtResource("6_e7anx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.5, 0)
 inventory = Dictionary[ExtResource("7_ur00s"), int]({
 ExtResource("8_4n8tn"): 1,
 ExtResource("9_wkb0e"): 2,
@@ -255,6 +256,22 @@ ExtResource("10_wkb0e"): 3,
 ExtResource("12_axl34"): 4
 })
 
+[node name="Shopkeep2" parent="Shops" unique_id=866997347 instance=ExtResource("6_e7anx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.5, 8)
+inventory = Dictionary[ExtResource("7_ur00s"), int]({
+ExtResource("8_4n8tn"): 100,
+ExtResource("9_wkb0e"): 100,
+ExtResource("10_wkb0e"): 100,
+ExtResource("12_axl34"): 100
+})
+
 [node name="ShoppableItem" parent="." unique_id=264745181 instance=ExtResource("9_ly3hx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.682247, 1, -12.679103)
 amount = 3
+
+[node name="Home" parent="." unique_id=219637577 instance=ExtResource("13_axl34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0.5, -7)
+debug = true
+requirements = Dictionary[ExtResource("7_ur00s"), int]({
+ExtResource("12_axl34"): 2
+})
