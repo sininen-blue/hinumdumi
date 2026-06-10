@@ -33,9 +33,13 @@ func init_dialogue() -> void:
 		if line == "":
 			list_requirements()
 			continue
+		if line == "[m]":
+			queue.append("here's " + str(home.starting_cash) + " pesos")
+			continue
 		queue.append(line)
 
-	queue.append("here's " + str(home.starting_cash) + " pesos")
+	if "[m]" not in lines:
+		queue.append("here's " + str(home.starting_cash) + " pesos")
 
 	dialgoue_label.text = ""
 	add_character(queue[current_line_index][current_char_index])
