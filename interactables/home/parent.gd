@@ -17,9 +17,6 @@ var current_char_index: int = 0
 @onready var submit_debounce_timer: Timer = $SubmitDebounceTimer
 @onready var line_timer: Timer = $LineTimer
 
-# TODO: item submission lines
-# TODO: acceptance lines
-
 
 func _ready() -> void:
 	home.finished_requirements.connect(_on_home_finished_requirements)
@@ -34,9 +31,6 @@ func _input(event: InputEvent) -> void:
 		reset()
 		if PlayerStates.left_home == false:
 			init_dialogue()
-		if PlayerStates.left_home:
-			# check if player has items meeting the reqs
-			pass
 
 
 func init_dialogue() -> void:
@@ -53,7 +47,7 @@ func init_dialogue() -> void:
 		queue.append("here's " + str(home.starting_cash) + " pesos")
 
 	dialgoue_label.text = ""
-	add_character(queue[current_line_index][current_char_index])
+	start_talking()
 	is_talking = true
 
 
@@ -74,13 +68,10 @@ func list_requirements() -> void:
 		queue.append(line)
 
 
+## Utils
 func add_character(character: String) -> void:
 	dialgoue_label.text += character
 	character_timer.start()
-
-
-func give_player_money() -> void:
-	PlayerInventory.money = home.starting_cash
 
 
 func reset() -> void:
@@ -95,6 +86,14 @@ func reset() -> void:
 	line_timer.stop()
 
 
+func give_player_money() -> void:
+	PlayerInventory.money = home.starting_cash
+
+
+func start_talking() -> void:
+	add_character(queue[current_line_index][current_char_index])
+
+
 func _on_player_inventory_removed_item(item: Item) -> void:
 	submitted_items.append(item)
 	submit_debounce_timer.start()
@@ -104,7 +103,7 @@ func _on_home_finished_requirements() -> void:
 	reset()
 	queue.append("Okay, thank you")
 	queue.append("Dinner at 8")
-	add_character(queue[current_line_index][current_char_index])
+	start_talking()
 
 	level_complete.emit()
 
@@ -116,7 +115,7 @@ func _on_character_timer_timeout() -> void:
 		line_timer.start()
 		return
 
-	add_character(queue[current_line_index][current_char_index])
+	start_talking()
 
 
 func _on_line_timer_timeout() -> void:
@@ -131,7 +130,7 @@ func _on_line_timer_timeout() -> void:
 	current_char_index = 0
 	dialgoue_label.text = ""
 
-	add_character(queue[current_line_index][current_char_index])
+	start_talking()
 
 
 func _on_submit_debounce_timer_timeout() -> void:
@@ -140,7 +139,7 @@ func _on_submit_debounce_timer_timeout() -> void:
 		return
 	queue.append("All that's left is")
 	list_requirements()
-	add_character(queue[current_line_index][current_char_index])
+	start_talking()
 
 
 func _on_interact_area_body_entered(body: Node3D) -> void:
