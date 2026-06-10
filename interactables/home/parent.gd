@@ -3,6 +3,7 @@ extends Node3D
 @export var player: Player
 
 var queue: Array[String] = []
+var submitted_items: Array[Item] = []
 var is_talking: bool = false
 var current_line_index: int = 0
 var current_char_index: int = 0
@@ -11,12 +12,16 @@ var current_char_index: int = 0
 @onready var lines: Array[String] = home.lines
 @onready var dialgoue_label: Label3D = $DialgoueLabel
 @onready var character_timer: Timer = $CharacterTimer
+@onready var submit_debounce_timer: Timer = $SubmitDebounceTimer
 @onready var line_timer: Timer = $LineTimer
 
-# TODO: "and" for the last item
-# TODO: closing speech
 # TODO: item submission lines
 # TODO: acceptance lines
+
+
+func _ready() -> void:
+	home.finished_requirements.connect(_on_home_finished_requirements)
+	PlayerInventory.removed_item.connect(_on_player_inventory_removed_item)
 
 
 func _input(event: InputEvent) -> void:
@@ -25,7 +30,11 @@ func _input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("interact"):
 		reset()
-		init_dialogue()
+		if PlayerStates.left_home == false:
+			init_dialogue()
+		if PlayerStates.left_home:
+			# check if player has items meeting the reqs
+			pass
 
 
 func init_dialogue() -> void:
@@ -68,6 +77,28 @@ func add_character(character: String) -> void:
 	character_timer.start()
 
 
+func give_player_money() -> void:
+	PlayerInventory.money = home.starting_cash
+
+
+func reset() -> void:
+	dialgoue_label.text = ""
+	queue = []
+	is_talking = false
+	current_line_index = 0
+	current_char_index = 0
+
+
+func _on_player_inventory_removed_item(item: Item) -> void:
+	submitted_items.append(item)
+	submit_debounce_timer.start()
+
+
+func _on_home_finished_requirements() -> void:
+	print_debug("do some text here, maybe an animation")
+	print_debug("game done")
+
+
 func _on_character_timer_timeout() -> void:
 	current_char_index += 1
 
@@ -93,16 +124,10 @@ func _on_line_timer_timeout() -> void:
 	add_character(queue[current_line_index][current_char_index])
 
 
-func give_player_money() -> void:
-	PlayerInventory.money = home.starting_cash
-
-
-func reset() -> void:
-	dialgoue_label.text = ""
-	queue = []
-	is_talking = false
-	current_line_index = 0
-	current_char_index = 0
+func _on_submit_debounce_timer_timeout() -> void:
+	reset()
+	list_requirements()
+	add_character(queue[current_line_index][current_char_index])
 
 
 func _on_interact_area_body_entered(body: Node3D) -> void:
