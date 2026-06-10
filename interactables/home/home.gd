@@ -11,6 +11,9 @@ signal finished_requirements
 	"Before dinner",
 	"Can you buy me",
 	"",
+	"And",
+	"[m]",
+	"Buy the vinegar from tatoys because it's cheaper",
 ]
 
 var player: Player
