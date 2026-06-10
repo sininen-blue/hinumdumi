@@ -5,6 +5,10 @@ class_name Item
 @export_group("Primary")
 ## Name of the item
 @export var name: String
+## Used for dialogue, i.e. bottle of ketchup
+@export var singular_description: String
+## Used for dialogue, i.e. bottles of ketchup
+@export var plural_description: String
 ## Scene of the items model used in shopkeep showcase, and in inventory
 @export var model: PackedScene = preload("res://src/items/item_placeholder.tscn")
 ## Base cost of the item

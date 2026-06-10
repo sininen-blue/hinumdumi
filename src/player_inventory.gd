@@ -3,6 +3,7 @@ extends Node
 @export var inventory: Dictionary[Item, int] = { }
 @export var left_hand: Hand
 @export var right_hand: Hand
+@export var money: int
 
 
 # adds an item to the inventory and picks a hand to represent it
