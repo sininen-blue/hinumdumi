@@ -485,6 +485,7 @@ shadow_enabled = true
 
 [node name="Home" parent="." unique_id=219637577 instance=ExtResource("3_suyj1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83, 0, -7)
+starting_cash = 3
 requirements = Dictionary[ExtResource("4_tfi2c"), int]({
 ExtResource("5_auw86"): 2,
 ExtResource("6_yv6wp"): 1

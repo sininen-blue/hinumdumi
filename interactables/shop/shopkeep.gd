@@ -82,4 +82,7 @@ func _on_shoppable_area_body_exited(body: Node3D) -> void:
 func _on_shoppable_item_interacted(shoppable: ShoppableItem) -> void:
 	if not player:
 		return
-	buy(shoppable)
+
+	if PlayerInventory.money >= shoppable.item.base_cost:
+		PlayerInventory.money -= shoppable.item.base_cost
+		buy(shoppable)

@@ -34,6 +34,7 @@ func _input(event: InputEvent) -> void:
 
 
 func init_dialogue() -> void:
+	give_player_money()
 	for line: String in lines:
 		if line == "":
 			list_requirements()
@@ -123,7 +124,6 @@ func _on_line_timer_timeout() -> void:
 
 	if current_line_index + 1 > len(queue):
 		is_talking = false
-		give_player_money()
 		reset()
 		return
 
