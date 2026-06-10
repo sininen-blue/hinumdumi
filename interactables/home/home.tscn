@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bmigjydjonpfr"]
 
 [ext_resource type="Script" uid="uid://cu2kxag7ujk24" path="res://interactables/home/home.gd" id="1_3xue1"]
+[ext_resource type="PackedScene" uid="uid://258n54iobafi" path="res://interactables/home/parent.tscn" id="2_605y4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_udn2t"]
 size = Vector3(3, 3, 3)
@@ -23,6 +24,7 @@ shape = SubResource("BoxShape3D_udn2t")
 
 [node name="DebugLabel" type="Label3D" parent="Debug" unique_id=459198911]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1, 0)
+visible = false
 billboard = 2
 text = "Test Home"
 
@@ -30,6 +32,8 @@ text = "Test Home"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099999994, 0)
 size = Vector3(3, 0.2, 3)
 material = SubResource("StandardMaterial3D_3xue1")
+
+[node name="Parent" parent="." unique_id=565167997 instance=ExtResource("2_605y4")]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

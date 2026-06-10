@@ -1,9 +1,17 @@
 extends Node3D
 
+class_name Home
+
 signal finished_requirements
 
 @export var debug: bool = false
+@export var starting_cash: int = 0
 @export var requirements: Dictionary[Item, int] = { }
+@export var lines: Array[String] = [
+	"Before dinner",
+	"Can you buy me",
+	"",
+]
 
 var player: Player
 
