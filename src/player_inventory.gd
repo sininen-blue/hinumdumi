@@ -1,5 +1,7 @@
 extends Node
 
+signal removed_item(item: Item)
+
 @export var inventory: Dictionary[Item, int] = { }
 @export var left_hand: Hand
 @export var right_hand: Hand
@@ -35,6 +37,8 @@ func remove_item(item: Item) -> void:
 		left_hand.remove_item(item)
 	else:
 		right_hand.remove_item(item)
+
+	removed_item.emit(item)
 
 
 func sum(accum: int, number: int) -> int:
