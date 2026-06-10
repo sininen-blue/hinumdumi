@@ -21,3 +21,5 @@ class_name Item
 @export var two_hands: bool = false
 ## How likely the item is to fall, with 1 being always on "fall likely" events
 @export_range(0, 1) var fiddliness: float = 0
+
+var origin: Shop

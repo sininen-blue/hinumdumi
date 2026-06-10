@@ -5,7 +5,7 @@ signal removed_item(item: Item)
 @export var inventory: Dictionary[Item, int] = { }
 @export var left_hand: Hand
 @export var right_hand: Hand
-@export var money: int
+@export var money: float = 0
 
 
 # adds an item to the inventory and picks a hand to represent it
