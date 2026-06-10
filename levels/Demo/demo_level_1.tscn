@@ -495,6 +495,10 @@ metadata/_edit_lock_ = true
 
 [node name="Shopkeep" parent="Shops" unique_id=913437893 instance=ExtResource("4_v7ale")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -5)
+inventory = Dictionary[ExtResource("4_tfi2c"), int]({
+ExtResource("5_auw86"): 5,
+ExtResource("6_yv6wp"): 1
+})
 
 [node name="Shopkeep2" parent="Shops" unique_id=599069500 instance=ExtResource("4_v7ale")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -46)

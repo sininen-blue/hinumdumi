@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 PlayerInventory="*uid://d3rvskq3dbkq4"
+PlayerStates="*uid://cls3pohm4xcw0"
 
 [editor_plugins]
 

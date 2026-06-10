@@ -2,6 +2,8 @@ extends Node3D
 
 @export var player: Player
 
+signal level_complete
+
 var queue: Array[String] = []
 var submitted_items: Array[Item] = []
 var is_talking: bool = false
@@ -88,6 +90,10 @@ func reset() -> void:
 	current_line_index = 0
 	current_char_index = 0
 
+	character_timer.stop()
+	submit_debounce_timer.stop()
+	line_timer.stop()
+
 
 func _on_player_inventory_removed_item(item: Item) -> void:
 	submitted_items.append(item)
@@ -95,8 +101,12 @@ func _on_player_inventory_removed_item(item: Item) -> void:
 
 
 func _on_home_finished_requirements() -> void:
-	print_debug("do some text here, maybe an animation")
-	print_debug("game done")
+	reset()
+	queue.append("Okay, thank you")
+	queue.append("Dinner at 8")
+	add_character(queue[current_line_index][current_char_index])
+
+	level_complete.emit()
 
 
 func _on_character_timer_timeout() -> void:
@@ -126,6 +136,9 @@ func _on_line_timer_timeout() -> void:
 
 func _on_submit_debounce_timer_timeout() -> void:
 	reset()
+	if home.requirements.is_empty():
+		return
+	queue.append("All that's left is")
 	list_requirements()
 	add_character(queue[current_line_index][current_char_index])
 
@@ -137,5 +150,8 @@ func _on_interact_area_body_entered(body: Node3D) -> void:
 
 func _on_interact_area_body_exited(body: Node3D) -> void:
 	if body is Player:
+		if PlayerStates.left_home == false:
+			PlayerStates.left_home = true
+
 		player = null
 		reset()
