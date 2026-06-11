@@ -21,14 +21,14 @@ shoppableItem = ExtResource("2_p68ca")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 line_delay = 2.0
 
-[node name="InteractArea" type="Area3D" parent="." unique_id=1632505056]
+[node name="ShopkeepInteract" type="Area3D" parent="." unique_id=1632505056]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("4_2drsn")
 metadata/_custom_type_script = "uid://c7rh18x7usf6y"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=1764994424]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShopkeepInteract" unique_id=1764994424]
 shape = SubResource("SphereShape3D_y1uo0")
 
 [node name="ShoppableArea" type="Area3D" parent="." unique_id=1806168609]
@@ -40,9 +40,6 @@ shape = SubResource("SphereShape3D_rplqf")
 
 [node name="DisplayOrigin" type="Node3D" parent="." unique_id=1823539743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
-
-[node name="DialogueOrigin" type="Node3D" parent="." unique_id=1852645961]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Debug" type="Node3D" parent="." unique_id=1956959714]
 
@@ -56,5 +53,6 @@ radius = 3.0
 height = 0.15
 material = SubResource("StandardMaterial3D_p68ca")
 
+[connection signal="interacted" from="ShopkeepInteract" to="." method="_on_shopkeep_interact_interacted"]
 [connection signal="body_entered" from="ShoppableArea" to="." method="_on_shoppable_area_body_entered"]
 [connection signal="body_exited" from="ShoppableArea" to="." method="_on_shoppable_area_body_exited"]

@@ -22,6 +22,12 @@ var player: Player
 @onready var display_origin: Node3D = $DisplayOrigin
 @onready var dialogue_component: DialogueComponent = $DialogueComponent
 
+# return behavior
+# if the player looks at point (shopkeep)
+# if player has item from shop (same origin)
+# shopkeep displayes interactables for each item
+# if player interacts, return item, get money back, with fee
+
 
 func _ready() -> void:
 	toggle_display()
@@ -29,6 +35,7 @@ func _ready() -> void:
 	var items: Array[Item] = inventory.keys()
 
 	for item: Item in items:
+		item.origin = self
 		var shoppable: ShoppableItem = SHOPPABLE_ITEM.instantiate()
 		shoppable.interacted.connect(_on_shoppable_item_interacted)
 		shoppable.item = item
@@ -74,10 +81,6 @@ func arrange_items():
 		shoppable.position += Vector3(0, 0, shoppable_offset * distance)
 
 
-func interact() -> void:
-	print_debug("tests")
-
-
 func _on_shoppable_area_body_entered(body: Node3D) -> void:
 	if body is Player:
 		self.player = body
@@ -104,3 +107,16 @@ func _on_shoppable_item_interacted(shoppable: ShoppableItem) -> void:
 	if PlayerInventory.money >= shoppable.item.base_cost:
 		PlayerInventory.money -= shoppable.item.base_cost
 		buy(shoppable)
+
+
+func _on_shopkeep_interact_interacted() -> void:
+	for item in PlayerInventory.inventory:
+		if item.origin == self:
+			# show list of returnable items as interact areas
+			# each interact area increases stock
+
+			# TODO: probably rework some of the systems
+			# primarily rework stock handling
+			# stock display handling
+			# into separate components
+			pass
