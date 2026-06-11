@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://258n54iobafi"]
 
 [ext_resource type="Script" uid="uid://wm5yv3mws1l5" path="res://interactables/home/parent.gd" id="1_ad57i"]
+[ext_resource type="PackedScene" uid="uid://dhdb0srr160uw" path="res://src/dialogue_component/dialogue_component.tscn" id="2_60d41"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kyjot"]
 radius = 4.0
 
 [node name="Parent" type="Node3D" unique_id=565167997]
 script = ExtResource("1_ad57i")
+
+[node name="DialogueComponent" parent="." unique_id=1041026313 instance=ExtResource("2_60d41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="InteractArea" type="Area3D" parent="." unique_id=677420073]
 collision_layer = 0
@@ -18,27 +22,10 @@ shape = SubResource("SphereShape3D_kyjot")
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=915961608]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
-[node name="DialgoueLabel" type="Label3D" parent="." unique_id=2132828680]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8089075, 0)
-billboard = 1
-text = "placeholder text"
-
-[node name="CharacterTimer" type="Timer" parent="." unique_id=1648394452]
-wait_time = 0.05
-one_shot = true
-
-[node name="LineTimer" type="Timer" parent="." unique_id=30491733]
-wait_time = 0.5
-one_shot = true
-
 [node name="SubmitDebounceTimer" type="Timer" parent="." unique_id=2090562741]
 wait_time = 0.5
 one_shot = true
 
-[node name="VoicePlayer" type="AudioStreamPlayer3D" parent="." unique_id=1797620122]
-
 [connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]
 [connection signal="body_exited" from="InteractArea" to="." method="_on_interact_area_body_exited"]
-[connection signal="timeout" from="CharacterTimer" to="." method="_on_character_timer_timeout"]
-[connection signal="timeout" from="LineTimer" to="." method="_on_line_timer_timeout"]
 [connection signal="timeout" from="SubmitDebounceTimer" to="." method="_on_submit_debounce_timer_timeout"]

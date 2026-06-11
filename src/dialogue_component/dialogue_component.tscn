@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dhdb0srr160uw"]
+
+[ext_resource type="Script" uid="uid://03skf0fa4am" path="res://src/dialogue_component/dialogue_component.gd" id="1_53i3o"]
+
+[node name="DialogueComponent" type="Node3D" unique_id=1041026313]
+script = ExtResource("1_53i3o")
+
+[node name="Label" type="Label3D" parent="." unique_id=97833389]
+billboard = 1
+text = "Placeholder"
+
+[node name="VoicePlayer" type="AudioStreamPlayer3D" parent="." unique_id=1317939009]
+
+[node name="CharacterTimer" type="Timer" parent="." unique_id=1394526900]
+one_shot = true
+
+[node name="LineTimer" type="Timer" parent="." unique_id=607722553]
+one_shot = true
+
+[connection signal="timeout" from="CharacterTimer" to="." method="_on_character_timer_timeout"]
+[connection signal="timeout" from="LineTimer" to="." method="_on_line_timer_timeout"]
