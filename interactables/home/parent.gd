@@ -4,18 +4,12 @@ extends Node3D
 
 signal level_complete
 
-var queue: Array[String] = []
 var submitted_items: Array[Item] = []
-var is_talking: bool = false
-var current_line_index: int = 0
-var current_char_index: int = 0
 
 @onready var home: Home = self.get_parent()
 @onready var lines: Array[String] = home.lines
-@onready var dialgoue_label: Label3D = $DialgoueLabel
-@onready var character_timer: Timer = $CharacterTimer
 @onready var submit_debounce_timer: Timer = $SubmitDebounceTimer
-@onready var line_timer: Timer = $LineTimer
+@onready var dialogue_component: DialogueComponent = $DialogueComponent
 
 
 func _ready() -> void:
@@ -28,28 +22,26 @@ func _input(event: InputEvent) -> void:
 		return
 
 	if event.is_action_pressed("interact"):
-		reset()
 		if PlayerStates.left_home == false:
 			init_dialogue()
 
 
 func init_dialogue() -> void:
 	give_player_money()
+
 	for line: String in lines:
 		if line == "":
 			list_requirements()
 			continue
 		if line == "[m]":
-			queue.append("here's " + str(home.starting_cash) + " pesos")
+			dialogue_component.add_line("here's " + str(home.starting_cash) + " pesos")
 			continue
-		queue.append(line)
+		dialogue_component.add_line(line)
 
 	if "[m]" not in lines:
-		queue.append("here's " + str(home.starting_cash) + " pesos")
+		dialogue_component.add_line("here's " + str(home.starting_cash) + " pesos")
 
-	dialgoue_label.text = ""
-	start_talking()
-	is_talking = true
+	dialogue_component.start_talking()
 
 
 func list_requirements() -> void:
@@ -66,33 +58,12 @@ func list_requirements() -> void:
 
 		line = number_string + " " + item_name
 
-		queue.append(line)
+		dialogue_component.add_line(line)
 
 
 ## Utils
-func add_character(character: String) -> void:
-	dialgoue_label.text += character
-	character_timer.start()
-
-
-func reset() -> void:
-	dialgoue_label.text = ""
-	queue = []
-	is_talking = false
-	current_line_index = 0
-	current_char_index = 0
-
-	character_timer.stop()
-	submit_debounce_timer.stop()
-	line_timer.stop()
-
-
 func give_player_money() -> void:
 	PlayerInventory.money = home.starting_cash
-
-
-func start_talking() -> void:
-	add_character(queue[current_line_index][current_char_index])
 
 
 func _on_player_inventory_removed_item(item: Item) -> void:
@@ -101,45 +72,19 @@ func _on_player_inventory_removed_item(item: Item) -> void:
 
 
 func _on_home_finished_requirements() -> void:
-	reset()
-	queue.append("Okay, thank you")
-	queue.append("Dinner at 8")
-	start_talking()
+	dialogue_component.add_line("Okay, thank you")
+	dialogue_component.add_line("Dinner at 8")
+	dialogue_component.start_talking()
 
 	level_complete.emit()
 
 
-func _on_character_timer_timeout() -> void:
-	current_char_index += 1
-
-	if current_char_index + 1 > queue[current_line_index].length():
-		line_timer.start()
-		return
-
-	start_talking()
-
-
-func _on_line_timer_timeout() -> void:
-	current_line_index += 1
-
-	if current_line_index + 1 > len(queue):
-		is_talking = false
-		reset()
-		return
-
-	current_char_index = 0
-	dialgoue_label.text = ""
-
-	start_talking()
-
-
 func _on_submit_debounce_timer_timeout() -> void:
-	reset()
 	if home.requirements.is_empty():
 		return
-	queue.append("All that's left is")
+	dialogue_component.add_line("All that's left is")
 	list_requirements()
-	start_talking()
+	dialogue_component.start_talking()
 
 
 func _on_interact_area_body_entered(body: Node3D) -> void:
@@ -153,4 +98,4 @@ func _on_interact_area_body_exited(body: Node3D) -> void:
 			PlayerStates.left_home = true
 
 		player = null
-		reset()
+		dialogue_component.stop_talking()

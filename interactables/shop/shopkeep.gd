@@ -7,13 +7,20 @@ const SHOPPABLE_ITEM: PackedScene = preload("res://interactables/shop/shoppable_
 @export var shoppableItem: PackedScene
 @export var inventory: Dictionary[Item, int]
 @export var cost_modifier: float = 1
-
 @export var shoppable_offset: float = 2
+
+@export var intro_lines: Array[String] = [
+	"What are you buying?",
+]
+@export var outro_line: Array[String] = [
+	"Ogey",
+]
 
 var player: Player
 
 @onready var debug_label: Label3D = $Debug/DebugLabel
 @onready var display_origin: Node3D = $DisplayOrigin
+@onready var dialogue_component: DialogueComponent = $DialogueComponent
 
 
 func _ready() -> void:
@@ -40,8 +47,8 @@ func buy(shoppable: ShoppableItem) -> void:
 	var stock: int = inventory.get(shoppable.item, 0)
 	if stock > 0:
 		inventory[shoppable.item] -= 1
-		if inventory[shoppable.item] <= 0:
-			inventory.erase(shoppable.item)
+		#if inventory[shoppable.item] <= 0: NOTE: removed for return
+		#inventory.erase(shoppable.item)
 
 		var target: Hand = PlayerInventory.add_item(shoppable.item)
 		shoppable.remove_stock(target)
@@ -67,16 +74,27 @@ func arrange_items():
 		shoppable.position += Vector3(0, 0, shoppable_offset * distance)
 
 
+func interact() -> void:
+	print_debug("tests")
+
+
 func _on_shoppable_area_body_entered(body: Node3D) -> void:
 	if body is Player:
 		self.player = body
 		toggle_display()
+
+		dialogue_component.add_line("what are you buying?")
+		dialogue_component.start_talking()
 
 
 func _on_shoppable_area_body_exited(body: Node3D) -> void:
 	if body is Player:
 		self.player = null
 		toggle_display()
+
+		dialogue_component.stop_talking()
+		dialogue_component.add_line("have a good day")
+		dialogue_component.start_talking()
 
 
 func _on_shoppable_item_interacted(shoppable: ShoppableItem) -> void:

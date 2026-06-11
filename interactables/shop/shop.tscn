@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ed8gtl5wl0m8" path="res://interactables/shop/shopkeep.gd" id="1_viryw"]
 [ext_resource type="PackedScene" uid="uid://dkxterlqgopgk" path="res://interactables/shop/shoppable_item.tscn" id="2_p68ca"]
+[ext_resource type="PackedScene" uid="uid://dhdb0srr160uw" path="res://src/dialogue_component/dialogue_component.tscn" id="3_k37hj"]
+[ext_resource type="Script" uid="uid://c7rh18x7usf6y" path="res://interactables/shop/interact_area.gd" id="4_2drsn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y1uo0"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rplqf"]
 radius = 3.0
@@ -12,6 +16,20 @@ albedo_color = Color(1, 0.639, 0.43, 1)
 [node name="Shopkeep" type="Node3D" unique_id=913437893]
 script = ExtResource("1_viryw")
 shoppableItem = ExtResource("2_p68ca")
+
+[node name="DialogueComponent" parent="." unique_id=1041026313 instance=ExtResource("3_k37hj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+line_delay = 2.0
+
+[node name="InteractArea" type="Area3D" parent="." unique_id=1632505056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("4_2drsn")
+metadata/_custom_type_script = "uid://c7rh18x7usf6y"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=1764994424]
+shape = SubResource("SphereShape3D_y1uo0")
 
 [node name="ShoppableArea" type="Area3D" parent="." unique_id=1806168609]
 collision_layer = 3
