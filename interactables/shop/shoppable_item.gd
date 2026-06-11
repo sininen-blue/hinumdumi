@@ -51,11 +51,11 @@ func _process(delta: float) -> void:
 			to_remove.erase(child)
 
 
-func interact() -> void:
-	interacted.emit(self)
-
-
 func remove_stock(target: Hand) -> void:
 	var obj: Node3D = models.get_child(-1)
 	models.move_child(obj, 0)
 	to_remove.append({ obj: target })
+
+
+func _on_interact_area_interacted() -> void:
+	interacted.emit(self)

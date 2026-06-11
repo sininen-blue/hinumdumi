@@ -2,6 +2,9 @@ extends Area3D
 
 class_name InteractArea
 
+signal interacted
+
+
 func _ready() -> void:
 	self.set_collision_mask_value(1, false)
 	self.set_collision_layer_value(1, false)
@@ -9,4 +12,4 @@ func _ready() -> void:
 
 
 func interact() -> void:
-	get_parent().interact()
+	interacted.emit()

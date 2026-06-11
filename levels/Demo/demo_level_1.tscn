@@ -509,6 +509,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 88)
 
 [node name="Shopkeep4" parent="Shops" unique_id=2101722101 instance=ExtResource("4_v7ale")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 0, 89)
+inventory = Dictionary[ExtResource("4_tfi2c"), int]({
+ExtResource("6_yv6wp"): 1
+})
 
 [node name="Shopkeep5" parent="Shops" unique_id=1950198790 instance=ExtResource("4_v7ale")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127, 0, 105)
