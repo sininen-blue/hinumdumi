@@ -477,7 +477,7 @@ use_collision = true
 size = Vector3(10, 20, 10)
 
 [node name="Player" parent="." unique_id=950809192 instance=ExtResource("1_l88ne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91, 9, 5)
+transform = Transform3D(-0.8660253, 0, 0.5, 0, 1, 0, -0.5, 0, -0.8660253, 53.75923, 1, -8.399366)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1164156201]
 transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, -4, 8, 0)
