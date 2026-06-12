@@ -1,5 +1,7 @@
 extends Node3D
 
+class_name ItemInteracts
+
 const SHOP_INTERACT: PackedScene = preload("res://interactables/shop/shop_interact.tscn")
 const RETURN_INTERACT: PackedScene = preload("res://interactables/shop/return_interact.tscn")
 
@@ -7,6 +9,8 @@ const RETURN_INTERACT: PackedScene = preload("res://interactables/shop/return_in
 
 var index: int = 0
 var offset: float = 1.2
+
+var shop_display_list: Array[ShopDisplay]
 
 
 func _ready() -> void:
@@ -33,4 +37,12 @@ func _ready() -> void:
 		shop_display.position += position_offset
 		return_interact.position += position_offset + Vector3(0, -0.4, 0)
 
+		shop_display_list.append(shop_display)
+
 		index += 1
+
+
+func send(item: Item, hand: Hand) -> void:
+	for display: ShopDisplay in shop_display_list:
+		if display.item == item:
+			display.send(hand)
