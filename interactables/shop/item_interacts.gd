@@ -46,3 +46,9 @@ func send(item: Item, hand: Hand) -> void:
 	for display: ShopDisplay in shop_display_list:
 		if display.item == item:
 			display.send(hand)
+
+
+func recieve(item: Item, hand: Hand) -> void:
+	for display: ShopDisplay in shop_display_list:
+		if display.item == item:
+			display.recieve(hand)

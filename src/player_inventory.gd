@@ -8,7 +8,6 @@ signal removed_item(item: Item)
 @export var money: float = 100
 
 
-# adds an item to the inventory and picks a hand to represent it
 func add_item(item: Item) -> Hand:
 	if inventory.get(item, null) == null:
 		inventory[item] = 0
@@ -24,21 +23,22 @@ func add_item(item: Item) -> Hand:
 		return right_hand
 
 
-func remove_item(item: Item) -> void:
+func remove_item(item: Item) -> Hand:
 	if inventory.get(item, null) == null:
 		printerr("Item does not exist: ", item.name)
 		return
 
+	removed_item.emit(item)
 	inventory[item] -= 1
 	if inventory[item] <= 0:
 		inventory.erase(item)
 
 	if left_hand.has_item(item):
 		left_hand.remove_item(item)
+		return left_hand
 	else:
 		right_hand.remove_item(item)
-
-	removed_item.emit(item)
+		return right_hand
 
 
 func sum(accum: int, number: int) -> int:

@@ -28,6 +28,7 @@ func _on_item_interact(item: Item) -> void:
 		if stock <= 0:
 			return
 
+		PlayerInventory.money -= item.base_cost
 		inventory[item] -= 1
 		item.origin = self
 		var hand: Hand = PlayerInventory.add_item(item)
@@ -40,7 +41,8 @@ func _on_return_interact(item: Item) -> void:
 			continue
 
 		if item.origin == self:
-			PlayerInventory.remove_item(item)
+			var hand: Hand = PlayerInventory.remove_item(item)
+			item_interacts.recieve(item, hand)
 			PlayerInventory.money += item.base_cost
 			inventory[item] += 1
 
