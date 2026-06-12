@@ -35,7 +35,6 @@ func _ready() -> void:
 	var items: Array[Item] = inventory.keys()
 
 	for item: Item in items:
-		item.origin = self
 		var shoppable: ShoppableItem = SHOPPABLE_ITEM.instantiate()
 		shoppable.interacted.connect(_on_shoppable_item_interacted)
 		shoppable.item = item
@@ -110,13 +109,38 @@ func _on_shoppable_item_interacted(shoppable: ShoppableItem) -> void:
 
 
 func _on_shopkeep_interact_interacted() -> void:
-	for item in PlayerInventory.inventory:
-		if item.origin == self:
-			# show list of returnable items as interact areas
-			# each interact area increases stock
+	#for item in PlayerInventory.inventory:
+	#if item.origin == self:
+	# show list of returnable items as interact areas
+	# each interact area increases stock
 
-			# TODO: probably rework some of the systems
-			# primarily rework stock handling
-			# stock display handling
-			# into separate components
-			pass
+	# TODO: probably rework some of the systems
+	# primarily rework stock handling
+	# stock display handling
+	# into separate components
+	pass
+
+
+func _on_item_interact(item: Item) -> void:
+	if PlayerInventory.money >= item.base_cost:
+		var stock: int = inventory.get(item, 0)
+		if stock > 0:
+			item.origin = self
+			inventory[item] -= 1
+			PlayerInventory.add_item(item)
+			#if inventory[shoppable.item] <= 0: NOTE: removed for return
+			#inventory.erase(shoppable.item)
+
+			#var target: Hand = PlayerInventory.add_item(shoppable.item)
+			#shoppable.remove_stock(target)
+
+
+func _on_return_interact(item: Item) -> void:
+	for player_item: Item in PlayerInventory.inventory.keys():
+		if player_item != item:
+			continue
+
+		if item.origin == self:
+			PlayerInventory.remove_item(item)
+			PlayerInventory.money += item.base_cost
+			inventory[item] += 1
