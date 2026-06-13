@@ -24,4 +24,4 @@ func _set_weight(new_weight: float) -> void:
 
 
 func visit() -> void:
-	base_weight *= 0.85
+	pass

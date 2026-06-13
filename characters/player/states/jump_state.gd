@@ -36,6 +36,7 @@ func exit() -> void:
 
 func update(_delta: float) -> void:
 	if player.is_on_ground:
+		player.noise_created.emit(3)
 		if state_machine.previous_state != debug_flight_state:
 			state_machine.change_state(state_machine.previous_state)
 			return

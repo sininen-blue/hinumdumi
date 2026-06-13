@@ -615,6 +615,36 @@ metadata/_custom_type_script = "uid://n02j0kwxqqr6"
 [node name="InterestPoint" parent="WanderPoints" unique_id=549054796 instance=ExtResource("6_58rwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -15)
 
+[node name="InterestPoint9" parent="WanderPoints" unique_id=390277029 instance=ExtResource("6_58rwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 41)
+
+[node name="InterestPoint10" parent="WanderPoints" unique_id=981541711 instance=ExtResource("6_58rwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67, 0, 54)
+
+[node name="InterestPoint11" parent="WanderPoints" unique_id=67616743 instance=ExtResource("6_58rwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102, 0, 4)
+
+[node name="InterestPoint12" parent="WanderPoints" unique_id=605027596 instance=ExtResource("6_58rwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 51)
+
+[node name="InterestPoint13" parent="WanderPoints" unique_id=1887550405 instance=ExtResource("6_58rwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 0, 28)
+
+[node name="InterestPoint14" parent="WanderPoints" unique_id=858188727 instance=ExtResource("6_58rwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -36)
+
+[node name="InterestPoint15" parent="WanderPoints" unique_id=1630447898 instance=ExtResource("6_58rwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 75)
+
+[node name="InterestPoint16" parent="WanderPoints" unique_id=810657137 instance=ExtResource("6_58rwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, 69)
+
+[node name="InterestPoint17" parent="WanderPoints" unique_id=30237515 instance=ExtResource("6_58rwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 44)
+
+[node name="InterestPoint18" parent="WanderPoints" unique_id=367272466 instance=ExtResource("6_58rwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, 0, 2)
+
 [node name="InterestPoint2" parent="WanderPoints" unique_id=617053557 instance=ExtResource("6_58rwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -19)
 
@@ -627,6 +657,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, 73)
 [node name="InterestPoint5" parent="WanderPoints" unique_id=1146772364 instance=ExtResource("6_58rwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.6, 0, 86.9)
 
+[node name="InterestPoint19" parent="WanderPoints" unique_id=574527108 instance=ExtResource("6_58rwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.6, 0, 111.9)
+
+[node name="InterestPoint20" parent="WanderPoints" unique_id=1942245382 instance=ExtResource("6_58rwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.6, 0, 49.9)
+
 [node name="InterestPoint6" parent="WanderPoints" unique_id=2075798519 instance=ExtResource("6_58rwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.200005, 0, 96.4)
 
@@ -636,6 +672,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.200005, 0, 110.7)
 [node name="InterestPoint8" parent="WanderPoints" unique_id=511276439 instance=ExtResource("6_58rwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.200005, 0, 14.000001)
 
-[node name="Monster" parent="." unique_id=2116566352 node_paths=PackedStringArray("wander_points") instance=ExtResource("6_hc2bv")]
+[node name="Monster" parent="." unique_id=2116566352 node_paths=PackedStringArray("wander_points", "player") instance=ExtResource("6_hc2bv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -32)
 wander_points = NodePath("../WanderPoints")
+player = NodePath("../Player")
