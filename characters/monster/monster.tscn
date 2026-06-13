@@ -108,6 +108,7 @@ unique_name_in_owner = true
 script = ExtResource("3_xm3rn")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
+speed = 10.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Scanning" type="Node" parent="StateMachine" unique_id=2021815502 node_paths=PackedStringArray("monster")]
@@ -117,7 +118,6 @@ monster = NodePath("../..")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="ScanTimer" type="Timer" parent="StateMachine/Scanning" unique_id=1388949173]
-wait_time = 0.2
 one_shot = true
 
 [node name="Investigate" type="Node" parent="StateMachine" unique_id=1444443692 node_paths=PackedStringArray("monster", "nav")]

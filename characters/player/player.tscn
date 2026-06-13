@@ -108,6 +108,10 @@ speed = 3.0
 accel = 1.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
+[node name="StepTimer" type="Timer" parent="StateMachine/WalkState" unique_id=881744368]
+wait_time = 0.5
+one_shot = true
+
 [node name="RunState" type="Node" parent="StateMachine" unique_id=267854527 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
 script = ExtResource("5_c6leb")
@@ -115,6 +119,10 @@ player = NodePath("../..")
 speed = 7.0
 accel = 0.1
 metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="StepTimer" type="Timer" parent="StateMachine/RunState" unique_id=1429186149]
+wait_time = 0.3
+one_shot = true
 
 [node name="CrouchState" type="Node" parent="StateMachine" unique_id=2031842837 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
@@ -155,4 +163,6 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 wait_time = 0.25
 one_shot = true
 
+[connection signal="timeout" from="StateMachine/WalkState/StepTimer" to="StateMachine/WalkState" method="_on_step_timer_timeout"]
+[connection signal="timeout" from="StateMachine/RunState/StepTimer" to="StateMachine/RunState" method="_on_step_timer_timeout"]
 [connection signal="timeout" from="StateMachine/JumpState/GroundCastToggleTimer" to="StateMachine/JumpState" method="_on_ground_cast_toggle_timer_timeout"]

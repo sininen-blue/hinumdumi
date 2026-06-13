@@ -3,6 +3,7 @@ extends State
 @export var monster: Monster
 @export var nav: NavigationAgent3D
 @export var speed: float = 2
+@export var distance_threhold: float = 100
 
 var player: Player
 var interest_points: Array[InterestPoint] = []
@@ -69,10 +70,13 @@ func _get_target_point() -> Vector3:
 		var distance: float = monster_pos.distance_squared_to(point.global_position)
 		var normalized: float = (distance - closest_distance) / distance_range
 		normalized = 1 - normalized
-		var noise: float = randf_range(0, 0.01)
 
-		point.weight = normalized * noise * point.base_weight
+		var noise: float = randf_range(0, 0.2)
+		point.weight = normalized * point.base_weight * noise
+
 		if distance < 5:
+			point.weight = 0
+		if point.global_position.distance_to(monster.player.global_position) > distance_threhold:
 			point.weight = 0
 
 		if point.weight > candidate.weight:
@@ -103,6 +107,6 @@ func _on_hearing_area_body_exited(body: Node3D) -> void:
 
 
 func _on_player_noise_created(noise_level: float) -> void:
-	if noise_level > 3: # TODO: temp value
+	if noise_level >= 3:
 		state_machine.last_known_position = player.global_position
 		state_machine.change_state(investigate)
