@@ -96,7 +96,7 @@ unique_name_in_owner = true
 script = ExtResource("3_xm3rn")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
-speed = 9.0
+speed = 8.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Scanning" type="Node" parent="StateMachine" unique_id=2021815502 node_paths=PackedStringArray("monster")]
@@ -113,7 +113,7 @@ unique_name_in_owner = true
 script = ExtResource("5_utdx2")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
-speed = 11.0
+speed = 9.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Hunt" type="Node" parent="StateMachine" unique_id=1998318133 node_paths=PackedStringArray("monster", "nav")]
@@ -121,7 +121,7 @@ unique_name_in_owner = true
 script = ExtResource("6_s386a")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
-speed = 14.0
+speed = 10.5
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Lunge" type="Node" parent="StateMachine" unique_id=2119255039]

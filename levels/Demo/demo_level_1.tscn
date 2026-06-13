@@ -27,6 +27,8 @@ uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nbfxf"]
+sky_top_color = Color(0.215, 0.30816668, 0.43, 1)
+sky_horizon_color = Color(0.24, 0.11039999, 0.11039999, 1)
 
 [sub_resource type="Sky" id="Sky_4raoo"]
 sky_material = SubResource("ProceduralSkyMaterial_nbfxf")
@@ -38,7 +40,6 @@ ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
-glow_enabled = true
 volumetric_fog_enabled = true
 
 [node name="DemoLevel1" type="Node3D" unique_id=1355145291]
