@@ -4,4 +4,4 @@ extends Node3D
 
 
 func _on_play_button_pressed() -> void:
-	get_tree().change_scene_to_packed(play_level)
+	SceneManager.change_scene(play_level)

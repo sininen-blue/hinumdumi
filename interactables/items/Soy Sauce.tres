@@ -6,4 +6,6 @@
 [resource]
 script = ExtResource("2_7gw1f")
 name = "Soy Sauce"
+singular_description = "bottle of soy sauce"
+plural_description = "bottles of soy sauce"
 metadata/_custom_type_script = "uid://b6rk0uffidg5l"

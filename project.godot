@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="hinumdumi"
-run/main_scene="uid://bwd570eivx0mj"
+run/main_scene="uid://dx8hrd8i1clec"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 PlayerInventory="*uid://d3rvskq3dbkq4"
 PlayerStates="*uid://cls3pohm4xcw0"
 DebugGameState="*uid://bjmjiaalsgma5"
+SceneManager="*uid://cwr6kqpq0bnf8"
 
 [editor_plugins]
 

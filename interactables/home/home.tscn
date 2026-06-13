@@ -35,5 +35,9 @@ material = SubResource("StandardMaterial3D_3xue1")
 
 [node name="Parent" parent="." unique_id=565167997 instance=ExtResource("2_605y4")]
 
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1385094452]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3, 0)
+shadow_enabled = true
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

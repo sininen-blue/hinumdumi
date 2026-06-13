@@ -15,6 +15,12 @@ var recieving: Array[Array]
 
 
 func _ready() -> void:
+	var label: Label3D = Label3D.new()
+	label.text = item.name
+	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	add_child(label)
+	label.position.y += 0.5
+
 	current_amount = initial_amount
 
 	for i in range(initial_amount):
