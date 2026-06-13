@@ -44,6 +44,7 @@ var current_speed: float = 0
 	"PreviousState": "null",
 	"CurrentSpeed": "null",
 	"CurrentStamina": "null",
+	"MonsterState": "null",
 }
 
 
@@ -74,6 +75,9 @@ func _process(_delta: float) -> void:
 		"CurrentSpeed": str(current_speed),
 		"CurrentStamina": str(current_stamina),
 	}
+
+	if DebugGameState.monster_state_machine:
+		debug_info["MonsterState"] = str(DebugGameState.monster_state_machine.current_state.name)
 
 	for debug_label: Label in debug_info_container.get_children():
 		debug_label.text = debug_label.name + ": " + debug_info[debug_label.name]

@@ -15,7 +15,7 @@ func enter() -> void:
 
 
 func exit() -> void:
-	pass
+	scan_timer.stop()
 
 
 func update(delta: float) -> void:
@@ -30,22 +30,6 @@ func _on_scan_timer_timeout() -> void:
 	state_machine.change_state(wander)
 
 
-func _on_hearing_area_body_entered(body: Node3D) -> void:
-	if body is Player:
-		player = body
-		player.noise_created.connect(_on_player_noise_created)
-
-
-func _on_hearing_area_body_exited(body: Node3D) -> void:
-	if body is Player:
-		player.noise_created.disconnect(_on_player_noise_created)
-		player = null
-
-
-func _on_player_noise_created(noise_level: float) -> void:
-	if noise_level > 3: # TODO: temp value
+func detect_player(noise: int) -> void:
+	if noise >= 2:
 		state_machine.change_state(investigate)
-
-
-func _on_head_found_player() -> void:
-	state_machine.change_state(hunt)

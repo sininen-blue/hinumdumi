@@ -2,8 +2,7 @@ extends Area3D
 
 var player: Player
 
-@onready var wander: Node = %Wander
-@onready var scanning: Node = %Scanning
+@onready var investigate: Node = %Investigate
 @onready var state_machine: StateMachine = $"../StateMachine"
 
 
@@ -20,7 +19,5 @@ func _on_body_exited(body: Node3D) -> void:
 
 
 func _on_player_noise_created(noise_level: float) -> void:
-	if state_machine.current_state == wander:
-		wander.detect_player(noise_level)
-	elif state_machine.current_state == scanning:
-		scanning.detect_player(noise_level)
+	if state_machine.current_state == investigate:
+		investigate.detect_player(noise_level)

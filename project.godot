@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 PlayerInventory="*uid://d3rvskq3dbkq4"
 PlayerStates="*uid://cls3pohm4xcw0"
+DebugGameState="*uid://bjmjiaalsgma5"
 
 [editor_plugins]
 

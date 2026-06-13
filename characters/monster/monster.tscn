@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://dbdp6yu5bgt1b"]
 
 [ext_resource type="Script" uid="uid://bk504v50325ek" path="res://characters/monster/states/monster.gd" id="1_7ouai"]
-[ext_resource type="Script" uid="uid://wkye3c4s28yj" path="res://characters/monster/head.gd" id="2_s386a"]
 [ext_resource type="Script" uid="uid://gf102xlm7pek" path="res://characters/monster/debug/debug_state_label.gd" id="2_tyycc"]
 [ext_resource type="Script" uid="uid://dbrt73bn2822j" path="res://characters/monster/hearing_area.gd" id="3_legie"]
 [ext_resource type="Script" uid="uid://b1dl6kr3n5ex8" path="res://characters/monster/states/wander.gd" id="3_xm3rn"]
+[ext_resource type="Script" uid="uid://ukpnj7q0mijy" path="res://characters/monster/vision_cast.gd" id="3_yrry2"]
 [ext_resource type="Script" uid="uid://dblxk48co5xmx" path="res://characters/monster/states/scanning.gd" id="4_11k15"]
 [ext_resource type="Script" uid="uid://k56d5wujbb36" path="res://characters/monster/monster_state_machine.gd" id="4_legie"]
 [ext_resource type="Script" uid="uid://bmxmpbo75gqnx" path="res://characters/monster/states/investigate.gd" id="5_utdx2"]
+[ext_resource type="Script" uid="uid://c3au1he41o3xh" path="res://characters/monster/detect_area.gd" id="5_yrry2"]
 [ext_resource type="Script" uid="uid://btyntbdut57r3" path="res://characters/monster/states/hunt.gd" id="6_s386a"]
 [ext_resource type="Script" uid="uid://vhu87qyiqy08" path="res://characters/monster/states/lunge.gd" id="7_legie"]
 [ext_resource type="Script" uid="uid://da7h67kyyhgfv" path="res://characters/monster/states/swipe.gd" id="8_tyycc"]
@@ -18,11 +19,11 @@ height = 2.5
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xm3rn"]
 height = 2.5
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_s386a"]
-radius = 24.0
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_utdx2"]
 radius = 36.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tyycc"]
+radius = 15.634
 
 [node name="Monster" type="CharacterBody3D" unique_id=2116566352]
 script = ExtResource("1_7ouai")
@@ -46,46 +47,15 @@ shape = SubResource("CapsuleShape3D_xm3rn")
 target_desired_distance = 2.0
 debug_enabled = true
 
-[node name="Head" type="Node3D" parent="." unique_id=1957352583]
+[node name="VisionCast" type="RayCast3D" parent="." unique_id=1656187139]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-script = ExtResource("2_s386a")
+target_position = Vector3(0, 0, -100)
+collision_mask = 3
+script = ExtResource("3_yrry2")
 
-[node name="VisionLossTimer" type="Timer" parent="Head" unique_id=1127763991]
+[node name="VisionLossTimer" type="Timer" parent="VisionCast" unique_id=960539668]
 one_shot = true
-
-[node name="VisionCast" type="RayCast3D" parent="Head" unique_id=356170336]
-target_position = Vector3(0, -1, 25)
-
-[node name="VisionCast2" type="RayCast3D" parent="Head" unique_id=544863955]
-target_position = Vector3(1, -1, 25)
-
-[node name="VisionCast3" type="RayCast3D" parent="Head" unique_id=1415655620]
-target_position = Vector3(-1, -1, 25)
-
-[node name="VisionCast4" type="RayCast3D" parent="Head" unique_id=812768414]
-target_position = Vector3(1, 0, 25)
-
-[node name="VisionCast5" type="RayCast3D" parent="Head" unique_id=1786240971]
-target_position = Vector3(0, 0, 25)
-
-[node name="VisionCast6" type="RayCast3D" parent="Head" unique_id=163593633]
-target_position = Vector3(-1, 0, 25)
-
-[node name="VisionCast7" type="RayCast3D" parent="Head" unique_id=1845363781]
-target_position = Vector3(0, 1, 25)
-
-[node name="VisionCast8" type="RayCast3D" parent="Head" unique_id=2076634508]
-target_position = Vector3(1, 1, 25)
-
-[node name="VisionCast9" type="RayCast3D" parent="Head" unique_id=355188]
-target_position = Vector3(-1, 1, 25)
-
-[node name="VisionArea" type="Area3D" parent="." unique_id=619800592]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="VisionArea" unique_id=787063363]
-shape = SubResource("SphereShape3D_s386a")
-debug_color = Color(0.6176285, 0.50412804, 0.29334137, 0.41960785)
-debug_fill = false
 
 [node name="HearingArea" type="Area3D" parent="." unique_id=1517629973]
 collision_layer = 3
@@ -97,6 +67,14 @@ script = ExtResource("3_legie")
 shape = SubResource("SphereShape3D_utdx2")
 debug_color = Color(0, 0.5950001, 0.7, 0.24313726)
 debug_fill = false
+
+[node name="DetectArea" type="Area3D" parent="." unique_id=1600706994]
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("5_yrry2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectArea" unique_id=1601725311]
+shape = SubResource("SphereShape3D_tyycc")
 
 [node name="StateMachine" type="Node" parent="." unique_id=630183888 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_legie")
@@ -127,9 +105,11 @@ monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
-[node name="Hunt" type="Node" parent="StateMachine" unique_id=1998318133]
+[node name="Hunt" type="Node" parent="StateMachine" unique_id=1998318133 node_paths=PackedStringArray("monster", "nav")]
 unique_name_in_owner = true
 script = ExtResource("6_s386a")
+monster = NodePath("../..")
+nav = NodePath("../../MonsterNavigationAgent")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Lunge" type="Node" parent="StateMachine" unique_id=2119255039]
@@ -149,14 +129,9 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [connection signal="navigation_finished" from="MonsterNavigationAgent" to="StateMachine/Wander" method="_on_monster_navigation_agent_navigation_finished"]
 [connection signal="navigation_finished" from="MonsterNavigationAgent" to="StateMachine/Investigate" method="_on_monster_navigation_agent_navigation_finished"]
-[connection signal="found_player" from="Head" to="StateMachine/Wander" method="_on_head_found_player"]
-[connection signal="found_player" from="Head" to="StateMachine/Scanning" method="_on_head_found_player"]
-[connection signal="found_player" from="Head" to="StateMachine/Investigate" method="_on_head_found_player"]
-[connection signal="lost_player" from="Head" to="StateMachine/Hunt" method="_on_head_lost_player"]
-[connection signal="timeout" from="Head/VisionLossTimer" to="Head" method="_on_vision_loss_timer_timeout"]
+[connection signal="timeout" from="VisionCast/VisionLossTimer" to="VisionCast" method="_on_vision_loss_timer_timeout"]
 [connection signal="body_entered" from="HearingArea" to="HearingArea" method="_on_body_entered"]
-[connection signal="body_entered" from="HearingArea" to="StateMachine/Wander" method="_on_hearing_area_body_entered"]
-[connection signal="body_entered" from="HearingArea" to="StateMachine/Scanning" method="_on_hearing_area_body_entered"]
-[connection signal="body_exited" from="HearingArea" to="StateMachine/Wander" method="_on_hearing_area_body_exited"]
-[connection signal="body_exited" from="HearingArea" to="StateMachine/Scanning" method="_on_hearing_area_body_exited"]
+[connection signal="body_exited" from="HearingArea" to="HearingArea" method="_on_body_exited"]
+[connection signal="body_entered" from="DetectArea" to="DetectArea" method="_on_body_entered"]
+[connection signal="body_exited" from="DetectArea" to="DetectArea" method="_on_body_exited"]
 [connection signal="timeout" from="StateMachine/Scanning/ScanTimer" to="StateMachine/Scanning" method="_on_scan_timer_timeout"]
