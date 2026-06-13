@@ -68,6 +68,8 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 		if requirements.is_empty():
 			print("level done")
+			var end: PackedScene = preload("res://src/debug/debug_death_screen.tscn")
+			SceneManager.change_scene(end)
 			finished_requirements.emit()
 
 	_update_debug_text()

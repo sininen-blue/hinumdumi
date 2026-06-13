@@ -32,6 +32,9 @@ func update(_delta: float) -> void:
 
 
 func physics_update(_delta: float) -> void:
+	if PlayerStates.left_home == false:
+		return
+
 	next_path_position = nav.get_next_path_position()
 	direction = monster.global_position.direction_to(next_path_position)
 	monster.velocity = direction * speed

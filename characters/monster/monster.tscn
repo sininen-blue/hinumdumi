@@ -25,6 +25,9 @@ radius = 36.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_tyycc"]
 radius = 15.634
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_yrry2"]
+radius = 1.0
+
 [node name="Monster" type="CharacterBody3D" unique_id=2116566352]
 script = ExtResource("1_7ouai")
 
@@ -45,7 +48,6 @@ shape = SubResource("CapsuleShape3D_xm3rn")
 
 [node name="MonsterNavigationAgent" type="NavigationAgent3D" parent="." unique_id=2142026948]
 target_desired_distance = 2.0
-debug_enabled = true
 
 [node name="VisionCast" type="RayCast3D" parent="." unique_id=1656187139]
 unique_name_in_owner = true
@@ -76,6 +78,14 @@ script = ExtResource("5_yrry2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectArea" unique_id=1601725311]
 shape = SubResource("SphereShape3D_tyycc")
 
+[node name="Hitbox" type="Area3D" parent="." unique_id=1572355544]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=743860647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_yrry2")
+
 [node name="StateMachine" type="Node" parent="." unique_id=630183888 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_legie")
 initial_state = NodePath("Wander")
@@ -86,7 +96,7 @@ unique_name_in_owner = true
 script = ExtResource("3_xm3rn")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
-speed = 10.0
+speed = 9.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Scanning" type="Node" parent="StateMachine" unique_id=2021815502 node_paths=PackedStringArray("monster")]
@@ -103,6 +113,7 @@ unique_name_in_owner = true
 script = ExtResource("5_utdx2")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
+speed = 11.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Hunt" type="Node" parent="StateMachine" unique_id=1998318133 node_paths=PackedStringArray("monster", "nav")]
@@ -110,6 +121,7 @@ unique_name_in_owner = true
 script = ExtResource("6_s386a")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
+speed = 14.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Lunge" type="Node" parent="StateMachine" unique_id=2119255039]
@@ -134,4 +146,5 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 [connection signal="body_exited" from="HearingArea" to="HearingArea" method="_on_body_exited"]
 [connection signal="body_entered" from="DetectArea" to="DetectArea" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="DetectArea" method="_on_body_exited"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="StateMachine/Scanning/ScanTimer" to="StateMachine/Scanning" method="_on_scan_timer_timeout"]
