@@ -9,6 +9,8 @@ var states: Dictionary = { }
 
 
 func _ready() -> void:
+	DebugGameState.monster_state_machine = self
+
 	var children: Array[Node] = get_children()
 	for child: Node in children:
 		if child is State:

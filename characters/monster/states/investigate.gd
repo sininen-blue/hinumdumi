@@ -21,11 +21,11 @@ func exit() -> void:
 	pass
 
 
-func update(delta: float) -> void:
+func update(_delta: float) -> void:
 	pass
 
 
-func physics_update(delta: float) -> void:
+func physics_update(_delta: float) -> void:
 	next_path_position = nav.get_next_path_position()
 	direction = monster.global_position.direction_to(next_path_position)
 	monster.velocity = direction * speed
@@ -36,5 +36,6 @@ func _on_monster_navigation_agent_navigation_finished() -> void:
 	state_machine.change_state(scanning)
 
 
-func _on_head_found_player() -> void:
-	state_machine.change_state(hunt)
+func detect_player(noise: int) -> void:
+	if noise >= 1:
+		state_machine.change_state(hunt)

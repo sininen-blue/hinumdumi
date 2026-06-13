@@ -20,17 +20,13 @@ func exit() -> void:
 	pass
 
 
-func update(delta: float) -> void:
-	if player:
-		nav.target_position = player.position
-
-
-func physics_update(delta: float) -> void:
+func physics_update(_delta: float) -> void:
+	nav.target_position = monster.player.position
 	next_path_position = nav.get_next_path_position()
 	direction = monster.global_position.direction_to(next_path_position)
 	monster.velocity = direction * speed
 	monster.move_and_slide()
 
 
-func _on_head_lost_player() -> void:
-	state_machine.change_state(investigate)
+func lost_player() -> void:
+	pass
