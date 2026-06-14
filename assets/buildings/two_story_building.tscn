@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dsvyx1ppd05ul"]
+
+[ext_resource type="PackedScene" uid="uid://ykq3ikq3na85" path="res://assets_raw/buildings/2 Storey building.glb" id="1_purnv"]
+
+[node name="TwoStoryBuilding" type="Node3D" unique_id=717431392]
+
+[node name="2 Storey building" parent="." unique_id=853641828 instance=ExtResource("1_purnv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 3.4)
+
+[node name="AirconSound" type="AudioStreamPlayer3D" parent="." unique_id=1422671030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.400001, 15.3, 3.4)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=508743909]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -8.2, 7.4, 4.9)
+shadow_enabled = true

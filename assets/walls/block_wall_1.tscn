@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d2b2fb6n0j2iu"]
+
+[ext_resource type="PackedScene" uid="uid://bscfa1w83768d" path="res://assets_raw/walls/Modular Block Wall Variant1.glb" id="1_64pm6"]
+
+[node name="BlockWall1" type="Node3D" unique_id=1217266752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -0.8)
+
+[node name="Modular Block Wall Variant1" parent="." unique_id=727359731 instance=ExtResource("1_64pm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)

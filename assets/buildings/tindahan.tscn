@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://di5ccpypsjut8"]
+
+[ext_resource type="Script" uid="uid://bm1ve5b8iwy17" path="res://src/model_toggle.gd" id="1_7itfs"]
+[ext_resource type="PackedScene" uid="uid://dpfnpkt0lg72u" path="res://assets_raw/buildings/Tindahan2 close.glb" id="1_37vji"]
+[ext_resource type="PackedScene" uid="uid://uef4wxej2wmn" path="res://assets_raw/buildings/Tindahan2 open.glb" id="2_7itfs"]
+
+[node name="Tindahan" type="Node3D" unique_id=1923491395 node_paths=PackedStringArray("open_model", "close_model")]
+script = ExtResource("1_7itfs")
+open_model = NodePath("Tindahan2 open")
+close_model = NodePath("Tindahan2 close")
+
+[node name="Tindahan2 close" parent="." unique_id=247191380 instance=ExtResource("1_37vji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.7, -0.40000015)
+
+[node name="Tindahan2 open" parent="." unique_id=2037590489 instance=ExtResource("2_7itfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.7, -0.39999998)

@@ -53,7 +53,7 @@ func handle_input(event: InputEvent) -> void:
 		state_machine.change_state(jump_state)
 	if event.is_action_pressed("move_crouch") and player.is_on_floor():
 		state_machine.change_state(crouch_state)
-	if event.is_action_pressed("interact_hide"):
+	if event.is_action_pressed("interact_hide") and player.can_hide:
 		state_machine.change_state(hide_state)
 
 

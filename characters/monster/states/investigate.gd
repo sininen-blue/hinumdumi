@@ -9,6 +9,7 @@ var suspicion: int = 0
 var next_path_position: Vector3 = Vector3.ZERO
 var direction: Vector3 = Vector3.ZERO
 
+@onready var wander: Node = %Wander
 @onready var scanning: Node = %Scanning
 @onready var hunt: Node = %Hunt
 
@@ -22,7 +23,8 @@ func exit() -> void:
 
 
 func update(_delta: float) -> void:
-	pass
+	if PlayerStates.in_home == true:
+		state_machine.change_state(wander)
 
 
 func physics_update(_delta: float) -> void:

@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dhdb0srr160uw" path="res://src/dialogue_component/dialogue_component.tscn" id="3_k37hj"]
 [ext_resource type="Script" uid="uid://c7rh18x7usf6y" path="res://interactables/shop/interact_area.gd" id="4_2drsn"]
 [ext_resource type="Script" uid="uid://vbhgha4o801k" path="res://interactables/shop/item_interacts.gd" id="4_e6ofr"]
+[ext_resource type="PackedScene" uid="uid://2ek0lrlatgfm" path="res://assets/buildings/modern_sari_sari.tscn" id="5_y1uo0"]
+[ext_resource type="PackedScene" uid="uid://y5r1lgw06mdk" path="res://assets/buildings/normelita_store.tscn" id="6_d0trc"]
+[ext_resource type="PackedScene" uid="uid://di5ccpypsjut8" path="res://assets/buildings/tindahan.tscn" id="7_ts87k"]
 
 [sub_resource type="GDScript" id="GDScript_ylcqf"]
 script/source = "extends Node3D
@@ -87,7 +90,7 @@ _bundled = {
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rplqf"]
-radius = 3.0
+radius = 4.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p68ca"]
 albedo_color = Color(1, 0.639, 0.43, 1)
@@ -97,35 +100,47 @@ script = ExtResource("1_viryw")
 shoppableItem = SubResource("PackedScene_2drsn")
 
 [node name="DialogueComponent" parent="." unique_id=1041026313 instance=ExtResource("3_k37hj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 2.9, 0)
 line_delay = 2.0
 
 [node name="ItemInteracts" type="Node3D" parent="." unique_id=93998991]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2.1, 2.2000003)
 script = ExtResource("4_e6ofr")
 
 [node name="ShoppableArea" type="Area3D" parent="." unique_id=1806168609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
 collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ShoppableArea" unique_id=939099808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, -0.1)
 shape = SubResource("SphereShape3D_rplqf")
 
 [node name="Debug" type="Node3D" parent="." unique_id=1956959714]
 
 [node name="DebugLabel" type="Label3D" parent="Debug" unique_id=453247010]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 billboard = 2
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Debug" unique_id=2121356285]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025000036, 0)
+visible = false
 radius = 3.0
 height = 0.15
 material = SubResource("StandardMaterial3D_p68ca")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=589207746]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.1, -1.4)
 shadow_enabled = true
+
+[node name="ModernSariSari" parent="." unique_id=1462480663 instance=ExtResource("5_y1uo0")]
+
+[node name="NormelitaStore" parent="." unique_id=117462459 instance=ExtResource("6_d0trc")]
+transform = Transform3D(-1, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, -1, 2.1029565, 0, -2.6815882)
+
+[node name="Tindahan" parent="." unique_id=1923491395 instance=ExtResource("7_ts87k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2970432, 1, 1.718412)
 
 [connection signal="body_entered" from="ShoppableArea" to="." method="_on_shoppable_area_body_entered"]
 [connection signal="body_exited" from="ShoppableArea" to="." method="_on_shoppable_area_body_exited"]

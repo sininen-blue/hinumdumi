@@ -18,6 +18,8 @@ signal noise_created(noise_level: float)
 @export_category("Properties")
 @export var max_stamina: float = 10
 
+var hideable: Hideable = null
+var can_hide: bool = false
 var current_stamina: float = max_stamina:
 	set(new_stamina):
 		current_stamina = new_stamina

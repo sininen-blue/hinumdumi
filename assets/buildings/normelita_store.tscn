@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://y5r1lgw06mdk"]
+
+[ext_resource type="PackedScene" uid="uid://uwo1whafau6g" path="res://assets_raw/buildings/Normelita Store Close.glb" id="1_5vkor"]
+[ext_resource type="Script" uid="uid://bm1ve5b8iwy17" path="res://src/model_toggle.gd" id="1_u3yge"]
+[ext_resource type="PackedScene" uid="uid://cn5ylji31esgb" path="res://assets_raw/buildings/Normelita Store Open.glb" id="2_u3yge"]
+
+[node name="NormelitaStore" type="Node3D" unique_id=117462459 node_paths=PackedStringArray("open_model", "close_model")]
+script = ExtResource("1_u3yge")
+open_model = NodePath("Normelita Store Open")
+close_model = NodePath("Normelita Store Close")
+
+[node name="Normelita Store Close" parent="." unique_id=2007075377 instance=ExtResource("1_5vkor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36842537, -0.2, 0.63158965)
+
+[node name="Normelita Store Open" parent="." unique_id=782828435 instance=ExtResource("2_u3yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36842537, -0.2, 0.63158965)

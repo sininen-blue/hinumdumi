@@ -33,13 +33,13 @@ func _process(_delta: float) -> void:
 		var player_distance: float = self.global_position.distance_to(player.global_position)
 		match state_machine.current_state:
 			wander:
-				if player_distance < wander_distance_threshold:
+				if player_distance < wander_distance_threshold and PlayerStates.is_hiding == false:
 					state_machine.change_state(hunt)
 			scanning:
-				if player_distance < scanning_distance_threshold:
+				if player_distance < scanning_distance_threshold and PlayerStates.is_hiding == false:
 					state_machine.change_state(hunt)
 			investigate:
-				if player_distance < investigate_distance_threshold:
+				if player_distance < investigate_distance_threshold and PlayerStates.is_hiding == false:
 					state_machine.change_state(hunt)
 
 

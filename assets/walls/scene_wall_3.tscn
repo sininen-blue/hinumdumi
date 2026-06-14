@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://qi4bs8tjnu7w"]
+
+[ext_resource type="PackedScene" uid="uid://dqfdtndcc8i8h" path="res://assets_raw/walls/Roof Fence v3.glb" id="1_456i5"]
+
+[node name="SceneWall3" type="Node3D" unique_id=1231221809]
+
+[node name="Roof Fence v3" parent="." unique_id=1422877842 instance=ExtResource("1_456i5")]

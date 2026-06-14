@@ -5,6 +5,8 @@ extends State
 @export var stamina_regen: float = 1
 @export var stamina_run_threshold: float = 1
 
+var can_hide: bool = false
+
 @onready var idle_state: State = %IdleState
 @onready var crouch_state: State = %CrouchState
 @onready var jump_state: State = %JumpState
@@ -48,5 +50,5 @@ func handle_input(event: InputEvent) -> void:
 		state_machine.change_state(crouch_state)
 	if event.is_action_pressed("move_run") and player.current_stamina > stamina_run_threshold:
 		state_machine.change_state(run_state)
-	if event.is_action_pressed("interact_hide"):
+	if event.is_action_pressed("interact_hide") and player.can_hide:
 		state_machine.change_state(hide_state)

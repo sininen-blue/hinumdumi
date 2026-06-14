@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bbqcxt5o3ntpx"]
+
+[ext_resource type="PackedScene" uid="uid://bdxn38d13pwi6" path="res://assets_raw/buildings/Unfinished Building 1.glb" id="1_rimux"]
+
+[node name="UnfinishedBuilding" type="Node3D" unique_id=2016349544]
+
+[node name="Unfinished Building 1" parent="." unique_id=817428007 instance=ExtResource("1_rimux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, -0.2, 10.7)

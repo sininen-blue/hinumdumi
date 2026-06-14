@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://2ek0lrlatgfm"]
+
+[ext_resource type="PackedScene" uid="uid://c8hg6hd5mxuox" path="res://assets_raw/buildings/Modern Sari Sari Store Close.glb" id="1_7o5ue"]
+[ext_resource type="Script" uid="uid://bm1ve5b8iwy17" path="res://src/model_toggle.gd" id="1_sfki6"]
+[ext_resource type="PackedScene" uid="uid://dg4s7ekq61esd" path="res://assets_raw/buildings/Modern Sari Sari Store Open.glb" id="2_l7p5y"]
+
+[node name="ModernSariSari" type="Node3D" unique_id=1462480663 node_paths=PackedStringArray("open_model", "close_model")]
+script = ExtResource("1_sfki6")
+open_model = NodePath("Modern Sari Sari Store Open")
+close_model = NodePath("Modern Sari Sari Store Close")
+
+[node name="Modern Sari Sari Store Close" parent="." unique_id=1108189016 instance=ExtResource("1_7o5ue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.2, 0)
+
+[node name="Modern Sari Sari Store Open" parent="." unique_id=248033465 instance=ExtResource("2_l7p5y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60000026, 0.2, 1.937151e-07)

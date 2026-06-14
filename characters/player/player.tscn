@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://leixn7ybth70"]
 
 [ext_resource type="Script" uid="uid://7wocdaykxcya" path="res://characters/player/player.gd" id="1_exd8k"]
-[ext_resource type="Script" uid="uid://dhyugj58epewt" path="res://src/statemachine/state.gd" id="2_exd8k"]
 [ext_resource type="Script" uid="uid://cb2s4et27sehd" path="res://characters/player/state_machine.gd" id="3_3t07l"]
 [ext_resource type="Script" uid="uid://dggjbvqb85wdw" path="res://characters/player/states/idle_state.gd" id="3_5dc8e"]
 [ext_resource type="Script" uid="uid://cb2k8pff3hwwf" path="res://characters/player/hand.gd" id="3_on558"]
@@ -12,6 +11,7 @@
 [ext_resource type="Script" uid="uid://m61ucfa6stb3" path="res://characters/player/states/jump_state.gd" id="8_x5dtk"]
 [ext_resource type="Shape3D" uid="uid://cqagiplowr36g" path="res://characters/player/default_player_shape.tres" id="9_rpf03"]
 [ext_resource type="Script" uid="uid://cerq1hesr3qgu" path="res://characters/player/states/debug_flight_state.gd" id="11_3t07l"]
+[ext_resource type="Script" uid="uid://detp4j86s6ip8" path="res://characters/player/hide_state.gd" id="11_on558"]
 
 [node name="Player" type="CharacterBody3D" unique_id=950809192]
 collision_layer = 2
@@ -54,7 +54,7 @@ metadata/_custom_type_script = "uid://cb2k8pff3hwwf"
 
 [node name="Head" type="Node3D" parent="." unique_id=1819092234]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="InteractionCast" type="RayCast3D" parent="Head" unique_id=1682129743]
 target_position = Vector3(0, 0, -10)
@@ -159,9 +159,11 @@ one_shot = true
 wait_time = 0.5
 one_shot = true
 
-[node name="HideState" type="Node" parent="StateMachine" unique_id=2041981457]
+[node name="HideState" type="Node" parent="StateMachine" unique_id=2041981457 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
-script = ExtResource("2_exd8k")
+script = ExtResource("11_on558")
+player = NodePath("../..")
+stamina_regen = 2.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="DebugFlightState" type="Node" parent="StateMachine" unique_id=215656222 node_paths=PackedStringArray("player")]

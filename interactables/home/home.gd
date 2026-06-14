@@ -37,6 +37,7 @@ func _update_debug_text() -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Player:
 		player = body
+		PlayerStates.in_home = false
 
 	if player == null:
 		return
@@ -77,4 +78,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body is Player:
+		PlayerStates.in_home = false
 		player = null

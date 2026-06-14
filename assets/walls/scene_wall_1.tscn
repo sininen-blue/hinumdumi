@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://djblaf10rk67j"]
+
+[ext_resource type="PackedScene" uid="uid://cpre0u1lt15tp" path="res://assets_raw/walls/Roof Fence v1.glb" id="1_deibk"]
+
+[node name="SceneWall1" type="Node3D" unique_id=966954745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.90000004)
+
+[node name="Roof Fence v1" parent="." unique_id=1328313267 instance=ExtResource("1_deibk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
