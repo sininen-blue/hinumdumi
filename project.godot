@@ -24,7 +24,7 @@ SceneManager="*uid://cwr6kqpq0bnf8"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg")
+enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/gdt_terrain/plugin.cfg")
 
 [input]
 

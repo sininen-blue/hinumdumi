@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cb2s4et27sehd" path="res://characters/player/state_machine.gd" id="3_3t07l"]
 [ext_resource type="Script" uid="uid://dggjbvqb85wdw" path="res://characters/player/states/idle_state.gd" id="3_5dc8e"]
 [ext_resource type="Script" uid="uid://cb2k8pff3hwwf" path="res://characters/player/hand.gd" id="3_on558"]
+[ext_resource type="Shader" uid="uid://un5qjvr6pr2k" path="res://assets/shaders/crt.gdshader" id="4_gqopd"]
 [ext_resource type="Script" uid="uid://dm7spsu76df8p" path="res://characters/player/states/walk_state.gd" id="4_ixbpm"]
 [ext_resource type="Script" uid="uid://cry8y257jde36" path="res://characters/player/states/run_state.gd" id="5_c6leb"]
 [ext_resource type="Script" uid="uid://c4m8v1ojgdbpp" path="res://characters/player/states/crouch_state.gd" id="6_dirf7"]
@@ -12,6 +13,26 @@
 [ext_resource type="Shape3D" uid="uid://cqagiplowr36g" path="res://characters/player/default_player_shape.tres" id="9_rpf03"]
 [ext_resource type="Script" uid="uid://cerq1hesr3qgu" path="res://characters/player/states/debug_flight_state.gd" id="11_3t07l"]
 [ext_resource type="Script" uid="uid://detp4j86s6ip8" path="res://characters/player/hide_state.gd" id="11_on558"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_icpky"]
+shader = ExtResource("4_gqopd")
+shader_parameter/grain_intensity = 0.0350000016625
+shader_parameter/min_lum = 0.0
+shader_parameter/max_lum = 1.0
+shader_parameter/time_scale = 0.5
+shader_parameter/vignette_darkness = 0.027000001282499998
+shader_parameter/vignette_outer_radius = 1.74400007958012
+shader_parameter/vignette_inner_radius = 0.2
+shader_parameter/scanline_intensity = 0.2
+shader_parameter/barrel_distortion = 0.0400000019
+shader_parameter/chromatic_aberration = 0.005
+shader_parameter/crt_vignette_power = 1.070000050825
+shader_parameter/pixel_resolution_x = 640
+shader_parameter/pixel_resolution_y = 480
+shader_parameter/enable_color_quantization = false
+shader_parameter/color_quant_steps = 32.0
+shader_parameter/warble_amount = 0.002
+shader_parameter/warble_speed = 5.0
 
 [node name="Player" type="CharacterBody3D" unique_id=950809192]
 collision_layer = 2
@@ -98,6 +119,14 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.49019608)
+
+[node name="Shader" type="ColorRect" parent="Hud" unique_id=1011110878]
+material = SubResource("ShaderMaterial_icpky")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="StateMachine" type="Node" parent="." unique_id=794658559 node_paths=PackedStringArray("initial_state")]
 unique_name_in_owner = true
