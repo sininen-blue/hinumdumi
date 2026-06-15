@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dsrnrxhowsshg"]
+
+[ext_resource type="Script" uid="uid://cfvyg4nhw8b4m" path="res://src/randomizer.gd" id="1_77rx5"]
+[ext_resource type="PackedScene" uid="uid://xurb2kwpi4xa" path="res://assets_raw/others/Bisaya banana.glb" id="1_cyav6"]
+
+[node name="BananaTree" type="Node3D" unique_id=645096363 node_paths=PackedStringArray("object")]
+script = ExtResource("1_77rx5")
+object = NodePath("Pivot")
+
+[node name="Pivot" type="Node3D" parent="." unique_id=318735185]
+
+[node name="Bisaya banana" parent="Pivot" unique_id=1724113106 instance=ExtResource("1_cyav6")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0.37969685, -4.6701355, -0.05075741)

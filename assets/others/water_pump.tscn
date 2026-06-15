@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://q7po06ahw8xl"]
+
+[ext_resource type="PackedScene" uid="uid://dq7h1tib34tb1" path="res://assets_raw/others/Fuso.glb" id="1_0x76j"]
+
+[node name="WaterPump" type="Node3D" unique_id=1042807517]
+
+[node name="Fuso" parent="." unique_id=1902887683 instance=ExtResource("1_0x76j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08088255, -0.11093587, -0.07822275)

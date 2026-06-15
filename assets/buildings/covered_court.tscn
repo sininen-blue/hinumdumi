@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ceqkkt8vmytvy"]
+
+[ext_resource type="PackedScene" uid="uid://bthmkrm5rrh8d" path="res://assets_raw/buildings/Covered Court.glb" id="1_m4no6"]
+
+[node name="CoveredCourt" type="Node3D" unique_id=889480693]
+
+[node name="Covered Court" parent="." unique_id=79888148 instance=ExtResource("1_m4no6")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -12.580303, -2.6000001, -0.39707834)

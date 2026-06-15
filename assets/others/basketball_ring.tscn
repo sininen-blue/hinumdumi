@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ubwp1j184h56"]
+
+[ext_resource type="PackedScene" uid="uid://b6vlnnln5jmcl" path="res://assets_raw/others/Basketball Ring 1.glb" id="1_ts0f0"]
+
+[node name="BasketballRing" type="Node3D" unique_id=1713290691]
+
+[node name="Basketball Ring 1" parent="." unique_id=1298727638 instance=ExtResource("1_ts0f0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.039, -26)
