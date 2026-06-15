@@ -10,8 +10,6 @@ sky_material = SubResource("ProceduralSkyMaterial_nbfxf")
 [resource]
 background_mode = 2
 sky = SubResource("Sky_4raoo")
-ssr_enabled = true
 ssao_enabled = true
-ssil_enabled = true
 sdfgi_enabled = true
 volumetric_fog_enabled = true

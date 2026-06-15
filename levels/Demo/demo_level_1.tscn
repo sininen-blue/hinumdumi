@@ -66,6 +66,7 @@
 [ext_resource type="Shape3D" uid="uid://15uerimwjil0" path="res://generated_terrain/TerrainChunk_03_03_collision_shape.res" id="32_6a5yr"]
 [ext_resource type="ArrayMesh" uid="uid://bgw4vmr1hswlr" path="res://generated_terrain/TerrainChunk_03_02_lod1_mesh.res" id="34_joltu"]
 [ext_resource type="ArrayMesh" uid="uid://b87s7kq3ebs3o" path="res://generated_terrain/TerrainChunk_03_03_lod2_mesh.res" id="42_apun2"]
+[ext_resource type="Environment" uid="uid://4thbuqoqy2tc" path="res://src/environment.tres" id="67_eutc3"]
 [ext_resource type="PackedScene" uid="uid://dbdp6yu5bgt1b" path="res://characters/monster/monster.tscn" id="68_eutc3"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_hc2bv"]
@@ -664,7 +665,7 @@ shader_parameter/snow_height = 5.0
 shader_parameter/rock_slope_threshold = 0.44
 shader_parameter/texture_tile_scale = 0.18
 shader_parameter/macro_texture_tiling_enabled = true
-shader_parameter/texture_focus_position = Vector3(160.98212, 28.17093, 37.79584)
+shader_parameter/texture_focus_position = Vector3(147.30942, 29.40978, 46.171444)
 shader_parameter/close_texture_tile_scale = 0.2
 shader_parameter/medium_texture_tile_scale = 0.03
 shader_parameter/far_texture_tile_scale = 0.01
@@ -1462,9 +1463,11 @@ metadata/_custom_type_script = "uid://n02j0kwxqqr6"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.600002, 0, -16.8)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1204729564]
+environment = ExtResource("67_eutc3")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=1307618061]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 22, 0)
+visible = false
 
 [node name="Monster" parent="." unique_id=2116566352 node_paths=PackedStringArray("wander_points", "player") instance=ExtResource("68_eutc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.96179, 0, 44.843758)
