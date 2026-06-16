@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("2_ma77s")
 name = "Rice"
-singular_description = "bag of rice"
-plural_description = "bags of rice"
+singular_description = "kilo of rice"
+plural_description = "kilos of rice"
 metadata/_custom_type_script = "uid://b6rk0uffidg5l"

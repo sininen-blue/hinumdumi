@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://btyntbdut57r3" path="res://characters/monster/states/hunt.gd" id="6_s386a"]
 [ext_resource type="Script" uid="uid://vhu87qyiqy08" path="res://characters/monster/states/lunge.gd" id="7_legie"]
 [ext_resource type="Script" uid="uid://da7h67kyyhgfv" path="res://characters/monster/states/swipe.gd" id="8_tyycc"]
+[ext_resource type="Script" uid="uid://oi5ctl585nw7" path="res://characters/monster/footsteps.gd" id="13_pxgw5"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xm3rn"]
 height = 2.5
@@ -56,6 +57,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 target_position = Vector3(0, 0, -100)
 collision_mask = 3
 script = ExtResource("3_yrry2")
+wander_distance_threshold = 10.0
+scanning_distance_threshold = 20.0
+investigate_distance_threshold = 40.0
 
 [node name="VisionLossTimer" type="Timer" parent="VisionCast" unique_id=960539668]
 one_shot = true
@@ -140,6 +144,15 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="SwipeCooldown" type="Timer" parent="StateMachine/Swipe" unique_id=522916671]
 
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="." unique_id=1909668395 node_paths=PackedStringArray("state_machine")]
+pitch_scale = 0.8
+script = ExtResource("13_pxgw5")
+state_machine = NodePath("../StateMachine")
+
+[node name="Timer" type="Timer" parent="Footsteps" unique_id=541889159]
+wait_time = 1.2
+one_shot = true
+
 [connection signal="navigation_finished" from="MonsterNavigationAgent" to="StateMachine/Wander" method="_on_monster_navigation_agent_navigation_finished"]
 [connection signal="navigation_finished" from="MonsterNavigationAgent" to="StateMachine/Investigate" method="_on_monster_navigation_agent_navigation_finished"]
 [connection signal="timeout" from="VisionCast/VisionLossTimer" to="VisionCast" method="_on_vision_loss_timer_timeout"]
@@ -148,4 +161,6 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 [connection signal="body_entered" from="DetectArea" to="DetectArea" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="DetectArea" method="_on_body_exited"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="changed_state" from="StateMachine" to="Footsteps" method="_on_state_machine_changed_state"]
 [connection signal="timeout" from="StateMachine/Scanning/ScanTimer" to="StateMachine/Scanning" method="_on_scan_timer_timeout"]
+[connection signal="timeout" from="Footsteps/Timer" to="Footsteps" method="_on_timer_timeout"]
