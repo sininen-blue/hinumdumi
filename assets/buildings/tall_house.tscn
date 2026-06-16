@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dwhric1msutsq"]
+
+[ext_resource type="PackedScene" uid="uid://u7jevcc7w327" path="res://assets_raw/buildings/Tall house1.glb" id="1_nc6jc"]
+
+[node name="TallHouse" type="Node3D" unique_id=82599585]
+
+[node name="Tall house1" parent="." unique_id=1538304180 instance=ExtResource("1_nc6jc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58473456, -1.2755716, 1.4455199)
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1757933896]
+height = 30.0
+vertices = PackedVector3Array(-10.7211075, 0, 5.8856688, 16.1473, 0, 6.0169477, 16.016022, 0, -7.373495, -10.896145, 0, -7.7673326)

@@ -15,3 +15,8 @@ visible = false
 
 [node name="Normelita Store Open" parent="." unique_id=782828435 instance=ExtResource("2_u3yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36842537, -0.2, 0.63158965)
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1485561818]
+height = 20.0
+vertices = PackedVector3Array(-5.6970773, 0, 2.151998, 4.595087, 0, 2.0896213, 4.640277, 0, -2.8880644, -2.0688396, 0, -2.54458, -2.177468, 0, -6.0312243, -5.655493, 0, -5.9153957)
+metadata/_edit_lock_ = true

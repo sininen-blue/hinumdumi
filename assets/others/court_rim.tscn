@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://75r61sbi2laq"]
+
+[ext_resource type="PackedScene" uid="uid://c5rciij3n4jiu" path="res://assets_raw/others/Court Rim.glb" id="1_fd0ye"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fd0ye"]
+size = Vector3(3.3555908, 6.7443237, 2.916748)
+
+[node name="CourtRim" type="Node3D" unique_id=1734200794]
+
+[node name="Court Rim" parent="." unique_id=943529468 instance=ExtResource("1_fd0ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8133487, -2.7587814, -2.3340368)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2112947083]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=641792937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.066345215, 2.8721619, -0.020385742)
+shape = SubResource("BoxShape3D_fd0ye")

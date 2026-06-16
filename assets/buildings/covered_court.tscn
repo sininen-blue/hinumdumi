@@ -6,3 +6,31 @@
 
 [node name="Covered Court" parent="." unique_id=79888148 instance=ExtResource("1_m4no6")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -12.580303, -2.6000001, -0.39707834)
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=520872444]
+height = 20.0
+vertices = PackedVector3Array(15.759609, 0, 13.7916155, 17.76689, 0, 13.677209, 17.695883, 0, 15.719021, 16.02174, 0, 15.58264)
+
+[node name="NavigationObstacle3D2" type="NavigationObstacle3D" parent="." unique_id=2012856164]
+height = 20.0
+vertices = PackedVector3Array(14.311373, 0, 13.984586, -22.03664, 0, 13.975541, -22.091366, 0, 15.887978, 14.070629, 0, 15.836187)
+
+[node name="NavigationObstacle3D3" type="NavigationObstacle3D" parent="." unique_id=2128781795]
+height = 20.0
+vertices = PackedVector3Array(-26.708563, 0, 13.802532, -24.805593, 0, 13.745233, -24.855879, 0, 15.661757, -26.618868, 0, 15.480764)
+
+[node name="NavigationObstacle3D4" type="NavigationObstacle3D" parent="." unique_id=1623958352]
+height = 20.0
+vertices = PackedVector3Array(-26.728205, 0, -15.585326, -24.532763, 0, -15.372778, -24.909674, 0, -13.479991, -26.637829, 0, -13.683267)
+
+[node name="NavigationObstacle3D5" type="NavigationObstacle3D" parent="." unique_id=1964041626]
+height = 20.0
+vertices = PackedVector3Array(-12.399273, 0, -15.377095, -10.640451, 0, -15.403753, -10.617472, 0, -13.499579, -12.470133, 0, -13.633341)
+
+[node name="NavigationObstacle3D6" type="NavigationObstacle3D" parent="." unique_id=1438961704]
+height = 20.0
+vertices = PackedVector3Array(1.4537604, 0, -15.42824, 3.4501286, 0, -15.462917, 3.2373571, 0, -13.467088, 1.4178684, 0, -13.538576)
+
+[node name="NavigationObstacle3D7" type="NavigationObstacle3D" parent="." unique_id=1939468285]
+height = 20.0
+vertices = PackedVector3Array(15.942399, 0, -15.367739, 17.820215, 0, -15.358887, 17.755222, 0, -13.5973625, 15.854072, 0, -13.54787)

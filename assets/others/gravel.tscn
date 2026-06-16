@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dxps7w1lixest"]
+
+[ext_resource type="PackedScene" uid="uid://bk0a3fe7c7b6k" path="res://assets_raw/others/Grava1.glb" id="1_blu3b"]
+
+[node name="Gravel" type="Node3D" unique_id=2073890797]
+
+[node name="Grava12" parent="." unique_id=60412816 instance=ExtResource("1_blu3b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4368353, -0.79835343, -4.4645543)

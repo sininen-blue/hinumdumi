@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bhcobotcmwlno"]
+
+[ext_resource type="PackedScene" uid="uid://c0qomhkr5csml" path="res://assets_raw/buildings/House v2.glb" id="1_hwyo6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwyo6"]
+size = Vector3(5.0009766, 3.3243408, 1.8487549)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5sw7g"]
+size = Vector3(2.020874, 3.3243408, 1.8487549)
+
+[node name="SmallHouse2" type="Node3D" unique_id=1657116371]
+
+[node name="House v2" parent="." unique_id=340077540 instance=ExtResource("1_hwyo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7827988, -0.14345431, -2.049344)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=568462494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.758791)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1166102037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19580078, 1.1621704, -0.08392334)
+shape = SubResource("BoxShape3D_hwyo6")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=905221477]
+transform = Transform3D(0.7871181, 0, -0.6168024, 0, 1, 0, 0.6168024, 0, 0.7871181, 0.97704554, 1.1621704, 2.4746952)
+shape = SubResource("BoxShape3D_5sw7g")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1954588702]
+height = 10.0
+vertices = PackedVector3Array(-3.0538821, 0, 3.2182574, -3.0918136, 0, -8.3889265, 3.3945527, 0, -8.540655, 3.4704175, 0, 3.3320532, 2.2945256, 0, 3.4079175, 2.332457, 0, 8.490803, -0.6641669, 0, 8.718395, -0.43657637, 0, 5.797632, -2.7504268, 0, 5.683836, -2.5228362, 0, 3.1803255)

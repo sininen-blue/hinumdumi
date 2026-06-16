@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ctqgee1rb0lb8"]
+
+[ext_resource type="PackedScene" uid="uid://cs1kip65ul0hb" path="res://assets_raw/others/Trashbags.glb" id="1_sfbw5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sfbw5"]
+radius = 0.6599344
+
+[node name="Trashbags" type="Node3D" unique_id=1048232662]
+
+[node name="Trashbags" parent="." unique_id=1942279450 instance=ExtResource("1_sfbw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17841434, -0.26962006, -0.35657132)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=416577788]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=755086608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16266972, 0)
+shape = SubResource("SphereShape3D_sfbw5")

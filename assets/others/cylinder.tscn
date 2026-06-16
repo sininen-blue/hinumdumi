@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b81qggiygea4b"]
+
+[ext_resource type="PackedScene" uid="uid://uxw5b2t652jb" path="res://assets_raw/others/Cylinder Concrete.glb" id="1_lfe3f"]
+
+[node name="Cylinder" type="Node3D" unique_id=1282148799]
+
+[node name="Cylinder Concrete" parent="." unique_id=262427480 instance=ExtResource("1_lfe3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1106138, -0.7562951, 0.24304515)

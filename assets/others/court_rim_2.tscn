@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b4g4csqn6e4yb"]
+
+[ext_resource type="PackedScene" uid="uid://d4bp8toabmcyy" path="res://assets_raw/others/Court Rim2.glb" id="1_twg3k"]
+
+[node name="CourtRim2" type="Node3D" unique_id=1270030586]
+
+[node name="Court Rim2" parent="." unique_id=446502774 instance=ExtResource("1_twg3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.097292, -18.043816, -2.0463803)

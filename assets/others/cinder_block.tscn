@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://3viylwmsk3lo"]
+
+[ext_resource type="PackedScene" uid="uid://c7rxwx2s4wdqm" path="res://assets_raw/others/Cinder Blocks.glb" id="1_acxp3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eor1x"]
+size = Vector3(1, 1.7251587, 2.8481445)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7cdrm"]
+size = Vector3(0.27911377, 0.83117676, 0.7363281)
+
+[node name="CinderBlock" type="Node3D" unique_id=91898446]
+
+[node name="Cinder Blocks" parent="." unique_id=1388622576 instance=ExtResource("1_acxp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5818509, -0.7531642, -2.4455872)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1834070488]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1980539219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7527771, -0.45581055)
+shape = SubResource("BoxShape3D_eor1x")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=965086604]
+transform = Transform3D(0.9947136, 0, -0.10268837, 0, 1, 0, 0.10268837, 0, 0.9947136, -0.1848096, -0.08441162, 1.703255)
+shape = SubResource("BoxShape3D_7cdrm")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=338373253]
+transform = Transform3D(0.7659995, 0, -0.64284104, 0, 1, 0, 0.64284104, 0, 0.7659995, 0.40580913, -0.08441162, 1.6750559)
+shape = SubResource("BoxShape3D_7cdrm")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=1838245152]
+transform = Transform3D(0.9581028, 0, -0.2864242, 0, 1, 0, 0.2864242, 0, 0.9581028, 0.96491075, -0.08441162, 0.98991406)
+shape = SubResource("BoxShape3D_7cdrm")
