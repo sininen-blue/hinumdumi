@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://blglq3rmgocvo"]
+
+[ext_resource type="Script" uid="uid://ed8gtl5wl0m8" path="res://interactables/shop/shopkeep.gd" id="1_63njb"]
+[ext_resource type="Script" uid="uid://c7rh18x7usf6y" path="res://interactables/shop/interact_area.gd" id="2_0xl56"]
+[ext_resource type="PackedScene" uid="uid://dhdb0srr160uw" path="res://src/dialogue_component/dialogue_component.tscn" id="3_hoacj"]
+[ext_resource type="Script" uid="uid://vbhgha4o801k" path="res://interactables/shop/item_interacts.gd" id="4_7h8de"]
+[ext_resource type="PackedScene" uid="uid://2ek0lrlatgfm" path="res://assets/buildings/modern_sari_sari.tscn" id="5_fks2x"]
+
+[sub_resource type="GDScript" id="GDScript_ylcqf"]
+script/source = "extends Node3D
+
+class_name ShoppableItem
+
+signal interacted(shoppable: ShoppableItem)
+
+@export var item: Item = preload(\"res://interactables/items/Default.tres\")
+@export var amount: int = 1
+@export var rotate_speed: float = 1
+@export var item_offset: float = 0.1
+
+# Dictionary[Node3D: Hand]
+var to_remove: Array[Dictionary] = []
+
+@onready var label: Label3D = $Label
+@onready var models: Node3D = $Models
+
+@onready var interact_area: InteractArea = $InteractArea
+
+
+func _ready() -> void:
+	label.text = item.name
+
+	var model: PackedScene = item.model
+
+	for i in range(amount):
+		var item_model: Node3D = model.instantiate()
+		models.add_child(item_model)
+		item_model.global_position += Vector3(item_offset, -item_offset, item_offset) * i
+
+
+func _process(delta: float) -> void:
+	for item_model: Node3D in models.get_children():
+		item_model.rotate(Vector3(1, 1, 1).normalized(), rotate_speed * delta)
+
+	for child: Dictionary[Node3D, Hand] in to_remove:
+		var node: Node3D = child.keys()[0]
+		var target: Hand = child[node]
+
+		var tween: Tween = get_tree().create_tween()
+		tween.set_ease(Tween.EASE_IN_OUT)
+		tween.set_trans(Tween.TRANS_CUBIC)
+		tween.tween_property(node, \"global_position\", target.global_position, 0.07)
+
+		if (node.global_position - target.global_position).length() < 0.5:
+			var qf_tween: Tween = get_tree().create_tween()
+			qf_tween.tween_property(node, \"scale\", Vector3.ZERO, 0.1)
+
+		if (node.scale - Vector3.ZERO).length() <= 0.2:
+			node.call_deferred(\"queue_free\")
+			to_remove.erase(child)
+
+
+func remove_stock(target: Hand) -> void:
+	var obj: Node3D = models.get_child(-1)
+	models.move_child(obj, 0)
+	to_remove.append({ obj: target })
+
+
+func _on_interact_area_interacted() -> void:
+	interacted.emit(self)
+"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3v00k"]
+
+[sub_resource type="PackedScene" id="PackedScene_2drsn"]
+_bundled = {
+"conn_count": 1,
+"conns": PackedInt32Array(1, 0, 16, 15, 2, 0, 0),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("ShoppableItem", "script", "Node3D", "InteractArea", "collision_layer", "collision_mask", "Area3D", "CollisionShape3D", "shape", "Label", "transform", "billboard", "text", "Label3D", "Models", "_on_interact_area_interacted", "interacted"),
+"node_count": 5,
+"node_ids": PackedInt32Array(264745181, 1878260335, 635442556, 477278645, 351853164),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 6, 3, -1, 3, 4, 1, 5, 2, 1, 3, 0, 1, 0, 7, 7, -1, 1, 8, 4, 0, 0, 0, 13, 9, -1, 3, 10, 5, 11, 6, 12, 7, 0, 0, 0, 2, 14, -1, 0, 0),
+"variants": [SubResource("GDScript_ylcqf"), 4, 0, ExtResource("2_0xl56"), SubResource("SphereShape3D_3v00k"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6913036, 0), 2, "Soy Sauce"],
+"version": 3
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rplqf"]
+radius = 4.1
+
+[node name="StoreModern" type="Node3D" unique_id=913437893]
+script = ExtResource("1_63njb")
+shoppableItem = SubResource("PackedScene_2drsn")
+
+[node name="DialogueComponent" parent="." unique_id=1041026313 instance=ExtResource("3_hoacj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 2.9, 0)
+line_delay = 2.0
+
+[node name="ItemInteracts" type="Node3D" parent="." unique_id=93998991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2.7575812, 1.8725092)
+script = ExtResource("4_7h8de")
+
+[node name="ShoppableArea" type="Area3D" parent="." unique_id=1806168609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3807099, 2.2, 0.70046234)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShoppableArea" unique_id=939099808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, -0.1)
+shape = SubResource("SphereShape3D_rplqf")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=589207746]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.1, -1.4)
+shadow_enabled = true
+
+[node name="ModernSariSari" parent="." unique_id=1462480663 instance=ExtResource("5_fks2x")]
+
+[connection signal="body_entered" from="ShoppableArea" to="." method="_on_shoppable_area_body_entered"]
+[connection signal="body_exited" from="ShoppableArea" to="." method="_on_shoppable_area_body_exited"]

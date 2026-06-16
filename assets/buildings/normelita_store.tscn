@@ -11,6 +11,7 @@ close_model = NodePath("Normelita Store Close")
 
 [node name="Normelita Store Close" parent="." unique_id=2007075377 instance=ExtResource("1_5vkor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36842537, -0.2, 0.63158965)
+visible = false
 
 [node name="Normelita Store Open" parent="." unique_id=782828435 instance=ExtResource("2_u3yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36842537, -0.2, 0.63158965)

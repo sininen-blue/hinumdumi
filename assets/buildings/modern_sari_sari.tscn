@@ -11,6 +11,7 @@ close_model = NodePath("Modern Sari Sari Store Close")
 
 [node name="Modern Sari Sari Store Close" parent="." unique_id=1108189016 instance=ExtResource("1_7o5ue")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.2, 0)
+visible = false
 
 [node name="Modern Sari Sari Store Open" parent="." unique_id=248033465 instance=ExtResource("2_l7p5y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60000026, 0.2, 1.937151e-07)

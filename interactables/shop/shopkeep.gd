@@ -4,7 +4,6 @@ class_name Shop
 
 @export_enum("Modern", "Normelta", "Tindahan") var type: int = 0
 
-@export var debug: bool = false
 @export var shoppableItem: PackedScene
 @export var inventory: Dictionary[Item, int]
 @export var cost_modifier: float = 1
@@ -23,7 +22,6 @@ var player: Player
 @onready var normelita_store: Node3D = $NormelitaStore
 @onready var tindahan: Node3D = $Tindahan
 
-@onready var debug_label: Label3D = $Debug/DebugLabel
 @onready var dialogue_component: DialogueComponent = $DialogueComponent
 @onready var item_interacts: ItemInteracts = $ItemInteracts
 

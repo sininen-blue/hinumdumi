@@ -11,6 +11,7 @@ close_model = NodePath("Tindahan2 close")
 
 [node name="Tindahan2 close" parent="." unique_id=247191380 instance=ExtResource("1_37vji")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.7, -0.40000015)
+visible = false
 
 [node name="Tindahan2 open" parent="." unique_id=2037590489 instance=ExtResource("2_7itfs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.7, -0.39999998)
