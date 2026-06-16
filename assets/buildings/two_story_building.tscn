@@ -17,3 +17,4 @@ shadow_enabled = true
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1656171717]
 height = 30.0
 vertices = PackedVector3Array(-14.025304, 0, 6.3489943, 12.388281, 0, 6.658701, 12.56526, 0, -6.7029443, -14.423498, 0, -6.924164)
+affect_navigation_mesh = true

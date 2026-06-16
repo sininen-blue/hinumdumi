@@ -6,13 +6,12 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dlich"]
 height = 4.1728516
-radius = 1.3491211
+radius = 2.440918
 
 [node name="BushWall" type="Node3D" unique_id=1439560232]
 script = ExtResource("1_dlich")
 
 [node name="Tree3D" type="Tree3D" parent="." unique_id=1852012470]
-trunk_branches_count = 7
 trunk_height = 15
 trunk_branch_length = 0.65
 trunk_branch_length_falloff = 0.875
@@ -32,4 +31,4 @@ shape = SubResource("CylinderShape3D_dlich")
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1944331425]
 height = 20.0
-vertices = PackedVector3Array(-0.16376281, 0, -1.3391579, -0.92446804, 0, -1.0750242, -1.2889726, 0, -0.4992127, -1.3153858, 0, 0.266775, -1.0987962, 0, 0.8108905, -0.665617, 0, 1.2018083, -0.015847921, 0, 1.355006, 0.6708996, 0, 1.1965256, 1.0671003, 0, 0.85843444, 1.3417995, 0, 0.37242845, 1.3470819, 0, -0.2984711, 1.1093619, 0, -0.8320212, 0.57052875, 0, -1.238787)
+vertices = PackedVector3Array(-0.93867636, 0, -2.2831345, -1.9164641, 0, -1.5889052, -2.3466907, 0, -0.35689247, -2.1315775, 0, 1.0902332, -1.47646, 0, 1.8529079, -0.35200357, 0, 2.2244673, 0.9191203, 0, 2.1755779, 1.6622391, 0, 1.5400156, 2.3088906, 0, 0.8486568, 2.3466907, 0, -0.5133386, 1.9360199, 0, -1.4715706, 1.2906799, 0, -2.068021, 0.20533514, 0, -2.400469)

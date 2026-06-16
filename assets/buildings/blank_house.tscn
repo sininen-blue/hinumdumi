@@ -19,3 +19,4 @@ shape = SubResource("BoxShape3D_7rs68")
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1967260592]
 height = 15.0
 vertices = PackedVector3Array(-1.4445877, 0, 1.2756929, 1.1642947, 0, 1.2828801, 1.1930423, 0, -1.3547499, -1.5092707, 0, -1.318815)
+affect_navigation_mesh = true

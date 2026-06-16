@@ -2,7 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://bk0a3fe7c7b6k" path="res://assets_raw/others/Grava1.glb" id="1_blu3b"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_blu3b"]
+radius = 4.5551243
+
 [node name="Gravel" type="Node3D" unique_id=2073890797]
 
 [node name="Grava12" parent="." unique_id=60412816 instance=ExtResource("1_blu3b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4368353, -0.79835343, -4.4645543)
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=681053291]
+vertices = PackedVector3Array(-3.3978758, 0, -2.4991627, -1.871294, 0, -3.65641, 1.7235603, 0, -4.5428123, 4.8752136, 0, -2.6468961, 6.204817, 0, 0.25853413, 5.170681, 0, 2.9916086, 1.895916, 0, 4.1242337, -3.1270313, 0, 3.0900974, -4.72748, 0, 0.30777854)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=766442622]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1877412862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1080017, -1.5166235, 0)
+shape = SubResource("SphereShape3D_blu3b")

@@ -40,11 +40,9 @@ materials/extract_path=""
 _subresources={
 "nodes": {
 "PATH:Cube_014": {
-"generate/occluder": 1,
 "generate/physics": true
 },
 "PATH:Cube_018": {
-"generate/occluder": 2,
 "generate/physics": true
 },
 "PATH:Cylinder_015": {
@@ -52,14 +50,7 @@ _subresources={
 "generate/physics": true
 },
 "PATH:Roll Up (down)_002": {
-"generate/occluder": 1,
 "generate/physics": true
-},
-"PATH:tinda ": {
-"generate/occluder": 2
-},
-"PATH:tinda _001": {
-"generate/occluder": 2
 }
 }
 }

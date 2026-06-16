@@ -2,7 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://xmtjj0am5311" path="res://assets_raw/others/Grava2.glb" id="1_h6nh2"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_h6nh2"]
+radius = 3.522524
+
 [node name="Gravel2" type="Node3D" unique_id=794246815]
 
 [node name="Grava22" parent="." unique_id=76911441 instance=ExtResource("1_h6nh2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.72872, -1.1521823, -3.9612527)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1822076778]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=798607763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.91356015, -0.6531477, 0)
+shape = SubResource("SphereShape3D_h6nh2")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=109238588]
+height = 30.0
+vertices = PackedVector3Array(-1.8576479, 0, -3.5358632, -4.4330225, 0, -0.7071727, -4.0319395, 0, 1.0660362, 0.71772766, 0, 4.3169193, 4.2852545, 0, 2.902574, 4.9396544, 0, 1.8893119, 4.2219267, 0, -1.7415444, 2.5331564, 0, -2.8392453)

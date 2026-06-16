@@ -40,55 +40,42 @@ materials/extract_path=""
 _subresources={
 "nodes": {
 "PATH:Cube_014": {
-"generate/occluder": 1,
 "generate/physics": true
 },
 "PATH:Cube_018": {
-"generate/occluder": 1,
 "generate/physics": true
 },
 "PATH:Cube_019": {
-"generate/occluder": 1,
 "generate/physics": true
 },
 "PATH:Cube_091": {
-"generate/occluder": 1,
 "generate/physics": true
 },
 "PATH:Cube_092": {
-"generate/occluder": 2,
 "generate/physics": true
 },
 "PATH:Cube_093": {
-"generate/occluder": 1,
 "generate/physics": true
 },
 "PATH:Cylinder_013": {
-"generate/occluder": 1,
 "generate/physics": true
 },
 "PATH:Cylinder_014": {
-"generate/navmesh": 1,
 "generate/physics": true
 },
 "PATH:Cylinder_015": {
-"generate/navmesh": 1,
 "generate/physics": true
 },
 "PATH:Roll Up Shell": {
-"generate/occluder": 1,
 "generate/physics": true
 },
 "PATH:Softdrinks Ref": {
-"generate/occluder": 1,
 "generate/physics": true
 },
 "PATH:tinda ": {
-"generate/occluder": 1,
 "generate/physics": true
 },
 "PATH:tinda _001": {
-"generate/occluder": 1,
 "generate/physics": true
 }
 }

@@ -10,3 +10,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9162085, -0.40670872, 2.453
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1111805807]
 height = 15.0
 vertices = PackedVector3Array(0.4041052, 0, 5.49057, 5.9737406, 0, 5.473, 5.921031, 0, -3.9268558, -6.316027, 0, -3.9865463, -6.4214463, 0, 2.5669978, 0.6240525, 0, 2.4088693)
+affect_navigation_mesh = true
