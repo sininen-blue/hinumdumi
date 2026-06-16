@@ -2,8 +2,6 @@ extends Node3D
 
 class_name Shop
 
-@export_enum("Modern", "Normelta", "Tindahan") var type: int = 0
-
 @export var shoppableItem: PackedScene
 @export var inventory: Dictionary[Item, int]
 @export var cost_modifier: float = 1
@@ -18,27 +16,9 @@ class_name Shop
 
 var player: Player
 
-@onready var modern_sari_sari: Node3D = $ModernSariSari
-@onready var normelita_store: Node3D = $NormelitaStore
-@onready var tindahan: Node3D = $Tindahan
-
 @onready var dialogue_component: DialogueComponent = $DialogueComponent
 @onready var item_interacts: ItemInteracts = $ItemInteracts
 
-
-func _ready() -> void:
-	if type == 0:
-		modern_sari_sari.visible = true
-		normelita_store.visible = false
-		tindahan.visible = false
-	elif type == 1:
-		modern_sari_sari.visible = false
-		normelita_store.visible = true
-		tindahan.visible = false
-	elif type == 2:
-		modern_sari_sari.visible = false
-		normelita_store.visible = false
-		tindahan.visible = true
 
 
 func _on_item_interact(item: Item) -> void:
