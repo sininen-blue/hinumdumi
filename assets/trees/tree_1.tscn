@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://56dw6by8o84c"]
+
+[ext_resource type="Script" uid="uid://n6pyfu8pdaiw" path="res://assets/trees/tree_randomizer.gd" id="1_6pm67"]
+[ext_resource type="Material" uid="uid://dvjj1fqxh2cc4" path="res://assets/trees/bark.tres" id="2_ijn1y"]
+[ext_resource type="Material" uid="uid://ek3r30gpe34s" path="res://assets/trees/twig.tres" id="3_6pm67"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6pm67"]
+height = 7.7875977
+
+[node name="Tree1" type="Node3D" unique_id=136200655]
+script = ExtResource("1_6pm67")
+
+[node name="Tree3D" type="Tree3D" parent="." unique_id=893053823]
+trunk_height = 10
+trunk_branch_length = 0.85
+trunk_branch_length_falloff = 0.825
+trunk_drop_amount = -0.025
+trunk_max_radius = 0.23
+trunk_length = 2.976
+material_trunk = ExtResource("2_ijn1y")
+material_twig = ExtResource("3_6pm67")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=138130984]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1671667679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8937988, 0)
+shape = SubResource("CylinderShape3D_6pm67")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1946058362]
+height = 20.0
+vertices = PackedVector3Array(0.066052236, 0, 0.2528123, -0.24550982, 0, 0.11541359, -0.23300692, 0, -0.20031719, 0.19967781, 0, -0.24018712, 0.28129774, 0, 0.015309793)

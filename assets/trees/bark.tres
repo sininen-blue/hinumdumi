@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dvjj1fqxh2cc4"]
+
+[ext_resource type="Texture2D" uid="uid://b3xku3ehikgfa" path="res://assets/textures/trees/pine_bark_diff_1k.jpg" id="1_napbq"]
+[ext_resource type="Texture2D" uid="uid://iblufpiu6sv5" path="res://assets/textures/trees/pine_bark_nor_gl_1k.jpg" id="2_0q2ua"]
+
+[resource]
+albedo_texture = ExtResource("1_napbq")
+normal_enabled = true
+normal_texture = ExtResource("2_0q2ua")

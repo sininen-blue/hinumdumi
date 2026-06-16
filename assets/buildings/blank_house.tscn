@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bhwmkc8yc2yoj"]
+
+[ext_resource type="PackedScene" uid="uid://dge3e1jhjxvbq" path="res://assets_raw/buildings/Random Building1.glb" id="1_3r3mr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7rs68"]
+size = Vector3(2.5756226, 4.2006836, 2.5654297)
+
+[node name="BlankHouse" type="Node3D" unique_id=1988165397]
+
+[node name="Random Building1" parent="." unique_id=636679222 instance=ExtResource("1_3r3mr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18420148, -1.5852768, 0.2922269)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=929717599]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=66962181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15512085, 1.6003418, -0.008544922)
+shape = SubResource("BoxShape3D_7rs68")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1967260592]
+height = 15.0
+vertices = PackedVector3Array(-1.4445877, 0, 1.2756929, 1.1642947, 0, 1.2828801, 1.1930423, 0, -1.3547499, -1.5092707, 0, -1.318815)

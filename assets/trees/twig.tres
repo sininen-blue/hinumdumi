@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ek3r30gpe34s"]
+
+[ext_resource type="Texture2D" uid="uid://cy5p5plswgte4" path="res://assets/textures/trees/twig.png" id="1_nw83i"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.61
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_nw83i")
