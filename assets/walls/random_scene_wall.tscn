@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cqk72qc3324v7"]
+
+[ext_resource type="PackedScene" uid="uid://djblaf10rk67j" path="res://assets/walls/scene_wall_1.tscn" id="1_au1we"]
+[ext_resource type="Script" uid="uid://bj6wnpo22c7pl" path="res://src/picker.gd" id="1_jvbpx"]
+[ext_resource type="PackedScene" uid="uid://b3u4aq2je7fjw" path="res://assets/walls/scene_wall_2.tscn" id="2_jvbpx"]
+[ext_resource type="PackedScene" uid="uid://qi4bs8tjnu7w" path="res://assets/walls/scene_wall_3.tscn" id="3_abrue"]
+
+[node name="RandomSceneWall" type="Node3D" unique_id=499604490 node_paths=PackedStringArray("variants")]
+script = ExtResource("1_jvbpx")
+variants = [NodePath("SceneWall1"), NodePath("SceneWall2"), NodePath("SceneWall3")]
+
+[node name="SceneWall1" parent="." unique_id=966954745 instance=ExtResource("1_au1we")]
+
+[node name="SceneWall2" parent="." unique_id=108997058 instance=ExtResource("2_jvbpx")]
+visible = false
+
+[node name="SceneWall3" parent="." unique_id=1231221809 instance=ExtResource("3_abrue")]
+visible = false

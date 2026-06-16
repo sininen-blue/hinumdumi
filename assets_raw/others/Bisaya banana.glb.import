@@ -40,8 +40,7 @@ materials/extract_path=""
 _subresources={
 "nodes": {
 "PATH:Plane_012": {
-"generate/occluder": 1,
-"generate/physics": true
+"generate/occluder": 1
 }
 }
 }

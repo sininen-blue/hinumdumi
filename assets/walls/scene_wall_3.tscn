@@ -2,6 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://dqfdtndcc8i8h" path="res://assets_raw/walls/Roof Fence v3.glb" id="1_456i5"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_456i5"]
+size = Vector3(6.625, 3.1020508, 0.3196411)
+
 [node name="SceneWall3" type="Node3D" unique_id=1231221809]
 
 [node name="Roof Fence v3" parent="." unique_id=1422877842 instance=ExtResource("1_456i5")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=754249293]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=223854616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1875, 1.5681152, 0.02267456)
+shape = SubResource("BoxShape3D_456i5")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=102096989]
+height = 5.0
+vertices = PackedVector3Array(-3.1963396, 0, -0.20329277, 3.491147, 0, -0.12571174, 3.5066633, 0, 0.20012854, -3.1342745, 0, 0.21564497)

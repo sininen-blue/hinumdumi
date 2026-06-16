@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://2n4q3u0mloh2"]
+
+[ext_resource type="Script" uid="uid://bj6wnpo22c7pl" path="res://src/picker.gd" id="1_dx46p"]
+[ext_resource type="PackedScene" uid="uid://d2b2fb6n0j2iu" path="res://assets/walls/block_wall_1.tscn" id="1_uu0pa"]
+[ext_resource type="PackedScene" uid="uid://bjx3gughlkrmv" path="res://assets/walls/block_wall_2.tscn" id="2_dx46p"]
+[ext_resource type="PackedScene" uid="uid://uu0anqp1enjt" path="res://assets/walls/block_wall_3.tscn" id="3_6g4k6"]
+
+[node name="RandomBrickWall" type="Node3D" unique_id=132481474 node_paths=PackedStringArray("variants")]
+script = ExtResource("1_dx46p")
+variants = [NodePath("BlockWall1"), NodePath("BlockWall2"), NodePath("BlockWall3")]
+
+[node name="BlockWall1" parent="." unique_id=1217266752 instance=ExtResource("1_uu0pa")]
+visible = false
+
+[node name="BlockWall2" parent="." unique_id=1740305728 instance=ExtResource("2_dx46p")]
+visible = false
+
+[node name="BlockWall3" parent="." unique_id=2081711540 instance=ExtResource("3_6g4k6")]

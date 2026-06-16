@@ -2,8 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://bscfa1w83768d" path="res://assets_raw/walls/Modular Block Wall Variant1.glb" id="1_64pm6"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_64pm6"]
+size = Vector3(10.119141, 6.6523438, 1)
+
 [node name="BlockWall1" type="Node3D" unique_id=1217266752]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -0.8)
 
 [node name="Modular Block Wall Variant1" parent="." unique_id=727359731 instance=ExtResource("1_64pm6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1045454666]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1824657240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045898438, 2.8261719, 0)
+shape = SubResource("BoxShape3D_64pm6")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=719912961]
+height = 10.0
+vertices = PackedVector3Array(4.9954515, 0, -0.37511635, 5.050347, 0, 0.19213301, -5.0503507, 0, 0.1738344, -5.123544, 0, -0.33851975)

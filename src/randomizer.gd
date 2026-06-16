@@ -3,7 +3,7 @@ extends Node3D
 @export var object: Node3D
 
 var min_size: float = 0.9
-var max_size: float = 1.2
+var max_size: float = 2.0
 
 var min_tilt: float = -10
 var max_tilt: float = 10
