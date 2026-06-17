@@ -4,16 +4,34 @@
 [ext_resource type="Script" uid="uid://bm1ve5b8iwy17" path="res://src/model_toggle.gd" id="1_u3yge"]
 [ext_resource type="PackedScene" uid="uid://cn5ylji31esgb" path="res://assets_raw/buildings/Normelita Store Open.glb" id="2_u3yge"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_u3yge"]
+size = Vector3(10.429626, 5.2608643, 5.0200195)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xy3gq"]
+size = Vector3(10.429626, 1.0061798, 2.9713135)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hbx3j"]
+size = Vector3(1.2829437, 3.8569527, 2.9713135)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n4cqv"]
+size = Vector3(4.1619797, 3.8569527, 0.2420044)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dp1jw"]
+size = Vector3(0.4413128, 1.084238, 1.6396255)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r0khm"]
+size = Vector3(0.19868374, 4.888247, 0.16869545)
+
 [node name="NormelitaStore" type="Node3D" unique_id=117462459 node_paths=PackedStringArray("open_model", "close_model")]
 script = ExtResource("1_u3yge")
 open_model = NodePath("Normelita Store Open")
 close_model = NodePath("Normelita Store Close")
 
-[node name="Normelita Store Close" parent="." unique_id=2007075377 instance=ExtResource("1_5vkor")]
+[node name="Normelita Store Close" parent="." unique_id=150734975 instance=ExtResource("1_5vkor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36842537, -0.2, 0.63158965)
 visible = false
 
-[node name="Normelita Store Open" parent="." unique_id=782828435 instance=ExtResource("2_u3yge")]
+[node name="Normelita Store Open" parent="." unique_id=1030697959 instance=ExtResource("2_u3yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36842537, -0.2, 0.63158965)
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1485561818]
@@ -21,3 +39,33 @@ height = 20.0
 vertices = PackedVector3Array(-5.6970773, 0, 2.151998, 4.595087, 0, 2.0896213, 4.640277, 0, -2.8880644, -2.0688396, 0, -2.54458, -2.177468, 0, -6.0312243, -5.655493, 0, -5.9153957)
 affect_navigation_mesh = true
 metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=160533789]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=444853771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5118103, 2.1304321, -0.3425293)
+shape = SubResource("BoxShape3D_u3yge")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1928341372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5118103, 0.0030899048, -4.3634257)
+shape = SubResource("BoxShape3D_xy3gq")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1306248877]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1196904, 2.394804, -4.3634257)
+shape = SubResource("BoxShape3D_hbx3j")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=980737930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6801724, 2.394804, -5.8768206)
+shape = SubResource("BoxShape3D_n4cqv")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=338573422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.005443, 1.0084467, -3.6646938)
+shape = SubResource("BoxShape3D_dp1jw")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D" unique_id=841846]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.548526, 1.0084467, -3.6646938)
+shape = SubResource("BoxShape3D_dp1jw")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D" unique_id=165045615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.70592, 2.2191718, -6.2180758)
+shape = SubResource("BoxShape3D_r0khm")

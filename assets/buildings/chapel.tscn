@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://kot44kp5s3tt"]
+
+[ext_resource type="PackedScene" uid="uid://dtwoyxa56m4vl" path="res://assets_raw/buildings/Chapel.glb" id="1_plchk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_plchk"]
+size = Vector3(11.3914795, 7.277832, 7.050537)
+
+[node name="Chapel" type="Node3D" unique_id=1992341583]
+
+[node name="Chapel" parent="." unique_id=1480747847 instance=ExtResource("1_plchk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7816101, -0.543067, -0.07918799)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1285235351]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=556689560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3204956, 3.138916, -0.08459473)
+shape = SubResource("BoxShape3D_plchk")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1602409127]
+height = 20.0
+vertices = PackedVector3Array(-5.3676577, 0, 3.4101863, 5.8108597, 0, 3.3609414, 5.8354816, 0, -3.508675, -5.4907684, 0, -3.6810317)

@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv0sdfeq8ha7j"
-path.s3tc="res://.godot/imported/bark_willow_02_diff_1k.jpg-9622414830d2d587071cc11c82ae142c.s3tc.ctex"
+uid="uid://81ehga0wlrw1"
+path.s3tc="res://.godot/imported/factory_Steel Sheet.png-4aed4c2aa6c0daee1dd92723bf8d2bfa.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "9811e228f170eb48e552c267ea8af57a"
+}
 
 [deps]
 
-source_file="res://assets/textures/trees/bark_willow_02_diff_1k.jpg"
-dest_files=["res://.godot/imported/bark_willow_02_diff_1k.jpg-9622414830d2d587071cc11c82ae142c.s3tc.ctex"]
+source_file="res://assets_raw/buildings/factory_Steel Sheet.png"
+dest_files=["res://.godot/imported/factory_Steel Sheet.png-4aed4c2aa6c0daee1dd92723bf8d2bfa.s3tc.ctex"]
 
 [params]
 

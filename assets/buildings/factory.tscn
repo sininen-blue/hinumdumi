@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dyqmsk1nhl6xj"]
+
+[ext_resource type="PackedScene" uid="uid://5apx0mtj5deu" path="res://assets_raw/buildings/factory.glb" id="1_jve6m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_44so3"]
+size = Vector3(25.560486, 12.73645, 13.023682)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_jve6m"]
+size = Vector3(25.084549, 8.009862, 12.961324)
+
+[node name="Factory" type="Node3D" unique_id=550227172]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1322084879]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=10585125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14364624, 5.868225, -0.026733398)
+shape = SubResource("BoxShape3D_44so3")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1387987225]
+height = 15.0
+vertices = PackedVector3Array(-13.079776, 0, 6.494314, 12.98863, 0, 6.539888, 12.760756, 0, -6.3120174, -13.262073, 0, -6.6766105)
+
+[node name="factory" parent="." unique_id=1061405769 instance=ExtResource("1_jve6m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5442809, -2.551568, -0.011498928)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1475555030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06881714, 3.8681765, 0)
+occluder = SubResource("BoxOccluder3D_jve6m")

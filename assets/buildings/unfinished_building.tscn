@@ -3,14 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://bdxn38d13pwi6" path="res://assets_raw/buildings/Unfinished Building 1.glb" id="1_rimux"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rimux"]
-size = Vector3(4.246582, 4.8565674, 1)
+size = Vector3(15.9800415, 15.203186, 10.992645)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r5572"]
-size = Vector3(0.7878418, 4.8565674, 0.25878906)
+size = Vector3(0.7878418, 4.8565674, 3.2460938)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_guydf"]
+size = Vector3(0.7878418, 4.8565674, 3.2460938)
 
 [node name="UnfinishedBuilding" type="Node3D" unique_id=2016349544]
 
-[node name="Unfinished Building 1" parent="." unique_id=817428007 instance=ExtResource("1_rimux")]
+[node name="Unfinished Building 1" parent="." unique_id=879208875 instance=ExtResource("1_rimux")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, -0.2, 10.7)
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1679556589]
@@ -20,10 +23,14 @@ affect_navigation_mesh = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=262780977]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=574063029]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.623291, 1.9282837, 2.7966204)
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=972337516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.540863, 7.101593, -2.1262374)
 shape = SubResource("BoxShape3D_rimux")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=105423423]
-transform = Transform3D(1, 0, 0, 0, 0.907044, 0.42103583, 0, -0.42103583, 0.907044, -3.3526611, 1.8704169, 4.5981507)
+transform = Transform3D(1, 0, 0, 0, 0.907044, 0.42103583, 0, -0.42103583, 0.907044, -3.3526611, 1.2415357, 3.2433424)
 shape = SubResource("BoxShape3D_r5572")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=22726056]
+transform = Transform3D(1, 0, 0, 0, 0.9669436, 0.25499016, 0, -0.25499016, 0.9669436, -0.5940845, 1.2415357, 3.7452307)
+shape = SubResource("BoxShape3D_guydf")

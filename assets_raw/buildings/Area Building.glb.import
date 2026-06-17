@@ -40,26 +40,12 @@ materials/extract_path=""
 _subresources={
 "nodes": {
 "PATH:1st Floor Extension 1": {
-"generate/physics": true,
 "physics/layer": 3,
 "physics/mask": 3
 },
 "PATH:1st Floor Extension 2": {
-"generate/physics": true,
 "physics/layer": 3,
 "physics/mask": 3
-},
-"PATH:1st floor base": {
-"generate/occluder": 1,
-"generate/physics": true
-},
-"PATH:1st floor left Platform": {
-"generate/occluder": 1,
-"generate/physics": true
-},
-"PATH:1st floor wood support middle": {
-"generate/occluder": 2,
-"generate/physics": true
 }
 }
 }

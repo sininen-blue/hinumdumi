@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c6qxid4qc54se"]
+
+[ext_resource type="Script" uid="uid://b1npju4hjavxb" path="res://interactables/hides/hideable.gd" id="1_b5lra"]
+[ext_resource type="PackedScene" uid="uid://b81qggiygea4b" path="res://assets/others/cylinder.tscn" id="2_rook2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2ur0a"]
+radius = 2.3
+
+[node name="HideCylinder" type="Node3D" unique_id=576549003]
+script = ExtResource("1_b5lra")
+
+[node name="HideArea" type="Area3D" parent="." unique_id=1394999876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.155854, 0, 0.4152441)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HideArea" unique_id=568381294]
+shape = SubResource("SphereShape3D_2ur0a")
+
+[node name="ExitArea" type="Node3D" parent="." unique_id=1468482593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3923366, 0, 0.06748527)
+
+[node name="DebugBox" type="CSGBox3D" parent="ExitArea" unique_id=907831213]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Cylinder" parent="." unique_id=1282148799 instance=ExtResource("2_rook2")]
+transform = Transform3D(0.011466566, 0, 0.99993426, 0, 1, 0, -0.99993426, 0, 0.011466566, -0.3811841, -0.03327501, 0.14391804)
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=16195467]
+vertices = PackedVector3Array(-2.0072594, 0, -1.3970981, 0.91239023, 0, -1.602386, 1.1861081, 0, 1.3514788, -1.8932104, 0, 1.6480057)
+
+[connection signal="body_entered" from="HideArea" to="." method="_on_hide_area_body_entered"]
+[connection signal="body_exited" from="HideArea" to="." method="_on_hide_area_body_exited"]

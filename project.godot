@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="hinumdumi"
-run/main_scene="uid://bwd570eivx0mj"
+run/main_scene="uid://dx8hrd8i1clec"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -106,3 +106,4 @@ interact={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+occlusion_culling/use_occlusion_culling=true

@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://vhu87qyiqy08" path="res://characters/monster/states/lunge.gd" id="7_legie"]
 [ext_resource type="Script" uid="uid://da7h67kyyhgfv" path="res://characters/monster/states/swipe.gd" id="8_tyycc"]
 [ext_resource type="Script" uid="uid://oi5ctl585nw7" path="res://characters/monster/footsteps.gd" id="13_pxgw5"]
+[ext_resource type="Texture2D" uid="uid://6h5ymisown7t" path="res://assets/sketches/temp_monster.png" id="14_pbgqo"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xm3rn"]
 height = 2.5
@@ -41,6 +42,7 @@ state_machine = NodePath("../StateMachine")
 
 [node name="DebugMesh" type="CSGMesh3D" parent="." unique_id=1874683917]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_xm3rn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1891105574]
@@ -48,8 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 shape = SubResource("CapsuleShape3D_xm3rn")
 
 [node name="MonsterNavigationAgent" type="NavigationAgent3D" parent="." unique_id=2142026948]
-target_desired_distance = 2.0
-debug_enabled = true
+target_desired_distance = 5.0
 
 [node name="VisionCast" type="RayCast3D" parent="." unique_id=1656187139]
 unique_name_in_owner = true
@@ -62,6 +63,10 @@ scanning_distance_threshold = 20.0
 investigate_distance_threshold = 40.0
 
 [node name="VisionLossTimer" type="Timer" parent="VisionCast" unique_id=960539668]
+one_shot = true
+
+[node name="VisionGainTimer" type="Timer" parent="VisionCast" unique_id=2130296793]
+wait_time = 0.5
 one_shot = true
 
 [node name="HearingArea" type="Area3D" parent="." unique_id=1517629973]
@@ -101,7 +106,7 @@ unique_name_in_owner = true
 script = ExtResource("3_xm3rn")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
-speed = 8.0
+speed = 5.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Scanning" type="Node" parent="StateMachine" unique_id=2021815502 node_paths=PackedStringArray("monster")]
@@ -111,6 +116,7 @@ monster = NodePath("../..")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="ScanTimer" type="Timer" parent="StateMachine/Scanning" unique_id=1388949173]
+wait_time = 4.0
 one_shot = true
 
 [node name="Investigate" type="Node" parent="StateMachine" unique_id=1444443692 node_paths=PackedStringArray("monster", "nav")]
@@ -118,7 +124,7 @@ unique_name_in_owner = true
 script = ExtResource("5_utdx2")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
-speed = 9.0
+speed = 6.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Hunt" type="Node" parent="StateMachine" unique_id=1998318133 node_paths=PackedStringArray("monster", "nav")]
@@ -126,7 +132,7 @@ unique_name_in_owner = true
 script = ExtResource("6_s386a")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
-speed = 10.5
+speed = 9.5
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Lunge" type="Node" parent="StateMachine" unique_id=2119255039]
@@ -153,9 +159,22 @@ state_machine = NodePath("../StateMachine")
 wait_time = 1.2
 one_shot = true
 
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1698984003]
+transform = Transform3D(0.37, 0, 0, 0, 0.37, 0, 0, 0, 0.37, 0, 1.68, 0)
+billboard = 2
+shaded = true
+texture = ExtResource("14_pbgqo")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1142028481]
+transform = Transform3D(1, 0, 0, 0, -0.34202015, 0.9396926, 0, -0.9396926, -0.34202015, 0, 4, -1.1)
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+spot_range = 6.315
+
 [connection signal="navigation_finished" from="MonsterNavigationAgent" to="StateMachine/Wander" method="_on_monster_navigation_agent_navigation_finished"]
 [connection signal="navigation_finished" from="MonsterNavigationAgent" to="StateMachine/Investigate" method="_on_monster_navigation_agent_navigation_finished"]
 [connection signal="timeout" from="VisionCast/VisionLossTimer" to="VisionCast" method="_on_vision_loss_timer_timeout"]
+[connection signal="timeout" from="VisionCast/VisionGainTimer" to="VisionCast" method="_on_vision_gain_timer_timeout"]
 [connection signal="body_entered" from="HearingArea" to="HearingArea" method="_on_body_entered"]
 [connection signal="body_exited" from="HearingArea" to="HearingArea" method="_on_body_exited"]
 [connection signal="body_entered" from="DetectArea" to="DetectArea" method="_on_body_entered"]

@@ -15,3 +15,4 @@ ssil_enabled = true
 sdfgi_enabled = true
 sdfgi_cascades = 2
 volumetric_fog_enabled = true
+volumetric_fog_density = 0.025

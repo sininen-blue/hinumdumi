@@ -17,8 +17,3 @@ func _ready() -> void:
 		randf_range(-360, 360),
 		randf_range(min_tilt, max_tilt),
 	)
-	tree_3d.scale = Vector3(
-		randf_range(min_size, max_size),
-		randf_range(min_size, max_size),
-		randf_range(min_size, max_size),
-	)

@@ -19,6 +19,8 @@ var queue_uncrouch: bool = false
 
 
 func enter() -> void:
+	PlayerStates.is_crouching = true
+
 	queue_uncrouch = false
 	previous_shape = collision_shape.shape
 	previous_y_position = collision_shape.position.y
@@ -39,6 +41,7 @@ func enter() -> void:
 
 
 func exit() -> void:
+	PlayerStates.is_crouching = false
 	collision_shape.shape = previous_shape
 	collision_shape.position.y = previous_y_position
 

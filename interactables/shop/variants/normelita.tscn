@@ -118,5 +118,8 @@ shadow_enabled = true
 [node name="NormelitaStore" parent="." unique_id=117462459 instance=ExtResource("6_8tfhm")]
 transform = Transform3D(-1, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, -1, 2.1029565, 0, -2.6815882)
 
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1952188212]
+vertices = PackedVector3Array(-4.292719, 0, -6.2857647, 8.278812, 0, -5.979142, 8.278812, 0, 3.6488104, -4.5380154, 0, 3.8327842)
+
 [connection signal="body_entered" from="ShoppableArea" to="." method="_on_shoppable_area_body_entered"]
 [connection signal="body_exited" from="ShoppableArea" to="." method="_on_shoppable_area_body_exited"]

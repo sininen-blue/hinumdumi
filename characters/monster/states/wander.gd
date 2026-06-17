@@ -93,10 +93,6 @@ func _on_monster_navigation_agent_navigation_finished() -> void:
 	state_machine.change_state(scanning)
 
 
-func _on_head_found_player() -> void:
-	state_machine.change_state(hunt)
-
-
 func detect_player(noise: int) -> void:
 	if noise >= 3:
 		state_machine.last_known_position = monster.player.global_position

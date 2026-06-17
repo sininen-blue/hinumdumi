@@ -7,20 +7,21 @@
 height = 3.9858398
 radius = 0.34375
 
-[node name="BananaTree" type="Node3D" unique_id=645096363 node_paths=PackedStringArray("object")]
+[node name="BananaTree" type="Node3D" unique_id=645096363 node_paths=PackedStringArray("object", "collision")]
 script = ExtResource("1_77rx5")
 object = NodePath("Pivot")
+collision = NodePath("StaticBody3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1830462237]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1631859929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18442488, 1.9066601, 0)
+shape = SubResource("CylinderShape3D_77rx5")
 
 [node name="Pivot" type="Node3D" parent="." unique_id=318735185]
 
 [node name="Bisaya banana" parent="Pivot" unique_id=1073957347 instance=ExtResource("1_cyav6")]
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0.37969685, -4.6701355, -0.05075741)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Pivot" unique_id=1830462237]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/StaticBody3D" unique_id=1631859929]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18442488, 1.9066601, 0)
-shape = SubResource("CylinderShape3D_77rx5")
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Pivot" unique_id=1178386017]
 height = 20.0
