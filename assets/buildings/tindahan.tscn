@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bm1ve5b8iwy17" path="res://src/model_toggle.gd" id="1_7itfs"]
 [ext_resource type="PackedScene" uid="uid://dpfnpkt0lg72u" path="res://assets_raw/buildings/Tindahan2 close.glb" id="1_37vji"]
 [ext_resource type="PackedScene" uid="uid://uef4wxej2wmn" path="res://assets_raw/buildings/Tindahan2 open.glb" id="2_7itfs"]
+[ext_resource type="PackedScene" uid="uid://d2i63aw6pm14r" path="res://src/ambient_sound_component.tscn" id="4_mvxqy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7itfs"]
 size = Vector3(1.7272949, 2.885498, 1.841919)
@@ -30,3 +31,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.012914419)
 height = 7.0
 vertices = PackedVector3Array(-3.1772468, 0, 3.9194694, -3.0093596, 0, 1.7498567, 4.687599, 0, 1.6465417, 4.661771, 0, -3.2738297, -3.3580477, 0, -3.3900592, -3.4097054, 0, 1.659456, -4.7786274, 0, 1.8919144, -4.752798, 0, 3.8936405)
 affect_navigation_mesh = true
+
+[node name="AmbientSoundComponent" parent="." unique_id=2077548551 instance=ExtResource("4_mvxqy")]

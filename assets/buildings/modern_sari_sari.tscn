@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c8hg6hd5mxuox" path="res://assets_raw/buildings/Modern Sari Sari Store Close.glb" id="1_7o5ue"]
 [ext_resource type="Script" uid="uid://bm1ve5b8iwy17" path="res://src/model_toggle.gd" id="1_sfki6"]
 [ext_resource type="PackedScene" uid="uid://dg4s7ekq61esd" path="res://assets_raw/buildings/Modern Sari Sari Store Open.glb" id="2_l7p5y"]
+[ext_resource type="PackedScene" uid="uid://d2i63aw6pm14r" path="res://src/ambient_sound_component.tscn" id="4_bxpr8"]
 
 [node name="ModernSariSari" type="Node3D" unique_id=1462480663 node_paths=PackedStringArray("open_model", "close_model")]
 script = ExtResource("1_sfki6")
@@ -20,3 +21,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60000026, 0.2, 1.937151e-07
 height = 15.0
 vertices = PackedVector3Array(-3.177178, 0, 2.9950001, 3.5852556, 0, 3.0241487, 3.716424, 0, -3.9568982, -3.1480298, 0, -3.9568982)
 affect_navigation_mesh = true
+
+[node name="AmbientSoundComponent" parent="." unique_id=2077548551 instance=ExtResource("4_bxpr8")]

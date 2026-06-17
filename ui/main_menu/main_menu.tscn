@@ -1,6 +1,76 @@
 [gd_scene format=3 uid="uid://dx8hrd8i1clec"]
 
 [ext_resource type="Script" uid="uid://cb5m4h6vo0rm0" path="res://ui/main_menu/main_menu.gd" id="1_uhj5c"]
+[ext_resource type="PackedScene" uid="uid://di5ccpypsjut8" path="res://assets/buildings/tindahan.tscn" id="2_i5wg5"]
+[ext_resource type="Texture2D" uid="uid://bdsb5ogr5p644" path="res://assets/textures/grass/rocky_terrain_02_diff_1k.jpg" id="3_3c04x"]
+[ext_resource type="PackedScene" uid="uid://2n4q3u0mloh2" path="res://assets/walls/random_brick_wall.tscn" id="5_6mijq"]
+[ext_resource type="PackedScene" uid="uid://dsrnrxhowsshg" path="res://assets/others/banana_tree.tscn" id="6_w2r0d"]
+[ext_resource type="PackedScene" uid="uid://56dw6by8o84c" path="res://assets/trees/tree_1.tscn" id="7_4e78x"]
+[ext_resource type="PackedScene" uid="uid://q7po06ahw8xl" path="res://assets/others/water_pump.tscn" id="8_6mijq"]
+[ext_resource type="PackedScene" uid="uid://ctqgee1rb0lb8" path="res://assets/others/trashbags.tscn" id="8_s4pem"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u184e"]
+albedo_texture = ExtResource("3_3c04x")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nbfxf"]
+sky_top_color = Color(0.161, 0.18975002, 0.23, 1)
+sky_horizon_color = Color(0.0836, 0.12970667, 0.19, 1)
+
+[sub_resource type="Sky" id="Sky_4raoo"]
+sky_material = SubResource("ProceduralSkyMaterial_nbfxf")
+
+[sub_resource type="Environment" id="Environment_u184e"]
+background_mode = 2
+sky = SubResource("Sky_4raoo")
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_cascades = 2
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.61, 0.61, 0.61, 1)
+volumetric_fog_emission_energy = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mijq"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.0
+
+[sub_resource type="Animation" id="Animation_w2r0d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.0724473, 6.4)]
+}
+
+[sub_resource type="Animation" id="Animation_6mijq"]
+resource_name = "camera_bob"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.53, 5.76),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector3(0, 3.0724473, 6.4), Vector3(0, 3.0457978, 6.4), Vector3(0.016327381, 3.071793, 6.4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w2r0d"]
+_data = {
+&"RESET": SubResource("Animation_w2r0d"),
+&"camera_bob": SubResource("Animation_6mijq")
+}
 
 [node name="MainMenu" type="Node3D" unique_id=1511179216]
 script = ExtResource("1_uhj5c")
@@ -30,10 +100,89 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Play"
 
+[node name="Label" type="Label" parent="UI/Control" unique_id=160064758]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -155.0
+offset_right = 54.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hinumdumi
+
+Early playtest"
+horizontal_alignment = 1
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=118272801]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
+transform = Transform3D(1, 0, 0, 0, 0.9538271, 0.30035624, 0, -0.30035624, 0.9538271, 0, 3.0724473, 6.4)
 current = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1763866040]
+[node name="Tindahan" parent="." unique_id=1923491395 instance=ExtResource("2_i5wg5")]
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 0, -3.8989742, -5)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=243682845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.6000001, 0)
+size = Vector3(35, 1, 35)
+material = SubResource("StandardMaterial3D_u184e")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1174797092]
+environment = SubResource("Environment_u184e")
+
+[node name="RandomBrickWall" parent="." unique_id=132481474 instance=ExtResource("5_6mijq")]
+transform = Transform3D(0.97129226, 0, -0.23788932, 0, 1, 0, 0.23788932, 0, 0.97129226, 9.307038, -6.376973, -2.7495937)
+
+[node name="RandomBrickWall2" parent="." unique_id=327101485 instance=ExtResource("5_6mijq")]
+transform = Transform3D(0.97129226, 0, -0.23788932, 0, 1, 0, 0.23788932, 0, 0.97129226, 19.469263, -6.376973, -0.569505)
+
+[node name="BananaTree" parent="." unique_id=645096363 instance=ExtResource("6_w2r0d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.812346, -3.278274, 0.27061343)
+
+[node name="BananaTree2" parent="." unique_id=1107202043 instance=ExtResource("6_w2r0d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.531624, -3.6692376, 1.5673697)
+
+[node name="Tree1" parent="." unique_id=136200655 instance=ExtResource("7_4e78x")]
+transform = Transform3D(0.99989176, 0.014712594, 0, -0.014712594, 0.99989176, 0, 0, 0, 1, -3.7200527, -3.819479, 0)
+
+[node name="Tree2" parent="." unique_id=155918195 instance=ExtResource("7_4e78x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.480521, -3.8464906, 0.83623123)
+
+[node name="Trashbags" parent="." unique_id=1048232662 instance=ExtResource("8_s4pem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9228704, -2.978006, -1.1352059)
+
+[node name="Trashbags3" parent="." unique_id=604265986 instance=ExtResource("8_s4pem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5665448, -3.3616123, -1.7562397)
+
+[node name="Trashbags4" parent="." unique_id=1172271933 instance=ExtResource("8_s4pem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4489393, -3.675594, -4.239156)
+
+[node name="Trashbags2" parent="." unique_id=1722475300 instance=ExtResource("8_s4pem")]
+transform = Transform3D(0.99236715, 0.07603258, -0.097089894, -0.070650935, 0.9958298, 0.05771797, 0.101073466, -0.0504179, 0.9936006, -4.3469067, -2.978006, 0.51737773)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1473531582]
+transform = Transform3D(1, 0, 0, 0, -0.23044032, 0.9730865, 0, -0.9730865, -0.23044032, 0, 5.1490245, 0)
+visible = false
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=427145953]
+transform = Transform3D(0.8895493, -0.03353754, -0.4556063, 0.45683897, 0.06475213, 0.88718957, -0.00025267864, -0.9973377, 0.07292147, -6.660514, 8.52691, 0.6723299)
+shadow_enabled = true
+spot_range = 40.0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=61672741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.638744)
+size = Vector3(100, 100, 1)
+material = SubResource("StandardMaterial3D_6mijq")
+
+[node name="WaterPump" parent="." unique_id=1042807517 instance=ExtResource("8_6mijq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6988862, -3.220672, 0.65747917)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1802612568]
+libraries/ = SubResource("AnimationLibrary_w2r0d")
 
 [connection signal="pressed" from="UI/Control/PlayButton" to="." method="_on_play_button_pressed"]

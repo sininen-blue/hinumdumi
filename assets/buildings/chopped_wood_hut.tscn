@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dqfhcx5ak55m5"]
 
 [ext_resource type="PackedScene" uid="uid://ctxf0ucfjx1cu" path="res://assets_raw/buildings/Chopped Wood Hut.glb" id="1_nym2q"]
+[ext_resource type="PackedScene" uid="uid://d2i63aw6pm14r" path="res://src/ambient_sound_component.tscn" id="2_pclhx"]
 
 [node name="ChoppedWoodHut" type="Node3D" unique_id=1643192303]
 
@@ -11,3 +12,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999964, -0.3, 0)
 height = 10.0
 vertices = PackedVector3Array(-2.028904, 0, 1.59051, 2.3809066, 0, 1.59051, 2.4004626, 0, -1.9001834, -1.9702373, 0, -1.8610718)
 affect_navigation_mesh = true
+
+[node name="AmbientSoundComponent" parent="." unique_id=2077548551 instance=ExtResource("2_pclhx")]

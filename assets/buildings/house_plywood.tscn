@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c201jg0o1h4he"]
 
 [ext_resource type="PackedScene" uid="uid://bpu50erqcfady" path="res://assets_raw/buildings/house plywood2.glb" id="1_dlwcf"]
+[ext_resource type="PackedScene" uid="uid://d2i63aw6pm14r" path="res://src/ambient_sound_component.tscn" id="2_m4l1f"]
 
 [node name="HousePlywood" type="Node3D" unique_id=1788501980]
 
@@ -16,3 +17,5 @@ affect_navigation_mesh = true
 height = 12.0
 vertices = PackedVector3Array(-6.29772, 0, 1.9764422, 0.27068257, 0, 2.0863738, 0.35313153, 0, -2.6956425, 6.6192226, 0, -2.640677, 6.6717234, 0, -11.641092, -6.355151, 0, -11.641092)
 affect_navigation_mesh = true
+
+[node name="AmbientSoundComponent" parent="." unique_id=2077548551 instance=ExtResource("2_m4l1f")]

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://d2i63aw6pm14r"]
+
+[ext_resource type="Script" uid="uid://0mwfwyraaup" path="res://src/ambient_sound_component.gd" id="1_rq4y3"]
+[ext_resource type="AudioStream" uid="uid://cx4rdcbmjfufv" path="res://assets/sounds/ambiance/barking_1.wav" id="2_4ojj0"]
+[ext_resource type="AudioStream" uid="uid://dphd8jsbsc5ih" path="res://assets/sounds/ambiance/creaking_1.wav" id="3_gmv84"]
+[ext_resource type="AudioStream" uid="uid://dqw73abg2fcv" path="res://assets/sounds/ambiance/creaking_2.wav" id="4_8wwde"]
+[ext_resource type="AudioStream" uid="uid://4ytxd5lpm8as" path="res://assets/sounds/ambiance/crying_1.wav" id="5_5d587"]
+
+[node name="AmbientSoundComponent" type="Node3D" unique_id=2077548551]
+script = ExtResource("1_rq4y3")
+
+[node name="BarkPlayer" type="AudioStreamPlayer3D" parent="." unique_id=586807437]
+stream = ExtResource("2_4ojj0")
+volume_db = -10.0
+max_distance = 30.0
+
+[node name="CreakPlayer" type="AudioStreamPlayer3D" parent="." unique_id=112984307]
+stream = ExtResource("3_gmv84")
+volume_db = -25.0
+max_distance = 30.0
+
+[node name="CreakPlayer2" type="AudioStreamPlayer3D" parent="." unique_id=982217702]
+stream = ExtResource("4_8wwde")
+volume_db = -20.0
+max_distance = 30.0
+
+[node name="CryPlayer" type="AudioStreamPlayer3D" parent="." unique_id=548609563]
+stream = ExtResource("5_5d587")
+volume_db = -25.0
+max_distance = 30.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1592274357]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

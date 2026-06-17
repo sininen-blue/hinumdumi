@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://chu6fbvwd2vqv"]
 
 [ext_resource type="PackedScene" uid="uid://lsdoexder8b6" path="res://assets_raw/buildings/House v1.glb" id="1_agwo6"]
+[ext_resource type="PackedScene" uid="uid://d2i63aw6pm14r" path="res://src/ambient_sound_component.tscn" id="2_pwbxg"]
 
 [node name="SmallHouse1" type="Node3D" unique_id=34963408]
 
@@ -11,3 +12,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9162085, -0.40670872, 2.453
 height = 15.0
 vertices = PackedVector3Array(0.4041052, 0, 5.49057, 5.9737406, 0, 5.473, 5.921031, 0, -3.9268558, -6.316027, 0, -3.9865463, -6.4214463, 0, 2.5669978, 0.6240525, 0, 2.4088693)
 affect_navigation_mesh = true
+
+[node name="AmbientSoundComponent" parent="." unique_id=2077548551 instance=ExtResource("2_pwbxg")]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bbqcxt5o3ntpx"]
 
 [ext_resource type="PackedScene" uid="uid://bdxn38d13pwi6" path="res://assets_raw/buildings/Unfinished Building 1.glb" id="1_rimux"]
+[ext_resource type="PackedScene" uid="uid://d2i63aw6pm14r" path="res://src/ambient_sound_component.tscn" id="2_r5572"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rimux"]
 size = Vector3(15.9800415, 15.203186, 10.992645)
@@ -34,3 +35,5 @@ shape = SubResource("BoxShape3D_r5572")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=22726056]
 transform = Transform3D(1, 0, 0, 0, 0.9669436, 0.25499016, 0, -0.25499016, 0.9669436, -0.5940845, 1.2415357, 3.7452307)
 shape = SubResource("BoxShape3D_guydf")
+
+[node name="AmbientSoundComponent" parent="." unique_id=2077548551 instance=ExtResource("2_r5572")]

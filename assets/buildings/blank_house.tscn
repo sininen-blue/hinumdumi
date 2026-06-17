@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhwmkc8yc2yoj"]
 
 [ext_resource type="PackedScene" uid="uid://dge3e1jhjxvbq" path="res://assets_raw/buildings/Random Building1.glb" id="1_3r3mr"]
+[ext_resource type="PackedScene" uid="uid://d2i63aw6pm14r" path="res://src/ambient_sound_component.tscn" id="2_7rs68"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7rs68"]
 size = Vector3(2.5756226, 4.2006836, 2.5654297)
@@ -20,3 +21,5 @@ shape = SubResource("BoxShape3D_7rs68")
 height = 15.0
 vertices = PackedVector3Array(-1.4445877, 0, 1.2756929, 1.1642947, 0, 1.2828801, 1.1930423, 0, -1.3547499, -1.5092707, 0, -1.318815)
 affect_navigation_mesh = true
+
+[node name="AmbientSoundComponent" parent="." unique_id=2077548551 instance=ExtResource("2_7rs68")]

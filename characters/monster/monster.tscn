@@ -812,6 +812,7 @@ script = ExtResource("1_7ouai")
 
 [node name="DebugStateLabel" type="Label3D" parent="." unique_id=1200775091 node_paths=PackedStringArray("state_machine")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+visible = false
 billboard = 1
 text = "Test"
 script = ExtResource("2_tyycc")
@@ -936,6 +937,7 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Footsteps" type="AudioStreamPlayer3D" parent="." unique_id=1909668395 node_paths=PackedStringArray("state_machine")]
 pitch_scale = 0.8
+max_distance = 50.0
 script = ExtResource("13_pxgw5")
 state_machine = NodePath("../StateMachine")
 

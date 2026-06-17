@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://uwo1whafau6g" path="res://assets_raw/buildings/Normelita Store Close.glb" id="1_5vkor"]
 [ext_resource type="Script" uid="uid://bm1ve5b8iwy17" path="res://src/model_toggle.gd" id="1_u3yge"]
 [ext_resource type="PackedScene" uid="uid://cn5ylji31esgb" path="res://assets_raw/buildings/Normelita Store Open.glb" id="2_u3yge"]
+[ext_resource type="PackedScene" uid="uid://d2i63aw6pm14r" path="res://src/ambient_sound_component.tscn" id="4_xy3gq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u3yge"]
 size = Vector3(10.429626, 5.2608643, 5.0200195)
@@ -69,3 +70,5 @@ shape = SubResource("BoxShape3D_dp1jw")
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D" unique_id=165045615]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.70592, 2.2191718, -6.2180758)
 shape = SubResource("BoxShape3D_r0khm")
+
+[node name="AmbientSoundComponent" parent="." unique_id=2077548551 instance=ExtResource("4_xy3gq")]

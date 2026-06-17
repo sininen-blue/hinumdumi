@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://kot44kp5s3tt"]
 
 [ext_resource type="PackedScene" uid="uid://dtwoyxa56m4vl" path="res://assets_raw/buildings/Chapel.glb" id="1_plchk"]
+[ext_resource type="PackedScene" uid="uid://d2i63aw6pm14r" path="res://src/ambient_sound_component.tscn" id="2_bkvn0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_plchk"]
 size = Vector3(11.3914795, 7.277832, 7.050537)
@@ -19,3 +20,5 @@ shape = SubResource("BoxShape3D_plchk")
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1602409127]
 height = 20.0
 vertices = PackedVector3Array(-5.3676577, 0, 3.4101863, 5.8108597, 0, 3.3609414, 5.8354816, 0, -3.508675, -5.4907684, 0, -3.6810317)
+
+[node name="AmbientSoundComponent" parent="." unique_id=2077548551 instance=ExtResource("2_bkvn0")]
