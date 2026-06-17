@@ -681,7 +681,7 @@ shader_parameter/snow_height = 5.0
 shader_parameter/rock_slope_threshold = 0.44
 shader_parameter/texture_tile_scale = 0.18
 shader_parameter/macro_texture_tiling_enabled = true
-shader_parameter/texture_focus_position = Vector3(52.76522, 4.272971, 7.5728383)
+shader_parameter/texture_focus_position = Vector3(52.786358, 112.815025, -107.6869)
 shader_parameter/close_texture_tile_scale = 0.2
 shader_parameter/medium_texture_tile_scale = 0.03
 shader_parameter/far_texture_tile_scale = 0.01
@@ -1156,10 +1156,10 @@ transform = Transform3D(-1.0000001, 0, 0, 0, 1, 0, 0, 0, -1.0000001, 14.699994, 
 [node name="HousePlywood3" parent="MonsterNav/Buildings" unique_id=1617498509 instance=ExtResource("4_usmu2")]
 transform = Transform3D(7.4505806e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 7.4505806e-08, 93.9, -0.11228132, 13.710337)
 
-[node name="UnfinishedBuilding3" parent="MonsterNav/Buildings" unique_id=809253956 instance=ExtResource("3_3r41g")]
+[node name="UnfinishedBuilding3" parent="MonsterNav/Buildings" unique_id=1737536594 instance=ExtResource("3_3r41g")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 24.9, 0, -25.6)
 
-[node name="UnfinishedBuilding2" parent="MonsterNav/Buildings" unique_id=1115025595 instance=ExtResource("3_3r41g")]
+[node name="UnfinishedBuilding2" parent="MonsterNav/Buildings" unique_id=914790915 instance=ExtResource("3_3r41g")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 66.4, 0.0048532486, -9.4)
 
 [node name="TwoStoryBuilding2" parent="MonsterNav/Buildings" unique_id=1696140781 instance=ExtResource("2_qo4u2")]
@@ -1210,7 +1210,7 @@ transform = Transform3D(0.026176995, 0, -0.99965733, 0, 1, 0, 0.99965733, 0, 0.0
 [node name="ChoppedWoodHut3" parent="MonsterNav/Buildings" unique_id=167343639 instance=ExtResource("20_ksg8c")]
 transform = Transform3D(0.70386595, 0, 0.7103328, 0, 1, 0, -0.7103328, 0, 0.70386595, 124.62274, 0.77974427, 99.324486)
 
-[node name="UnfinishedBuilding4" parent="MonsterNav/Buildings" unique_id=679400571 instance=ExtResource("3_3r41g")]
+[node name="UnfinishedBuilding4" parent="MonsterNav/Buildings" unique_id=464759277 instance=ExtResource("3_3r41g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.82181, -0.595477, 113.74433)
 
 [node name="HousePlywood10" parent="MonsterNav/Buildings" unique_id=1547388049 instance=ExtResource("5_xfb37")]

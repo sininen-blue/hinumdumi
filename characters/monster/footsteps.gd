@@ -14,15 +14,11 @@ var footsteps = [
 	FOOTSTEPS_HEAVY_4,
 ]
 
-@onready var timer: Timer = $Timer
+@onready var timer: Timer = %FootstepTimer
 @onready var wander: Node = %Wander
 @onready var scanning: Node = %Scanning
 @onready var investigate: Node = %Investigate
 @onready var hunt: Node = %Hunt
-
-
-func _ready() -> void:
-	timer.start()
 
 
 func _on_state_machine_changed_state(state: State) -> void:

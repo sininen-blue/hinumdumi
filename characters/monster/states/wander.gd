@@ -32,8 +32,10 @@ func update(_delta: float) -> void:
 
 
 func physics_update(_delta: float) -> void:
-	if PlayerStates.left_home == false:
+	if PlayerStates.left_home == false or PlayerStates.first_buy == false:
 		return
+	if monster.started == false: # NOTE: ugly, change this at some point
+		monster.started = true
 
 	next_path_position = nav.get_next_path_position()
 	direction = monster.global_position.direction_to(next_path_position)

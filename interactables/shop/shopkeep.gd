@@ -11,7 +11,7 @@ class_name Shop
 	"What are you buying?",
 ]
 @export var outro_line: Array[String] = [
-	"Ogey",
+	"Okay",
 ]
 
 var player: Player
@@ -20,13 +20,14 @@ var player: Player
 @onready var item_interacts: ItemInteracts = $ItemInteracts
 
 
-
 func _on_item_interact(item: Item) -> void:
 	if PlayerInventory.money >= item.base_cost:
 		var stock: int = inventory.get(item, 0)
 		if stock <= 0:
 			return
 
+		if PlayerStates.first_buy == false:
+			PlayerStates.first_buy = true
 		PlayerInventory.money -= item.base_cost
 		inventory[item] -= 1
 		item.origin = self

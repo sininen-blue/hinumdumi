@@ -155,7 +155,8 @@ pitch_scale = 0.8
 script = ExtResource("13_pxgw5")
 state_machine = NodePath("../StateMachine")
 
-[node name="Timer" type="Timer" parent="Footsteps" unique_id=541889159]
+[node name="FootstepTimer" type="Timer" parent="Footsteps" unique_id=541889159]
+unique_name_in_owner = true
 wait_time = 1.2
 one_shot = true
 
@@ -182,4 +183,4 @@ spot_range = 6.315
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="changed_state" from="StateMachine" to="Footsteps" method="_on_state_machine_changed_state"]
 [connection signal="timeout" from="StateMachine/Scanning/ScanTimer" to="StateMachine/Scanning" method="_on_scan_timer_timeout"]
-[connection signal="timeout" from="Footsteps/Timer" to="Footsteps" method="_on_timer_timeout"]
+[connection signal="timeout" from="Footsteps/FootstepTimer" to="Footsteps" method="_on_timer_timeout"]

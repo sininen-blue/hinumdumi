@@ -6,6 +6,15 @@ class_name Monster
 @export var player: Player
 @export var mass: float = 30
 
+@onready var footstep_timer: Timer = %FootstepTimer # NOTE: make an actual sound manager
+
+var started = false:
+	set(new_val):
+		started = new_val
+
+		if new_val == true:
+			footstep_timer.start()
+
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
