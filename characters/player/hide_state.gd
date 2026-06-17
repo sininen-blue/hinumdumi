@@ -21,7 +21,7 @@ func exit() -> void:
 	var tween: Tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(player, "global_position", player.hideable.exit_area.global_position, 0.5)
+	tween.tween_property(player, "global_position", player.hideable.exit_area.global_position, 0.2)
 
 
 func update(delta: float) -> void:

@@ -15,6 +15,8 @@ extends State
 @onready var ground_cast_toggle_timer: Timer = $GroundCastToggleTimer
 @onready var debug_flight_timer: Timer = $DebugFlightTimer
 
+@onready var land: AudioStreamPlayer3D = %Land
+
 
 func enter() -> void:
 	if player.current_stamina < stamina_cost:
@@ -39,6 +41,7 @@ func update(_delta: float) -> void:
 		player.noise_created.emit(3)
 		if state_machine.previous_state != debug_flight_state:
 			state_machine.change_state(state_machine.previous_state)
+			land.play()
 			return
 		state_machine.change_state(idle_state)
 

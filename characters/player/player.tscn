@@ -13,6 +13,9 @@
 [ext_resource type="Shape3D" uid="uid://cqagiplowr36g" path="res://characters/player/default_player_shape.tres" id="9_rpf03"]
 [ext_resource type="Script" uid="uid://cerq1hesr3qgu" path="res://characters/player/states/debug_flight_state.gd" id="11_3t07l"]
 [ext_resource type="Script" uid="uid://detp4j86s6ip8" path="res://characters/player/hide_state.gd" id="11_on558"]
+[ext_resource type="Script" uid="uid://cjsunpf7m30c" path="res://characters/player/sound_manager.gd" id="14_icpky"]
+[ext_resource type="AudioStream" uid="uid://b1r2qkueinysv" path="res://assets/sounds/footsteps/player_walk.wav" id="15_58jvb"]
+[ext_resource type="AudioStream" uid="uid://bno8umd8dkv0" path="res://assets/sounds/footsteps/footsteps_heavy_1.wav" id="16_8l73k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_icpky"]
 shader = ExtResource("4_gqopd")
@@ -78,11 +81,9 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Head" unique_id=1698700566]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15608889, -0.028652191, 1.3107598)
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
-spot_range = 8.29
-spot_angle = 20.55
+spot_range = 15.0
 
 [node name="InteractionCast" type="RayCast3D" parent="Head" unique_id=1682129743]
 target_position = Vector3(0, 0, -10)
@@ -179,7 +180,7 @@ one_shot = true
 unique_name_in_owner = true
 script = ExtResource("6_dirf7")
 player = NodePath("../..")
-speed = 4.0
+speed = 2.0
 crouch_shape = ExtResource("8_idpv6")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
@@ -216,6 +217,23 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 wait_time = 0.25
 one_shot = true
 
+[node name="SoundManager" type="Node3D" parent="." unique_id=1841433030]
+script = ExtResource("14_icpky")
+
+[node name="Footstep" type="AudioStreamPlayer3D" parent="SoundManager" unique_id=746440361]
+stream = ExtResource("15_58jvb")
+
+[node name="FootstepTimer" type="Timer" parent="SoundManager/Footstep" unique_id=907361700]
+wait_time = 1.2
+one_shot = true
+
+[node name="Land" type="AudioStreamPlayer3D" parent="SoundManager" unique_id=1529763453]
+unique_name_in_owner = true
+stream = ExtResource("16_8l73k")
+volume_db = -15.0
+pitch_scale = 0.7
+
 [connection signal="timeout" from="StateMachine/WalkState/StepTimer" to="StateMachine/WalkState" method="_on_step_timer_timeout"]
 [connection signal="timeout" from="StateMachine/RunState/StepTimer" to="StateMachine/RunState" method="_on_step_timer_timeout"]
 [connection signal="timeout" from="StateMachine/JumpState/GroundCastToggleTimer" to="StateMachine/JumpState" method="_on_ground_cast_toggle_timer_timeout"]
+[connection signal="timeout" from="SoundManager/Footstep/FootstepTimer" to="SoundManager" method="_on_footstep_timer_timeout"]

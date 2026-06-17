@@ -1,7 +1,7 @@
 [gd_resource type="Environment" format=3 uid="uid://4thbuqoqy2tc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nbfxf"]
-sky_top_color = Color(0.215, 0.30816668, 0.43, 1)
+sky_top_color = Color(0.161, 0.18975002, 0.23, 1)
 sky_horizon_color = Color(0.24, 0.11039999, 0.11039999, 1)
 
 [sub_resource type="Sky" id="Sky_4raoo"]
@@ -15,4 +15,4 @@ ssil_enabled = true
 sdfgi_enabled = true
 sdfgi_cascades = 2
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.025
+volumetric_fog_density = 0.03

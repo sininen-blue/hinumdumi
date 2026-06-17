@@ -10,14 +10,16 @@ var next_path_position: Vector3 = Vector3.ZERO
 var direction: Vector3 = Vector3.ZERO
 
 @onready var investigate: Node = %Investigate
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
 
 
 func enter() -> void:
-	pass
+	animation_player.speed_scale = 1.5
+	animation_player.play("Lando Walk/Armature|mixamo_com|Layer0")
 
 
 func exit() -> void:
-	pass
+	animation_player.speed_scale = 1
 
 
 func physics_update(_delta: float) -> void:

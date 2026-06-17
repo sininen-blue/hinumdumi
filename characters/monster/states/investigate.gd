@@ -12,14 +12,17 @@ var direction: Vector3 = Vector3.ZERO
 @onready var wander: Node = %Wander
 @onready var scanning: Node = %Scanning
 @onready var hunt: Node = %Hunt
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
 
 
 func enter() -> void:
+	animation_player.speed_scale = 1.2
+	animation_player.play("Lando Walk/Armature|mixamo_com|Layer0")
 	nav.target_position = state_machine.last_known_position
 
 
 func exit() -> void:
-	pass
+	animation_player.speed_scale = 1
 
 
 func update(_delta: float) -> void:

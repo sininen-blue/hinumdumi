@@ -8,7 +8,7 @@ class_name ShopDisplay
 var current_amount: int = 0
 var offset: float = 0.1
 var rotation_speed: float = 2
-var item_move_speed: float = 0.1
+var item_move_speed: float = 0.05
 
 var sending: Array[Array]
 var recieving: Array[Array]

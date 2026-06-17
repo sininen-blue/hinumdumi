@@ -14,9 +14,12 @@ var direction: Vector3 = Vector3.ZERO
 @onready var hunt: Node = %Hunt
 @onready var investigate: Node = %Investigate
 
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
+
 
 func _ready() -> void:
 	interest_points = monster.wander_points.points
+	animation_player.play("Lando Walk/Armature|mixamo_com|Layer0")
 
 
 func enter() -> void:

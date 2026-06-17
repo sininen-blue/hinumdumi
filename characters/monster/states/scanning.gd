@@ -8,13 +8,18 @@ var player: Player
 @onready var wander: Node = %Wander
 @onready var investigate: Node = %Investigate
 @onready var hunt: Node = %Hunt
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var footstep_timer: Timer = %FootstepTimer
 
 
 func enter() -> void:
+	footstep_timer.stop()
+	animation_player.play("Lando Idle/Armature|mixamo_com|Layer0")
 	scan_timer.start()
 
 
 func exit() -> void:
+	footstep_timer.start()
 	scan_timer.stop()
 
 

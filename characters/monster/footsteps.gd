@@ -24,9 +24,9 @@ var footsteps = [
 func _on_state_machine_changed_state(state: State) -> void:
 	match state:
 		wander:
-			timer.wait_time = 1.5
+			timer.wait_time = 1
 		scanning:
-			timer.wait_time = 3
+			timer.wait_time = 1
 		investigate:
 			timer.wait_time = 0.7
 		hunt:

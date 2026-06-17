@@ -7,8 +7,8 @@ height = 13.794434
 
 [node name="Lamppost" type="Node3D" unique_id=1674911750]
 
-[node name="Lamp Post2" parent="." unique_id=588237942 instance=ExtResource("1_87odp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010316014, 0, 0.09064627)
+[node name="Lamp Post2" parent="." unique_id=96306616 instance=ExtResource("1_87odp")]
+transform = Transform3D(0.69, 0, 0, 0, 0.69, 0, 0, 0, 0.69, 0.010316014, 0, 0.09064627)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1894016672]
 
@@ -17,7 +17,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0297966, 6.7990723, 0)
 shape = SubResource("CylinderShape3D_87odp")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2131350184]
-transform = Transform3D(1, 0, 0, 0, -0.16048415, 0.98703843, 0, -0.98703843, -0.16048415, 0, 14.314568, 1.7862034)
+transform = Transform3D(1, 0, 0, 0, -0.16048415, 0.98703843, 0, -0.98703843, -0.16048415, 0, 9.88652, 1.2559214)
 light_color = Color(1, 0.7583334, 0.42000002, 1)
+light_volumetric_fog_energy = 0.0
 shadow_enabled = true
-spot_range = 23.331
+spot_range = 19.141
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1375504933]
+height = 20.0
+vertices = PackedVector3Array(-0.2674253, 0, -0.24845135, 0.32996488, 0, -0.26363927, 0.34515262, 0, 0.2729993, -0.27248788, 0, 0.32362556)
