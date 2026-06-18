@@ -99,7 +99,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1772674, 3.3625996, 2.51859
 line_delay = 2.0
 
 [node name="ItemInteracts" type="Node3D" parent="." unique_id=93998991]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1916008, 3.3367696, 3.6391988)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4249982, 3.8192692, 4.2799335)
 script = ExtResource("4_i4wv7")
 
 [node name="ShoppableArea" type="Area3D" parent="." unique_id=1806168609]
@@ -116,7 +116,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4
 shadow_enabled = true
 
 [node name="Tindahan" parent="." unique_id=1923491395 instance=ExtResource("7_bhfhl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2970432, 1, 1.718412)
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -1.2970432, 1, 1.718412)
 
 [connection signal="body_entered" from="ShoppableArea" to="." method="_on_shoppable_area_body_entered"]
 [connection signal="body_exited" from="ShoppableArea" to="." method="_on_shoppable_area_body_exited"]

@@ -4,6 +4,8 @@ extends Node3D
 @onready var footstep_timer: Timer = $Footstep/FootstepTimer
 @onready var state_machine: StateMachine = %StateMachine
 
+@onready var player: Player = $".."
+
 @onready var walk_state: Node = %WalkState
 @onready var run_state: Node = %RunState
 @onready var crouch_state: Node = %CrouchState
@@ -13,9 +15,10 @@ func _process(_delta: float) -> void:
 	if footstep_timer.is_stopped():
 		match state_machine.current_state:
 			crouch_state:
-				footstep.volume_db = -25
-				footstep.pitch_scale = 0.8
-				footstep_timer.start(0.9)
+				if player.velocity != Vector3.ZERO:
+					footstep.volume_db = -25
+					footstep.pitch_scale = 0.8
+					footstep_timer.start(0.9)
 			walk_state:
 				footstep.volume_db = -15
 				footstep.pitch_scale = 0.8

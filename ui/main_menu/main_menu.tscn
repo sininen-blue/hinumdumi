@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cb5m4h6vo0rm0" path="res://ui/main_menu/main_menu.gd" id="1_uhj5c"]
 [ext_resource type="PackedScene" uid="uid://di5ccpypsjut8" path="res://assets/buildings/tindahan.tscn" id="2_i5wg5"]
+[ext_resource type="PackedScene" uid="uid://b0jkf1hw1u7py" path="res://ui/disclaimer/disclaimer.tscn" id="2_w2r0d"]
 [ext_resource type="Texture2D" uid="uid://bdsb5ogr5p644" path="res://assets/textures/grass/rocky_terrain_02_diff_1k.jpg" id="3_3c04x"]
 [ext_resource type="PackedScene" uid="uid://2n4q3u0mloh2" path="res://assets/walls/random_brick_wall.tscn" id="5_6mijq"]
 [ext_resource type="PackedScene" uid="uid://dsrnrxhowsshg" path="res://assets/others/banana_tree.tscn" id="6_w2r0d"]
@@ -63,7 +64,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2.53, 5.76),
 "transitions": PackedFloat32Array(-2, -2, -2),
 "update": 0,
-"values": [Vector3(0, 3.0724473, 6.4), Vector3(0, 3.0457978, 6.4), Vector3(0.016327381, 3.071793, 6.4)]
+"values": [Vector3(0, 3.0724473, 6.4), Vector3(-0.38, 2.736, 6.4), Vector3(0.496, 2.352, 6.16)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w2r0d"]
@@ -74,6 +75,7 @@ _data = {
 
 [node name="MainMenu" type="Node3D" unique_id=1511179216]
 script = ExtResource("1_uhj5c")
+play_level = ExtResource("2_w2r0d")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1039457917]
 

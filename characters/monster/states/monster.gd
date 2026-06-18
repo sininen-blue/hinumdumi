@@ -29,4 +29,5 @@ func _physics_process(delta: float) -> void:
 
 func _on_hitbox_body_entered(body: Node3D) -> void:
 	if body is Player:
+		## TODO: jumpscare
 		SceneManager.change_scene(load("res://src/debug/debug_death_screen.tscn"))

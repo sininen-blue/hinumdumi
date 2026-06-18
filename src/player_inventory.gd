@@ -41,5 +41,10 @@ func remove_item(item: Item) -> Hand:
 		return right_hand
 
 
+func reset() -> void:
+	inventory = { }
+	money = 0
+
+
 func sum(accum: int, number: int) -> int:
 	return accum + number

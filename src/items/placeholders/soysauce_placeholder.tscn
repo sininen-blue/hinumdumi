@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cdh57dmd8lvs2"]
+
+[ext_resource type="Texture2D" uid="uid://d0wsi0e688asb" path="res://assets/item_placeholders/soysauce.png" id="1_7bmpt"]
+
+[node name="SoysaucePlaceholder" type="Node3D" unique_id=1906190271]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1442384947]
+billboard = 1
+texture = ExtResource("1_7bmpt")

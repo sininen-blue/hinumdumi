@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://b0jkf1hw1u7py"]
+
+[ext_resource type="Script" uid="uid://dstnlqqyl1i5f" path="res://ui/disclaimer/disclaimer.gd" id="1_ooc02"]
+[ext_resource type="PackedScene" uid="uid://bwd570eivx0mj" path="res://levels/Demo/demo_level_1.tscn" id="2_mnafh"]
+
+[node name="Disclaimer" type="Control" unique_id=1618825101]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ooc02")
+target = ExtResource("2_mnafh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=898093200]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12, 0.12, 0.12, 1)
+
+[node name="Disclaimer" type="Label" parent="." unique_id=1547924092]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -202.0
+offset_right = 38.0
+offset_bottom = -179.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "DISCLAIMER"
+
+[node name="HeadphoneSuggestion" type="Label" parent="." unique_id=1318895166]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = -44.0
+offset_right = 131.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game is better with headphones"
+
+[node name="HeadphoneSuggestion2" type="Label" parent="." unique_id=611800380]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = 268.0
+offset_right = 131.0
+offset_bottom = 291.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is also a loading screen"
+
+[node name="Message" type="Label" parent="." unique_id=1335335680]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.0
+offset_top = -125.0
+offset_right = 329.0
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "We at NightOwl Studios appreciate your patience and any feedback you can provide"
+
+[node name="Warning" type="Label" parent="." unique_id=1023290856]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -164.0
+offset_right = 144.0
+offset_bottom = -141.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is an early playtest, expect bugs"
+
+[node name="Timer" type="Timer" parent="." unique_id=803974085]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Controls" type="Label" parent="." unique_id=2144681693]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 1.0
+offset_right = -86.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.31599998, 0.79, 0.71889997, 1)
+text = "WASD to move"
+
+[node name="Controls2" type="Label" parent="." unique_id=1511012554]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 90.0
+offset_top = -1.0
+offset_right = 204.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.31599998, 0.79, 0.71889997, 1)
+text = "Space to jump"
+
+[node name="Controls3" type="Label" parent="." unique_id=2091824247]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = 46.0
+offset_right = 53.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.31599998, 0.79, 0.71889997, 1)
+text = "Ctrl to crouch"
+
+[node name="Controls4" type="Label" parent="." unique_id=1925509263]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 103.0
+offset_right = 60.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.31599998, 0.79, 0.71889997, 1)
+text = "E to interact"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

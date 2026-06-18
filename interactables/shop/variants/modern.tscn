@@ -99,7 +99,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 2.9, 0)
 line_delay = 2.0
 
 [node name="ItemInteracts" type="Node3D" parent="." unique_id=93998991]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2.7575812, 1.8725092)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2.7575812, 2.309173)
 script = ExtResource("4_7h8de")
 
 [node name="ShoppableArea" type="Area3D" parent="." unique_id=1806168609]

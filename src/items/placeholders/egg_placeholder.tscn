@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dt0cafmukkfoy"]
+
+[ext_resource type="Texture2D" uid="uid://c31571frolx72" path="res://assets/item_placeholders/egg.png" id="1_itb38"]
+
+[node name="EggPlaceholder" type="Node3D" unique_id=1906190271]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=662838153]
+billboard = 1
+texture = ExtResource("1_itb38")

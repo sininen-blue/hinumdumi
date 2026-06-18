@@ -11,6 +11,7 @@ var direction: Vector3 = Vector3.ZERO
 
 @onready var investigate: Node = %Investigate
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var hitbox: Area3D = $"../../Hitbox"
 
 
 func enter() -> void:

@@ -22,6 +22,10 @@ PlayerStates="*uid://cls3pohm4xcw0"
 DebugGameState="*uid://bjmjiaalsgma5"
 SceneManager="*uid://cwr6kqpq0bnf8"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/gdt_terrain/plugin.cfg")

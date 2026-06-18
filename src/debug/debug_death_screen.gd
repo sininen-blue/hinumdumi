@@ -5,4 +5,6 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
-	SceneManager.change_scene(load("res://ui/main_menu/main_menu.tscn"))
+	PlayerInventory.reset()
+	PlayerStates.reset()
+	SceneManager.change_scene(load("res://levels/Demo/demo_level_1.tscn"))

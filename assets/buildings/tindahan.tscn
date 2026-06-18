@@ -8,16 +8,19 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_7itfs"]
 size = Vector3(1.7272949, 2.885498, 1.841919)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mvxqy"]
+size = Vector3(8.300293, 4.3100586, 5.25885)
+
 [node name="Tindahan" type="Node3D" unique_id=1923491395 node_paths=PackedStringArray("open_model", "close_model")]
 script = ExtResource("1_7itfs")
 open_model = NodePath("Tindahan2 open")
 close_model = NodePath("Tindahan2 close")
 
-[node name="Tindahan2 close" parent="." unique_id=247191380 instance=ExtResource("1_37vji")]
+[node name="Tindahan2 close" parent="." unique_id=2049524333 instance=ExtResource("1_37vji")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.7, -0.40000015)
 visible = false
 
-[node name="Tindahan2 open" parent="." unique_id=2037590489 instance=ExtResource("2_7itfs")]
+[node name="Tindahan2 open" parent="." unique_id=1413983463 instance=ExtResource("2_7itfs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.7, -0.39999998)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1073429199]
@@ -25,6 +28,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.7, -0.39999998)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=656608002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9353294, 1.2803955, 2.9283087)
 shape = SubResource("BoxShape3D_7itfs")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1876536638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5906105, 1.9926758, -0.78997064)
+shape = SubResource("BoxShape3D_mvxqy")
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=489231633]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.012914419)

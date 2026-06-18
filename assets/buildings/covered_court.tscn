@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bthmkrm5rrh8d" path="res://assets_raw/buildings/Covered Court.glb" id="1_m4no6"]
 [ext_resource type="PackedScene" uid="uid://d2i63aw6pm14r" path="res://src/ambient_sound_component.tscn" id="2_anwva"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_anwva"]
+size = Vector3(45.21289, 0.9166318, 31.906738)
+
 [node name="CoveredCourt" type="Node3D" unique_id=889480693]
 
 [node name="Covered Court" parent="." unique_id=79888148 instance=ExtResource("1_m4no6")]
@@ -44,3 +47,9 @@ vertices = PackedVector3Array(15.942399, 0, -15.367739, 17.820215, 0, -15.358887
 affect_navigation_mesh = true
 
 [node name="AmbientSoundComponent" parent="." unique_id=2077548551 instance=ExtResource("2_anwva")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=801750579]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1894623400]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.489258, -0.97184813, 0.14135742)
+shape = SubResource("BoxShape3D_anwva")

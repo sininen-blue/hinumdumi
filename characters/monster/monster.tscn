@@ -20,16 +20,15 @@
 height = 2.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xm3rn"]
-height = 2.5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_utdx2"]
-radius = 36.0
+radius = 30.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tyycc"]
-radius = 15.634
+radius = 10.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_yrry2"]
-radius = 1.25
+radius = 2.2117317
 
 [sub_resource type="Animation" id="Animation_arly5"]
 resource_name = "Armature|mixamo_com|Layer0"
@@ -831,7 +830,7 @@ visible = false
 mesh = SubResource("CapsuleMesh_xm3rn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1891105574]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0041504, 0)
 shape = SubResource("CapsuleShape3D_xm3rn")
 
 [node name="MonsterNavigationAgent" type="NavigationAgent3D" parent="." unique_id=2142026948]
@@ -843,9 +842,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 target_position = Vector3(0, 0, -100)
 collision_mask = 3
 script = ExtResource("3_yrry2")
-wander_distance_threshold = 10.0
-scanning_distance_threshold = 20.0
-investigate_distance_threshold = 40.0
+wander_distance_threshold = 5.0
+scanning_distance_threshold = 15.0
+investigate_distance_threshold = 30.0
 
 [node name="VisionLossTimer" type="Timer" parent="VisionCast" unique_id=960539668]
 one_shot = true
@@ -878,7 +877,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=743860647]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2718248, 0)
 shape = SubResource("SphereShape3D_yrry2")
 
 [node name="StateMachine" type="Node" parent="." unique_id=630183888 node_paths=PackedStringArray("initial_state")]
@@ -891,7 +890,8 @@ unique_name_in_owner = true
 script = ExtResource("3_xm3rn")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
-speed = 5.0
+speed = 4.0
+distance_threhold = 120.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Scanning" type="Node" parent="StateMachine" unique_id=2021815502 node_paths=PackedStringArray("monster")]
@@ -909,7 +909,7 @@ unique_name_in_owner = true
 script = ExtResource("5_utdx2")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
-speed = 6.0
+speed = 5.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Hunt" type="Node" parent="StateMachine" unique_id=1998318133 node_paths=PackedStringArray("monster", "nav")]
@@ -917,7 +917,7 @@ unique_name_in_owner = true
 script = ExtResource("6_s386a")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
-speed = 9.5
+speed = 9.2
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Lunge" type="Node" parent="StateMachine" unique_id=2119255039]
@@ -936,6 +936,7 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 [node name="SwipeCooldown" type="Timer" parent="StateMachine/Swipe" unique_id=522916671]
 
 [node name="Footsteps" type="AudioStreamPlayer3D" parent="." unique_id=1909668395 node_paths=PackedStringArray("state_machine")]
+attenuation_model = 1
 pitch_scale = 0.8
 max_distance = 50.0
 script = ExtResource("13_pxgw5")
@@ -959,7 +960,7 @@ root_node = NodePath("../Lando")
 "libraries/Lando Walk" = SubResource("AnimationLibrary_6755d")
 
 [node name="Lando" parent="." unique_id=262993916 instance=ExtResource("15_tt45c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24534068, 0)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, -0.24534068, 0)
 
 [connection signal="navigation_finished" from="MonsterNavigationAgent" to="StateMachine/Wander" method="_on_monster_navigation_agent_navigation_finished"]
 [connection signal="navigation_finished" from="MonsterNavigationAgent" to="StateMachine/Investigate" method="_on_monster_navigation_agent_navigation_finished"]

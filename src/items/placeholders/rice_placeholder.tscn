@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://1fv4khumsumn"]
+
+[ext_resource type="Texture2D" uid="uid://bnaaxrm61v11o" path="res://assets/item_placeholders/rice.png" id="1_kcvrn"]
+
+[node name="RicePlaceholder" type="Node3D" unique_id=1906190271]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1440821803]
+billboard = 1
+texture = ExtResource("1_kcvrn")

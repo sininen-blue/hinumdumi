@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://j3m1ojllirwc"]
+
+[ext_resource type="Texture2D" uid="uid://ddkkmn3tgwaeo" path="res://assets/item_placeholders/vinegar.png" id="1_5dek2"]
+
+[node name="VinegarPlaceholder" type="Node3D" unique_id=1906190271]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1737686305]
+billboard = 1
+texture = ExtResource("1_5dek2")

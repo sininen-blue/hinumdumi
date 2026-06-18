@@ -51,6 +51,8 @@ var current_speed: float = 0
 
 
 func _ready() -> void:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
 	PlayerInventory.left_hand = left_hand
 	PlayerInventory.right_hand = right_hand
 

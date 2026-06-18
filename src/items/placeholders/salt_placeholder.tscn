@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b34wuayl3tgbw"]
+
+[ext_resource type="Texture2D" uid="uid://ca7wvksnbf78i" path="res://assets/item_placeholders/salt.png" id="1_v5tyv"]
+
+[node name="SaltPlaceholder" type="Node3D" unique_id=1906190271]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1966091152]
+billboard = 1
+texture = ExtResource("1_v5tyv")

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://dduxxviuf6umn"]
 
-[ext_resource type="PackedScene" uid="uid://cbsuyeodh5w11" path="res://src/items/item_placeholder.tscn" id="1_5wn8f"]
+[ext_resource type="PackedScene" uid="uid://b34wuayl3tgbw" path="res://src/items/placeholders/salt_placeholder.tscn" id="1_5wn8f"]
 [ext_resource type="Script" uid="uid://b6rk0uffidg5l" path="res://src/items/item.gd" id="2_np57m"]
 
 [resource]
@@ -8,4 +8,5 @@ script = ExtResource("2_np57m")
 name = "Salt"
 singular_description = "scoop of salt"
 plural_description = "scoops of salt"
+model = ExtResource("1_5wn8f")
 metadata/_custom_type_script = "uid://b6rk0uffidg5l"

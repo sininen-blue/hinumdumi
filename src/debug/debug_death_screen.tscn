@@ -13,11 +13,21 @@ script = ExtResource("1_3gk3r")
 
 [node name="Label" type="Label" parent="." unique_id=1174834771]
 layout_mode = 0
-offset_left = 508.0
-offset_top = 227.0
-offset_right = 548.0
-offset_bottom = 250.0
-text = "you r ded (or won)"
+offset_left = 468.0
+offset_top = 202.0
+offset_right = 570.0
+offset_bottom = 225.0
+text = "You are dead"
+
+[node name="Label2" type="Label" parent="." unique_id=1136997805]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 363.0
+offset_right = 702.0
+offset_bottom = 386.0
+text = "Or you won
+
+we ended up using the same death sreen here"
 
 [node name="Button" type="Button" parent="." unique_id=2140917527]
 layout_mode = 0
@@ -25,6 +35,6 @@ offset_left = 499.0
 offset_top = 285.0
 offset_right = 507.0
 offset_bottom = 293.0
-text = "restrt?"
+text = "Restart"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
