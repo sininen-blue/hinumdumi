@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c35jfnf4jip1e"]
+
+[ext_resource type="PackedScene" uid="uid://bsp8pfukqk8lc" path="res://assets_raw/others/Kuya Zen Political ad.glb" id="1_2nh4d"]
+
+[node name="ZenAd" type="Node3D" unique_id=1627895575]
+
+[node name="Kuya Zen Political ad" parent="." unique_id=651560954 instance=ExtResource("1_2nh4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04972112, -0.26231205, -0.005486965)

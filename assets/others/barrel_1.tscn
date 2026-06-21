@@ -15,3 +15,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38749206, -0.73091674, -3.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=892909529]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73223877, 0)
 shape = SubResource("CylinderShape3D_mrcqo")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=779323355]
+height = 5.0
+vertices = PackedVector3Array(-0.006293416, 0, -0.5842427, -0.4195639, 0, -0.3996346, -0.5936829, 0, -0.017831452, -0.4195639, 0, 0.44159102, -0.027271628, 0, 0.592634, 0.45942247, 0, 0.43529755, 0.6440306, 0, -0.019929301, 0.40278137, 0, -0.4625692)

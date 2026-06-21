@@ -27,16 +27,21 @@ func update(_delta: float) -> void:
 
 
 func physics_update(delta: float) -> void:
-	player.current_speed = move_toward(player.current_speed, speed, accel)
-	player.velocity.x = player.direction.x * player.current_speed
-	player.velocity.z = player.direction.z * player.current_speed
+	print(player.current_speed)
+	if player.direction != Vector3.ZERO:
+		player.current_speed = move_toward(player.current_speed, speed, accel)
+	else:
+		player.current_speed = move_toward(player.current_speed, 0, accel)
+
+	player.velocity.x = move_toward(player.velocity.x, player.direction.x * player.current_speed, accel)
+	player.velocity.z = move_toward(player.velocity.z, player.direction.z * player.current_speed, accel)
 
 	if Input.is_action_pressed("move_jump"):
-		player.velocity.y += hover_force * delta
+		player.velocity.y = move_toward(player.velocity.y, player.current_speed, accel)
 	elif Input.is_action_pressed("move_crouch"):
-		player.velocity.y -= hover_force * delta
+		player.velocity.y = move_toward(player.velocity.y, -player.current_speed, accel)
 	else:
-		player.velocity.y = 0
+		player.velocity.y = move_toward(player.velocity.y, 0, accel)
 
 	player.move_and_slide()
 

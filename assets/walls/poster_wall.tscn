@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bttusdlfo5pxn"]
+
+[ext_resource type="PackedScene" uid="uid://pjevmjp5c5hj" path="res://assets_raw/walls/Missing Children Wall.glb" id="1_21yns"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_21yns"]
+size = Vector3(10.096741, 7.0336914, 0.3762207)
+
+[node name="PosterWall" type="Node3D" unique_id=1247598268]
+
+[node name="Missing Children Wall" parent="." unique_id=1357985673 instance=ExtResource("1_21yns")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022299409, 0, -0.022380233)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1716888808]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1666678102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006439209, 3.0168457, 0.028442383)
+shape = SubResource("BoxShape3D_21yns")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=790827160]
+height = 20.0
+vertices = PackedVector3Array(-5.0523605, 0, -0.25660968, 5.0865755, 0, -0.2680147, 5.0751705, 0, 0.31363404, -5.029551, 0, 0.34784874)

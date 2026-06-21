@@ -9,6 +9,8 @@ var current_state: State
 var previous_state: State
 var states: Dictionary = { }
 
+var is_locked: bool = false
+
 
 func _ready() -> void:
 	DebugGameState.monster_state_machine = self
@@ -39,6 +41,9 @@ func _input(event: InputEvent) -> void:
 
 
 func change_state(new_state: State) -> void:
+	if is_locked:
+		return
+
 	if current_state:
 		previous_state = current_state
 		current_state.exit()
@@ -60,3 +65,7 @@ func get_previous_state_name() -> String:
 	if previous_state:
 		return previous_state.name
 	return "unavailable"
+
+
+func toggle_lock() -> void:
+	is_locked = !is_locked

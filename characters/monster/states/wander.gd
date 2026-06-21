@@ -19,11 +19,11 @@ var direction: Vector3 = Vector3.ZERO
 
 func _ready() -> void:
 	interest_points = monster.wander_points.points
-	animation_player.play("Lando Walk/Armature|mixamo_com|Layer0")
 
 
 func enter() -> void:
 	nav.target_position = _get_target_point()
+	animation_player.play("Lando Walk/Armature|mixamo_com|Layer0")
 
 
 func exit() -> void:

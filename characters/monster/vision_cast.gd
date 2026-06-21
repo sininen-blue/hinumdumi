@@ -29,19 +29,10 @@ func _process(_delta: float) -> void:
 	if self.is_colliding() == false:
 		return
 
-	if self.get_collider() is Player:
+	if _can_see_player():
 		vision_loss_timer.start()
-		var player_distance: float = self.global_position.distance_to(player.global_position)
-		match state_machine.current_state:
-			wander:
-				if player_distance < wander_distance_threshold and vision_gain_timer.is_stopped():
-					vision_gain_timer.start()
-			scanning:
-				if player_distance < scanning_distance_threshold and vision_gain_timer.is_stopped():
-					vision_gain_timer.start()
-			investigate:
-				if player_distance < investigate_distance_threshold and vision_gain_timer.is_stopped():
-					vision_gain_timer.start()
+		if vision_gain_timer.is_stopped():
+			vision_gain_timer.start()
 	else:
 		if vision_gain_timer.is_stopped() == false:
 			vision_gain_timer.stop()

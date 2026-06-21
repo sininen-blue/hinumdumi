@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_eeqqt")
 name = "Vinegar"
-singular_description = "bottle of vinegar"
-plural_description = "bottles of vinegar"
+singular_description = "pack of vinegar"
+plural_description = "packs of vinegar"
 model = ExtResource("1_glvc1")
 metadata/_custom_type_script = "uid://b6rk0uffidg5l"

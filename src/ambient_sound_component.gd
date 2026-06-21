@@ -17,10 +17,10 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	current_player = sounds.pick_random()
+
+	if current_player.playing:
+		timer.start(randf_range(20, 40))
+		return
+
 	current_player.play()
-	current_player.finished.connect(_on_sound_finished)
-
-
-func _on_sound_finished() -> void:
-	current_player.finished.disconnect(_on_sound_finished)
 	timer.start(randf_range(20, 40))

@@ -31,6 +31,7 @@ var prev_dir: Vector3
 var is_on_ground: bool = false
 var enabled_gravity: bool = true
 var current_speed: float = 0
+var getting_jumpscared: bool = false
 
 @onready var right_hand: Node3D = %RightHand
 @onready var left_hand: Node3D = %LeftHand
@@ -49,8 +50,13 @@ var current_speed: float = 0
 	"MonsterState": "null",
 }
 
+@onready var jumpscare: Node3D = %Jumpscare
+@onready var jumpscare_player: AnimationPlayer = %JumpscarePlayer
+@onready var idle_state: Node = %IdleState
+
 
 func _ready() -> void:
+	jumpscare_player.play_backwards("RESET")
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 	PlayerInventory.left_hand = left_hand
@@ -100,9 +106,10 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		rotation_degrees.y -= event.relative.x * sensitivity
-		head.rotation_degrees.x -= event.relative.y * sensitivity
-		head.rotation_degrees.x = clamp(head.rotation_degrees.x, -80, 80)
+		if getting_jumpscared == false:
+			rotation_degrees.y -= event.relative.x * sensitivity
+			head.rotation_degrees.x -= event.relative.y * sensitivity
+			head.rotation_degrees.x = clamp(head.rotation_degrees.x, -80, 80)
 
 	if event.is_action_pressed("interact"):
 		interact()
@@ -129,3 +136,29 @@ func interact() -> void:
 	if not collided:
 		return
 	collided.interact()
+
+
+func start_jumpscare(monster: Monster) -> void:
+	getting_jumpscared = true
+	state_machine.change_state(idle_state)
+	state_machine.toggle_lock()
+
+	var tween: Tween = get_tree().create_tween().set_parallel()
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.set_trans(Tween.TRANS_BACK)
+
+	var target_direction = monster.global_position - self.global_position
+	var target_y = atan2(target_direction.x, target_direction.z)
+
+	var current_y = self.rotation.y
+	target_y = current_y + wrapf(target_y - current_y, -PI, PI)
+
+	tween.tween_property(self, "rotation:y", target_y - PI, 0.5)
+
+	await tween.finished
+
+	jumpscare_player.play("jumpscare")
+
+	await jumpscare_player.animation_finished
+
+	SceneManager.change_scene(load("res://src/debug/debug_death_screen.tscn"))

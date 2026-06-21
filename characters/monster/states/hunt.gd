@@ -12,6 +12,7 @@ var direction: Vector3 = Vector3.ZERO
 @onready var investigate: Node = %Investigate
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var hitbox: Area3D = $"../../Hitbox"
+@onready var jumpscare: Node = %Jumpscare
 
 
 func enter() -> void:
@@ -33,3 +34,8 @@ func physics_update(_delta: float) -> void:
 
 func lost_player() -> void:
 	pass
+
+
+func _on_hitbox_body_entered(body: Node3D) -> void:
+	if body is Player:
+		state_machine.change_state(jumpscare)

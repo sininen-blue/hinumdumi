@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dbdp6yu5bgt1b"]
 
 [ext_resource type="Script" uid="uid://bk504v50325ek" path="res://characters/monster/states/monster.gd" id="1_7ouai"]
-[ext_resource type="Script" uid="uid://gf102xlm7pek" path="res://characters/monster/debug/debug_state_label.gd" id="2_tyycc"]
 [ext_resource type="Script" uid="uid://dbrt73bn2822j" path="res://characters/monster/hearing_area.gd" id="3_legie"]
 [ext_resource type="Script" uid="uid://b1dl6kr3n5ex8" path="res://characters/monster/states/wander.gd" id="3_xm3rn"]
 [ext_resource type="Script" uid="uid://ukpnj7q0mijy" path="res://characters/monster/vision_cast.gd" id="3_yrry2"]
@@ -13,6 +12,8 @@
 [ext_resource type="Script" uid="uid://vhu87qyiqy08" path="res://characters/monster/states/lunge.gd" id="7_legie"]
 [ext_resource type="Script" uid="uid://da7h67kyyhgfv" path="res://characters/monster/states/swipe.gd" id="8_tyycc"]
 [ext_resource type="Script" uid="uid://oi5ctl585nw7" path="res://characters/monster/footsteps.gd" id="13_pxgw5"]
+[ext_resource type="Script" uid="uid://btlt2brwvxoc6" path="res://characters/monster/jumpscare.gd" id="14_arly5"]
+[ext_resource type="AudioStream" uid="uid://bno8umd8dkv0" path="res://assets/sounds/footsteps/footsteps_heavy_1.wav" id="14_esr8h"]
 [ext_resource type="Texture2D" uid="uid://6h5ymisown7t" path="res://assets/sketches/temp_monster.png" id="14_pbgqo"]
 [ext_resource type="PackedScene" uid="uid://fraogvv70eja" path="res://assets_raw/monster/Lando.glb" id="15_tt45c"]
 
@@ -28,7 +29,7 @@ radius = 30.0
 radius = 10.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_yrry2"]
-radius = 2.2117317
+radius = 3.374324
 
 [sub_resource type="Animation" id="Animation_arly5"]
 resource_name = "Armature|mixamo_com|Layer0"
@@ -809,13 +810,11 @@ _data = {
 [node name="Monster" type="CharacterBody3D" unique_id=2116566352]
 script = ExtResource("1_7ouai")
 
-[node name="DebugStateLabel" type="Label3D" parent="." unique_id=1200775091 node_paths=PackedStringArray("state_machine")]
+[node name="DebugStateLabel" type="Label3D" parent="." unique_id=1200775091]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 visible = false
 billboard = 1
 text = "Test"
-script = ExtResource("2_tyycc")
-state_machine = NodePath("../StateMachine")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1698984003]
 transform = Transform3D(0.37, 0, 0, 0, 0.37, 0, 0, 0, 0.37, 0, 1.68, 0)
@@ -842,15 +841,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 target_position = Vector3(0, 0, -100)
 collision_mask = 3
 script = ExtResource("3_yrry2")
-wander_distance_threshold = 5.0
-scanning_distance_threshold = 15.0
-investigate_distance_threshold = 30.0
+wander_distance_threshold = 25.0
+investigate_distance_threshold = 50.0
 
 [node name="VisionLossTimer" type="Timer" parent="VisionCast" unique_id=960539668]
+wait_time = 1.5
 one_shot = true
 
 [node name="VisionGainTimer" type="Timer" parent="VisionCast" unique_id=2130296793]
-wait_time = 0.5
+wait_time = 0.2
 one_shot = true
 
 [node name="HearingArea" type="Area3D" parent="." unique_id=1517629973]
@@ -891,7 +890,7 @@ script = ExtResource("3_xm3rn")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
 speed = 4.0
-distance_threhold = 120.0
+distance_threhold = 90.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Scanning" type="Node" parent="StateMachine" unique_id=2021815502 node_paths=PackedStringArray("monster")]
@@ -909,7 +908,7 @@ unique_name_in_owner = true
 script = ExtResource("5_utdx2")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
-speed = 5.0
+speed = 5.3
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Hunt" type="Node" parent="StateMachine" unique_id=1998318133 node_paths=PackedStringArray("monster", "nav")]
@@ -935,10 +934,16 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="SwipeCooldown" type="Timer" parent="StateMachine/Swipe" unique_id=522916671]
 
+[node name="Jumpscare" type="Node" parent="StateMachine" unique_id=1425243517 node_paths=PackedStringArray("monster")]
+unique_name_in_owner = true
+script = ExtResource("14_arly5")
+monster = NodePath("../..")
+metadata/_custom_type_script = "uid://dhyugj58epewt"
+
 [node name="Footsteps" type="AudioStreamPlayer3D" parent="." unique_id=1909668395 node_paths=PackedStringArray("state_machine")]
+stream = ExtResource("14_esr8h")
 attenuation_model = 1
 pitch_scale = 0.8
-max_distance = 50.0
 script = ExtResource("13_pxgw5")
 state_machine = NodePath("../StateMachine")
 
@@ -970,7 +975,7 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, -0.24534068, 0)
 [connection signal="body_exited" from="HearingArea" to="HearingArea" method="_on_body_exited"]
 [connection signal="body_entered" from="DetectArea" to="DetectArea" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="DetectArea" method="_on_body_exited"]
-[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="StateMachine/Hunt" method="_on_hitbox_body_entered"]
 [connection signal="changed_state" from="StateMachine" to="Footsteps" method="_on_state_machine_changed_state"]
 [connection signal="timeout" from="StateMachine/Scanning/ScanTimer" to="StateMachine/Scanning" method="_on_scan_timer_timeout"]
 [connection signal="timeout" from="Footsteps/FootstepTimer" to="Footsteps" method="_on_timer_timeout"]

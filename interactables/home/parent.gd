@@ -82,6 +82,7 @@ func _on_home_finished_requirements() -> void:
 func _on_submit_debounce_timer_timeout() -> void:
 	if home.requirements.is_empty():
 		return
+	dialogue_component.queue.clear()
 	dialogue_component.add_line("All that's left is")
 	list_requirements()
 	dialogue_component.start_talking()

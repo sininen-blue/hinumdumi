@@ -19,9 +19,11 @@ signal finished_requirements
 var player: Player
 
 @onready var debug_label: Label3D = $Debug/DebugLabel
+@onready var debug_model: CSGBox3D = $Debug/DebugModel
 
 
 func _ready() -> void:
+	debug_model.visible = false
 	if not debug:
 		return
 	_update_debug_text()

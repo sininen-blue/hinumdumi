@@ -6,6 +6,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_anwva"]
 size = Vector3(45.21289, 0.9166318, 31.906738)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_anwva"]
+height = 44.607666
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u7i3k"]
+height = 31.84674
+
 [node name="CoveredCourt" type="Node3D" unique_id=889480693]
 
 [node name="Covered Court" parent="." unique_id=79888148 instance=ExtResource("1_m4no6")]
@@ -53,3 +59,19 @@ affect_navigation_mesh = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1894623400]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.489258, -0.97184813, 0.14135742)
 shape = SubResource("BoxShape3D_anwva")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1594331737]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -4.8831787, -1.0213814, -15.80973)
+shape = SubResource("CapsuleShape3D_anwva")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=2128444751]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -4.8831787, -1.0213814, 16.097496)
+shape = SubResource("CapsuleShape3D_anwva")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=1645671361]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 18.125496, -1.0213807, 0.13018036)
+shape = SubResource("CapsuleShape3D_u7i3k")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=292482362]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, -27.096838, -1.0213807, 0.13018036)
+shape = SubResource("CapsuleShape3D_u7i3k")

@@ -5,7 +5,7 @@ signal removed_item(item: Item)
 @export var inventory: Dictionary[Item, int] = { }
 @export var left_hand: Hand
 @export var right_hand: Hand
-@export var money: float = 100
+@export var money: float = 10
 
 
 func add_item(item: Item) -> Hand:
@@ -43,7 +43,7 @@ func remove_item(item: Item) -> Hand:
 
 func reset() -> void:
 	inventory = { }
-	money = 0
+	money = 10
 
 
 func sum(accum: int, number: int) -> int:

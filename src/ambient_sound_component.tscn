@@ -39,6 +39,7 @@ max_distance = 30.0
 
 [node name="CricketsPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1610337061]
 stream = ExtResource("7_4ojj0")
+volume_db = -20.0
 max_distance = 30.0
 
 [node name="Glass" type="AudioStreamPlayer3D" parent="." unique_id=1406985826]
