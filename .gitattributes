@@ -709,6 +709,6 @@ assets_raw/buildings/Area[[:space:]]Building_Water[[:space:]]hose_Metallic-Water
 assets_raw/buildings/House[[:space:]]v1_Upper[[:space:]]Base[[:space:]]Wood[[:space:]]Support_Metallic-Upper[[:space:]]Base[[:space:]]Wood[[:space:]]Support_Roughness.png filter=lfs diff=lfs merge=lfs -text
 assets_raw/buildings/Modern[[:space:]]Sari[[:space:]]Sari[[:space:]]Store[[:space:]]Open_Softdrinks[[:space:]]ref3.png filter=lfs diff=lfs merge=lfs -text
 assets_raw/buildings/Unfinished[[:space:]]Building[[:space:]]1_wood[[:space:]]cement[[:space:]]mixer_Normal.png filter=lfs diff=lfs merge=lfs -text
-**/*.jpg filter=lfs diff=lfs merge=lfs -text
 **/*.png filter=lfs diff=lfs merge=lfs -text
+**/*.jpg filter=lfs diff=lfs merge=lfs -text
 **/*.glb filter=lfs diff=lfs merge=lfs -text
