@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://jqvj2fvnm8po"]
+
+[ext_resource type="Texture2D" uid="uid://bjbnp11u3b317" path="res://assets_raw/buildings/Modern Sari Sari Store Close_Concrete.jpg" id="1_jn4ug"]
+
+[resource]
+resource_name = "Concrete.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_jn4ug")
+roughness = 0.5
+texture_filter = 2

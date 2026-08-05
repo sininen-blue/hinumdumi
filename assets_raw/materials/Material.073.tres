@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://beiike20m1xmy"]
+
+[ext_resource type="Texture2D" uid="uid://cq74e6f72d0no" path="res://assets_raw/buildings/Modern Sari Sari Store Close_Roll Up.png" id="1_anv6a"]
+
+[resource]
+resource_name = "Material.073"
+cull_mode = 2
+albedo_texture = ExtResource("1_anv6a")
+metallic = 1.0
+roughness = 0.795455
+texture_filter = 2

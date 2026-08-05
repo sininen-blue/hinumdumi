@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b4wb54r6v73ri"]
+
+[ext_resource type="Texture2D" uid="uid://buitxcjhcnayk" path="res://assets_raw/walls/Roof Fence v3_rusty metal 2.png" id="1_w6ubr"]
+
+[resource]
+resource_name = "Material.006"
+cull_mode = 2
+albedo_texture = ExtResource("1_w6ubr")
+roughness = 0.5
+texture_filter = 2

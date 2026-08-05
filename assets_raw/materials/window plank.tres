@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cwh442n0nt5b2"]
+
+[ext_resource type="Texture2D" uid="uid://17grt5nqpwyd" path="res://assets_raw/buildings/house plywood2_window plank_Base_color.png" id="1_0x255"]
+[ext_resource type="Texture2D" uid="uid://cpfx8gbybf6t6" path="res://assets_raw/buildings/house plywood2_window plank_Metallic-window plank_Roughness.png" id="2_epia8"]
+[ext_resource type="Texture2D" uid="uid://b52xjldv5kyx5" path="res://assets_raw/buildings/house plywood2_window plank_Normal.png" id="3_bg45j"]
+
+[resource]
+resource_name = "window plank"
+cull_mode = 2
+albedo_texture = ExtResource("1_0x255")
+metallic = 1.0
+metallic_texture = ExtResource("2_epia8")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_epia8")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_bg45j")

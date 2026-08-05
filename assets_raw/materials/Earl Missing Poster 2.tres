@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://caki8uwshws7r"]
+
+[ext_resource type="Texture2D" uid="uid://qalykjebds5o" path="res://assets_raw/walls/Missing Children Wall_Earl Missing Poster 2.png" id="1_jv6dg"]
+
+[resource]
+resource_name = "Earl Missing Poster 2"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_jv6dg")
+roughness = 0.5
+texture_repeat = false

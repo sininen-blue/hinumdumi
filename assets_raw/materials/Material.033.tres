@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c2tu20wwainig"]
+
+[ext_resource type="Texture2D" uid="uid://dqe5aavik3i7e" path="res://assets_raw/buildings/Modern Sari Sari Store Close_Nature’s (2).png" id="1_pi2wt"]
+
+[resource]
+resource_name = "Material.033"
+cull_mode = 2
+albedo_texture = ExtResource("1_pi2wt")
+roughness = 0.5
+texture_filter = 2

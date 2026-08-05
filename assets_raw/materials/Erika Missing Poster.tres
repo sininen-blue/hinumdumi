@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cv64a0o87rymc"]
+
+[ext_resource type="Texture2D" uid="uid://bpn0f4dfueelp" path="res://assets_raw/walls/Missing Children Wall_Erika Missing Poster.png" id="1_mbtp5"]
+
+[resource]
+resource_name = "Erika Missing Poster"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_mbtp5")
+roughness = 0.5
+texture_repeat = false

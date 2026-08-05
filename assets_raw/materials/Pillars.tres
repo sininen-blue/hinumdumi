@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://wbh2fetrhp4q"]
+
+[ext_resource type="Texture2D" uid="uid://sqhqwfasn8l8" path="res://assets_raw/others/Basketball Ring 1_Pillars_Base_color.png" id="1_6ba2n"]
+[ext_resource type="Texture2D" uid="uid://dulaaq3onc8c" path="res://assets_raw/others/Basketball Ring 1_Pillars_Metallic-Pillars_Roughness.png" id="2_rsohy"]
+[ext_resource type="Texture2D" uid="uid://s4yrcabac43w" path="res://assets_raw/others/Basketball Ring 1_Pillars_Normal.png" id="3_6t4mx"]
+
+[resource]
+resource_name = "Pillars"
+cull_mode = 2
+albedo_texture = ExtResource("1_6ba2n")
+metallic = 1.0
+metallic_texture = ExtResource("2_rsohy")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_rsohy")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_6t4mx")

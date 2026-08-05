@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bhgag82cxvhio"]
+
+[ext_resource type="Texture2D" uid="uid://b8qyqr64y7e10" path="res://assets_raw/others/Basketball Ring 1_Stand support_Base_color.png" id="1_21vjf"]
+[ext_resource type="Texture2D" uid="uid://t8dssuu2ljvd" path="res://assets_raw/others/Basketball Ring 1_Stand support_Metallic-Stand support_Roughness.png" id="2_iqb5v"]
+[ext_resource type="Texture2D" uid="uid://ch7yqergrii8v" path="res://assets_raw/others/Basketball Ring 1_Stand support_Normal.png" id="3_5732t"]
+
+[resource]
+resource_name = "Stand support"
+cull_mode = 2
+albedo_texture = ExtResource("1_21vjf")
+metallic = 1.0
+metallic_texture = ExtResource("2_iqb5v")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_iqb5v")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_5732t")

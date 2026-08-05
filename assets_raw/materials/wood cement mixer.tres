@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://djh0jk80xw8yg"]
+
+[ext_resource type="Texture2D" uid="uid://b3bumcxgccmmv" path="res://assets_raw/buildings/2 Storey building_wood cement mixer_Base_color.png" id="1_wx474"]
+[ext_resource type="Texture2D" uid="uid://c45he75l4r66n" path="res://assets_raw/buildings/2 Storey building_wood cement mixer_Metallic-wood cement mixer_Roughness.png" id="2_otn8n"]
+[ext_resource type="Texture2D" uid="uid://bs8a4t40qatyj" path="res://assets_raw/buildings/2 Storey building_wood cement mixer_Normal.png" id="3_csqfw"]
+
+[resource]
+resource_name = "wood cement mixer"
+cull_mode = 2
+albedo_texture = ExtResource("1_wx474")
+metallic = 1.0
+metallic_texture = ExtResource("2_otn8n")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_otn8n")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_csqfw")

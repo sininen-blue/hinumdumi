@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c60dwu24fn1ks"]
+
+[ext_resource type="Texture2D" uid="uid://djyvqad72st6t" path="res://assets_raw/buildings/Area Building_Roof upper left_Base_color.png" id="1_gcg4x"]
+[ext_resource type="Texture2D" uid="uid://dxo8t8q54jamh" path="res://assets_raw/buildings/Area Building_Roof upper left_Metallic-Roof upper left_Roughness.png" id="2_t75rl"]
+[ext_resource type="Texture2D" uid="uid://dq4nl5hhukd87" path="res://assets_raw/buildings/Area Building_Roof upper left_Normal.png" id="3_dhlf0"]
+
+[resource]
+resource_name = "Roof upper left"
+cull_mode = 2
+albedo_texture = ExtResource("1_gcg4x")
+metallic = 1.0
+metallic_texture = ExtResource("2_t75rl")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_t75rl")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_dhlf0")

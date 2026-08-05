@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://3qbe50p2wa4c"]
+
+[ext_resource type="Script" uid="uid://c4kfqsfngyfb" path="res://assets/buildings/house.gd" id="1_rdhl7"]
+[ext_resource type="PackedScene" uid="uid://bto2dp00ka1r1" path="res://assets_raw/house/house.blend" id="1_v1k7e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v1k7e"]
+size = Vector3(1, 4.664551, 2.6797485)
+
+[node name="House" type="Node3D" unique_id=705296369]
+script = ExtResource("1_rdhl7")
+
+[node name="model" parent="." unique_id=201285515 instance=ExtResource("1_v1k7e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.727124, -0.53422594, 1.5052443)
+
+[node name="ExitArea" type="Area3D" parent="." unique_id=1926332882]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitArea" unique_id=733420314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8065653, 2.7916183, -2.1774619)
+shape = SubResource("BoxShape3D_v1k7e")
+
+[node name="EnterArea" type="Area3D" parent="." unique_id=77993254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2319403, 2.7078705, -2.2612112)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnterArea" unique_id=685843703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013427734, 0.067474365)
+shape = SubResource("BoxShape3D_v1k7e")
+
+[connection signal="body_entered" from="ExitArea" to="." method="_on_exit_area_body_entered"]
+[connection signal="body_entered" from="EnterArea" to="." method="_on_enter_area_body_entered"]

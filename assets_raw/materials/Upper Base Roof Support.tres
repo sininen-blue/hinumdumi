@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://tp3vq6s71my1"]
+
+[ext_resource type="Texture2D" uid="uid://dkcatyl5cr1xs" path="res://assets_raw/buildings/Area Building_Upper Base Roof Support 2_Base_color.png" id="1_774xl"]
+[ext_resource type="Texture2D" uid="uid://boc6urvrg5xgk" path="res://assets_raw/buildings/Area Building_Upper Base Roof Support 2_Metallic.png-Upper Base Roof Support 2_Roughness.png" id="2_ji5up"]
+[ext_resource type="Texture2D" uid="uid://b1ys2pgxepk6g" path="res://assets_raw/buildings/Area Building_Upper Base Roof Support 2_Normal.png" id="3_g0kw5"]
+
+[resource]
+resource_name = "Upper Base Roof Support"
+cull_mode = 2
+albedo_texture = ExtResource("1_774xl")
+metallic = 1.0
+metallic_texture = ExtResource("2_ji5up")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_ji5up")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_g0kw5")

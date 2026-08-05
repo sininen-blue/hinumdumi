@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c7310khfhib6v"]
+
+[ext_resource type="Texture2D" uid="uid://djt7yodvvkj3b" path="res://assets_raw/others/Court Rim_Court Rim_Rim Board_BaseColor.png" id="1_2txe1"]
+[ext_resource type="Texture2D" uid="uid://c0wnnpxuieqih" path="res://assets_raw/others/Court Rim_Court Rim_Rim Board_Metallic-Court Rim_Rim Board_Roughness.png" id="2_y2w40"]
+[ext_resource type="Texture2D" uid="uid://dc5viqjxhy2ai" path="res://assets_raw/others/Court Rim_Court Rim_Rim Board_Normal.png" id="3_3vfd1"]
+
+[resource]
+resource_name = "Rim Board"
+cull_mode = 2
+albedo_texture = ExtResource("1_2txe1")
+metallic = 1.0
+metallic_texture = ExtResource("2_y2w40")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_y2w40")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_3vfd1")

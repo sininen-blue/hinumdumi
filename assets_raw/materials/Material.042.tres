@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://vqeg3plw2wgy"]
+
+[ext_resource type="Texture2D" uid="uid://d3j8j83gsp8j8" path="res://assets_raw/buildings/Tindahan2 close_Rusty DOor.png" id="1_2lhin"]
+
+[resource]
+resource_name = "Material.042"
+cull_mode = 2
+albedo_texture = ExtResource("1_2lhin")
+metallic = 0.7615385
+roughness = 0.31538463
+texture_filter = 2

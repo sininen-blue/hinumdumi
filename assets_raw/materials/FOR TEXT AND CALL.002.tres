@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dmhhaq01nah8n"]
+
+[ext_resource type="Texture2D" uid="uid://h7fgloejillq" path="res://assets_raw/buildings/Tindahan2 close_sim.png" id="1_5mckj"]
+
+[resource]
+resource_name = "FOR TEXT AND CALL.002"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_5mckj")
+roughness = 0.5
+texture_repeat = false

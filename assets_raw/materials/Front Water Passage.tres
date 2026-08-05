@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://doxwm8bl5wj86"]
+
+[ext_resource type="Texture2D" uid="uid://o07qj0lscvk4" path="res://assets_raw/others/Fuso_Front Water Passage_Base_color.png" id="1_qj3ud"]
+[ext_resource type="Texture2D" uid="uid://blg0wk26gp5lb" path="res://assets_raw/others/Fuso_Front Water Passage_Metallic-Front Water Passage_Roughness.png" id="2_banwe"]
+[ext_resource type="Texture2D" uid="uid://b2yribh4xqwdr" path="res://assets_raw/others/Fuso_Front Water Passage_Normal.png" id="3_txo8f"]
+
+[resource]
+resource_name = "Front Water Passage"
+cull_mode = 2
+albedo_texture = ExtResource("1_qj3ud")
+metallic = 1.0
+metallic_texture = ExtResource("2_banwe")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_banwe")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_txo8f")

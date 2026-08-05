@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ch07fspf5p138"]
+
+[ext_resource type="Texture2D" uid="uid://djf87l2c0jjv" path="res://assets_raw/buildings/House v2_Rusty Roof.png" id="1_53oeu"]
+
+[resource]
+resource_name = "Material.040"
+cull_mode = 2
+albedo_texture = ExtResource("1_53oeu")
+metallic = 0.53846157
+roughness = 0.32377625
+texture_filter = 2

@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://s0wv3iq2syhx"]
+
+[ext_resource type="Texture2D" uid="uid://cb5yapuuj08m0" path="res://assets_raw/buildings/house plywood2_pillar _Base_color.png" id="1_4dx30"]
+[ext_resource type="Texture2D" uid="uid://bgsj60gsm6aoj" path="res://assets_raw/buildings/house plywood2_pillar _Metallic-pillar _Roughness.png" id="2_0is56"]
+[ext_resource type="Texture2D" uid="uid://djwq0e184whlm" path="res://assets_raw/buildings/house plywood2_pillar _Normal.png" id="3_xpkwy"]
+
+[resource]
+resource_name = "pillar "
+cull_mode = 2
+albedo_texture = ExtResource("1_4dx30")
+metallic = 1.0
+metallic_texture = ExtResource("2_0is56")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_0is56")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_xpkwy")

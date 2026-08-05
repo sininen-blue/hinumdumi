@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bj23kec3mhkqo"]
+
+[ext_resource type="Texture2D" uid="uid://dt8wcy0iiwp5y" path="res://assets_raw/buildings/Modern Sari Sari Store Close_Baligya.png" id="1_jesbp"]
+
+[resource]
+resource_name = "Material.023"
+cull_mode = 2
+albedo_texture = ExtResource("1_jesbp")
+metallic = 0.23636363
+roughness = 0.46818182

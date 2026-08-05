@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://do4gn7fg3iu06"]
+
+[ext_resource type="Texture2D" uid="uid://bcef8roerhnfq" path="res://assets_raw/buildings/Tindahan2 close_Black Simple Monoline Letter AJ Logo (47).png" id="1_wqo41"]
+
+[resource]
+resource_name = "Black Simple Monoline Letter AJ Logo (47)"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_wqo41")
+metallic = 0.4409091
+roughness = 0.41363636
+texture_repeat = false

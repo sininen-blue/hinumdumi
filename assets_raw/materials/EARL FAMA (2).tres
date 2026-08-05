@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bx7n3muguv6uh"]
+
+[ext_resource type="Texture2D" uid="uid://pmjhrmlcic0h" path="res://assets_raw/walls/Missing Children Wall_EARL FAMA (2).png" id="1_uydrc"]
+
+[resource]
+resource_name = "EARL FAMA (2)"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_uydrc")
+roughness = 0.5
+texture_repeat = false

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://blrlcfi7ihxf6"]
+
+[ext_resource type="Texture2D" uid="uid://8tgs8io6vfp8" path="res://assets_raw/buildings/Modern Sari Sari Store Close_sporing.png" id="1_4sb2o"]
+
+[resource]
+resource_name = "Material.021"
+cull_mode = 2
+albedo_texture = ExtResource("1_4sb2o")
+metallic = 0.3090909
+roughness = 0.1590909

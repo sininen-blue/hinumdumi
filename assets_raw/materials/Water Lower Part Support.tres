@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c23d1665osjyw"]
+
+[ext_resource type="Texture2D" uid="uid://drs5hqglga2n" path="res://assets_raw/others/Fuso_Water Lower Part Support_Base_color.png" id="1_eehjp"]
+[ext_resource type="Texture2D" uid="uid://c7sd5p3calnvo" path="res://assets_raw/others/Fuso_Water Lower Part Support_Metallic-Water Lower Part Support_Roughness.png" id="2_mcghl"]
+[ext_resource type="Texture2D" uid="uid://c0573005wkycl" path="res://assets_raw/others/Fuso_Water Lower Part Support_Normal.png" id="3_n6wg0"]
+
+[resource]
+resource_name = "Water Lower Part Support"
+cull_mode = 2
+albedo_texture = ExtResource("1_eehjp")
+metallic = 1.0
+metallic_texture = ExtResource("2_mcghl")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_mcghl")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_n6wg0")

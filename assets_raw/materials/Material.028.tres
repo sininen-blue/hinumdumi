@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cy2dfb55a23k3"]
+
+[ext_resource type="Texture2D" uid="uid://cl3uqs0juqbcd" path="res://assets_raw/buildings/Modern Sari Sari Store Close_Tin can top.jpg" id="1_p02lr"]
+
+[resource]
+resource_name = "Material.028"
+cull_mode = 2
+albedo_texture = ExtResource("1_p02lr")
+roughness = 0.5

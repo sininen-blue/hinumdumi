@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c6hblcmh1qln7"]
+
+[ext_resource type="Texture2D" uid="uid://c4uu4whdf2sff" path="res://assets_raw/buildings/Area Building_1st Floor Extension 1_Base_color.png" id="1_mb7mt"]
+[ext_resource type="Texture2D" uid="uid://bnr54b1fdji5g" path="res://assets_raw/buildings/Area Building_1st Floor Extension 1_Metallic-1st Floor Extension 1_Roughness.png" id="2_ddm2b"]
+[ext_resource type="Texture2D" uid="uid://b5uo56wgajdmf" path="res://assets_raw/buildings/Area Building_1st Floor Extension 1_Normal.png" id="3_lo458"]
+
+[resource]
+resource_name = "1st Floor Extension 1"
+cull_mode = 2
+albedo_texture = ExtResource("1_mb7mt")
+metallic = 1.0
+metallic_texture = ExtResource("2_ddm2b")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_ddm2b")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_lo458")

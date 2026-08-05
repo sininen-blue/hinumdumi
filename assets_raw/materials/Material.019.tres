@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ckry4b8b3uc8e"]
+
+[ext_resource type="Texture2D" uid="uid://cf0w7tpjkfl2y" path="res://assets_raw/buildings/2 Storey building_2666b8294cdcd313ec1e0934532f5771.jpg" id="1_q6gdt"]
+
+[resource]
+resource_name = "Material.019"
+cull_mode = 2
+albedo_texture = ExtResource("1_q6gdt")
+metallic = 0.18636364
+roughness = 0.054545455
+texture_filter = 2

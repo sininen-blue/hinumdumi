@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c61wpprdmxptp"]
+
+[ext_resource type="Texture2D" uid="uid://dglxr5u8dvid" path="res://assets_raw/walls/Modular Block Wall Variant3_Screen.png" id="1_si8lv"]
+
+[resource]
+resource_name = "Screen"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_si8lv")
+roughness = 0.5
+texture_repeat = false

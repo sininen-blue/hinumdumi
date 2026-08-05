@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dxqpvsmfgfwpx"]
+
+[ext_resource type="Texture2D" uid="uid://cbtb1m8y012no" path="res://assets_raw/buildings/Modern Sari Sari Store Close_ni aling lorna.png" id="1_l6nky"]
+
+[resource]
+resource_name = "Material.061"
+cull_mode = 2
+albedo_texture = ExtResource("1_l6nky")
+texture_filter = 2

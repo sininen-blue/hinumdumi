@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ci0r7w0uw02np"]
+
+[ext_resource type="Texture2D" uid="uid://2u328il85o3b" path="res://assets_raw/buildings/Tindahan2 close_wood.png" id="1_ye7ow"]
+
+[resource]
+resource_name = "Material.045"
+cull_mode = 2
+albedo_texture = ExtResource("1_ye7ow")
+roughness = 0.5
+texture_filter = 2

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://rg070hir00d0"]
+
+[ext_resource type="Texture2D" uid="uid://dvaqa11ofc5y" path="res://assets_raw/buildings/Modern Sari Sari Store Close_Plank texture.png" id="1_rju5s"]
+
+[resource]
+resource_name = "Material.069"
+cull_mode = 2
+albedo_texture = ExtResource("1_rju5s")
+roughness = 0.5

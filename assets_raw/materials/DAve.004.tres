@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dgq5p70h7u412"]
+
+[ext_resource type="Texture2D" uid="uid://o3upqupr3b36" path="res://assets_raw/buildings/2 Storey building_Ian Missing Poster 2.png" id="1_p2s6o"]
+
+[resource]
+resource_name = "DAve.004"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_p2s6o")
+roughness = 0.5
+texture_filter = 2
+texture_repeat = false

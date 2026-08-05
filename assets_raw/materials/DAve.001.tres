@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ce1tdj6jnn7qp"]
+
+[ext_resource type="Texture2D" uid="uid://clhnxigv4iup7" path="res://assets_raw/buildings/2 Storey building_Yan.png" id="1_17bao"]
+
+[resource]
+resource_name = "DAve.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_17bao")
+roughness = 0.5
+texture_filter = 2
+texture_repeat = false

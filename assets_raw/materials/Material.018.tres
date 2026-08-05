@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dn4y7dunko0td"]
+
+[ext_resource type="Texture2D" uid="uid://bh1j0e3rq6rh8" path="res://assets_raw/buildings/Normelita Store Close_Political Election Flyer (4).png" id="1_kliqn"]
+
+[resource]
+resource_name = "Material.018"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_kliqn")
+roughness = 0.5
+texture_filter = 2

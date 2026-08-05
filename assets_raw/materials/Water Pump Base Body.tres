@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bl30g8eqhtrwp"]
+
+[ext_resource type="Texture2D" uid="uid://b2ql30qorw28p" path="res://assets_raw/others/Fuso_Water Pump Base Body_Base_color.png" id="1_pxkya"]
+[ext_resource type="Texture2D" uid="uid://cj5kw7s5p826n" path="res://assets_raw/others/Fuso_Water Pump Base Body_Metallic-Water Pump Base Body_Roughness.png" id="2_pqbmk"]
+[ext_resource type="Texture2D" uid="uid://rl5npyq1c6ln" path="res://assets_raw/others/Fuso_Water Pump Base Body_Normal.png" id="3_xh8wy"]
+
+[resource]
+resource_name = "Water Pump Base Body"
+cull_mode = 2
+albedo_texture = ExtResource("1_pxkya")
+metallic = 1.0
+metallic_texture = ExtResource("2_pqbmk")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_pqbmk")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_xh8wy")

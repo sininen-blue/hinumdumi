@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cdrvoeepb2gll"]
+
+[ext_resource type="Texture2D" uid="uid://chjpc3tu1gl4s" path="res://assets_raw/buildings/2 Storey building_Wooden window_Base_color.png" id="1_ilh3y"]
+[ext_resource type="Texture2D" uid="uid://dh7syjs5i0v71" path="res://assets_raw/buildings/2 Storey building_Wooden window_Metallic-Wooden window_Roughness.png" id="2_8ib2u"]
+[ext_resource type="Texture2D" uid="uid://bedu8dec5k7d2" path="res://assets_raw/buildings/2 Storey building_Wooden window_Normal.png" id="3_yuspi"]
+
+[resource]
+resource_name = "Wooden window"
+cull_mode = 2
+albedo_texture = ExtResource("1_ilh3y")
+metallic = 1.0
+metallic_texture = ExtResource("2_8ib2u")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_8ib2u")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_yuspi")

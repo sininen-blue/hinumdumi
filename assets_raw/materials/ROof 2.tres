@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cfg4v06vnvmqa"]
+
+[ext_resource type="Texture2D" uid="uid://bfwteup54cj4k" path="res://assets_raw/walls/Modular Block Wall Variant3_ROof 2.png" id="1_auscc"]
+
+[resource]
+resource_name = "ROof 2"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_auscc")
+roughness = 0.5
+texture_repeat = false

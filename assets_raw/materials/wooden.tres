@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dds3cysl5tn67"]
+
+[ext_resource type="Texture2D" uid="uid://bwovoyyinwjt1" path="res://assets_raw/buildings/2 Storey building_Wood_Base_color.png" id="1_wodqj"]
+[ext_resource type="Texture2D" uid="uid://co1k3o4lt3exe" path="res://assets_raw/buildings/2 Storey building_Wood_Metallic-Wood_Roughness.png" id="2_oj5hl"]
+[ext_resource type="Texture2D" uid="uid://ry7jglec2bav" path="res://assets_raw/buildings/2 Storey building_Wood_Normal.png" id="3_fae0f"]
+
+[resource]
+resource_name = "wooden"
+cull_mode = 2
+albedo_texture = ExtResource("1_wodqj")
+metallic = 1.0
+metallic_texture = ExtResource("2_oj5hl")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_oj5hl")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_fae0f")

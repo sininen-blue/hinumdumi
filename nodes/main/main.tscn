@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ibqiiw3d6qq5"]
+
+[ext_resource type="PackedScene" uid="uid://jahauq4jp658" path="res://nodes/environment/environment.tscn" id="1_irdys"]
+[ext_resource type="PackedScene" uid="uid://cnqm12iyjttyy" path="res://nodes/worlds/demo_world.tscn" id="2_bxlbv"]
+[ext_resource type="PackedScene" uid="uid://leixn7ybth70" path="res://characters/player/player.tscn" id="3_757c4"]
+[ext_resource type="PackedScene" uid="uid://dbdp6yu5bgt1b" path="res://characters/monster/monster.tscn" id="4_paj5s"]
+[ext_resource type="Script" uid="uid://n02j0kwxqqr6" path="res://characters/monster/interest_point/wander_points.gd" id="5_jeic7"]
+[ext_resource type="PackedScene" uid="uid://q4tiair8u3s5" path="res://nodes/ui/shaders/shaders.tscn" id="6_757c4"]
+[ext_resource type="PackedScene" uid="uid://27ch0062tx23" path="res://nodes/ui/hud/hud.tscn" id="7_paj5s"]
+
+[node name="Main" type="Node" unique_id=1280053012]
+
+[node name="Environment" parent="." unique_id=2135263294 instance=ExtResource("1_irdys")]
+
+[node name="DemoWorld" parent="." unique_id=1868170460 instance=ExtResource("2_bxlbv")]
+
+[node name="Player" parent="." unique_id=950809192 instance=ExtResource("3_757c4")]
+
+[node name="Monster" parent="." unique_id=2116566352 instance=ExtResource("4_paj5s")]
+
+[node name="WanderPoints" type="Node3D" parent="." unique_id=1200781501]
+script = ExtResource("5_jeic7")
+metadata/_custom_type_script = "uid://n02j0kwxqqr6"
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1315627567]
+
+[node name="Shaders" parent="UI" unique_id=784845990 instance=ExtResource("6_757c4")]
+
+[node name="Hud" parent="UI" unique_id=706053294 instance=ExtResource("7_paj5s")]

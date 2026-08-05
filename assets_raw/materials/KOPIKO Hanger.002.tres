@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bgdgt3goi5d8f"]
+
+[ext_resource type="Texture2D" uid="uid://ceuhnu8r5r71m" path="res://assets_raw/buildings/Modern Sari Sari Store Close_KAPEKA Package.png" id="1_5h0q7"]
+
+[resource]
+resource_name = "KOPIKO Hanger.002"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_5h0q7")
+roughness = 0.5
+texture_filter = 2
+texture_repeat = false

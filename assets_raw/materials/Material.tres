@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cchdh8q8gxrg6"]
+
+[ext_resource type="Texture2D" uid="uid://bk7bdllqv8ok8" path="res://assets_raw/others/Barrel1_Barrel.png" id="1_li2x3"]
+
+[resource]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_li2x3")
+metallic = 0.8218181
+roughness = 0.52363634
+texture_filter = 2

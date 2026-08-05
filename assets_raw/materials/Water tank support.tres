@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c6y2whlj342ts"]
+
+[ext_resource type="Texture2D" uid="uid://c7yr6q3oeu0mm" path="res://assets_raw/buildings/Area Building_Water tank support_Base_color.png" id="1_ik66m"]
+[ext_resource type="Texture2D" uid="uid://buuq2rlk50upt" path="res://assets_raw/buildings/Area Building_Water tank support_Metallic-Water tank support_Roughness.png" id="2_t4cyn"]
+[ext_resource type="Texture2D" uid="uid://mptkhlep5qrg" path="res://assets_raw/buildings/Area Building_Water tank support_Normal.png" id="3_3id64"]
+
+[resource]
+resource_name = "Water tank support"
+cull_mode = 2
+albedo_texture = ExtResource("1_ik66m")
+metallic = 1.0
+metallic_texture = ExtResource("2_t4cyn")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_t4cyn")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_3id64")

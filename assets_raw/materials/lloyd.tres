@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ul6jw67qfqb"]
+
+[ext_resource type="Texture2D" uid="uid://bdigox0x7oa47" path="res://assets_raw/walls/Missing Children Wall_lloyd.png" id="1_x650t"]
+
+[resource]
+resource_name = "lloyd"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_x650t")
+roughness = 0.5
+texture_repeat = false

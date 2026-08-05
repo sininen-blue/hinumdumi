@@ -88,6 +88,7 @@
 [ext_resource type="PackedScene" uid="uid://bttusdlfo5pxn" path="res://assets/walls/poster_wall.tscn" id="70_wdlwj"]
 [ext_resource type="PackedScene" uid="uid://c6qxid4qc54se" path="res://interactables/hides/variants/hide_cylinder.tscn" id="81_joltu"]
 [ext_resource type="Environment" uid="uid://4thbuqoqy2tc" path="res://src/environment.tres" id="81_xlj54"]
+[ext_resource type="PackedScene" uid="uid://3qbe50p2wa4c" path="res://assets/buildings/house.tscn" id="85_yse4c"]
 [ext_resource type="AudioStream" uid="uid://brh5a2uhj03gh" path="res://assets/sounds/ambiance/wind_1.wav" id="86_6a5yr"]
 [ext_resource type="AudioStream" uid="uid://bw17otg7e5ipu" path="res://assets/sounds/ambiance/wind_2.wav" id="87_7j1ob"]
 
@@ -98,7 +99,7 @@ agent_radius = 1.5
 agent_max_climb = 0.5
 agent_max_slope = 25.0
 
-[sub_resource type="Shader" id="Shader_wdlwj"]
+[sub_resource type="Shader" id="Shader_yse4c"]
 code = "
 shader_type spatial;
 render_mode cull_back, diffuse_burley, specular_schlick_ggx;
@@ -572,7 +573,7 @@ void fragment() {
 }
 "
 
-[sub_resource type="Image" id="Image_yse4c"]
+[sub_resource type="Image" id="Image_m5d18"]
 data = {
 "data": PackedByteArray(61, 84, 38, 255, 61, 84, 38, 255, 61, 84, 38, 255, 61, 84, 38, 255, 61, 84, 38, 255, 61, 84, 38, 255, 61, 84, 38, 255, 61, 84, 38, 255, 61, 84, 38, 255, 61, 84, 38, 255, 61, 84, 38, 255, 61, 84, 38, 255, 61, 84, 38, 255, 61, 84, 38, 255, 61, 84, 38, 255, 61, 84, 38, 255),
 "format": "RGBA8",
@@ -581,10 +582,10 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_m5d18"]
-image = SubResource("Image_yse4c")
+[sub_resource type="ImageTexture" id="ImageTexture_gjynu"]
+image = SubResource("Image_m5d18")
 
-[sub_resource type="Image" id="Image_gjynu"]
+[sub_resource type="Image" id="Image_skrd0"]
 data = {
 "data": PackedByteArray(127, 127, 127, 255, 127, 127, 127, 255, 127, 127, 127, 255, 127, 127, 127, 255, 127, 127, 127, 255, 127, 127, 127, 255, 127, 127, 127, 255, 127, 127, 127, 255, 127, 127, 127, 255, 127, 127, 127, 255, 127, 127, 127, 255, 127, 127, 127, 255, 127, 127, 127, 255, 127, 127, 127, 255, 127, 127, 127, 255, 127, 127, 127, 255),
 "format": "RGBA8",
@@ -593,10 +594,10 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_skrd0"]
-image = SubResource("Image_gjynu")
+[sub_resource type="ImageTexture" id="ImageTexture_3rck0"]
+image = SubResource("Image_skrd0")
 
-[sub_resource type="Image" id="Image_3rck0"]
+[sub_resource type="Image" id="Image_dmejc"]
 data = {
 "data": PackedByteArray(191, 191, 191, 255, 191, 191, 191, 255, 191, 191, 191, 255, 191, 191, 191, 255, 191, 191, 191, 255, 191, 191, 191, 255, 191, 191, 191, 255, 191, 191, 191, 255, 191, 191, 191, 255, 191, 191, 191, 255, 191, 191, 191, 255, 191, 191, 191, 255, 191, 191, 191, 255, 191, 191, 191, 255, 191, 191, 191, 255, 191, 191, 191, 255),
 "format": "RGBA8",
@@ -605,10 +606,10 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_dmejc"]
-image = SubResource("Image_3rck0")
+[sub_resource type="ImageTexture" id="ImageTexture_hpixl"]
+image = SubResource("Image_dmejc")
 
-[sub_resource type="Image" id="Image_hpixl"]
+[sub_resource type="Image" id="Image_nj023"]
 data = {
 "data": PackedByteArray(127, 127, 255, 255, 127, 127, 255, 255, 127, 127, 255, 255, 127, 127, 255, 255, 127, 127, 255, 255, 127, 127, 255, 255, 127, 127, 255, 255, 127, 127, 255, 255, 127, 127, 255, 255, 127, 127, 255, 255, 127, 127, 255, 255, 127, 127, 255, 255, 127, 127, 255, 255, 127, 127, 255, 255, 127, 127, 255, 255, 127, 127, 255, 255),
 "format": "RGBA8",
@@ -617,12 +618,12 @@ data = {
 "width": 4
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_nj023"]
-image = SubResource("Image_hpixl")
+[sub_resource type="ImageTexture" id="ImageTexture_gwhqg"]
+image = SubResource("Image_nj023")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gwhqg"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n5xgs"]
 render_priority = 0
-shader = SubResource("Shader_wdlwj")
+shader = SubResource("Shader_yse4c")
 shader_parameter/use_procedural_detail = false
 shader_parameter/material_mode = 1
 shader_parameter/snow_enabled = false
@@ -664,22 +665,22 @@ shader_parameter/paint_ground_albedo_texture = ExtResource("6_82bax")
 shader_parameter/paint_ground_normal_texture = ExtResource("8_vroaw")
 shader_parameter/paint_ground_roughness_texture = ExtResource("9_80yqy")
 shader_parameter/paint_ground_height_texture = ExtResource("7_jqnnm")
-shader_parameter/paint_upper_albedo_texture = SubResource("ImageTexture_skrd0")
-shader_parameter/paint_upper_normal_texture = SubResource("ImageTexture_nj023")
-shader_parameter/paint_upper_roughness_texture = SubResource("ImageTexture_dmejc")
-shader_parameter/paint_upper_height_texture = SubResource("ImageTexture_dmejc")
+shader_parameter/paint_upper_albedo_texture = SubResource("ImageTexture_3rck0")
+shader_parameter/paint_upper_normal_texture = SubResource("ImageTexture_gwhqg")
+shader_parameter/paint_upper_roughness_texture = SubResource("ImageTexture_hpixl")
+shader_parameter/paint_upper_height_texture = SubResource("ImageTexture_hpixl")
 shader_parameter/paint_rocky_albedo_texture = ExtResource("2_0kcbd")
 shader_parameter/paint_rocky_normal_texture = ExtResource("4_eutc3")
 shader_parameter/paint_rocky_roughness_texture = ExtResource("5_21gde")
 shader_parameter/paint_rocky_height_texture = ExtResource("3_ak2k5")
-shader_parameter/paint_cliff_albedo_texture = SubResource("ImageTexture_skrd0")
-shader_parameter/paint_cliff_normal_texture = SubResource("ImageTexture_nj023")
-shader_parameter/paint_cliff_roughness_texture = SubResource("ImageTexture_dmejc")
-shader_parameter/paint_cliff_height_texture = SubResource("ImageTexture_dmejc")
-shader_parameter/paint_snow_albedo_texture = SubResource("ImageTexture_skrd0")
-shader_parameter/paint_snow_normal_texture = SubResource("ImageTexture_nj023")
-shader_parameter/paint_snow_roughness_texture = SubResource("ImageTexture_dmejc")
-shader_parameter/paint_snow_height_texture = SubResource("ImageTexture_dmejc")
+shader_parameter/paint_cliff_albedo_texture = SubResource("ImageTexture_3rck0")
+shader_parameter/paint_cliff_normal_texture = SubResource("ImageTexture_gwhqg")
+shader_parameter/paint_cliff_roughness_texture = SubResource("ImageTexture_hpixl")
+shader_parameter/paint_cliff_height_texture = SubResource("ImageTexture_hpixl")
+shader_parameter/paint_snow_albedo_texture = SubResource("ImageTexture_3rck0")
+shader_parameter/paint_snow_normal_texture = SubResource("ImageTexture_gwhqg")
+shader_parameter/paint_snow_roughness_texture = SubResource("ImageTexture_hpixl")
+shader_parameter/paint_snow_height_texture = SubResource("ImageTexture_hpixl")
 shader_parameter/lowland_color = Color(0.15, 0.21, 0.09, 1)
 shader_parameter/grass_color = Color(0.24, 0.33, 0.15, 1)
 shader_parameter/rock_color = Color(0.27, 0.24, 0.18, 1)
@@ -689,7 +690,7 @@ shader_parameter/snow_height = 5.0
 shader_parameter/rock_slope_threshold = 0.44
 shader_parameter/texture_tile_scale = 0.18
 shader_parameter/macro_texture_tiling_enabled = true
-shader_parameter/texture_focus_position = Vector3(39.463326, 175.05862, 3.4864044)
+shader_parameter/texture_focus_position = Vector3(91.07587, 3.1957638, -8.407008)
 shader_parameter/close_texture_tile_scale = 0.2
 shader_parameter/medium_texture_tile_scale = 0.03
 shader_parameter/far_texture_tile_scale = 0.01
@@ -706,7 +707,7 @@ shader_parameter/texture_bombing_cell_scale = 0.65
 shader_parameter/texture_bombing_samples = 2
 shader_parameter/material_performance_preset = 2
 shader_parameter/far_material_cache_enabled = false
-shader_parameter/far_material_cache_texture = SubResource("ImageTexture_m5d18")
+shader_parameter/far_material_cache_texture = SubResource("ImageTexture_gjynu")
 shader_parameter/terrain_world_size = 256.0
 shader_parameter/macro_variation_strength = 0.18
 shader_parameter/macro_variation_scale = 0.04
@@ -847,7 +848,7 @@ metadata/_edit_lock_ = true
 
 [node name="TerrainChunk_01_00" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=647820730]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09095764, 0.0043621063, 0.7029915)
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("7_wossb")
 metadata/terrain_chunk_center = Vector2(-32, -96)
 metadata/terrain_chunk_x = 1
@@ -870,7 +871,7 @@ shape = ExtResource("8_gmtm7")
 metadata/terrain_collision_quality = 1
 
 [node name="TerrainChunk_03_00" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=1831710546]
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("3_f6mfe")
 metadata/terrain_chunk_center = Vector2(96, -96)
 metadata/terrain_chunk_x = 3
@@ -892,7 +893,7 @@ shape = ExtResource("4_jante")
 metadata/terrain_collision_quality = 1
 
 [node name="TerrainChunk_02_00" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=238507735]
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("5_nayji")
 metadata/terrain_chunk_center = Vector2(32, -96)
 metadata/terrain_chunk_x = 2
@@ -914,7 +915,7 @@ shape = ExtResource("6_y7abg")
 metadata/terrain_collision_quality = 1
 
 [node name="TerrainChunk_00_00" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=2119187956]
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("9_5kihn")
 metadata/terrain_chunk_center = Vector2(-96, -96)
 metadata/terrain_chunk_x = 0
@@ -936,7 +937,7 @@ shape = ExtResource("10_26vfg")
 metadata/terrain_collision_quality = 1
 
 [node name="TerrainChunk_00_01" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=1687484538]
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("22_ppmxy")
 metadata/terrain_chunk_center = Vector2(-96, -32)
 metadata/terrain_chunk_x = 0
@@ -958,7 +959,7 @@ shape = ExtResource("12_ak2k5")
 metadata/terrain_collision_quality = 1
 
 [node name="TerrainChunk_02_01" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=279168525]
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("30_nayji")
 metadata/terrain_chunk_center = Vector2(32, -32)
 metadata/terrain_chunk_x = 2
@@ -980,7 +981,7 @@ shape = ExtResource("13_eutc3")
 metadata/terrain_collision_quality = 1
 
 [node name="TerrainChunk_03_01" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=1198152280]
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("28_6a5yr")
 metadata/terrain_chunk_center = Vector2(96, -32)
 metadata/terrain_chunk_x = 3
@@ -1002,7 +1003,7 @@ shape = ExtResource("14_21gde")
 metadata/terrain_collision_quality = 1
 
 [node name="TerrainChunk_01_01" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=1669606094]
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("15_82bax")
 metadata/terrain_chunk_center = Vector2(-32, -32)
 metadata/terrain_chunk_x = 1
@@ -1024,7 +1025,7 @@ shape = ExtResource("16_jqnnm")
 metadata/terrain_collision_quality = 1
 
 [node name="TerrainChunk_00_02" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=2129642060]
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("30_opa8n")
 metadata/terrain_chunk_center = Vector2(-96, 32)
 metadata/terrain_chunk_x = 0
@@ -1046,7 +1047,7 @@ shape = ExtResource("18_80yqy")
 metadata/terrain_collision_quality = 1
 
 [node name="TerrainChunk_01_02" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=1890738020]
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("19_qpri6")
 metadata/terrain_chunk_center = Vector2(-32, 32)
 metadata/terrain_chunk_x = 1
@@ -1068,7 +1069,7 @@ shape = ExtResource("20_le8h8")
 metadata/terrain_collision_quality = 1
 
 [node name="TerrainChunk_03_02" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=453256650]
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("34_joltu")
 metadata/terrain_chunk_center = Vector2(96, 32)
 metadata/terrain_chunk_x = 3
@@ -1090,7 +1091,7 @@ shape = ExtResource("22_d8f7f")
 metadata/terrain_collision_quality = 1
 
 [node name="TerrainChunk_02_02" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=617681564]
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("23_ppmxy")
 metadata/terrain_chunk_center = Vector2(32, 32)
 metadata/terrain_chunk_x = 2
@@ -1112,7 +1113,7 @@ shape = ExtResource("24_arlxr")
 metadata/terrain_collision_quality = 1
 
 [node name="TerrainChunk_00_03" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=1062843537]
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("25_opa8n")
 metadata/terrain_chunk_center = Vector2(-96, 96)
 metadata/terrain_chunk_x = 0
@@ -1134,7 +1135,7 @@ shape = ExtResource("26_joltu")
 metadata/terrain_collision_quality = 1
 
 [node name="TerrainChunk_01_03" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=367671747]
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("27_apun2")
 metadata/terrain_chunk_center = Vector2(-32, 96)
 metadata/terrain_chunk_x = 1
@@ -1156,7 +1157,7 @@ shape = ExtResource("28_xlj54")
 metadata/terrain_collision_quality = 1
 
 [node name="TerrainChunk_03_03" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=1011730596]
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("42_apun2")
 metadata/terrain_chunk_center = Vector2(96, 96)
 metadata/terrain_chunk_x = 3
@@ -1178,7 +1179,7 @@ shape = ExtResource("32_6a5yr")
 metadata/terrain_collision_quality = 1
 
 [node name="TerrainChunk_02_03" type="MeshInstance3D" parent="MonsterNav/GdtTerrain3D/TerrainChunks" unique_id=716085763]
-material_override = SubResource("ShaderMaterial_gwhqg")
+material_override = SubResource("ShaderMaterial_n5xgs")
 mesh = ExtResource("29_fq073")
 metadata/terrain_chunk_center = Vector2(32, 96)
 metadata/terrain_chunk_x = 2
@@ -1819,13 +1820,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.0785, 0, -15.855339)
 transform = Transform3D(0.99996835, 0, 0.007958567, 0, 1, 0, -0.007958567, 0, 0.99996835, -1.4536095, 0, 0.2558632)
 
 [node name="RandomBrickWall2" parent="MonsterNav/BrickWall5" unique_id=461775210 instance=ExtResource("62_d8f7f")]
-transform = Transform3D(0.99996835, 0, 0.007958567, 0, 1, 0, -0.007958567, 0, 0.99996835, -11.631212, 0, 0.2558632)
+transform = Transform3D(0.99996835, 0, 0.007958567, 0, 1, 0, -0.007958567, 0, 0.99996835, -11.63121, 0, -5.216007)
 
 [node name="RandomBrickWall3" parent="MonsterNav/BrickWall5" unique_id=523113663 instance=ExtResource("62_d8f7f")]
-transform = Transform3D(0.99996835, 0, 0.007958567, 0, 1, 0, -0.007958567, 0, 0.99996835, -21.735199, 0, 0.2558632)
+transform = Transform3D(0.99996835, 0, 0.007958567, 0, 1, 0, -0.007958567, 0, 0.99996835, -21.735199, 0, -7.770603)
 
 [node name="RandomBrickWall4" parent="MonsterNav/BrickWall5" unique_id=458472178 instance=ExtResource("62_d8f7f")]
-transform = Transform3D(0.99996835, 0, 0.007958567, 0, 1, 0, -0.007958567, 0, 0.99996835, -30.32017, 0, 0.2558632)
+transform = Transform3D(0.99996835, 0, 0.007958567, 0, 1, 0, -0.007958567, 0, 0.99996835, -30.320168, 0, -5.515732)
 
 [node name="RandomBrickWall5" parent="MonsterNav/BrickWall5" unique_id=909325552 instance=ExtResource("62_d8f7f")]
 transform = Transform3D(0.99996835, 0, 0.007958567, 0, 1, 0, -0.007958567, 0, 0.99996835, -40.750744, 0, 0.2558632)
@@ -1947,7 +1948,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.33754, -0.305, 5.339758)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.33754, -0.305, 9.339758)
 
 [node name="Tree93" parent="MonsterNav/Trees" unique_id=306145063 instance=ExtResource("63_ppmxy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.33754, -0.305, -6.660242)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.58492, -0.305, -6.660242)
 
 [node name="Tree94" parent="MonsterNav/Trees" unique_id=415395321 instance=ExtResource("63_ppmxy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.30568, -0.305, 0.9938774)
@@ -2359,6 +2360,9 @@ ExtResource("7_nbfxf"): 2,
 ExtResource("8_4raoo"): 2,
 ExtResource("9_m7mj5"): 3
 })
+
+[node name="House" parent="Home" unique_id=705296369 instance=ExtResource("85_yse4c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.080396414, 0)
 
 [node name="WanderPoints" type="Node3D" parent="." unique_id=1805835612]
 script = ExtResource("5_7e3l5")

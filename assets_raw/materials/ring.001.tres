@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://75hv0xko7g38"]
+
+[ext_resource type="Texture2D" uid="uid://dyykvftgdx52k" path="res://assets_raw/others/Court Rim2_ring_Base_color.png" id="1_4qb4a"]
+[ext_resource type="Texture2D" uid="uid://18m7bnw8ubg4" path="res://assets_raw/others/Court Rim2_ring_Metallic-ring_Roughness.png" id="2_x0bft"]
+[ext_resource type="Texture2D" uid="uid://bvkf1m5gbntdb" path="res://assets_raw/others/Court Rim2_ring_Normal.png" id="3_d66sr"]
+
+[resource]
+resource_name = "ring.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_4qb4a")
+metallic = 1.0
+metallic_texture = ExtResource("2_x0bft")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_x0bft")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_d66sr")

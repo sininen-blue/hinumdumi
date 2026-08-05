@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cpvkbv0l076l1"]
+
+[ext_resource type="Texture2D" uid="uid://d1apmst4t27a" path="res://assets_raw/buildings/Modern Sari Sari Store Close_Kwentador.png" id="1_crpqj"]
+
+[resource]
+resource_name = "metal sheets"
+cull_mode = 2
+albedo_texture = ExtResource("1_crpqj")
+roughness = 0.5
+texture_filter = 2

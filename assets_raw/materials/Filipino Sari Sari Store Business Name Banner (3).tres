@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ck0wycry33xut"]
+
+[ext_resource type="Texture2D" uid="uid://beq3ylamr3b1d" path="res://assets_raw/buildings/Normelita Store Close_Filipino Sari Sari Store Business Name Banner (3).png" id="1_1dfy8"]
+
+[resource]
+resource_name = "Filipino Sari Sari Store Business Name Banner (3)"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_1dfy8")
+roughness = 0.5
+texture_repeat = false

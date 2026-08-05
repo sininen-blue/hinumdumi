@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b25246fsal58m"]
+
+[ext_resource type="Texture2D" uid="uid://b1g8m0hy1oitl" path="res://assets_raw/walls/Missing Children Wall_ELE.png" id="1_5bth6"]
+
+[resource]
+resource_name = "ELE"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_5bth6")
+roughness = 0.5
+texture_repeat = false

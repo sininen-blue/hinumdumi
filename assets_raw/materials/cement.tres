@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://scixlomcn6h5"]
+
+[ext_resource type="Texture2D" uid="uid://11l2ubch5mnd" path="res://assets_raw/buildings/Unfinished Building 1_cement_Base_color.png" id="1_82nuf"]
+[ext_resource type="Texture2D" uid="uid://brp8gm3xfic5e" path="res://assets_raw/buildings/Unfinished Building 1_cement_Metallic-cement_Roughness.png" id="2_ikpfj"]
+[ext_resource type="Texture2D" uid="uid://bnhsis3y5coal" path="res://assets_raw/buildings/Unfinished Building 1_cement_Normal.png" id="3_e2je7"]
+
+[resource]
+resource_name = "cement"
+cull_mode = 2
+albedo_texture = ExtResource("1_82nuf")
+metallic = 1.0
+metallic_texture = ExtResource("2_ikpfj")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_ikpfj")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_e2je7")

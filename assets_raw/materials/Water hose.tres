@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://doalj32nmf3ay"]
+
+[ext_resource type="Texture2D" uid="uid://4y48x08wnvfk" path="res://assets_raw/buildings/Area Building_Water hose_Base_color.png" id="1_jnfvh"]
+[ext_resource type="Texture2D" uid="uid://bpuwwyoh7qi3g" path="res://assets_raw/buildings/Area Building_Water hose_Metallic-Water hose_Roughness.png" id="2_3k2be"]
+[ext_resource type="Texture2D" uid="uid://d1sbn0qsamlgr" path="res://assets_raw/buildings/Area Building_Water hose_Normal.png" id="3_u83pp"]
+
+[resource]
+resource_name = "Water hose"
+cull_mode = 2
+albedo_texture = ExtResource("1_jnfvh")
+metallic = 1.0
+metallic_texture = ExtResource("2_3k2be")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_3k2be")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_u83pp")

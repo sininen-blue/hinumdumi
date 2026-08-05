@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bhym0mibihn1v"]
+
+[ext_resource type="Texture2D" uid="uid://b4x3dpxmd1b74" path="res://assets_raw/walls/Roof Fence v3_Plank texture.png" id="1_ev7ux"]
+
+[resource]
+resource_name = "Material.002"
+cull_mode = 2
+albedo_texture = ExtResource("1_ev7ux")
+roughness = 0.5
+texture_filter = 2

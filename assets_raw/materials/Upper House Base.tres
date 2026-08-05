@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b4nyvlt23nyq7"]
+
+[ext_resource type="Texture2D" uid="uid://bhc8o2ddt0b54" path="res://assets_raw/buildings/Area Building_Upper House Base_Base_color.png" id="1_seb7g"]
+[ext_resource type="Texture2D" uid="uid://o3jqcsjjark7" path="res://assets_raw/buildings/Area Building_Upper House Base_Metallic-Upper House Base_Roughness.png" id="2_7nmxs"]
+[ext_resource type="Texture2D" uid="uid://cvmhpfpncq5nv" path="res://assets_raw/buildings/Area Building_Upper House Base_Normal.png" id="3_iq51e"]
+
+[resource]
+resource_name = "Upper House Base"
+cull_mode = 2
+albedo_texture = ExtResource("1_seb7g")
+metallic = 1.0
+metallic_texture = ExtResource("2_7nmxs")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_7nmxs")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_iq51e")

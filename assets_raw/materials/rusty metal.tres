@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b4lp21id4ul6p"]
+
+[ext_resource type="Texture2D" uid="uid://cdayirard8e1" path="res://assets_raw/walls/Modular Block Wall Variant3_rusty metal.png" id="1_15nqm"]
+
+[resource]
+resource_name = "rusty metal"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_15nqm")
+roughness = 0.5
+texture_repeat = false

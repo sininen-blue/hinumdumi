@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cb1pcon2ttduv"]
+
+[ext_resource type="Texture2D" uid="uid://marxw53vtcds" path="res://assets_raw/others/Basketball Ring 1_back support_Base_color.png" id="1_otijn"]
+[ext_resource type="Texture2D" uid="uid://c61kynofkrvqv" path="res://assets_raw/others/Basketball Ring 1_back support_Metallic-back support_Roughness.png" id="2_e1kme"]
+[ext_resource type="Texture2D" uid="uid://d08pi387f6djg" path="res://assets_raw/others/Basketball Ring 1_back support_Normal.png" id="3_xl7m1"]
+
+[resource]
+resource_name = "back support"
+cull_mode = 2
+albedo_texture = ExtResource("1_otijn")
+metallic = 1.0
+metallic_texture = ExtResource("2_e1kme")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_e1kme")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_xl7m1")

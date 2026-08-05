@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b6b01ob1e8bvg"]
+
+[ext_resource type="Texture2D" uid="uid://ftcqh3syt5in" path="res://assets_raw/buildings/Normelita Store Close_FOR TEXT AND CALL.png" id="1_6cisp"]
+
+[resource]
+resource_name = "FOR TEXT AND CALL"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_6cisp")
+roughness = 0.5
+texture_repeat = false

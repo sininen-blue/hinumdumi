@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dqs7231uqqvyk"]
+
+[ext_resource type="Texture2D" uid="uid://dk1c826j3l8p8" path="res://assets_raw/buildings/Tindahan2 close_Sari Sari Store Sign.png" id="1_eg01a"]
+
+[resource]
+resource_name = "Sari Sari Store Sign"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_eg01a")
+roughness = 0.5
+texture_repeat = false

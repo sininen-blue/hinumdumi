@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://e4gfkv2r67wm"]
+
+[ext_resource type="Texture2D" uid="uid://c8vwq6dvxbccq" path="res://assets_raw/buildings/Area Building_Untitled design.png" id="1_forlf"]
+
+[resource]
+resource_name = "Untitled design"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_forlf")
+texture_repeat = false

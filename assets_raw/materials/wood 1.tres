@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bhdwc6eun5yek"]
+
+[ext_resource type="Texture2D" uid="uid://cn8wxksb24tax" path="res://assets_raw/buildings/Unfinished Building 1_wood 1_Base_color.png" id="1_46osh"]
+[ext_resource type="Texture2D" uid="uid://cmn7kog4auiox" path="res://assets_raw/buildings/Unfinished Building 1_wood 1_Metallic-wood 1_Roughness.png" id="2_4c7yl"]
+[ext_resource type="Texture2D" uid="uid://uunaxmc0jp5d" path="res://assets_raw/buildings/Unfinished Building 1_wood 1_Normal.png" id="3_lqqoa"]
+
+[resource]
+resource_name = "wood 1"
+cull_mode = 2
+albedo_texture = ExtResource("1_46osh")
+metallic = 1.0
+metallic_texture = ExtResource("2_4c7yl")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_4c7yl")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_lqqoa")
