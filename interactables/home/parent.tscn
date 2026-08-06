@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://wm5yv3mws1l5" path="res://interactables/home/parent.gd" id="1_ad57i"]
 [ext_resource type="PackedScene" uid="uid://dhdb0srr160uw" path="res://src/dialogue_component/dialogue_component.tscn" id="2_60d41"]
+[ext_resource type="PackedScene" uid="uid://cshf5u66otfbp" path="res://assets_raw/Mother/Mama Tpose.fbx" id="3_m8be5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kyjot"]
 radius = 4.0
@@ -19,12 +20,11 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=1008890521]
 shape = SubResource("SphereShape3D_kyjot")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=915961608]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
 [node name="SubmitDebounceTimer" type="Timer" parent="." unique_id=2090562741]
 wait_time = 0.5
 one_shot = true
+
+[node name="Mama Tpose" parent="." unique_id=1267276202 instance=ExtResource("3_m8be5")]
 
 [connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]
 [connection signal="body_exited" from="InteractArea" to="." method="_on_interact_area_body_exited"]
