@@ -690,7 +690,7 @@ shader_parameter/snow_height = 5.0
 shader_parameter/rock_slope_threshold = 0.44
 shader_parameter/texture_tile_scale = 0.18
 shader_parameter/macro_texture_tiling_enabled = true
-shader_parameter/texture_focus_position = Vector3(91.07587, 3.1957638, -8.407008)
+shader_parameter/texture_focus_position = Vector3(90.142075, 7.5461817, 5.5425806)
 shader_parameter/close_texture_tile_scale = 0.2
 shader_parameter/medium_texture_tile_scale = 0.03
 shader_parameter/far_texture_tile_scale = 0.01
@@ -2362,7 +2362,7 @@ ExtResource("9_m7mj5"): 3
 })
 
 [node name="House" parent="Home" unique_id=705296369 instance=ExtResource("85_yse4c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.080396414, 0)
+transform = Transform3D(-0.07466542, 0, -0.99720865, 0, 1, 0, 0.99720865, 0, -0.07466542, 0, -0.080396414, 0)
 
 [node name="WanderPoints" type="Node3D" parent="." unique_id=1805835612]
 script = ExtResource("5_7e3l5")

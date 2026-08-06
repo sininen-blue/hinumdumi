@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://p1aireb0rvvo"]
+
+[ext_resource type="PackedScene" uid="uid://3qbe50p2wa4c" path="res://assets/buildings/house.tscn" id="1_c73n5"]
+[ext_resource type="PackedScene" uid="uid://leixn7ybth70" path="res://characters/player/player.tscn" id="2_m6dyk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c73n5"]
+size = Vector3(50, 1, 50)
+
+[node name="HouseTestScene" type="Node3D" unique_id=1620166744]
+
+[node name="House" parent="." unique_id=705296369 instance=ExtResource("1_c73n5")]
+
+[node name="Player" parent="." unique_id=950809192 instance=ExtResource("2_m6dyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59647393, 0)
+enable_fly = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=59653426]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=505804131]
+shape = SubResource("BoxShape3D_c73n5")

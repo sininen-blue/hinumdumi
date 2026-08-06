@@ -4,7 +4,61 @@
 [ext_resource type="PackedScene" uid="uid://bto2dp00ka1r1" path="res://assets_raw/house/house.blend" id="1_v1k7e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v1k7e"]
-size = Vector3(1, 4.664551, 2.6797485)
+size = Vector3(2.7421265, 4.664551, 2.6797485)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rdhl7"]
+size = Vector3(2.1523132, 4.664551, 2.6797485)
+
+[sub_resource type="Animation" id="Animation_c73n5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m6dyk"]
+resource_name = "blink"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_trigger_teleport"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rdhl7"]
+_data = {
+&"RESET": SubResource("Animation_c73n5"),
+&"blink": SubResource("Animation_m6dyk")
+}
 
 [node name="House" type="Node3D" unique_id=705296369]
 script = ExtResource("1_rdhl7")
@@ -13,17 +67,53 @@ script = ExtResource("1_rdhl7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.727124, -0.53422594, 1.5052443)
 
 [node name="ExitArea" type="Area3D" parent="." unique_id=1926332882]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ExitArea" unique_id=733420314]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8065653, 2.7916183, -2.1774619)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.156761, 2.7916183, -2.1774619)
 shape = SubResource("BoxShape3D_v1k7e")
 
 [node name="EnterArea" type="Area3D" parent="." unique_id=77993254]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2319403, 2.7078705, -2.2612112)
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EnterArea" unique_id=685843703]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013427734, 0.067474365)
-shape = SubResource("BoxShape3D_v1k7e")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8561678, 0.013427734, 0.067474365)
+shape = SubResource("BoxShape3D_rdhl7")
+
+[node name="EnterLabel" type="Label3D" parent="." unique_id=148965571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0940695, 2.8264046, -2.249531)
+billboard = 2
+text = "Press E to enter"
+
+[node name="ExitLabel" type="Label3D" parent="." unique_id=620100109]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.042521, 2.8040729, -2.390125)
+billboard = 2
+text = "Press E to Exit"
+
+[node name="InsidePosition" type="Marker3D" parent="." unique_id=37565182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0012608, 0.33829045, -2.203267)
+
+[node name="OutsidePosition" type="Marker3D" parent="." unique_id=1592813193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.281168, 0.3382902, -2.181617)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1943838868]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=693184063]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=852404639]
+libraries/ = SubResource("AnimationLibrary_rdhl7")
 
 [connection signal="body_entered" from="ExitArea" to="." method="_on_exit_area_body_entered"]
+[connection signal="body_exited" from="ExitArea" to="." method="_on_exit_area_body_exited"]
 [connection signal="body_entered" from="EnterArea" to="." method="_on_enter_area_body_entered"]
+[connection signal="body_exited" from="EnterArea" to="." method="_on_enter_area_body_exited"]
