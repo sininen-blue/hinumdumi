@@ -317,7 +317,7 @@ tracks/0/path = NodePath("Head:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1.4901161e-08, 0.13333334, 0.6),
+"times": PackedFloat32Array(1.4901161e-08, 0.13333334, 0.46666667),
 "transitions": PackedFloat32Array(-2, -2, -2),
 "update": 0,
 "values": [Vector3(0, 0, -0.20071286), Vector3(0, 0, -0.29670596), Vector3(0, 0, 0.1919862)]
@@ -329,7 +329,7 @@ tracks/1/path = NodePath("Head:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.4901161e-08, 0.13333334, 0.6),
+"times": PackedFloat32Array(1.4901161e-08, 0.06666667, 0.36666667),
 "transitions": PackedFloat32Array(-2, -2, -2),
 "update": 0,
 "values": [Vector3(0, 3, 0), Vector3(0, 3, -0.21499991), Vector3(0, 2, 2.0480335)]
@@ -341,7 +341,7 @@ tracks/2/path = NodePath("LeftHand:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.4901161e-08, 0.13333334, 0.6),
+"times": PackedFloat32Array(1.4901161e-08, 0.13333334, 0.46666667),
 "transitions": PackedFloat32Array(-2, -2, -2),
 "update": 0,
 "values": [Vector3(0, 0, -0.47996554), Vector3(0, 0, -0.6632251), Vector3(0, 0, 0.48869222)]
@@ -353,7 +353,7 @@ tracks/3/path = NodePath("LeftHand:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1.4901161e-08, 0.13333334, 0.6),
+"times": PackedFloat32Array(1.4901161e-08, 0.13333334, 0.46666667),
 "transitions": PackedFloat32Array(-2, -2, -2),
 "update": 0,
 "values": [Vector3(1.7, 3, 0), Vector3(1.7, 3, -0.135), Vector3(0.5093919, 2, 2.3451078)]
@@ -365,7 +365,7 @@ tracks/4/path = NodePath("RightHand:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1.4901161e-08, 0.13333334, 0.6),
+"times": PackedFloat32Array(1.4901161e-08, 0.13333334, 0.46666667),
 "transitions": PackedFloat32Array(-2, -2, -2),
 "update": 0,
 "values": [Vector3(-1.7, 3, 0), Vector3(-1.7, 3, -0.105), Vector3(-0.3816108, 2.01968, 2.4332356)]
@@ -377,7 +377,7 @@ tracks/5/path = NodePath("RightHand:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(1.4901161e-08, 0.13333334, 0.6),
+"times": PackedFloat32Array(1.4901161e-08, 0.13333334, 0.46666667),
 "transitions": PackedFloat32Array(-2, -2, -2),
 "update": 0,
 "values": [Vector3(0, 0, 0.38397244), Vector3(0, 0, 0.5934119), Vector3(0, 0, -0.6283185)]
@@ -394,7 +394,7 @@ tracks/6/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("20_5mkjs")
 }],
-"times": PackedFloat32Array(0.4)
+"times": PackedFloat32Array(0.23333333)
 }
 tracks/6/use_blend = true
 tracks/7/type = "audio"
@@ -409,7 +409,7 @@ tracks/7/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("21_yybc7")
 }],
-"times": PackedFloat32Array(0.03333336)
+"times": PackedFloat32Array(-0.03333333)
 }
 tracks/7/use_blend = true
 tracks/8/type = "value"
@@ -611,7 +611,7 @@ tracks/24/path = NodePath("Head:texture")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
-"times": PackedFloat32Array(0, 0.36666667, 0.48, 0.63),
+"times": PackedFloat32Array(0, 0.23333332, 0.34666663, 0.49666664),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("17_fpo3a"), ExtResource("11_e0pgg"), ExtResource("12_sbttr"), ExtResource("7_w53g3")]
@@ -733,7 +733,7 @@ visible = false
 
 [node name="Head" type="Sprite3D" parent="Head/Jumpscare" unique_id=553958122]
 transform = Transform3D(0.09816272, -0.019080898, 0, 0.019080898, 0.09816272, 0, 0, 0, 0.1, 0, 2, 2.0480335)
-texture = ExtResource("7_w53g3")
+texture = ExtResource("17_fpo3a")
 
 [node name="LeftHand" type="Sprite3D" parent="Head/Jumpscare" unique_id=659208025]
 transform = Transform3D(0.08829477, -0.046947163, 0, 0.046947166, 0.08829476, 0, 0, 0, 0.09999999, 0.5093919, 2, 2.3451078)
