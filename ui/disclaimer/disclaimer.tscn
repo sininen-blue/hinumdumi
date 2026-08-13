@@ -99,6 +99,7 @@ grow_vertical = 2
 text = "This is an early playtest, expect bugs"
 
 [node name="Timer" type="Timer" parent="." unique_id=803974085]
+wait_time = 0.1
 one_shot = true
 autostart = true
 
