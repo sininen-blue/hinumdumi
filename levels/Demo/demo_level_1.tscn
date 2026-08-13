@@ -690,7 +690,7 @@ shader_parameter/snow_height = 5.0
 shader_parameter/rock_slope_threshold = 0.44
 shader_parameter/texture_tile_scale = 0.18
 shader_parameter/macro_texture_tiling_enabled = true
-shader_parameter/texture_focus_position = Vector3(29.07782, 60.711113, 82.13802)
+shader_parameter/texture_focus_position = Vector3(29.0905, 60.727997, 82.17385)
 shader_parameter/close_texture_tile_scale = 0.2
 shader_parameter/medium_texture_tile_scale = 0.03
 shader_parameter/far_texture_tile_scale = 0.01
@@ -2427,6 +2427,7 @@ environment = ExtResource("81_xlj54")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=1307618061]
 transform = Transform3D(0.8049041, 2.593855e-08, -0.59340495, 0.59340495, -3.5183476e-08, 0.8049041, 0, -1, -4.371139e-08, 0, 22, 0)
+visible = false
 
 [node name="Monster" parent="." unique_id=2116566352 node_paths=PackedStringArray("wander_points", "player") instance=ExtResource("68_eutc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.292206, 0.45628405, 77.865875)
