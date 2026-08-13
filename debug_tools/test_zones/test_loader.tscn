@@ -1,0 +1,1408 @@
+[gd_scene format=3 uid="uid://bj4cbj55c7507"]
+
+[ext_resource type="Texture2D" uid="uid://bdsb5ogr5p644" path="res://assets/textures/grass/rocky_terrain_02_diff_1k.jpg" id="2_nhv4g"]
+[ext_resource type="PackedScene" uid="uid://leixn7ybth70" path="res://characters/player/player.tscn" id="2_ya0g0"]
+[ext_resource type="PackedScene" uid="uid://tsvdxcuxbnfb" path="res://assets/buildings/shed.tscn" id="3_ya0g0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ya0g0"]
+albedo_texture = ExtResource("2_nhv4g")
+
+[node name="TestLoader" type="Node3D" unique_id=1620166744]
+
+[node name="Player" parent="." unique_id=950809192 instance=ExtResource("2_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.125736, 0.59647393, 4.432503)
+enable_fly = true
+enable_inifite_stamina = true
+
+[node name="Ground" type="CSGBox3D" parent="." unique_id=1017558622]
+use_collision = true
+size = Vector3(200, 1, 200)
+material = SubResource("StandardMaterial3D_ya0g0")
+
+[node name="Sheds" type="Node3D" parent="." unique_id=1542831504]
+
+[node name="Shed" parent="Sheds" unique_id=1932083097 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds" unique_id=360619720 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds" unique_id=464410350 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds" unique_id=2112315578 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds" unique_id=325878992 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed6" parent="Sheds" unique_id=339210132 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed7" parent="Sheds" unique_id=2018909950 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds" unique_id=760158690 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds" unique_id=1220059978 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds" unique_id=138286961 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds" unique_id=663703239 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds" unique_id=1249075569 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds" unique_id=1932086518 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, 0, -102.46556)
+
+[node name="Sheds2" type="Node3D" parent="." unique_id=1349544121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.850191, 0, 1.0810909)
+
+[node name="Shed" parent="Sheds2" unique_id=1345645817 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds2" unique_id=1708852692 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds2" unique_id=490364826 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds2" unique_id=171729215 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds2" unique_id=489224416 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed6" parent="Sheds2" unique_id=1650771101 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed7" parent="Sheds2" unique_id=1035237317 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds2" unique_id=1612327705 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds2" unique_id=507443103 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds2" unique_id=203928253 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds2" unique_id=1292643816 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds2" unique_id=353230202 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds2" unique_id=1887060440 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, 0, -102.46556)
+
+[node name="Sheds3" type="Node3D" parent="." unique_id=1910276930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.80123, 0, -0.6399746)
+
+[node name="Shed" parent="Sheds3" unique_id=74549268 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds3" unique_id=696873406 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds3" unique_id=999550316 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds3" unique_id=436584067 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds3" unique_id=1997146194 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed6" parent="Sheds3" unique_id=711375869 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed7" parent="Sheds3" unique_id=1156613054 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds3" unique_id=998668987 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds3" unique_id=1243620016 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds3" unique_id=72215967 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds3" unique_id=2050246486 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds3" unique_id=683922293 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds3" unique_id=734836295 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, 0, -102.46556)
+
+[node name="Sheds4" type="Node3D" parent="." unique_id=727387872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.784615, 0, 6.3664703)
+
+[node name="Shed" parent="Sheds4" unique_id=987450354 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds4" unique_id=1155889275 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds4" unique_id=495305957 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds4" unique_id=406941142 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds4" unique_id=2015166027 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed6" parent="Sheds4" unique_id=222058158 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed7" parent="Sheds4" unique_id=1332845081 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds4" unique_id=1169465044 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds4" unique_id=1052607916 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds4" unique_id=790693693 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds4" unique_id=964213836 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds4" unique_id=1945331706 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds4" unique_id=1337403673 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, 0, -102.46556)
+
+[node name="Sheds5" type="Node3D" parent="." unique_id=1296215786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.85311, 0, 5.64806)
+
+[node name="Shed" parent="Sheds5" unique_id=2034136347 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds5" unique_id=1322510043 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds5" unique_id=1407333831 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds5" unique_id=978072444 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds5" unique_id=337964435 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed6" parent="Sheds5" unique_id=1809220517 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed7" parent="Sheds5" unique_id=985265832 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds5" unique_id=2010890981 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds5" unique_id=642626940 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds5" unique_id=1384599043 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds5" unique_id=1033509088 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds5" unique_id=1139898229 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds5" unique_id=671160527 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, 0, -102.46556)
+
+[node name="Sheds6" type="Node3D" parent="." unique_id=832751446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.85311, 4.7865295, 110.134155)
+
+[node name="Shed" parent="Sheds6" unique_id=1960134351 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds6" unique_id=933375769 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds6" unique_id=1279001519 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds6" unique_id=1905683362 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds6" unique_id=370162440 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed6" parent="Sheds6" unique_id=654924971 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed7" parent="Sheds6" unique_id=540614720 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds6" unique_id=877673861 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds6" unique_id=1544990323 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds6" unique_id=1504826360 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds6" unique_id=203527748 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds6" unique_id=1774200187 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds6" unique_id=1624431605 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, 0, -102.46556)
+
+[node name="Sheds7" type="Node3D" parent="." unique_id=562747325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.4999, 4.7865295, 124.14336)
+
+[node name="Shed" parent="Sheds7" unique_id=428626057 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds7" unique_id=326343062 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds7" unique_id=372523009 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds7" unique_id=1326512487 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds7" unique_id=646865248 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed6" parent="Sheds7" unique_id=821215937 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed7" parent="Sheds7" unique_id=1741477563 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds7" unique_id=1978671671 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds7" unique_id=533399316 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds7" unique_id=2113247515 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds7" unique_id=1438478198 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds7" unique_id=1306399603 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds7" unique_id=294163319 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, 0, -102.46556)
+
+[node name="Sheds8" type="Node3D" parent="." unique_id=2037346520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.585472, 4.7865295, 122.58678)
+
+[node name="Shed" parent="Sheds8" unique_id=508797758 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds8" unique_id=1065253302 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds8" unique_id=1501346301 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds8" unique_id=1016550028 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds8" unique_id=1847290516 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed6" parent="Sheds8" unique_id=1997150314 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed7" parent="Sheds8" unique_id=786402666 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds8" unique_id=2024921076 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds8" unique_id=511601833 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds8" unique_id=545955902 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds8" unique_id=415084889 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds8" unique_id=242005330 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds8" unique_id=1893884144 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, 0, -102.46556)
+
+[node name="Sheds9" type="Node3D" parent="." unique_id=1943226087]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.340752, 4.7865295, 123.36507)
+
+[node name="Shed" parent="Sheds9" unique_id=1881894758 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds9" unique_id=1338487156 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds9" unique_id=1440019643 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds9" unique_id=2126069188 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds9" unique_id=1832131444 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed6" parent="Sheds9" unique_id=1579113424 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed7" parent="Sheds9" unique_id=55106866 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds9" unique_id=1271812502 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds9" unique_id=154251406 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds9" unique_id=893338400 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds9" unique_id=2065711058 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds9" unique_id=1543750091 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds9" unique_id=1583381998 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, 0, -102.46556)
+
+[node name="Sheds10" type="Node3D" parent="." unique_id=593271152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.569069, 4.7865295, 122.58678)
+
+[node name="Shed" parent="Sheds10" unique_id=562429372 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds10" unique_id=388086529 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds10" unique_id=1386514754 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds10" unique_id=1621141439 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds10" unique_id=1368610678 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed6" parent="Sheds10" unique_id=1345248215 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed7" parent="Sheds10" unique_id=785834696 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds10" unique_id=1668258629 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds10" unique_id=1731108614 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds10" unique_id=2095842084 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds10" unique_id=921059103 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds10" unique_id=1094988287 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds10" unique_id=754537769 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, 0, -102.46556)
+
+[node name="Sheds11" type="Node3D" parent="." unique_id=1798666915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.021675, 4.7865295, 13.626373)
+
+[node name="Shed" parent="Sheds11" unique_id=113411521 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds11" unique_id=1810645810 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds11" unique_id=1948756289 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds11" unique_id=2000798706 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds11" unique_id=849420602 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed6" parent="Sheds11" unique_id=1349184501 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, 0, -38.58301)
+
+[node name="Shed7" parent="Sheds11" unique_id=646858612 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds11" unique_id=953920088 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds11" unique_id=498635909 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds11" unique_id=138942173 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds11" unique_id=644185813 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds11" unique_id=1504138521 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds11" unique_id=1034512906 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, 0, -102.46556)
+
+[node name="Sheds12" type="Node3D" parent="." unique_id=376440807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 65.10904, 0)
+
+[node name="Shed" parent="Sheds12" unique_id=207962595 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, -39.135956, -0.71798706)
+
+[node name="Shed2" parent="Sheds12" unique_id=1119114025 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -8.615845)
+
+[node name="Shed3" parent="Sheds12" unique_id=1400743246 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -17.949669)
+
+[node name="Shed4" parent="Sheds12" unique_id=706981816 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, -39.135956, -26.291553)
+
+[node name="Shed5" parent="Sheds12" unique_id=262717457 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.58301)
+
+[node name="Shed6" parent="Sheds12" unique_id=427619709 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.58301)
+
+[node name="Shed7" parent="Sheds12" unique_id=795906091 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, -39.135956, -46.893585)
+
+[node name="Shed8" parent="Sheds12" unique_id=604605611 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, -39.135956, -60.51369)
+
+[node name="Shed9" parent="Sheds12" unique_id=464024699 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -68.03767)
+
+[node name="Shed10" parent="Sheds12" unique_id=650630405 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -75.10565)
+
+[node name="Shed11" parent="Sheds12" unique_id=1820583142 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, -39.135956, -82.85763)
+
+[node name="Shed12" parent="Sheds12" unique_id=586029469 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, -39.135956, -93.573586)
+
+[node name="Shed13" parent="Sheds12" unique_id=640098189 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, -39.135956, -102.46556)
+
+[node name="Sheds13" type="Node3D" parent="." unique_id=1944855947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.850191, 65.10904, 1.0810909)
+
+[node name="Shed" parent="Sheds13" unique_id=1904307678 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, -39.135956, -0.71798706)
+
+[node name="Shed2" parent="Sheds13" unique_id=1228074300 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -8.615845)
+
+[node name="Shed3" parent="Sheds13" unique_id=2093424741 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -17.949669)
+
+[node name="Shed4" parent="Sheds13" unique_id=619410305 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, -39.135956, -26.291553)
+
+[node name="Shed5" parent="Sheds13" unique_id=1703976901 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.583015)
+
+[node name="Shed6" parent="Sheds13" unique_id=374273811 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.583015)
+
+[node name="Shed7" parent="Sheds13" unique_id=407039190 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, -39.135956, -46.893585)
+
+[node name="Shed8" parent="Sheds13" unique_id=1858134416 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, -39.135956, -60.513695)
+
+[node name="Shed9" parent="Sheds13" unique_id=1452825085 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -68.03767)
+
+[node name="Shed10" parent="Sheds13" unique_id=1654822236 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -75.10565)
+
+[node name="Shed11" parent="Sheds13" unique_id=461141839 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, -39.135956, -82.85763)
+
+[node name="Shed12" parent="Sheds13" unique_id=817088317 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, -39.135956, -93.573586)
+
+[node name="Shed13" parent="Sheds13" unique_id=51489062 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, -39.135956, -102.46556)
+
+[node name="Sheds14" type="Node3D" parent="." unique_id=1257718232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.80123, 65.10904, -0.6399746)
+
+[node name="Shed" parent="Sheds14" unique_id=1018464688 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, -39.135956, -0.71798706)
+
+[node name="Shed2" parent="Sheds14" unique_id=1567092372 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -8.615845)
+
+[node name="Shed3" parent="Sheds14" unique_id=210040863 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -17.949669)
+
+[node name="Shed4" parent="Sheds14" unique_id=2036094871 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, -39.135956, -26.291553)
+
+[node name="Shed5" parent="Sheds14" unique_id=430122118 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.583008)
+
+[node name="Shed6" parent="Sheds14" unique_id=1470864343 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.583008)
+
+[node name="Shed7" parent="Sheds14" unique_id=1308743448 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, -39.135956, -46.893585)
+
+[node name="Shed8" parent="Sheds14" unique_id=744001791 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, -39.135956, -60.513687)
+
+[node name="Shed9" parent="Sheds14" unique_id=1108349727 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -68.03767)
+
+[node name="Shed10" parent="Sheds14" unique_id=903974744 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -75.10565)
+
+[node name="Shed11" parent="Sheds14" unique_id=1559033285 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, -39.135956, -82.85763)
+
+[node name="Shed12" parent="Sheds14" unique_id=2072469907 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, -39.135956, -93.573586)
+
+[node name="Shed13" parent="Sheds14" unique_id=376947104 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, -39.135956, -102.46556)
+
+[node name="Sheds15" type="Node3D" parent="." unique_id=577774757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.784615, 65.10904, 6.3664703)
+
+[node name="Shed" parent="Sheds15" unique_id=2079930675 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, -39.135956, -0.71798706)
+
+[node name="Shed2" parent="Sheds15" unique_id=578637385 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -8.615845)
+
+[node name="Shed3" parent="Sheds15" unique_id=1374862012 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -17.949669)
+
+[node name="Shed4" parent="Sheds15" unique_id=1960463119 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, -39.135956, -26.291553)
+
+[node name="Shed5" parent="Sheds15" unique_id=73628866 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.58301)
+
+[node name="Shed6" parent="Sheds15" unique_id=241501413 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.58301)
+
+[node name="Shed7" parent="Sheds15" unique_id=2015898311 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, -39.135956, -46.893585)
+
+[node name="Shed8" parent="Sheds15" unique_id=1494830270 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, -39.135956, -60.51369)
+
+[node name="Shed9" parent="Sheds15" unique_id=1351493772 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -68.03767)
+
+[node name="Shed10" parent="Sheds15" unique_id=585753162 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -75.10565)
+
+[node name="Shed11" parent="Sheds15" unique_id=1897230624 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, -39.135956, -82.85763)
+
+[node name="Shed12" parent="Sheds15" unique_id=1963491188 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, -39.135956, -93.573586)
+
+[node name="Shed13" parent="Sheds15" unique_id=690685332 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, -39.135956, -102.46556)
+
+[node name="Sheds16" type="Node3D" parent="." unique_id=927225970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.85311, 65.10904, 5.64806)
+
+[node name="Shed" parent="Sheds16" unique_id=1896695137 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, -39.135956, -0.71798706)
+
+[node name="Shed2" parent="Sheds16" unique_id=1055510754 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -8.615845)
+
+[node name="Shed3" parent="Sheds16" unique_id=150655685 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -17.949669)
+
+[node name="Shed4" parent="Sheds16" unique_id=871934912 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, -39.135956, -26.291553)
+
+[node name="Shed5" parent="Sheds16" unique_id=921380971 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.58301)
+
+[node name="Shed6" parent="Sheds16" unique_id=1698546819 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.58301)
+
+[node name="Shed7" parent="Sheds16" unique_id=1682747390 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, -39.135956, -46.893585)
+
+[node name="Shed8" parent="Sheds16" unique_id=406453542 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, -39.135956, -60.51369)
+
+[node name="Shed9" parent="Sheds16" unique_id=1024112125 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -68.03767)
+
+[node name="Shed10" parent="Sheds16" unique_id=1573309799 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -75.10565)
+
+[node name="Shed11" parent="Sheds16" unique_id=2137167128 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, -39.135956, -82.85762)
+
+[node name="Shed12" parent="Sheds16" unique_id=929196168 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, -39.135956, -93.57358)
+
+[node name="Shed13" parent="Sheds16" unique_id=2104338919 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, -39.135956, -102.46556)
+
+[node name="Sheds17" type="Node3D" parent="." unique_id=1664771336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.85311, 69.89557, 110.134155)
+
+[node name="Shed" parent="Sheds17" unique_id=1610290769 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, -39.135956, -0.71798706)
+
+[node name="Shed2" parent="Sheds17" unique_id=801982131 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -8.615845)
+
+[node name="Shed3" parent="Sheds17" unique_id=965255256 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -17.949669)
+
+[node name="Shed4" parent="Sheds17" unique_id=167613393 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, -39.135956, -26.29155)
+
+[node name="Shed5" parent="Sheds17" unique_id=388235405 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.583008)
+
+[node name="Shed6" parent="Sheds17" unique_id=1746155698 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.583008)
+
+[node name="Shed7" parent="Sheds17" unique_id=223160579 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, -39.135956, -46.893585)
+
+[node name="Shed8" parent="Sheds17" unique_id=1033460580 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, -39.135956, -60.51369)
+
+[node name="Shed9" parent="Sheds17" unique_id=423475221 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -68.03767)
+
+[node name="Shed10" parent="Sheds17" unique_id=471491249 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -75.10565)
+
+[node name="Shed11" parent="Sheds17" unique_id=900446766 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, -39.135956, -82.85763)
+
+[node name="Shed12" parent="Sheds17" unique_id=1891848602 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, -39.135956, -93.573586)
+
+[node name="Shed13" parent="Sheds17" unique_id=893344070 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, -39.135956, -102.46556)
+
+[node name="Sheds18" type="Node3D" parent="." unique_id=1458793949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.4999, 69.89557, 124.14336)
+
+[node name="Shed" parent="Sheds18" unique_id=2026093618 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, -39.135956, -0.71798706)
+
+[node name="Shed2" parent="Sheds18" unique_id=1960859374 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -8.615845)
+
+[node name="Shed3" parent="Sheds18" unique_id=1475862731 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -17.949669)
+
+[node name="Shed4" parent="Sheds18" unique_id=1669764217 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, -39.135956, -26.29155)
+
+[node name="Shed5" parent="Sheds18" unique_id=363921116 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.583008)
+
+[node name="Shed6" parent="Sheds18" unique_id=590243594 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.583008)
+
+[node name="Shed7" parent="Sheds18" unique_id=1065308072 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, -39.135956, -46.893585)
+
+[node name="Shed8" parent="Sheds18" unique_id=2145532999 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, -39.135956, -60.51369)
+
+[node name="Shed9" parent="Sheds18" unique_id=311072992 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -68.03767)
+
+[node name="Shed10" parent="Sheds18" unique_id=919015501 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -75.10565)
+
+[node name="Shed11" parent="Sheds18" unique_id=1292230208 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, -39.135956, -82.85763)
+
+[node name="Shed12" parent="Sheds18" unique_id=23664323 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, -39.135956, -93.573586)
+
+[node name="Shed13" parent="Sheds18" unique_id=1817703108 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, -39.135956, -102.46556)
+
+[node name="Sheds19" type="Node3D" parent="." unique_id=1672804762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.585472, 69.89557, 122.58678)
+
+[node name="Shed" parent="Sheds19" unique_id=445123332 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, -39.135956, -0.71798706)
+
+[node name="Shed2" parent="Sheds19" unique_id=1138046102 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -8.615845)
+
+[node name="Shed3" parent="Sheds19" unique_id=244211946 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -17.949669)
+
+[node name="Shed4" parent="Sheds19" unique_id=1619202204 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, -39.135956, -26.29155)
+
+[node name="Shed5" parent="Sheds19" unique_id=1261223500 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.583008)
+
+[node name="Shed6" parent="Sheds19" unique_id=1331376452 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.583008)
+
+[node name="Shed7" parent="Sheds19" unique_id=1618916132 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, -39.135956, -46.893585)
+
+[node name="Shed8" parent="Sheds19" unique_id=986908840 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, -39.135956, -60.51369)
+
+[node name="Shed9" parent="Sheds19" unique_id=1998909738 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -68.03767)
+
+[node name="Shed10" parent="Sheds19" unique_id=903659790 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -75.10565)
+
+[node name="Shed11" parent="Sheds19" unique_id=1664718573 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, -39.135956, -82.85763)
+
+[node name="Shed12" parent="Sheds19" unique_id=1824112297 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, -39.135956, -93.573586)
+
+[node name="Shed13" parent="Sheds19" unique_id=1579222145 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, -39.135956, -102.46556)
+
+[node name="Sheds20" type="Node3D" parent="." unique_id=1077519897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.340752, 69.89557, 123.36507)
+
+[node name="Shed" parent="Sheds20" unique_id=1382979334 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, -39.135956, -0.71798706)
+
+[node name="Shed2" parent="Sheds20" unique_id=1728950229 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -8.615845)
+
+[node name="Shed3" parent="Sheds20" unique_id=1929439825 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -17.949669)
+
+[node name="Shed4" parent="Sheds20" unique_id=1255222256 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, -39.135956, -26.29155)
+
+[node name="Shed5" parent="Sheds20" unique_id=496522635 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.583008)
+
+[node name="Shed6" parent="Sheds20" unique_id=534774306 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.583008)
+
+[node name="Shed7" parent="Sheds20" unique_id=978031780 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, -39.135956, -46.893585)
+
+[node name="Shed8" parent="Sheds20" unique_id=1153579449 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, -39.135956, -60.51369)
+
+[node name="Shed9" parent="Sheds20" unique_id=254368899 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -68.03767)
+
+[node name="Shed10" parent="Sheds20" unique_id=360227340 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -75.10565)
+
+[node name="Shed11" parent="Sheds20" unique_id=496607189 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, -39.135956, -82.85763)
+
+[node name="Shed12" parent="Sheds20" unique_id=1601948004 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, -39.135956, -93.573586)
+
+[node name="Shed13" parent="Sheds20" unique_id=1414613117 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, -39.135956, -102.46556)
+
+[node name="Sheds21" type="Node3D" parent="." unique_id=1224293739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.569069, 69.89557, 122.58678)
+
+[node name="Shed" parent="Sheds21" unique_id=853161029 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, -39.135956, -0.71798706)
+
+[node name="Shed2" parent="Sheds21" unique_id=953573356 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -8.615845)
+
+[node name="Shed3" parent="Sheds21" unique_id=2045111211 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -17.949669)
+
+[node name="Shed4" parent="Sheds21" unique_id=533827682 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, -39.135956, -26.29155)
+
+[node name="Shed5" parent="Sheds21" unique_id=1452341180 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.583008)
+
+[node name="Shed6" parent="Sheds21" unique_id=71806891 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.583008)
+
+[node name="Shed7" parent="Sheds21" unique_id=1827694860 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, -39.135956, -46.893585)
+
+[node name="Shed8" parent="Sheds21" unique_id=494411020 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, -39.135956, -60.51369)
+
+[node name="Shed9" parent="Sheds21" unique_id=513885035 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -68.03767)
+
+[node name="Shed10" parent="Sheds21" unique_id=463362369 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -75.10565)
+
+[node name="Shed11" parent="Sheds21" unique_id=1872262322 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, -39.135956, -82.85763)
+
+[node name="Shed12" parent="Sheds21" unique_id=995410345 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, -39.135956, -93.573586)
+
+[node name="Shed13" parent="Sheds21" unique_id=486184867 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, -39.135956, -102.46556)
+
+[node name="Sheds22" type="Node3D" parent="." unique_id=886877190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.021675, 69.89557, 13.626373)
+
+[node name="Shed" parent="Sheds22" unique_id=232788267 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.13102, -39.135956, -0.71798706)
+
+[node name="Shed2" parent="Sheds22" unique_id=76504764 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -8.615845)
+
+[node name="Shed3" parent="Sheds22" unique_id=2146561612 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.32766, -39.135956, -17.949669)
+
+[node name="Shed4" parent="Sheds22" unique_id=91077842 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.855568, -39.135956, -26.291553)
+
+[node name="Shed5" parent="Sheds22" unique_id=1915529838 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.58301)
+
+[node name="Shed6" parent="Sheds22" unique_id=1102579619 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.382813, -39.135956, -38.58301)
+
+[node name="Shed7" parent="Sheds22" unique_id=1029600551 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.691307, -39.135956, -46.893585)
+
+[node name="Shed8" parent="Sheds22" unique_id=1679872668 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.84556, -39.135956, -60.51369)
+
+[node name="Shed9" parent="Sheds22" unique_id=1945629518 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -68.03767)
+
+[node name="Shed10" parent="Sheds22" unique_id=1364790957 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.529556, -39.135956, -75.10565)
+
+[node name="Shed11" parent="Sheds22" unique_id=220686085 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.213562, -39.135956, -82.85763)
+
+[node name="Shed12" parent="Sheds22" unique_id=632989928 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.61757, -39.135956, -93.573586)
+
+[node name="Shed13" parent="Sheds22" unique_id=1367961648 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.389565, -39.135956, -102.46556)
+
+[node name="Sheds23" type="Node3D" parent="." unique_id=1326645874]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -198.15529, 27.838318, 0)
+
+[node name="Shed" parent="Sheds23" unique_id=239446690 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.14996, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds23" unique_id=48041217 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95334, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds23" unique_id=1840346236 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95334, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds23" unique_id=1193157156 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.425415, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds23" unique_id=1027743467 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89818, 0, -38.58301)
+
+[node name="Shed6" parent="Sheds23" unique_id=795375182 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89818, 0, -38.58301)
+
+[node name="Shed7" parent="Sheds23" unique_id=1985825378 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.58969, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds23" unique_id=900766762 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.435425, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds23" unique_id=921837746 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.751434, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds23" unique_id=1303030538 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.751434, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds23" unique_id=2135856387 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.06743, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds23" unique_id=1764562899 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.66342, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds23" unique_id=1553514328 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.89142, 0, -102.46556)
+
+[node name="Sheds24" type="Node3D" parent="." unique_id=259124017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -170.3051, 27.838318, 1.0810909)
+
+[node name="Shed" parent="Sheds24" unique_id=638453751 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.14996, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds24" unique_id=1782251815 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95334, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds24" unique_id=1817211435 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95334, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds24" unique_id=1339300827 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.425415, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds24" unique_id=1949704288 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89818, 0, -38.583015)
+
+[node name="Shed6" parent="Sheds24" unique_id=1417574256 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89818, 0, -38.583015)
+
+[node name="Shed7" parent="Sheds24" unique_id=1311882843 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.58969, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds24" unique_id=646158138 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.435425, 0, -60.513695)
+
+[node name="Shed9" parent="Sheds24" unique_id=603621875 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.751434, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds24" unique_id=382091217 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.751434, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds24" unique_id=2144722687 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.06743, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds24" unique_id=1554326679 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.66342, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds24" unique_id=1914416913 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.89142, 0, -102.46556)
+
+[node name="Sheds25" type="Node3D" parent="." unique_id=859863240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.35406, 27.838318, -0.6399746)
+
+[node name="Shed" parent="Sheds25" unique_id=1563673619 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.14998, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds25" unique_id=795071439 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95332, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds25" unique_id=1592329387 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95332, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds25" unique_id=743629632 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.42543, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds25" unique_id=1453072593 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89818, 0, -38.583008)
+
+[node name="Shed6" parent="Sheds25" unique_id=1541471368 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89818, 0, -38.583008)
+
+[node name="Shed7" parent="Sheds25" unique_id=1114942127 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.589676, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds25" unique_id=1750698635 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.43544, 0, -60.513687)
+
+[node name="Shed9" parent="Sheds25" unique_id=713083089 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.751434, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds25" unique_id=199752005 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.751434, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds25" unique_id=488740069 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.06743, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds25" unique_id=678423940 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.66342, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds25" unique_id=687468504 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.89143, 0, -102.46556)
+
+[node name="Sheds26" type="Node3D" parent="." unique_id=1540347346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.370674, 27.838318, 6.3664703)
+
+[node name="Shed" parent="Sheds26" unique_id=1180059788 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.14997, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds26" unique_id=566846267 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95333, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds26" unique_id=731174843 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95333, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds26" unique_id=1369489819 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.42542, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds26" unique_id=1296659012 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.898186, 0, -38.58301)
+
+[node name="Shed6" parent="Sheds26" unique_id=799325286 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.898186, 0, -38.58301)
+
+[node name="Shed7" parent="Sheds26" unique_id=1799533098 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.58968, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds26" unique_id=158808122 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.43543, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds26" unique_id=1836184754 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.75143, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds26" unique_id=428169949 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.75143, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds26" unique_id=797867545 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.06744, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds26" unique_id=1761767402 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.663414, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds26" unique_id=188544983 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.891426, 0, -102.46556)
+
+[node name="Sheds27" type="Node3D" parent="." unique_id=1735855908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.30218, 27.838318, 5.64806)
+
+[node name="Shed" parent="Sheds27" unique_id=740344091 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.14997, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds27" unique_id=1289967486 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95333, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds27" unique_id=949076998 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95333, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds27" unique_id=491313910 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.42542, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds27" unique_id=764299175 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89817, 0, -38.58301)
+
+[node name="Shed6" parent="Sheds27" unique_id=63807311 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89817, 0, -38.58301)
+
+[node name="Shed7" parent="Sheds27" unique_id=599716861 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.58968, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds27" unique_id=743442590 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.43543, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds27" unique_id=2120112895 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.75144, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds27" unique_id=2141528450 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.75144, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds27" unique_id=1335207393 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.06742, 0, -82.85762)
+
+[node name="Shed12" parent="Sheds27" unique_id=891929530 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.66343, 0, -93.57358)
+
+[node name="Shed13" parent="Sheds27" unique_id=887840157 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.891426, 0, -102.46556)
+
+[node name="Sheds28" type="Node3D" parent="." unique_id=867225457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.30218, 32.624847, 110.134155)
+
+[node name="Shed" parent="Sheds28" unique_id=41955898 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.14997, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds28" unique_id=262151886 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95333, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds28" unique_id=534032629 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95333, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds28" unique_id=1764234652 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.42542, 0, -26.29155)
+
+[node name="Shed5" parent="Sheds28" unique_id=858738432 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89817, 0, -38.583008)
+
+[node name="Shed6" parent="Sheds28" unique_id=1923919577 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89817, 0, -38.583008)
+
+[node name="Shed7" parent="Sheds28" unique_id=870172385 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.58968, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds28" unique_id=1534790876 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.43543, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds28" unique_id=272758800 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.75144, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds28" unique_id=1787687157 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.75144, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds28" unique_id=892898359 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.06742, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds28" unique_id=1458533759 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.66343, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds28" unique_id=84847999 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.891426, 0, -102.46556)
+
+[node name="Sheds29" type="Node3D" parent="." unique_id=96305294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.65539, 32.624847, 124.14336)
+
+[node name="Shed" parent="Sheds29" unique_id=506413703 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.14997, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds29" unique_id=1437700523 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95333, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds29" unique_id=1117621238 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95333, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds29" unique_id=1376488927 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.42542, 0, -26.29155)
+
+[node name="Shed5" parent="Sheds29" unique_id=818017046 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89817, 0, -38.583008)
+
+[node name="Shed6" parent="Sheds29" unique_id=183822000 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89817, 0, -38.583008)
+
+[node name="Shed7" parent="Sheds29" unique_id=1455463512 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.58968, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds29" unique_id=900611488 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.43543, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds29" unique_id=739389822 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.75144, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds29" unique_id=154766453 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.75144, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds29" unique_id=1687769564 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.06742, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds29" unique_id=1681057296 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.66343, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds29" unique_id=437731917 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.891426, 0, -102.46556)
+
+[node name="Sheds30" type="Node3D" parent="." unique_id=1351599707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.56982, 32.624847, 122.58678)
+
+[node name="Shed" parent="Sheds30" unique_id=107079558 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.14998, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds30" unique_id=1597159098 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95332, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds30" unique_id=1511559706 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95332, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds30" unique_id=1831976745 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.42543, 0, -26.29155)
+
+[node name="Shed5" parent="Sheds30" unique_id=640655333 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89818, 0, -38.583008)
+
+[node name="Shed6" parent="Sheds30" unique_id=482575823 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89818, 0, -38.583008)
+
+[node name="Shed7" parent="Sheds30" unique_id=1976574716 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.589676, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds30" unique_id=236864848 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.43544, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds30" unique_id=1833341278 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.751434, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds30" unique_id=1045326335 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.751434, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds30" unique_id=1525794611 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.06743, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds30" unique_id=1955554717 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.66342, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds30" unique_id=1314651251 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.89143, 0, -102.46556)
+
+[node name="Sheds31" type="Node3D" parent="." unique_id=508977401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -182.81454, 32.624847, 123.36507)
+
+[node name="Shed" parent="Sheds31" unique_id=983699216 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.14998, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds31" unique_id=1966191486 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95332, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds31" unique_id=1873099084 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95332, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds31" unique_id=1564632782 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.42543, 0, -26.29155)
+
+[node name="Shed5" parent="Sheds31" unique_id=1325554478 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89818, 0, -38.583008)
+
+[node name="Shed6" parent="Sheds31" unique_id=2092350889 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89818, 0, -38.583008)
+
+[node name="Shed7" parent="Sheds31" unique_id=2085249166 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.589676, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds31" unique_id=2087765734 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.43544, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds31" unique_id=1242184890 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.751434, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds31" unique_id=1964100343 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.751434, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds31" unique_id=1429142431 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.06743, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds31" unique_id=676268754 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.66342, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds31" unique_id=383476235 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.89143, 0, -102.46556)
+
+[node name="Sheds32" type="Node3D" parent="." unique_id=70154232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -214.72437, 32.624847, 122.58678)
+
+[node name="Shed" parent="Sheds32" unique_id=1292166796 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.14998, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds32" unique_id=748539795 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95332, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds32" unique_id=471538183 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95332, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds32" unique_id=1878554309 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.42543, 0, -26.29155)
+
+[node name="Shed5" parent="Sheds32" unique_id=778819600 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89818, 0, -38.583008)
+
+[node name="Shed6" parent="Sheds32" unique_id=1537670389 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89818, 0, -38.583008)
+
+[node name="Shed7" parent="Sheds32" unique_id=902843113 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.589676, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds32" unique_id=864062801 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.43544, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds32" unique_id=409665084 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.75145, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds32" unique_id=370978469 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.75145, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds32" unique_id=290526484 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.06743, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds32" unique_id=581473120 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.66344, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds32" unique_id=1699335738 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.89143, 0, -102.46556)
+
+[node name="Sheds33" type="Node3D" parent="." unique_id=853399967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -227.17697, 32.624847, 13.626373)
+
+[node name="Shed" parent="Sheds33" unique_id=2107100340 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.14998, 0, -0.71798706)
+
+[node name="Shed2" parent="Sheds33" unique_id=1943466313 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95332, 0, -8.615845)
+
+[node name="Shed3" parent="Sheds33" unique_id=1214916766 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95332, 0, -17.949669)
+
+[node name="Shed4" parent="Sheds33" unique_id=514767795 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.42543, 0, -26.291553)
+
+[node name="Shed5" parent="Sheds33" unique_id=88784311 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89818, 0, -38.58301)
+
+[node name="Shed6" parent="Sheds33" unique_id=1243607530 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.89818, 0, -38.58301)
+
+[node name="Shed7" parent="Sheds33" unique_id=1633240941 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.589676, 0, -46.893585)
+
+[node name="Shed8" parent="Sheds33" unique_id=703197265 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.43544, 0, -60.51369)
+
+[node name="Shed9" parent="Sheds33" unique_id=1358817868 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.75142, 0, -68.03767)
+
+[node name="Shed10" parent="Sheds33" unique_id=1958027631 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.75142, 0, -75.10565)
+
+[node name="Shed11" parent="Sheds33" unique_id=1599406118 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.06743, 0, -82.85763)
+
+[node name="Shed12" parent="Sheds33" unique_id=151665369 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.66341, 0, -93.573586)
+
+[node name="Shed13" parent="Sheds33" unique_id=400902508 instance=ExtResource("3_ya0g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.89143, 0, -102.46556)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1859130937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.932343, 4.3625298, -40.211575)

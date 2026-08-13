@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b5lgsep43134e"]
+
+[ext_resource type="Script" uid="uid://52ann7u23fot" path="res://tools/building_loader/building_loader.gd" id="1_s3g33"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s3g33"]
+size = Vector3(0, 0, 0)
+
+[node name="BuildingLoader" type="Node3D" unique_id=1185911966]
+script = ExtResource("1_s3g33")
+col_size = null
+col_pos = null
+
+[node name="LoadArea" type="Area3D" parent="." unique_id=1133745963]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LoadArea" unique_id=1410097718]
+shape = SubResource("BoxShape3D_s3g33")
+
+[connection signal="area_entered" from="LoadArea" to="." method="_on_load_area_area_entered"]

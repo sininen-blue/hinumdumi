@@ -102,6 +102,7 @@ interact={
 
 3d_physics/layer_2="Player"
 3d_physics/layer_3="UI interactable"
+3d_physics/layer_5="BuildingLoader"
 
 [physics]
 
