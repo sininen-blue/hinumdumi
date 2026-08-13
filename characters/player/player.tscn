@@ -28,6 +28,12 @@
 [ext_resource type="AudioStream" uid="uid://d385w5635jyhh" path="res://assets/sounds/jumpscare/jumpscare2.mp3" id="20_5mkjs"]
 [ext_resource type="AudioStream" uid="uid://bdrug2bavq2rb" path="res://assets/sounds/jumpscare/growl.mp3" id="21_yybc7"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_w53g3"]
+radius = 32.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w53g3"]
+size = Vector3(50, 50, 120)
+
 [sub_resource type="Animation" id="Animation_lv4bx"]
 length = 0.001
 tracks/0/type = "value"
@@ -676,9 +682,6 @@ shader_parameter/color_quant_steps = 32.0
 shader_parameter/warble_amount = 0.002
 shader_parameter/warble_speed = 1.0
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_w53g3"]
-radius = 40.748947
-
 [node name="Player" type="CharacterBody3D" unique_id=950809192]
 collision_layer = 2
 script = ExtResource("1_exd8k")
@@ -746,6 +749,19 @@ metadata/_custom_type_script = "uid://cb2k8pff3hwwf"
 [node name="Head" type="Node3D" parent="." unique_id=1819092234]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="BuildingLoaderArea" type="Area3D" parent="Head" unique_id=1563173170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/BuildingLoaderArea" unique_id=1982617937]
+shape = SubResource("SphereShape3D_w53g3")
+debug_color = Color(0.73794615, 0.46246886, 0.20847914, 0.41960785)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Head/BuildingLoaderArea" unique_id=1546363491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -60.32811)
+shape = SubResource("BoxShape3D_w53g3")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Head" unique_id=1698700566]
 light_volumetric_fog_energy = 0.0
@@ -936,14 +952,6 @@ unique_name_in_owner = true
 stream = ExtResource("16_8l73k")
 volume_db = -25.0
 pitch_scale = 0.7
-
-[node name="BuildingLoaderArea" type="Area3D" parent="." unique_id=1563173170]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BuildingLoaderArea" unique_id=1982617937]
-shape = SubResource("SphereShape3D_w53g3")
-debug_color = Color(0.73794615, 0.46246886, 0.20847914, 0.41960785)
 
 [connection signal="timeout" from="StateMachine/WalkState/StepTimer" to="StateMachine/WalkState" method="_on_step_timer_timeout"]
 [connection signal="timeout" from="StateMachine/RunState/StepTimer" to="StateMachine/RunState" method="_on_step_timer_timeout"]
