@@ -764,9 +764,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -60.32811)
 shape = SubResource("BoxShape3D_w53g3")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Head" unique_id=1698700566]
+transform = Transform3D(1, 0, 0, 0, 0.9204366, 0.3908918, 0, -0.3908918, 0.9204366, 0, 0, 0)
+light_energy = 0.5
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
-spot_range = 15.0
 
 [node name="InteractionCast" type="RayCast3D" parent="Head" unique_id=1682129743]
 target_position = Vector3(0, 0, -10)

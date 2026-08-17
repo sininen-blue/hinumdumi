@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://ds6kyupjbfi5u"]
+[gd_scene format=3 uid="uid://cfbygui8uxdx4"]
 
-[ext_resource type="Script" uid="uid://ciox7m58taop2" path="res://src/debug/debug_death_screen.gd" id="1_3gk3r"]
+[ext_resource type="Script" uid="uid://ciox7m58taop2" path="res://src/debug/debug_death_screen.gd" id="1_x6jf1"]
 
 [node name="DebugDeathScreen" type="Control" unique_id=1528282808]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_3gk3r")
+script = ExtResource("1_x6jf1")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=743559292]
 layout_mode = 1
@@ -33,7 +33,7 @@ offset_right = 51.0
 offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "You Are Dead"
+text = "You Have Won"
 
 [node name="Button" type="Button" parent="." unique_id=2140917527]
 layout_mode = 1
