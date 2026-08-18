@@ -1,28 +1,11 @@
 [gd_scene format=3 uid="uid://tsvdxcuxbnfb"]
 
-[ext_resource type="Script" uid="uid://ctlrqk77kj0su" path="res://tools/building_import.gd" id="1_mgbqv"]
-[ext_resource type="Script" uid="uid://db1txmqmuc61r" path="res://tools/placeholder.gd" id="2_2p6f6"]
-[ext_resource type="PackedScene" uid="uid://b5lgsep43134e" path="res://tools/building_loader/building_loader.tscn" id="2_fl1ro"]
-[ext_resource type="Script" uid="uid://52ann7u23fot" path="res://tools/building_loader/building_loader.gd" id="3_2p6f6"]
+[ext_resource type="PackedScene" uid="uid://ds3qewa650rw0" path="res://assets_raw/buildings-new/waiting-shed.glb" id="1_mgbqv"]
 
 [node name="Shed" type="Node3D" unique_id=1932083097]
 
-[node name="BuildingImport" type="Node3D" parent="." unique_id=1655308970]
-script = ExtResource("1_mgbqv")
-model_path = "uid://dlkrgdmdg65k8"
-metadata/_custom_type_script = "uid://ctlrqk77kj0su"
-
-[node name="Placeholder" type="CSGBox3D" parent="." unique_id=1470156013]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029587269, 3.029334, -0.1961546)
-size = Vector3(7.7320957, 6.058668, 6.2452087)
-script = ExtResource("2_2p6f6")
-
-[node name="NavigationObstacle" type="NavigationObstacle3D" parent="." unique_id=664604390]
+[node name="NavigationObstacle" type="NavigationObstacle3D" parent="." unique_id=1837059762]
 height = 6.058668
-vertices = PackedVector3Array(-3.8364606, 0, -3.318759, -3.8364606, 0, 2.9264498, 3.8956351, 0, 2.9264498, 3.8956351, 0, -3.318759)
+vertices = PackedVector3Array(-3.8660479, 0, -3.1226044, -3.8660479, 0, 3.1226044, 3.8660479, 0, 3.1226044, 3.8660479, 0, -3.1226044)
 
-[node name="BuildingLoader" type="Node3D" parent="." unique_id=1185911966 instance=ExtResource("2_fl1ro")]
-script = ExtResource("3_2p6f6")
-model_path = "uid://dlkrgdmdg65k8"
-col_size = Vector3(7.7320957, 6.058668, 6.2452087)
-col_pos = Vector3(0.029587269, 3.029334, -0.1961546)
+[node name="Model" type="Node3D" parent="." unique_id=509355489 instance=ExtResource("1_mgbqv")]

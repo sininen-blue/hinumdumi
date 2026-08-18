@@ -846,6 +846,7 @@ color = Color(1, 1, 1, 0.49019608)
 
 [node name="Shader" type="ColorRect" parent="Hud" unique_id=1011110878]
 unique_name_in_owner = true
+visible = false
 material = SubResource("ShaderMaterial_icpky")
 anchors_preset = 15
 anchor_right = 1.0

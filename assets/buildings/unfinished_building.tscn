@@ -1,48 +1,12 @@
 [gd_scene format=3 uid="uid://bbqcxt5o3ntpx"]
 
-[ext_resource type="PackedScene" uid="uid://bdxn38d13pwi6" path="res://assets_raw/buildings/Unfinished Building 1.glb" id="1_rimux"]
-[ext_resource type="PackedScene" uid="uid://d2i63aw6pm14r" path="res://src/ambient_sound_component.tscn" id="2_r5572"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_rimux"]
-size = Vector3(15.9800415, 15.203186, 10.992645)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_r5572"]
-size = Vector3(0.7878418, 4.8565674, 3.2460938)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_guydf"]
-size = Vector3(0.7878418, 4.8565674, 3.2460938)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5572"]
-transparency = 1
-albedo_color = Color(0, 0, 0, 0.88235295)
+[ext_resource type="PackedScene" uid="uid://b2tqaqw8uib11" path="res://assets_raw/buildings-new/unfinished-building.glb" id="2_r5572"]
 
 [node name="UnfinishedBuilding" type="Node3D" unique_id=2016349544]
 
-[node name="Unfinished Building 1" parent="." unique_id=879208875 instance=ExtResource("1_rimux")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, -0.2, 10.7)
+[node name="NavigationObstacle" type="NavigationObstacle3D" parent="." unique_id=1231661150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3099396, 0)
+height = 16.573566
+vertices = PackedVector3Array(-8.364128, 0, -7.098307, -8.386694, 0, 4.541349, -1.0720859, 0, 4.55788, -1.0480095, 0, 7.106224, 8.364128, 0, 7.098308, 8.364128, 0, -7.098307)
 
-[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1679556589]
-height = 20.0
-vertices = PackedVector3Array(-6.356902, 0, -6.984227, 9.563234, 0, -7.263039, 9.507473, 0, 3.526965, -6.4963083, 0, 3.499084)
-affect_navigation_mesh = true
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=262780977]
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=972337516]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.540863, 7.101593, -2.1262374)
-shape = SubResource("BoxShape3D_rimux")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=105423423]
-transform = Transform3D(1, 0, 0, 0, 0.907044, 0.42103583, 0, -0.42103583, 0.907044, -3.3526611, 1.2415357, 3.2433424)
-shape = SubResource("BoxShape3D_r5572")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=22726056]
-transform = Transform3D(1, 0, 0, 0, 0.9669436, 0.25499016, 0, -0.25499016, 0.9669436, -0.5940845, 1.2415357, 3.7452307)
-shape = SubResource("BoxShape3D_guydf")
-
-[node name="AmbientSoundComponent" parent="." unique_id=2077548551 instance=ExtResource("2_r5572")]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1251967453]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2349854, 6.585205, -1.5421753)
-size = Vector3(10.281494, 14.17041, 9.373901)
-material = SubResource("StandardMaterial3D_r5572")
+[node name="Model" type="Node3D" parent="." unique_id=137467634 instance=ExtResource("2_r5572")]

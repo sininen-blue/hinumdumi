@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var debug: bool = true
+@export var debug: bool = false
 
 @onready var timer: Timer = $Timer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -26,4 +26,4 @@ func _on_detection_area_body_entered(body: Node3D) -> void:
 		return
 	
 	if randi_range(0, 3) == 0:
-		timer.start(randf_range(1, 4))
+		timer.start(randf_range(0, 1))

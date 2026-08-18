@@ -15,8 +15,8 @@ trunk_height = 10
 trunk_branch_length = 0.85
 trunk_branch_length_falloff = 0.825
 trunk_drop_amount = -0.025
-trunk_max_radius = 0.23
-trunk_length = 2.976
+trunk_max_radius = 0.25
+trunk_length = 3.0
 material_trunk = ExtResource("2_ijn1y")
 material_twig = ExtResource("3_6pm67")
 
