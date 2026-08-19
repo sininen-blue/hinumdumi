@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bijkdm5fvnuxo" path="res://assets/others/barrel_1.tscn" id="3_wdlwj"]
 [ext_resource type="Script" uid="uid://b6rk0uffidg5l" path="res://src/items/item.gd" id="4_tfi2c"]
 [ext_resource type="PackedScene" uid="uid://c201jg0o1h4he" path="res://assets/buildings/house_plywood.tscn" id="4_usmu2"]
-[ext_resource type="PackedScene" uid="uid://pf8a38ufupxl" path="res://levels/Demo/demo_terrain.tscn" id="4_yoc4w"]
 [ext_resource type="Script" uid="uid://n02j0kwxqqr6" path="res://characters/monster/interest_point/wander_points.gd" id="5_7e3l5"]
 [ext_resource type="Resource" uid="uid://bhsq474tgbqxa" path="res://interactables/items/Vinegar.tres" id="5_auw86"]
 [ext_resource type="PackedScene" uid="uid://coutmk0d1shhh" path="res://assets/buildings/house_plywood_2.tscn" id="5_xfb37"]
@@ -149,9 +148,6 @@ transform = Transform3D(0.98749846, -0.009808593, -0.15732323, 0.0096864365, 0.9
 
 [node name="Barrel10" parent="MonsterNav/Decorations" unique_id=2107944941 instance=ExtResource("3_wdlwj")]
 transform = Transform3D(0.98749846, -0.009808593, -0.15732323, -0.15437916, 0.14143011, -0.97783667, 0.031841442, 0.98989964, 0.13814777, 32.42254, 0.6661918, 29.784843)
-
-[node name="GdtTerrain3D" parent="MonsterNav" unique_id=989931744 instance=ExtResource("4_yoc4w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.37326, 0, 61.294994)
 
 [node name="Obstacles" type="Node3D" parent="MonsterNav" unique_id=57851605]
 
