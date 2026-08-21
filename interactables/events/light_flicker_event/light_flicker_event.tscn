@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d028g4cpyu45h"]
+
+[ext_resource type="Script" uid="uid://tp5cbd18ptsr" path="res://interactables/events/light_flicker_event/light_flicker_event.gd" id="1_3dbhf"]
+
+[node name="LightFlickerEvent" type="Node3D" unique_id=1921605111]
+script = ExtResource("1_3dbhf")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://xrgcd0g68xws"]
+
+[ext_resource type="Script" uid="uid://dd5gg0tvp8cqp" path="res://interactables/events/sound_player_event/sound_player_event.gd" id="1_bjkgr"]
+
+[node name="SoundPlayerEvent" type="Node3D" unique_id=1923810190]
+script = ExtResource("1_bjkgr")
+
+[node name="SoundPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1503026729]
