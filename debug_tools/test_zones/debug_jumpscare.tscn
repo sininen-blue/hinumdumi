@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://gdh4pnm1fe4t"]
+
+[ext_resource type="PackedScene" uid="uid://dbdp6yu5bgt1b" path="res://characters/monster/monster.tscn" id="1_qgxb7"]
+[ext_resource type="Script" uid="uid://bx7k63tyj4jax" path="res://debug_tools/test_zones/debug_jumpscare.gd" id="1_sh15p"]
+[ext_resource type="PackedScene" uid="uid://leixn7ybth70" path="res://characters/player/player.tscn" id="2_yrylj"]
+[ext_resource type="PackedScene" uid="uid://by0k7k6tu31h4" path="res://levels/wander_points.tscn" id="3_yrylj"]
+
+[node name="DebugJumpscare" type="Node3D" unique_id=1942335175]
+script = ExtResource("1_sh15p")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=167765869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.872262, 0)
+use_collision = true
+size = Vector3(20, 1, 20)
+
+[node name="Monster" parent="." unique_id=2116566352 node_paths=PackedStringArray("wander_points", "player") instance=ExtResource("1_qgxb7")]
+wander_points = NodePath("../WanderPoints")
+player = NodePath("../Player")
+
+[node name="Player" parent="." unique_id=950809192 instance=ExtResource("2_yrylj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5758486)
+
+[node name="WanderPoints" parent="." unique_id=1158355714 instance=ExtResource("3_yrylj")]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=2089934772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9130471, 1.0053711, -0.710165)
+size = Vector3(1, 3.0107422, 11.385742)

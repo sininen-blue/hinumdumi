@@ -153,7 +153,7 @@ func start_jumpscare(monster: Monster) -> void:
 	var current_y = self.rotation.y
 	target_y = current_y + wrapf(target_y - current_y, -PI, PI)
 
-	tween.tween_property(self, "rotation:y", target_y - PI, 0.5)
+	tween.tween_property(self, "rotation:y", target_y - PI, 0.3)
 
 	await tween.finished
 

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c58kwm26v1jty"]
+
+[ext_resource type="PackedScene" uid="uid://dqs5c2udjifhq" path="res://assets_raw/trees/models/tree07.glb" id="1_8hmd1"]
+[ext_resource type="Texture2D" uid="uid://ccy6f24l1sc2r" path="res://assets_raw/trees/textures/tree07_summer.png" id="2_y1yao"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqjyq"]
+albedo_texture = ExtResource("2_y1yao")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0dwyi"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_y1yao")
+
+[node name="tree07" unique_id=1163737284 instance=ExtResource("1_8hmd1")]
+
+[node name="tree07" parent="." index="0" unique_id=670562605]
+surface_material_override/0 = SubResource("StandardMaterial3D_vqjyq")
+
+[node name="tree07_top" parent="tree07" index="0" unique_id=1459568138]
+surface_material_override/0 = SubResource("StandardMaterial3D_0dwyi")

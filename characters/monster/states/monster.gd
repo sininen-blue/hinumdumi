@@ -19,13 +19,12 @@ var started = false:
 			footstep_timer.start()
 
 
-## NOTE: override once close eonugh to the player
 func _physics_process(delta: float) -> void:
-	var target_pos: Vector3 = Vector3.ZERO
+	var target_pos: Vector3 = Vector3.RIGHT
 	if state_machine.current_state == jumpscare:
 		target_pos = global_position.direction_to(player.global_position)
-		var target_trans = transform.looking_at(target_pos, Vector3.UP)
-		transform.basis = transform.basis.slerp(target_trans.basis, 5 * delta)
+		var target_trans = transform.looking_at(target_pos, Vector3.UP, true)
+		transform.basis = transform.basis.slerp(target_trans.basis, 20 * delta)
 	else:
 		if velocity != Vector3.ZERO:
 			target_pos = global_position + -velocity

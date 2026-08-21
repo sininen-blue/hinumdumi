@@ -8,4 +8,4 @@
 height = 10.595369
 vertices = PackedVector3Array(-13.300142, 0, -7.147837, -13.300142, 0, 7.147837, 13.300142, 0, 7.147837, 13.300142, 0, -7.147837)
 
-[node name="Model" type="Node3D" parent="." unique_id=669889209 instance=ExtResource("1_jve6m")]
+[node name="Model" parent="." unique_id=669889209 instance=ExtResource("1_jve6m")]
