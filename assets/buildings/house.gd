@@ -25,11 +25,22 @@ func _input(event: InputEvent) -> void:
 		return
 	
 	if event.is_action_pressed("interact"):
-		animation_player.play("blink")
+		if PlayerStates.has_talked_to_parent:
+			animation_player.play("blink")
+
+
+func _process(_delta: float) -> void:
+	# NOTE: this is kinda ass
+	if PlayerStates.has_talked_to_parent == false:
+		exit_label.text = "You forgot to get money, talk to your mother"
+	else:
+		exit_label.text = "Press E to exit"
 
 
 func _trigger_teleport() -> void:
 	if is_inside:
+		if PlayerStates.left_home == false:
+			PlayerStates.left_home = true
 		player.global_position = outside_mark.global_position
 	else:
 		player.global_position = inside_mark.global_position

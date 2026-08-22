@@ -22,9 +22,10 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if not player:
 		return
-
+	
 	if event.is_action_pressed("interact"):
 		if PlayerStates.left_home == false:
+			PlayerStates.has_talked_to_parent = true
 			init_dialogue()
 
 
@@ -78,6 +79,7 @@ func _on_home_finished_requirements() -> void:
 	dialogue_component.add_line("Dinner at 8")
 	dialogue_component.start_talking()
 
+	await dialogue_component.finished_talking
 	level_complete.emit()
 
 
@@ -97,8 +99,5 @@ func _on_interact_area_body_entered(body: Node3D) -> void:
 
 func _on_interact_area_body_exited(body: Node3D) -> void:
 	if body is Player:
-		if PlayerStates.left_home == false:
-			PlayerStates.left_home = true
-
 		player = null
 		dialogue_component.stop_talking()

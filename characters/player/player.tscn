@@ -1002,9 +1002,6 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 unique_name_in_owner = true
 script = ExtResource("11_3t07l")
 player = NodePath("../..")
-speed = 10.0
-hover_force = 40.0
-accel = 0.1
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="DebugFlightTimer" type="Timer" parent="StateMachine/DebugFlightState" unique_id=851963497]

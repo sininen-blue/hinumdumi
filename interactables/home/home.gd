@@ -5,6 +5,9 @@ class_name Home
 signal finished_requirements
 
 @export var debug: bool = false
+@export var next_level_number: int = 0
+@export var next_missing_children: int = 0
+@export var next_level: PackedScene
 @export var starting_cash: int = 0
 @export var requirements: Dictionary[Item, int] = { }
 @export var lines: Array[String] = [
@@ -70,9 +73,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			requirements.erase(req)
 
 		if requirements.is_empty():
-			print("level done")
-			var end: PackedScene = preload("res://src/debug/debug_win_screen.tscn")
-			SceneManager.change_scene(end)
 			finished_requirements.emit()
 
 	_update_debug_text()
@@ -82,3 +82,8 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body is Player:
 		PlayerStates.in_home = false
 		player = null
+
+
+func _on_parent_level_complete() -> void:
+	PlayerStates.reset() # NOTE: might bight me in the ass
+	SceneManager.change_scene(next_level, true, next_level_number, next_missing_children)

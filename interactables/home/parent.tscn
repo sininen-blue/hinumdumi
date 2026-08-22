@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://byjqw0lhnsa00" path="res://assets_raw/Mother/mama.blend" id="3_m8be5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kyjot"]
-radius = 4.0
+radius = 5.0299487
 
 [node name="Parent" type="Node3D" unique_id=565167997]
 script = ExtResource("1_ad57i")
