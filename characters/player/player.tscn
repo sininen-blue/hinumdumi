@@ -19,14 +19,25 @@
 [ext_resource type="Texture2D" uid="uid://4wpvpysnbptd" path="res://assets/monster/Head2.png" id="11_e0pgg"]
 [ext_resource type="Script" uid="uid://detp4j86s6ip8" path="res://characters/player/hide_state.gd" id="11_on558"]
 [ext_resource type="Texture2D" uid="uid://b6kr11p6kdpcl" path="res://assets/monster/Head3.png" id="12_sbttr"]
-[ext_resource type="Script" uid="uid://cjsunpf7m30c" path="res://characters/player/sound_manager.gd" id="14_icpky"]
-[ext_resource type="AudioStream" uid="uid://b1r2qkueinysv" path="res://assets/sounds/footsteps/player_walk.wav" id="15_58jvb"]
 [ext_resource type="AudioStream" uid="uid://bno8umd8dkv0" path="res://assets/sounds/footsteps/footsteps_heavy_1.wav" id="16_8l73k"]
 [ext_resource type="Texture2D" uid="uid://7rouobnh5wkl" path="res://assets/monster/Head1.png" id="17_fpo3a"]
 [ext_resource type="Texture2D" uid="uid://ddaxlegppenop" path="res://assets/monster/Left Hand.png" id="18_kyfeq"]
 [ext_resource type="Texture2D" uid="uid://wsf27xdceten" path="res://assets/monster/Right Hand.png" id="19_5mkjs"]
 [ext_resource type="AudioStream" uid="uid://d385w5635jyhh" path="res://assets/sounds/jumpscare/jumpscare2.mp3" id="20_5mkjs"]
+[ext_resource type="AudioStream" uid="uid://bsdtjrgbhhaoi" path="res://assets/sounds/player/run_breath_high_stamina.wav" id="20_8v65i"]
+[ext_resource type="AudioStream" uid="uid://ue1vfxejw8u8" path="res://assets/sounds/player/run_breath_med_stamina.wav" id="21_jepfe"]
 [ext_resource type="AudioStream" uid="uid://bdrug2bavq2rb" path="res://assets/sounds/jumpscare/growl.mp3" id="21_yybc7"]
+[ext_resource type="AudioStream" uid="uid://dph8681ibpx55" path="res://assets/sounds/player/run_breath_low_stamina.wav" id="22_iopkm"]
+[ext_resource type="Script" uid="uid://c3noc1ww8pfgc" path="res://characters/player/sounds/stamina_breath.gd" id="25_2qgir"]
+[ext_resource type="AudioStream" uid="uid://tjpqvqwg87tt" path="res://assets/sounds/player/footsteps/grass_1.wav" id="29_2qgir"]
+[ext_resource type="Script" uid="uid://dm58yu5544saf" path="res://characters/player/sounds/footsteps.gd" id="29_8v65i"]
+[ext_resource type="AudioStream" uid="uid://c8hnw0sfmpim7" path="res://assets/sounds/player/breath.wav" id="29_pagxt"]
+[ext_resource type="AudioStream" uid="uid://dvse21uavro27" path="res://assets/sounds/player/out_of_stamina.wav" id="30_2qgir"]
+[ext_resource type="AudioStream" uid="uid://byp5c730ar1tm" path="res://assets/sounds/player/footsteps/grass_2.wav" id="30_o3aog"]
+[ext_resource type="AudioStream" uid="uid://snsfpeduu02f" path="res://assets/sounds/player/footsteps/grass_3.wav" id="31_5rrwf"]
+[ext_resource type="AudioStream" uid="uid://dcq4c15dsxx4p" path="res://assets/sounds/player/footsteps/grass_4.wav" id="32_gro5v"]
+[ext_resource type="AudioStream" uid="uid://42a35ddl3blu" path="res://assets/sounds/player/detected_gasp.wav" id="33_o3aog"]
+[ext_resource type="AudioStream" uid="uid://cw2hrvwjoirrj" path="res://assets/sounds/player/undetected_sigh.wav" id="34_5rrwf"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_w53g3"]
 radius = 32.0
@@ -1008,23 +1019,63 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 wait_time = 0.25
 one_shot = true
 
-[node name="SoundManager" type="Node3D" parent="." unique_id=1841433030]
-script = ExtResource("14_icpky")
+[node name="Sounds" type="Node3D" parent="." unique_id=1841433030]
 
-[node name="Footstep" type="AudioStreamPlayer3D" parent="SoundManager" unique_id=746440361]
-stream = ExtResource("15_58jvb")
+[node name="StaminaBreath" type="Node" parent="Sounds" unique_id=1521365279 node_paths=PackedStringArray("player")]
+script = ExtResource("25_2qgir")
+player = NodePath("../..")
 
-[node name="FootstepTimer" type="Timer" parent="SoundManager/Footstep" unique_id=907361700]
-wait_time = 1.2
+[node name="Breath" type="AudioStreamPlayer3D" parent="Sounds/StaminaBreath" unique_id=24604255]
+stream = ExtResource("29_pagxt")
+
+[node name="Timer" type="Timer" parent="Sounds/StaminaBreath/Breath" unique_id=383907897]
 one_shot = true
 
-[node name="Land" type="AudioStreamPlayer3D" parent="SoundManager" unique_id=1529763453]
+[node name="EmptySound" type="AudioStreamPlayer3D" parent="Sounds/StaminaBreath" unique_id=1474504510]
+
+[node name="OutOfStamina" type="AudioStreamPlayer3D" parent="Sounds/StaminaBreath" unique_id=1209078526]
+stream = ExtResource("30_2qgir")
+
+[node name="HighStaminaBreath" type="AudioStreamPlayer3D" parent="Sounds/StaminaBreath" unique_id=7878118]
+stream = ExtResource("20_8v65i")
+
+[node name="MedStaminaBreath" type="AudioStreamPlayer3D" parent="Sounds/StaminaBreath" unique_id=501619658]
+stream = ExtResource("21_jepfe")
+
+[node name="LowStaiminaBreath" type="AudioStreamPlayer3D" parent="Sounds/StaminaBreath" unique_id=1693242830]
+stream = ExtResource("22_iopkm")
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="Sounds" unique_id=746440361 node_paths=PackedStringArray("player")]
+script = ExtResource("29_8v65i")
+player = NodePath("../..")
+sounds = Array[AudioStream]([ExtResource("29_2qgir"), ExtResource("30_o3aog"), ExtResource("31_5rrwf"), ExtResource("32_gro5v")])
+
+[node name="SoundPlayerPool1" type="AudioStreamPlayer3D" parent="Sounds/Footsteps" unique_id=1989008359]
+
+[node name="SoundPlayerPool2" type="AudioStreamPlayer3D" parent="Sounds/Footsteps" unique_id=932802543]
+
+[node name="SoundPlayerPool3" type="AudioStreamPlayer3D" parent="Sounds/Footsteps" unique_id=811641797]
+
+[node name="SoundPlayerPool4" type="AudioStreamPlayer3D" parent="Sounds/Footsteps" unique_id=1902454805]
+
+[node name="SoundPlayerPool5" type="AudioStreamPlayer3D" parent="Sounds/Footsteps" unique_id=1015437788]
+
+[node name="Land" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1529763453]
 unique_name_in_owner = true
 stream = ExtResource("16_8l73k")
 volume_db = -25.0
 pitch_scale = 0.7
 
+[node name="Detected" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1081242069]
+stream = ExtResource("33_o3aog")
+volume_db = -15.0
+
+[node name="Undetected" type="AudioStreamPlayer3D" parent="Sounds" unique_id=684035208]
+stream = ExtResource("34_5rrwf")
+volume_db = -20.0
+pitch_scale = 0.9
+
 [connection signal="timeout" from="StateMachine/WalkState/StepTimer" to="StateMachine/WalkState" method="_on_step_timer_timeout"]
 [connection signal="timeout" from="StateMachine/RunState/StepTimer" to="StateMachine/RunState" method="_on_step_timer_timeout"]
 [connection signal="timeout" from="StateMachine/JumpState/GroundCastToggleTimer" to="StateMachine/JumpState" method="_on_ground_cast_toggle_timer_timeout"]
-[connection signal="timeout" from="SoundManager/Footstep/FootstepTimer" to="SoundManager" method="_on_footstep_timer_timeout"]
+[connection signal="timeout" from="Sounds/StaminaBreath/Breath/Timer" to="Sounds/StaminaBreath" method="_on_timer_timeout"]

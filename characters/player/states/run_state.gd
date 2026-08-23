@@ -18,10 +18,18 @@ var headbob_time: float = 0
 
 
 func enter() -> void:
+	var tween: Tween = get_tree().create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(camera_3d, "fov", 90, 1)
 	step_timer.start()
 
 
 func exit() -> void:
+	var tween: Tween = get_tree().create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(camera_3d, "fov", 75, 1)
 	step_timer.stop()
 
 

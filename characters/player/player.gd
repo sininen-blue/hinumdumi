@@ -53,6 +53,8 @@ var getting_jumpscared: bool = false
 @onready var jumpscare: Node3D = %Jumpscare
 @onready var jumpscare_player: AnimationPlayer = %JumpscarePlayer
 @onready var idle_state: Node = %IdleState
+@onready var detected: AudioStreamPlayer3D = $Sounds/Detected
+@onready var undetected: AudioStreamPlayer3D = $Sounds/Undetected
 
 
 func _ready() -> void:

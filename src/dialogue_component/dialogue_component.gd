@@ -6,17 +6,20 @@ signal finished_talking()
 signal started_talking()
 signal finished_line(indx: int, line: String)
 
+@export var voices: Array[AudioStream]
 @export var character_delay: float = 0.05
-@export var line_delay: float = 0.5
+@export var line_delay: float = 0.5 
 
 @onready var label: Label3D = $Label
 @onready var character_timer: Timer = $CharacterTimer
 @onready var line_timer: Timer = $LineTimer
+@onready var voice_player: AudioStreamPlayer3D = $VoicePlayer
 
 var queue: Array[String] = []
-
 var current_line_index: int = 0
 var current_char_index: int = 0
+
+var current_voice: int = 0
 
 
 func _ready() -> void:
@@ -26,6 +29,7 @@ func _ready() -> void:
 
 
 func start_talking() -> void:
+	_play_voice()
 	started_talking.emit()
 	_reset()
 	character_timer.start()
@@ -60,6 +64,7 @@ func _on_character_timer_timeout() -> void:
 
 
 func _on_line_timer_timeout() -> void:
+	_play_voice()
 	finished_line.emit(current_line_index, queue[current_line_index])
 
 	label.text = ""
@@ -72,3 +77,12 @@ func _on_line_timer_timeout() -> void:
 		return
 
 	character_timer.start()
+
+
+func _play_voice() -> void:
+	voice_player.stream = voices[current_voice]
+	current_voice += 1
+	if current_voice >= len(voices):
+		current_voice = 0
+
+	voice_player.play()

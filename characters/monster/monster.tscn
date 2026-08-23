@@ -5,7 +5,9 @@
 [ext_resource type="Script" uid="uid://b1dl6kr3n5ex8" path="res://characters/monster/states/wander.gd" id="3_xm3rn"]
 [ext_resource type="Script" uid="uid://ukpnj7q0mijy" path="res://characters/monster/vision_cast.gd" id="3_yrry2"]
 [ext_resource type="Script" uid="uid://dblxk48co5xmx" path="res://characters/monster/states/scanning.gd" id="4_11k15"]
+[ext_resource type="AudioStream" uid="uid://dth8umd42a4g5" path="res://assets/sounds/monster/monster_detect.wav" id="4_dapgd"]
 [ext_resource type="Script" uid="uid://k56d5wujbb36" path="res://characters/monster/monster_state_machine.gd" id="4_legie"]
+[ext_resource type="AudioStream" uid="uid://dhthns8agfr8l" path="res://assets/sounds/monster/monster_undetect.wav" id="5_6755d"]
 [ext_resource type="Script" uid="uid://bmxmpbo75gqnx" path="res://characters/monster/states/investigate.gd" id="5_utdx2"]
 [ext_resource type="Script" uid="uid://c3au1he41o3xh" path="res://characters/monster/detect_area.gd" id="5_yrry2"]
 [ext_resource type="Script" uid="uid://btyntbdut57r3" path="res://characters/monster/states/hunt.gd" id="6_s386a"]
@@ -849,8 +851,13 @@ wait_time = 1.5
 one_shot = true
 
 [node name="VisionGainTimer" type="Timer" parent="VisionCast" unique_id=2130296793]
-wait_time = 0.2
 one_shot = true
+
+[node name="Detected" type="AudioStreamPlayer3D" parent="VisionCast" unique_id=1421203469]
+stream = ExtResource("4_dapgd")
+
+[node name="Undetected" type="AudioStreamPlayer3D" parent="VisionCast" unique_id=990904018]
+stream = ExtResource("5_6755d")
 
 [node name="HearingArea" type="Area3D" parent="." unique_id=1517629973]
 collision_layer = 3

@@ -18,6 +18,8 @@ extends RayCast3D
 @onready var scanning: Node = %Scanning
 @onready var investigate: Node = %Investigate
 @onready var hunt: Node = %Hunt
+@onready var detected: AudioStreamPlayer3D = $Detected
+@onready var undetected: AudioStreamPlayer3D = $Undetected
 
 var can_see_player: bool = false
 
@@ -67,7 +69,11 @@ func _can_see_player() -> bool:
 func _on_vision_loss_timer_timeout() -> void:
 	state_machine.last_known_position = player.global_position
 	state_machine.change_state(investigate)
+	undetected.play()
+	player.undetected.play() # NOTE: hot garbage, complete ass, will break things
 
 
 func _on_vision_gain_timer_timeout() -> void:
 	state_machine.change_state(hunt)
+	detected.play()
+	player.detected.play() # NOTE: hot garbage, complete ass, will break things

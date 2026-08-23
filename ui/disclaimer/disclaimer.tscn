@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0jkf1hw1u7py"]
 
 [ext_resource type="Script" uid="uid://dstnlqqyl1i5f" path="res://ui/disclaimer/disclaimer.gd" id="1_ooc02"]
-[ext_resource type="PackedScene" uid="uid://bwd570eivx0mj" path="res://levels/Demo/demo_level_1.tscn" id="2_mnafh"]
+[ext_resource type="PackedScene" uid="uid://1frh6wwkqywc" path="res://levels/Demo/demo_tutorial_level.tscn" id="2_mnafh"]
 
 [node name="Disclaimer" type="Control" unique_id=1618825101]
 layout_mode = 3

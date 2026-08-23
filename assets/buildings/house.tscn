@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4kfqsfngyfb" path="res://assets/buildings/house.gd" id="1_rdhl7"]
 [ext_resource type="PackedScene" uid="uid://bto2dp00ka1r1" path="res://assets_raw/house/house.blend" id="1_v1k7e"]
+[ext_resource type="AudioStream" uid="uid://dfnqgslk8iro" path="res://assets/sounds/others/door.wav" id="3_pa3of"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v1k7e"]
 size = Vector3(2.7421265, 4.664551, 2.6797485)
@@ -26,7 +27,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_m6dyk"]
 resource_name = "blink"
-length = 0.5
+length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -53,6 +54,21 @@ tracks/1/keys = {
 "method": &"_trigger_teleport"
 }]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoorSound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_pa3of")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rdhl7"]
 _data = {
@@ -118,6 +134,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2667184, 0)
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 omni_range = 9.305
+
+[node name="DoorSound" type="AudioStreamPlayer3D" parent="." unique_id=669069314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4332547, 0, -3.1691632)
 
 [connection signal="body_entered" from="ExitArea" to="." method="_on_exit_area_body_entered"]
 [connection signal="body_exited" from="ExitArea" to="." method="_on_exit_area_body_exited"]

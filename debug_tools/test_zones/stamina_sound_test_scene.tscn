@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cpe0mcpfeggj0"]
+
+[ext_resource type="PackedScene" uid="uid://leixn7ybth70" path="res://characters/player/player.tscn" id="1_w7g1p"]
+[ext_resource type="PackedScene" uid="uid://dbdp6yu5bgt1b" path="res://characters/monster/monster.tscn" id="2_8umud"]
+[ext_resource type="Script" uid="uid://n02j0kwxqqr6" path="res://characters/monster/interest_point/wander_points.gd" id="3_pdww8"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w7g1p"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cm01l"]
+noise = SubResource("FastNoiseLite_w7g1p")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8umud"]
+albedo_color = Color(0.44, 0.44, 0.44, 1)
+albedo_texture = SubResource("NoiseTexture2D_cm01l")
+
+[node name="StaminaSoundTestScene" type="Node3D" unique_id=1636949099]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1725009286]
+use_collision = true
+size = Vector3(100, 1, 100)
+material = SubResource("StandardMaterial3D_8umud")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1928452919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.142057, 2.7651305, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_8umud")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=1638902018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.142057, 2.7651305, 19.978706)
+use_collision = true
+size = Vector3(1, 5, 28.474731)
+material = SubResource("StandardMaterial3D_8umud")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=156985326]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.142057, 2.7651305, -4.8546214)
+use_collision = true
+material = SubResource("StandardMaterial3D_8umud")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=106691772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.142057, 2.7651305, -11.135376)
+use_collision = true
+material = SubResource("StandardMaterial3D_8umud")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=818565943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.142057, 2.7651305, -17.864561)
+use_collision = true
+material = SubResource("StandardMaterial3D_8umud")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=1424109935]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.142057, 2.7651305, -23.124228)
+use_collision = true
+material = SubResource("StandardMaterial3D_8umud")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=1848348062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.142057, 2.7651305, -29.030869)
+use_collision = true
+material = SubResource("StandardMaterial3D_8umud")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="." unique_id=424385943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.142057, 2.7651305, -34.99566)
+use_collision = true
+material = SubResource("StandardMaterial3D_8umud")
+
+[node name="Player" parent="." unique_id=950809192 instance=ExtResource("1_w7g1p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.898974, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1911867649]
+transform = Transform3D(1, 0, 0, 0, 0.0077142706, 0.99997026, 0, -0.99997026, 0.0077142706, 0, 17.329697, 0)
+
+[node name="Monster" parent="." unique_id=2116566352 node_paths=PackedStringArray("wander_points", "player") instance=ExtResource("2_8umud")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.594183, 0, 8.444517)
+wander_points = NodePath("../WanderPoints")
+player = NodePath("../Player")
+
+[node name="WanderPoints" type="Node3D" parent="." unique_id=2078913681]
+script = ExtResource("3_pdww8")
+metadata/_custom_type_script = "uid://n02j0kwxqqr6"

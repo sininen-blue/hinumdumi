@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var debug: bool = false
+
 @onready var inside_mark: Marker3D = $InsidePosition
 @onready var outside_mark: Marker3D = $OutsidePosition
 
@@ -10,6 +12,7 @@ extends Node3D
 @onready var enter_area: Area3D = $EnterArea
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var door_sound: AudioStreamPlayer3D = $DoorSound
 
 var player: Player
 var is_inside: bool = true
@@ -25,6 +28,9 @@ func _input(event: InputEvent) -> void:
 		return
 	
 	if event.is_action_pressed("interact"):
+		if debug:
+			animation_player.play("blink")
+			
 		if PlayerStates.has_talked_to_parent:
 			animation_player.play("blink")
 
