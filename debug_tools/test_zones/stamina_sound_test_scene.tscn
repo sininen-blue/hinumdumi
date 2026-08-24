@@ -62,7 +62,7 @@ use_collision = true
 material = SubResource("StandardMaterial3D_8umud")
 
 [node name="Player" parent="." unique_id=950809192 instance=ExtResource("1_w7g1p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.898974, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.898974, 10.754751)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1911867649]
 transform = Transform3D(1, 0, 0, 0, 0.0077142706, 0.99997026, 0, -0.99997026, 0.0077142706, 0, 17.329697, 0)
