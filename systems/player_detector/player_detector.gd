@@ -12,4 +12,6 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
+	if body is not Player:
+		return
 	detected_player.emit(body)
