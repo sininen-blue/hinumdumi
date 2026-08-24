@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://rn2tq0y3xcuj"]
+
+[ext_resource type="Script" uid="uid://b8esrvon5cgbc" path="res://interactables/shop/shop_display.gd" id="1_ul4mh"]
+[ext_resource type="FontFile" uid="uid://jwqoj3bvw7hg" path="res://assets/fonts/HalloweenGreetings-Regular.otf" id="2_s7u72"]
+
+[node name="ShopDisplay" type="Node3D" unique_id=314857702]
+script = ExtResource("1_ul4mh")
+
+[node name="NameLabel" type="Label3D" parent="." unique_id=393752291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+billboard = 2
+font = ExtResource("2_s7u72")
+
+[node name="PriceLabel" type="Label3D" parent="." unique_id=114142577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5649578, 0)
+billboard = 2

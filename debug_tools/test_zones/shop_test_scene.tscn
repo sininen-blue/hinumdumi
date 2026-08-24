@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b1cxjx7enjgsn"]
+
+[ext_resource type="PackedScene" uid="uid://leixn7ybth70" path="res://characters/player/player.tscn" id="1_wk6u2"]
+[ext_resource type="PackedScene" uid="uid://dn1vho050ejq" path="res://interactables/shop/variants/normelita.tscn" id="2_p5smy"]
+[ext_resource type="Script" uid="uid://b6rk0uffidg5l" path="res://src/items/item.gd" id="3_t46qi"]
+[ext_resource type="Resource" uid="uid://cibahbmjhia64" path="res://interactables/items/Rice.tres" id="4_8lys1"]
+[ext_resource type="Resource" uid="uid://dqln4etsscmsq" path="res://interactables/items/Soy Sauce.tres" id="5_esdx5"]
+[ext_resource type="Resource" uid="uid://dduxxviuf6umn" path="res://interactables/items/Salt.tres" id="6_s7thw"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w7g1p"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cm01l"]
+noise = SubResource("FastNoiseLite_w7g1p")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8umud"]
+albedo_color = Color(0.44, 0.44, 0.44, 1)
+albedo_texture = SubResource("NoiseTexture2D_cm01l")
+
+[node name="StaminaSoundTestScene" type="Node3D" unique_id=1636949099]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1725009286]
+use_collision = true
+size = Vector3(100, 1, 100)
+material = SubResource("StandardMaterial3D_8umud")
+
+[node name="Player" parent="." unique_id=950809192 instance=ExtResource("1_wk6u2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9618049, 3.898974, 11.659628)
+debug_money = 100
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1911867649]
+transform = Transform3D(1, 0, 0, 0, 0.0077142706, 0.99997026, 0, -0.99997026, 0.0077142706, 0, 17.329697, 0)
+
+[node name="StoreNormelita" parent="." unique_id=913437893 instance=ExtResource("2_p5smy")]
+inventory = Dictionary[ExtResource("3_t46qi"), int]({
+ExtResource("4_8lys1"): 1,
+ExtResource("5_esdx5"): 2,
+ExtResource("6_s7thw"): 3
+})

@@ -15,6 +15,7 @@ signal noise_created(noise_level: float)
 @export var enable_inifite_stamina: bool = false
 @export var enable_quick_reset: bool = false
 @export var enable_debug_noise: bool = false
+@export var debug_money: int = 0
 @export_category("Properties")
 @export var max_stamina: float = 10
 
@@ -73,6 +74,9 @@ func _ready() -> void:
 			debug_label.name = key
 			debug_label.text = key + str(debug_info[key])
 			debug_info_container.add_child(debug_label)
+	
+	if debug_money != 0:
+		PlayerInventory.money = debug_money
 
 
 func _process(_delta: float) -> void:

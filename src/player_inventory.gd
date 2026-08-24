@@ -41,6 +41,13 @@ func remove_item(item: Item) -> Hand:
 		return right_hand
 
 
+func has_returnable(shop: Shop) -> bool:
+	for item: Item in inventory.keys():
+		if item.origin == shop:
+			return true
+	return false
+
+
 func reset() -> void:
 	inventory = { }
 	money = 0

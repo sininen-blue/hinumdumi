@@ -1,6 +1,12 @@
 extends Node3D
-
 class_name Shop
+
+const VOICE_1 = preload("uid://ccs7l77g45yb3")
+const VOICE_2 = preload("uid://dgrc26siix5mh")
+const VOICE_3 = preload("uid://d2uvlom5k01is")
+const VOICE_4 = preload("uid://c3cbbhodkrm2q")
+const VOICE_5 = preload("uid://gev8oqd86ed7")
+
 
 @export var shoppableItem: PackedScene
 @export var inventory: Dictionary[Item, int]
@@ -20,6 +26,16 @@ var player: Player
 @onready var item_interacts: ItemInteracts = $ItemInteracts
 
 
+func _ready() -> void:
+	dialogue_component.voices = [
+		VOICE_1,
+		VOICE_2,
+		VOICE_3,
+		VOICE_4,
+		VOICE_5,
+	]
+
+
 func _on_item_interact(item: Item) -> void:
 	if PlayerInventory.money >= item.base_cost:
 		var stock: int = inventory.get(item, 0)
@@ -33,6 +49,8 @@ func _on_item_interact(item: Item) -> void:
 		item.origin = self
 		var hand: Hand = PlayerInventory.add_item(item)
 		item_interacts.send(item, hand)
+		
+		_check_returns()
 
 
 func _on_return_interact(item: Item) -> void:
@@ -45,6 +63,8 @@ func _on_return_interact(item: Item) -> void:
 			item_interacts.recieve(item, hand)
 			PlayerInventory.money += item.base_cost
 			inventory[item] += 1
+		
+		_check_returns()
 
 
 func _on_shoppable_area_body_entered(body: Node3D) -> void:
@@ -53,6 +73,8 @@ func _on_shoppable_area_body_entered(body: Node3D) -> void:
 
 		dialogue_component.add_line("what are you buying?")
 		dialogue_component.start_talking()
+		
+		_check_returns()
 
 
 func _on_shoppable_area_body_exited(body: Node3D) -> void:
@@ -62,3 +84,11 @@ func _on_shoppable_area_body_exited(body: Node3D) -> void:
 		dialogue_component.stop_talking()
 		dialogue_component.add_line("have a good day")
 		dialogue_component.start_talking()
+
+
+func _check_returns():
+	for return_interact in item_interacts.return_interacts:
+		if PlayerInventory.has_returnable(return_interact.item.origin):
+			return_interact.visible = true
+		else:
+			return_interact.visible = false

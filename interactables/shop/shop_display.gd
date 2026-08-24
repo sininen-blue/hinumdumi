@@ -14,13 +14,13 @@ var sending: Array[Array]
 var recieving: Array[Array]
 
 
-func _ready() -> void:
-	var label: Label3D = Label3D.new()
-	label.text = item.name
-	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
-	add_child(label)
-	label.position.y += 0.5
+@onready var name_label: Label3D = $NameLabel
+@onready var price_label: Label3D = $PriceLabel
 
+
+func _ready() -> void:
+	name_label.text = item.name
+	price_label.text = "%d ₱" % item.base_cost
 	current_amount = initial_amount
 
 	for i in range(initial_amount):
