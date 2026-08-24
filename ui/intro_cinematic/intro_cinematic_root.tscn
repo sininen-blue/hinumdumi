@@ -3,6 +3,7 @@
 [ext_resource type="VideoStream" uid="uid://v8tueomwpiiy" path="res://assets/videos/intro_cutscene.ogv" id="1_gb53a"]
 [ext_resource type="Script" uid="uid://bucuvpgghnnkg" path="res://ui/intro_cinematic/intro_cinematic_root.gd" id="1_khlt8"]
 [ext_resource type="PackedScene" uid="uid://b0jkf1hw1u7py" path="res://ui/disclaimer/disclaimer.tscn" id="2_d1lo7"]
+[ext_resource type="Theme" uid="uid://bw650dm3xfbn0" path="res://ui/themes/holloween.tres" id="4_pgocs"]
 
 [sub_resource type="Shader" id="Shader_gb53a"]
 code = "//PSX Like shader, with Grain, CRT, Vignette, Pixelation, and Warble Effects
@@ -246,6 +247,7 @@ offset_top = 11.0
 offset_right = -14.0
 offset_bottom = 34.0
 grow_horizontal = 0
+theme = ExtResource("4_pgocs")
 text = "Tap Esc to Skip"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=534705850]

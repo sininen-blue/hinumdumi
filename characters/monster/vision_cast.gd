@@ -31,10 +31,13 @@ func _process(_delta: float) -> void:
 	if self.is_colliding() == false:
 		return
 
+	# NOTE: look through logic here again at some point
 	if _can_see_player():
+		print(state_machine.current_state)
 		vision_loss_timer.start()
-		if vision_gain_timer.is_stopped():
+		if vision_gain_timer.is_stopped() and state_machine.current_state != hunt:
 			vision_gain_timer.start()
+			# BUG: fucked
 	else:
 		if vision_gain_timer.is_stopped() == false:
 			vision_gain_timer.stop()

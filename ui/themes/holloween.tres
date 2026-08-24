@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://bw650dm3xfbn0"]
+
+[ext_resource type="FontFile" uid="uid://jwqoj3bvw7hg" path="res://assets/fonts/HalloweenGreetings-Regular.otf" id="1_ofvcb"]
+
+[resource]
+default_font = ExtResource("1_ofvcb")
+default_font_size = 28

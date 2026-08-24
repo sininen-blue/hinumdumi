@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b0jkf1hw1u7py"]
 
 [ext_resource type="Script" uid="uid://dstnlqqyl1i5f" path="res://ui/disclaimer/disclaimer.gd" id="1_ooc02"]
+[ext_resource type="Theme" uid="uid://bw650dm3xfbn0" path="res://ui/themes/holloween.tres" id="1_sxywn"]
 [ext_resource type="PackedScene" uid="uid://1frh6wwkqywc" path="res://levels/Demo/demo_tutorial_level.tscn" id="2_mnafh"]
 
 [node name="Disclaimer" type="Control" unique_id=1618825101]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_sxywn")
 script = ExtResource("1_ooc02")
 target = ExtResource("2_mnafh")
 

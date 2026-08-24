@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4kfqsfngyfb" path="res://assets/buildings/house.gd" id="1_rdhl7"]
 [ext_resource type="PackedScene" uid="uid://bto2dp00ka1r1" path="res://assets_raw/house/house.blend" id="1_v1k7e"]
+[ext_resource type="FontFile" uid="uid://jwqoj3bvw7hg" path="res://assets/fonts/HalloweenGreetings-Regular.otf" id="3_dqpnt"]
 [ext_resource type="AudioStream" uid="uid://dfnqgslk8iro" path="res://assets/sounds/others/door.wav" id="3_pa3of"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v1k7e"]
@@ -103,11 +104,13 @@ shape = SubResource("BoxShape3D_rdhl7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0940695, 2.8264046, -2.249531)
 billboard = 2
 text = "Press E to enter"
+font = ExtResource("3_dqpnt")
 
 [node name="ExitLabel" type="Label3D" parent="." unique_id=620100109]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.042521, 2.8040729, -2.390125)
 billboard = 2
 text = "Press E to Exit"
+font = ExtResource("3_dqpnt")
 
 [node name="InsidePosition" type="Marker3D" parent="." unique_id=37565182]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0012608, 0.33829045, -2.203267)
