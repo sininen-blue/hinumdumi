@@ -4,6 +4,12 @@
 [ext_resource type="Script" uid="uid://n02j0kwxqqr6" path="res://characters/monster/interest_point/wander_points.gd" id="5_7e3l5"]
 [ext_resource type="PackedScene" uid="uid://diily8l8v5bfh" path="res://levels/Demo/worlds/level_1.tscn" id="6_7e3l5"]
 [ext_resource type="PackedScene" uid="uid://cbjk2tbvb3xsk" path="res://characters/monster/interest_point/interest_point.tscn" id="6_58rwb"]
+[ext_resource type="PackedScene" uid="uid://bmigjydjonpfr" path="res://interactables/home/home.tscn" id="7_yv6wp"]
+[ext_resource type="PackedScene" uid="uid://cfbygui8uxdx4" path="res://src/debug/debug_win_screen.tscn" id="8_nbfxf"]
+[ext_resource type="Script" uid="uid://b6rk0uffidg5l" path="res://src/items/item.gd" id="9_4raoo"]
+[ext_resource type="Resource" uid="uid://dqln4etsscmsq" path="res://interactables/items/Soy Sauce.tres" id="10_m7mj5"]
+[ext_resource type="Resource" uid="uid://bnwb6eo5yt56w" path="res://interactables/items/Egg.tres" id="11_qo4u2"]
+[ext_resource type="Resource" uid="uid://dduxxviuf6umn" path="res://interactables/items/Salt.tres" id="12_3r41g"]
 [ext_resource type="PackedScene" uid="uid://dbdp6yu5bgt1b" path="res://characters/monster/monster.tscn" id="68_eutc3"]
 [ext_resource type="Environment" uid="uid://4thbuqoqy2tc" path="res://src/environment.tres" id="81_xlj54"]
 
@@ -79,3 +85,14 @@ wander_points = NodePath("../WanderPoints")
 player = NodePath("../Player")
 
 [node name="Level1" parent="." unique_id=539042850 instance=ExtResource("6_7e3l5")]
+
+[node name="Home" parent="." unique_id=219637577 instance=ExtResource("7_yv6wp")]
+transform = Transform3D(0.6949471, 0, -0.7190609, 0, 1, 0, 0.7190609, 0, 0.6949471, 89.046234, 2.3841858e-07, -15.826458)
+next_level = ExtResource("8_nbfxf")
+starting_cash = 13
+requirements = Dictionary[ExtResource("9_4raoo"), int]({
+ExtResource("10_m7mj5"): 1,
+ExtResource("11_qo4u2"): 4,
+ExtResource("12_3r41g"): 1
+})
+lines = Array[String](["We ran ouf of eggs", "Go out and buy", "", "[m]"])

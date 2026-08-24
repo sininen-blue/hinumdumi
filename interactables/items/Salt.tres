@@ -9,4 +9,5 @@ name = "Salt"
 singular_description = "bag of salt"
 plural_description = "bags of salt"
 model = ExtResource("1_5wn8f")
+base_cost = 2.0
 metadata/_custom_type_script = "uid://b6rk0uffidg5l"

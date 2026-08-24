@@ -9,4 +9,5 @@ name = "Egg"
 singular_description = "egg"
 plural_description = "eggs"
 model = ExtResource("1_fi8ww")
+base_cost = 3.0
 metadata/_custom_type_script = "uid://b6rk0uffidg5l"

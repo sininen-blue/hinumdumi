@@ -9,4 +9,5 @@ name = "Vinegar"
 singular_description = "pack of vinegar"
 plural_description = "packs of vinegar"
 model = ExtResource("1_glvc1")
+base_cost = 4.0
 metadata/_custom_type_script = "uid://b6rk0uffidg5l"

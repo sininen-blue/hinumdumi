@@ -24,8 +24,6 @@ environment = ExtResource("1_g271a")
 
 [node name="Player" parent="." unique_id=950809192 instance=ExtResource("2_0yv4g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.5212, 0, -11.543681)
-enable_fly = true
-enable_inifite_stamina = true
 
 [node name="MovementTutorial" parent="Player" unique_id=1341402659 node_paths=PackedStringArray("player") instance=ExtResource("4_fleqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)

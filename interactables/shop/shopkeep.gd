@@ -6,7 +6,9 @@ const VOICE_2 = preload("uid://dgrc26siix5mh")
 const VOICE_3 = preload("uid://d2uvlom5k01is")
 const VOICE_4 = preload("uid://c3cbbhodkrm2q")
 const VOICE_5 = preload("uid://gev8oqd86ed7")
-
+const BUY_SOUND = preload("uid://b5y30v6j1p81l")
+const NO_BUY_SOUND = preload("uid://j3wy7mpq6ves")
+const RETURN_SOUND = preload("uid://d0n0fuqf5cynu")
 
 @export var shoppableItem: PackedScene
 @export var inventory: Dictionary[Item, int]
@@ -21,6 +23,9 @@ const VOICE_5 = preload("uid://gev8oqd86ed7")
 ]
 
 var player: Player
+var buy_sound_player: AudioStreamPlayer3D
+var no_buy_sound_player: AudioStreamPlayer3D
+var return_sound_player: AudioStreamPlayer3D
 
 @onready var dialogue_component: DialogueComponent = $DialogueComponent
 @onready var item_interacts: ItemInteracts = $ItemInteracts
@@ -34,9 +39,24 @@ func _ready() -> void:
 		VOICE_4,
 		VOICE_5,
 	]
+	
+	buy_sound_player = AudioStreamPlayer3D.new()
+	buy_sound_player.stream = BUY_SOUND
+	add_child(buy_sound_player)
+	
+	no_buy_sound_player = AudioStreamPlayer3D.new()
+	no_buy_sound_player.stream = NO_BUY_SOUND
+	add_child(no_buy_sound_player)
+	
+	return_sound_player = AudioStreamPlayer3D.new()
+	return_sound_player.stream = RETURN_SOUND
+	add_child(return_sound_player)
 
 
 func _on_item_interact(item: Item) -> void:
+	if PlayerInventory.money < item.base_cost:
+		no_buy_sound_player.play()
+	
 	if PlayerInventory.money >= item.base_cost:
 		var stock: int = inventory.get(item, 0)
 		if stock <= 0:
@@ -49,6 +69,7 @@ func _on_item_interact(item: Item) -> void:
 		item.origin = self
 		var hand: Hand = PlayerInventory.add_item(item)
 		item_interacts.send(item, hand)
+		buy_sound_player.play()
 		
 		_check_returns()
 
@@ -63,6 +84,7 @@ func _on_return_interact(item: Item) -> void:
 			item_interacts.recieve(item, hand)
 			PlayerInventory.money += item.base_cost
 			inventory[item] += 1
+			return_sound_player.play()
 		
 		_check_returns()
 

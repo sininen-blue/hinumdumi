@@ -9,4 +9,5 @@ name = "Soy Sauce"
 singular_description = "bottle of soy sauce"
 plural_description = "bottles of soy sauce"
 model = ExtResource("1_i1u14")
+base_cost = 3.0
 metadata/_custom_type_script = "uid://b6rk0uffidg5l"

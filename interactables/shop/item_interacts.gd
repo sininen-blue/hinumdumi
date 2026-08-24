@@ -6,6 +6,8 @@ const SHOP_INTERACT: PackedScene = preload("res://interactables/shop/shop_intera
 const RETURN_INTERACT: PackedScene = preload("res://interactables/shop/return_interact.tscn")
 const SHOP_DISPLAY: PackedScene = preload("uid://rn2tq0y3xcuj")
 
+
+
 @onready var shop: Shop = self.get_parent()
 
 var index: int = 0
