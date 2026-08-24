@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c7cwthh0fb3lw"]
+
+[ext_resource type="Script" uid="uid://bd4cv73cldmvw" path="res://ui/tutorial/movement/movement_tutorial.gd" id="1_x02ng"]
+
+[node name="MovementTutorial" type="Label3D" unique_id=1341402659]
+billboard = 2
+text = "WASD to move"
+script = ExtResource("1_x02ng")

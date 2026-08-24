@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b8ar6ohy7dwh5"]
+
+[ext_resource type="Script" uid="uid://fq0yfl4s8kpp" path="res://ui/tutorial/buy/buy_item_tutorial.gd" id="1_un6k2"]
+
+[node name="BuyItemTutorial" type="Label3D" unique_id=1788238660]
+text = "Buy an item with \"E\""
+script = ExtResource("1_un6k2")

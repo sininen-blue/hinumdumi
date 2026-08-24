@@ -4,9 +4,16 @@
 [ext_resource type="Environment" uid="uid://cyvr8ojoug0lh" path="res://environment/sunny.tres" id="1_g271a"]
 [ext_resource type="PackedScene" uid="uid://leixn7ybth70" path="res://characters/player/player.tscn" id="2_0yv4g"]
 [ext_resource type="PackedScene" uid="uid://bmigjydjonpfr" path="res://interactables/home/home.tscn" id="4_b8sty"]
+[ext_resource type="PackedScene" uid="uid://c7cwthh0fb3lw" path="res://ui/tutorial/movement/movement_tutorial.tscn" id="4_fleqs"]
+[ext_resource type="PackedScene" uid="uid://d2s45sukdx2x8" path="res://ui/tutorial/run/run_tutorial.tscn" id="5_3mfk8"]
 [ext_resource type="PackedScene" uid="uid://bwd570eivx0mj" path="res://levels/Demo/demo_level_1.tscn" id="5_fleqs"]
 [ext_resource type="Script" uid="uid://b6rk0uffidg5l" path="res://src/items/item.gd" id="5_h3upu"]
 [ext_resource type="Resource" uid="uid://cibahbmjhia64" path="res://interactables/items/Rice.tres" id="6_fleqs"]
+[ext_resource type="PackedScene" uid="uid://diseukdbgi3s1" path="res://ui/tutorial/talk/talk_to_parent_tutorial.tscn" id="10_xam7x"]
+[ext_resource type="PackedScene" uid="uid://b8ar6ohy7dwh5" path="res://ui/tutorial/buy/buy_item_tutorial.tscn" id="11_qpj2s"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qpj2s"]
+radius = 4.938127
 
 [node name="DemoTutorialLevel" type="Node3D" unique_id=1499717250]
 
@@ -20,13 +27,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.5212, 0, -11.543681)
 enable_fly = true
 enable_inifite_stamina = true
 
+[node name="MovementTutorial" parent="Player" unique_id=1341402659 node_paths=PackedStringArray("player") instance=ExtResource("4_fleqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
+player = NodePath("..")
+
+[node name="RunTutorial" parent="Player" unique_id=992901842 node_paths=PackedStringArray("player") instance=ExtResource("5_3mfk8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
+player = NodePath("..")
+
 [node name="Home" parent="." unique_id=219637577 instance=ExtResource("4_b8sty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.98505, -9.536743e-07, -14.196477)
 next_level_number = 1
 next_missing_children = 2
 next_level = ExtResource("5_fleqs")
-starting_cash = 1
+starting_cash = 5
 requirements = Dictionary[ExtResource("5_h3upu"), int]({
 ExtResource("6_fleqs"): 1
 })
 lines = Array[String](["Can you buy me", "", "And", "[m]", "Go to uncles store", "the one on the right", "just ahead of that empty lot"])
+
+[node name="TalkToParentTutorial" parent="." unique_id=2121825646 instance=ExtResource("10_xam7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.1602, 2.1, -13.254681)
+billboard = 2
+threshold = 3.0
+
+[node name="BuyItemTutorial" parent="." unique_id=1788238660 instance=ExtResource("11_qpj2s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2519064, 2.1, -1.3067187)
+billboard = 2
+threshold = 0.5
+
+[node name="Area3D" type="Area3D" parent="BuyItemTutorial" unique_id=1780630309]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BuyItemTutorial/Area3D" unique_id=738620393]
+shape = SubResource("SphereShape3D_qpj2s")
+
+[connection signal="body_entered" from="BuyItemTutorial/Area3D" to="BuyItemTutorial" method="_on_area_3d_body_entered"]

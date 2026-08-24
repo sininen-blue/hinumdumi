@@ -7,6 +7,9 @@ extends Node
 @export var is_crouching: bool = false
 @export var in_home: bool = false
 
+@export var has_moved: bool = false
+@export var has_sprinted: bool = false
+
 
 func reset() -> void:
 	has_talked_to_parent = false
@@ -15,3 +18,6 @@ func reset() -> void:
 	is_hiding = false
 	is_crouching = false
 	in_home = false
+	
+	has_moved = false
+	has_sprinted = false
