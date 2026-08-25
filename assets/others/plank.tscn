@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c7wfo28jis2p7"]
+
+[ext_resource type="PackedScene" uid="uid://cjf5c0na76mfu" path="res://assets_raw/others/Plank.glb" id="1_hm1bl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mhb1c"]
+size = Vector3(1.2623291, 0.16723633, 1.7791748)
+
+[node name="Plank" type="Node3D" unique_id=429872481]
+
+[node name="Plank2" parent="." unique_id=1266688135 instance=ExtResource("1_hm1bl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98488915, -0.7674933, -0.26317322)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=706116364]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1803956355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046203613, 0.03137207, 0.0033569336)
+shape = SubResource("BoxShape3D_mhb1c")

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://di4e0oafg0xop"]
+
+[ext_resource type="PackedScene" uid="uid://eceixm1sgpx" path="res://assets_raw/grass-new/models/grass_bush.glb" id="1_vmdra"]
+[ext_resource type="Texture2D" uid="uid://diw83bmvatfih" path="res://assets_raw/grass-new/textures/grass_bush_summer.png" id="2_vn2ro"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ik8j3"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_vn2ro")
+
+[node name="grass_bush2" unique_id=686766078 instance=ExtResource("1_vmdra")]
+
+[node name="grass_bush" parent="." index="0" unique_id=1573718890]
+surface_material_override/0 = SubResource("StandardMaterial3D_ik8j3")
