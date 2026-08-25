@@ -87,7 +87,7 @@ player = NodePath("../Player")
 [node name="Level1" parent="." unique_id=539042850 instance=ExtResource("6_7e3l5")]
 
 [node name="Home" parent="." unique_id=219637577 instance=ExtResource("7_yv6wp")]
-transform = Transform3D(0.6949471, 0, -0.7190609, 0, 1, 0, 0.7190609, 0, 0.6949471, 89.046234, 2.3841858e-07, -15.826458)
+transform = Transform3D(0.6949471, 0, -0.7190609, 0, 1, 0, 0.7190609, 0, 0.6949471, 89.046234, 2.3841858e-07, -18.682034)
 next_level = ExtResource("8_nbfxf")
 starting_cash = 17
 requirements = Dictionary[ExtResource("9_4raoo"), int]({
