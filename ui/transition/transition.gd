@@ -3,18 +3,20 @@ class_name LevelTransition
 
 signal done_transition
 
-@export var night_number: int = 1
+@export var night_number: int = 12
 @export var missing_number: int = 1
 
 @onready var timer: Timer = $Timer
-@onready var title_label: Label = $TitleLabel
-@onready var missing_label: Label = $MissingLabel
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var title_label: RichTextLabel = $TitleLabel
+@onready var missing_label: RichTextLabel = $MissingLabel
 
 
 func _ready() -> void:
+	animation_player.play("display")
 	timer.start()
-	title_label.text = "Night %d" % _romanize(night_number)
-	missing_label.text = "There are %d missing children" % missing_number
+	title_label.text = "Night [wave]%s[/wave]" % _romanize(night_number)
+	missing_label.text = "There are [shake]%s[/shake] missing children" % _romanize(missing_number)
 
 
 func _on_timer_timeout() -> void:
@@ -30,13 +32,14 @@ func _romanize(n: int) -> String:
 		10: "X",
 	}
 	var nums: Array[int] = symbols.keys()
-	nums.sort()
-	
+	nums.sort_custom(func(a, b): return a > b )
 	var roman: String = ""
+	
 	while n > 0:
 		for i: int in nums:
-			if n > i:
+			if n >= i:
 				n -= i
 				roman += symbols[i]
+				continue
 		
 	return roman
