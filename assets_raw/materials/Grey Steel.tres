@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://ca26db6hl2jpn"]
-
-[resource]
-resource_name = "Grey Steel"
-cull_mode = 2
-albedo_color = Color(0.27354348, 0.27354348, 0.27354348, 1)
-metallic = 0.36363637
-roughness = 0.109090894

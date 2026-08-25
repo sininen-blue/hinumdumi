@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://byub7458gurwf"]
-
-[resource]
-resource_name = "Water pivot Bolt"
-cull_mode = 2
-albedo_color = Color(0.17029677, 0.17029677, 0.17029677, 1)
-roughness = 0.5

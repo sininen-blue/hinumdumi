@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://cwjnq7cdd3g50"]
-
-[ext_resource type="Texture2D" uid="uid://dvn7mukadgjxx" path="res://assets_raw/buildings/House v2_wood.png" id="1_744rl"]
-
-[resource]
-resource_name = "Material.041"
-cull_mode = 2
-albedo_texture = ExtResource("1_744rl")
-texture_filter = 2
