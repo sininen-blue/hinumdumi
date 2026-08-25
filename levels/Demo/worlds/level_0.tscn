@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c201jg0o1h4he" path="res://assets/buildings/house_plywood.tscn" id="11_x7hut"]
 [ext_resource type="PackedScene" uid="uid://dsvyx1ppd05ul" path="res://assets/buildings/two_story_building.tscn" id="12_yml1n"]
 [ext_resource type="PackedScene" uid="uid://bbqcxt5o3ntpx" path="res://assets/buildings/unfinished_building.tscn" id="13_kroib"]
-[ext_resource type="PackedScene" uid="uid://coutmk0d1shhh" path="res://assets/buildings/house_plywood_2.tscn" id="14_0fg67"]
+[ext_resource type="PackedScene" uid="uid://coutmk0d1shhh" path="res://assets/buildings/small_house.tscn" id="14_0fg67"]
 [ext_resource type="PackedScene" uid="uid://bfg7jo1yetoap" path="res://assets/buildings/l_house.tscn" id="15_8m7mq"]
 [ext_resource type="PackedScene" uid="uid://dqfhcx5ak55m5" path="res://assets/buildings/chopped_wood_hut.tscn" id="16_eakm1"]
 [ext_resource type="PackedScene" uid="uid://chu6fbvwd2vqv" path="res://assets/buildings/small_house_1.tscn" id="18_uwp14"]

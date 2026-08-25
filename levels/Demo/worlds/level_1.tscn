@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c201jg0o1h4he" path="res://assets/buildings/house_plywood.tscn" id="5_xu8n5"]
 [ext_resource type="PackedScene" uid="uid://dsvyx1ppd05ul" path="res://assets/buildings/two_story_building.tscn" id="6_avscp"]
 [ext_resource type="PackedScene" uid="uid://bbqcxt5o3ntpx" path="res://assets/buildings/unfinished_building.tscn" id="7_32bay"]
-[ext_resource type="PackedScene" uid="uid://coutmk0d1shhh" path="res://assets/buildings/house_plywood_2.tscn" id="8_oppew"]
+[ext_resource type="PackedScene" uid="uid://coutmk0d1shhh" path="res://assets/buildings/small_house.tscn" id="8_oppew"]
 [ext_resource type="PackedScene" uid="uid://bfg7jo1yetoap" path="res://assets/buildings/l_house.tscn" id="9_qtgxi"]
 [ext_resource type="PackedScene" uid="uid://dqfhcx5ak55m5" path="res://assets/buildings/chopped_wood_hut.tscn" id="10_monjo"]
 [ext_resource type="PackedScene" uid="uid://ceqkkt8vmytvy" path="res://assets/buildings/covered_court.tscn" id="11_q2eha"]
