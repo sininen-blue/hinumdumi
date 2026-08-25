@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://d2s45sukdx2x8"]
 
+[ext_resource type="FontFile" uid="uid://cbcl2vi5jbt8q" path="res://assets/fonts/AkayaTelivigala-Regular.ttf" id="1_5aelk"]
 [ext_resource type="Script" uid="uid://17hroeifse0h" path="res://ui/tutorial/run/run_tutorial.gd" id="1_vskab"]
 
 [node name="RunTutorial" type="Label3D" unique_id=992901842]
 text = "Press \"Shift\" to run"
+font = ExtResource("1_5aelk")
 script = ExtResource("1_vskab")

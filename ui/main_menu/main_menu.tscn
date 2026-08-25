@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ctqgee1rb0lb8" path="res://assets/others/trashbags.tscn" id="8_s4pem"]
 [ext_resource type="AudioStream" uid="uid://dk03jl053023p" path="res://assets/sounds/music/intro_music.mp3" id="10_4e78x"]
 [ext_resource type="Theme" uid="uid://bw650dm3xfbn0" path="res://ui/themes/holloween.tres" id="10_s4pem"]
+[ext_resource type="FontFile" uid="uid://jwqoj3bvw7hg" path="res://assets/fonts/HalloweenGreetings-Regular.otf" id="11_xio0d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u184e"]
 albedo_texture = ExtResource("3_3c04x")
@@ -151,8 +152,9 @@ offset_right = 233.5
 offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_xio0d")
 theme_override_font_sizes/font_size = 128
-text = "Hinumdumi"
+text = "3InumdumI"
 horizontal_alignment = 1
 uppercase = true
 

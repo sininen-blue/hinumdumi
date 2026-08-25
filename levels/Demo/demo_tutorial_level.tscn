@@ -26,11 +26,13 @@ environment = ExtResource("1_g271a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.5212, 0, -11.543681)
 
 [node name="MovementTutorial" parent="Player" unique_id=1341402659 node_paths=PackedStringArray("player") instance=ExtResource("4_fleqs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1.25)
+visible = false
 player = NodePath("..")
 
 [node name="RunTutorial" parent="Player" unique_id=992901842 node_paths=PackedStringArray("player") instance=ExtResource("5_3mfk8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1.25)
+visible = false
 player = NodePath("..")
 
 [node name="Home" parent="." unique_id=219637577 instance=ExtResource("4_b8sty")]

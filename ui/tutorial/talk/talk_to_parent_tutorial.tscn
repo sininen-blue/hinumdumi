@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://diseukdbgi3s1"]
 
 [ext_resource type="Script" uid="uid://uk0ruv0arkgf" path="res://ui/tutorial/talk/talk_to_parent_tutorial.gd" id="1_1fhhn"]
+[ext_resource type="FontFile" uid="uid://cbcl2vi5jbt8q" path="res://assets/fonts/AkayaTelivigala-Regular.ttf" id="1_e57bg"]
 
 [node name="TalkToParentTutorial" type="Label3D" unique_id=2121825646]
 text = "Talk to your mother
 Press \"E\""
+font = ExtResource("1_e57bg")
 script = ExtResource("1_1fhhn")
