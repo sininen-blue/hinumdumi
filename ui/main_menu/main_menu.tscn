@@ -5,12 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://di5ccpypsjut8" path="res://assets/buildings/tindahan.tscn" id="2_i5wg5"]
 [ext_resource type="Texture2D" uid="uid://bdsb5ogr5p644" path="res://assets/textures/grass/rocky_terrain_02_diff_1k.jpg" id="3_3c04x"]
 [ext_resource type="PackedScene" uid="uid://2n4q3u0mloh2" path="res://assets/walls/random_brick_wall.tscn" id="5_6mijq"]
-[ext_resource type="PackedScene" uid="uid://dsrnrxhowsshg" path="res://assets/others/banana_tree.tscn" id="6_w2r0d"]
-[ext_resource type="PackedScene" uid="uid://56dw6by8o84c" path="res://assets/trees/tree_1.tscn" id="7_4e78x"]
-[ext_resource type="PackedScene" uid="uid://q7po06ahw8xl" path="res://assets/others/water_pump.tscn" id="8_6mijq"]
-[ext_resource type="PackedScene" uid="uid://ctqgee1rb0lb8" path="res://assets/others/trashbags.tscn" id="8_s4pem"]
+[ext_resource type="PackedScene" uid="uid://xurb2kwpi4xa" path="res://assets_raw/others/Bisaya banana.glb" id="9_4e78x"]
 [ext_resource type="AudioStream" uid="uid://dk03jl053023p" path="res://assets/sounds/music/intro_music.mp3" id="10_4e78x"]
 [ext_resource type="Theme" uid="uid://bw650dm3xfbn0" path="res://ui/themes/holloween.tres" id="10_s4pem"]
+[ext_resource type="PackedScene" uid="uid://dwhric1msutsq" path="res://assets/buildings/two_story_2.tscn" id="10_xio0d"]
 [ext_resource type="FontFile" uid="uid://jwqoj3bvw7hg" path="res://assets/fonts/HalloweenGreetings-Regular.otf" id="11_xio0d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u184e"]
@@ -20,23 +18,34 @@ albedo_texture = ExtResource("3_3c04x")
 albedo_color = Color(0, 0, 0, 1)
 metallic_specular = 0.0
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nbfxf"]
-sky_top_color = Color(0.161, 0.18975002, 0.23, 1)
-sky_horizon_color = Color(0.0836, 0.12970667, 0.19, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tf5ef"]
+sky_top_color = Color(0.111999996, 0.132, 0.16, 1)
+sky_horizon_color = Color(0.256, 0.4, 0.3952, 1)
 
-[sub_resource type="Sky" id="Sky_4raoo"]
-sky_material = SubResource("ProceduralSkyMaterial_nbfxf")
+[sub_resource type="Sky" id="Sky_qao3l"]
+sky_material = SubResource("ProceduralSkyMaterial_tf5ef")
 
-[sub_resource type="Environment" id="Environment_u184e"]
+[sub_resource type="Environment" id="Environment_lknku"]
 background_mode = 2
-sky = SubResource("Sky_4raoo")
+sky = SubResource("Sky_qao3l")
+ambient_light_source = 3
+reflected_light_source = 2
+ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 sdfgi_cascades = 2
+glow_enabled = true
+fog_light_color = Color(0.5096, 0.53732, 0.56, 1)
+fog_light_energy = 0.2
+fog_aerial_perspective = 0.1
 volumetric_fog_enabled = true
-volumetric_fog_albedo = Color(0.61, 0.61, 0.61, 1)
-volumetric_fog_emission_energy = 0.5
+volumetric_fog_density = 0.03
+volumetric_fog_albedo = Color(0.58, 0.58, 0.58, 1)
+volumetric_fog_ambient_inject = 0.2
+adjustment_enabled = true
+adjustment_brightness = 1.06
+adjustment_saturation = 1.07
 
 [sub_resource type="Animation" id="Animation_w2r0d"]
 length = 0.001
@@ -96,37 +105,10 @@ transform = Transform3D(0.97129226, 0, -0.23788932, 0, 1, 0, 0.23788932, 0, 0.97
 [node name="RandomBrickWall2" parent="World" unique_id=327101485 instance=ExtResource("5_6mijq")]
 transform = Transform3D(0.97129226, 0, -0.23788932, 0, 1, 0, 0.23788932, 0, 0.97129226, 19.469263, -6.376973, -0.569505)
 
-[node name="BananaTree" parent="World" unique_id=645096363 instance=ExtResource("6_w2r0d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.812346, -3.278274, 0.27061343)
-
-[node name="BananaTree2" parent="World" unique_id=1107202043 instance=ExtResource("6_w2r0d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.531624, -3.6692376, 1.5673697)
-
-[node name="Tree1" parent="World" unique_id=136200655 instance=ExtResource("7_4e78x")]
-transform = Transform3D(0.99989176, 0.014712594, 0, -0.014712594, 0.99989176, 0, 0, 0, 1, -3.7200527, -3.819479, 0)
-
-[node name="Tree2" parent="World" unique_id=155918195 instance=ExtResource("7_4e78x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.480521, -3.8464906, 0.83623123)
-
-[node name="Trashbags" parent="World" unique_id=1048232662 instance=ExtResource("8_s4pem")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9228704, -2.978006, -1.1352059)
-
-[node name="Trashbags3" parent="World" unique_id=604265986 instance=ExtResource("8_s4pem")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5665448, -3.3616123, -1.7562397)
-
-[node name="Trashbags4" parent="World" unique_id=1172271933 instance=ExtResource("8_s4pem")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4489393, -3.675594, -4.239156)
-
-[node name="Trashbags2" parent="World" unique_id=1722475300 instance=ExtResource("8_s4pem")]
-transform = Transform3D(0.99236715, 0.07603258, -0.097089894, -0.070650935, 0.9958298, 0.05771797, 0.101073466, -0.0504179, 0.9936006, -4.3469067, -2.978006, 0.51737773)
-
 [node name="CSGBox3D2" type="CSGBox3D" parent="World" unique_id=61672741]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.638744)
 size = Vector3(100, 100, 1)
 material = SubResource("StandardMaterial3D_6mijq")
-
-[node name="WaterPump" parent="World" unique_id=1042807517 instance=ExtResource("8_6mijq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6988862, -3.220672, 0.65747917)
 
 [node name="MainMenuLayer" type="CanvasLayer" parent="." unique_id=1039457917]
 
@@ -195,7 +177,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9538271, 0.30035624, 0, -0.30035624, 0.953
 current = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1174797092]
-environment = SubResource("Environment_u184e")
+environment = SubResource("Environment_lknku")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=427145953]
 transform = Transform3D(0.8895494, -0.033537548, -0.45560637, 0.456839, 0.06475213, 0.88718957, -0.00025267867, -0.9973377, 0.07292148, -6.660514, 8.52691, 0.6723299)
@@ -209,5 +191,38 @@ libraries/ = SubResource("AnimationLibrary_w2r0d")
 stream = ExtResource("10_4e78x")
 volume_db = -5.0
 parameters/looping = false
+
+[node name="Bisaya banana" parent="." unique_id=1844144340 instance=ExtResource("9_4e78x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.371744, -2.434482, 5.670252)
+
+[node name="Bisaya banana9" parent="." unique_id=1427324959 instance=ExtResource("9_4e78x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2832456, -2.434482, 4.8765483)
+
+[node name="Bisaya banana10" parent="." unique_id=1160510783 instance=ExtResource("9_4e78x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1969945, -2.434482, 2.1141238)
+
+[node name="Bisaya banana2" parent="." unique_id=1778539173 instance=ExtResource("9_4e78x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.565166, -2.434482, 3.2974868)
+
+[node name="Bisaya banana3" parent="." unique_id=1893609304 instance=ExtResource("9_4e78x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.010879, -2.434482, 2.210174)
+
+[node name="Bisaya banana4" parent="." unique_id=801607397 instance=ExtResource("9_4e78x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5772862, -2.434482, 0.93457985)
+
+[node name="Bisaya banana5" parent="." unique_id=1521613160 instance=ExtResource("9_4e78x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.293121, -2.434482, 2.7216377)
+
+[node name="Bisaya banana6" parent="." unique_id=1418021006 instance=ExtResource("9_4e78x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.691069, -2.434482, 4.741053)
+
+[node name="Bisaya banana7" parent="." unique_id=1980281456 instance=ExtResource("9_4e78x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.691069, -2.434482, 6.741053)
+
+[node name="Bisaya banana8" parent="." unique_id=654047348 instance=ExtResource("9_4e78x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.37666, -2.434482, 4.8413835)
+
+[node name="TwoStory2" parent="." unique_id=395531032 instance=ExtResource("10_xio0d")]
+transform = Transform3D(0.9999451, 0, -0.010471783, 0, 1, 0, 0.010471783, 0, 0.9999451, -19.614, -6.162, -4.339)
 
 [connection signal="pressed" from="MainMenuLayer/MainMenuRoot/PlayButton" to="." method="_on_play_button_pressed"]
