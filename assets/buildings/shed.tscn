@@ -2,10 +2,4 @@
 
 [ext_resource type="PackedScene" uid="uid://ds3qewa650rw0" path="res://assets_raw/buildings-new/waiting-shed.glb" id="1_mgbqv"]
 
-[node name="Shed" type="Node3D" unique_id=1932083097]
-
-[node name="NavigationObstacle" type="NavigationObstacle3D" parent="." unique_id=1837059762]
-height = 6.058668
-vertices = PackedVector3Array(-3.8660479, 0, -3.1226044, -3.8660479, 0, 3.1226044, 3.8660479, 0, 3.1226044, 3.8660479, 0, -3.1226044)
-
-[node name="Model" type="Node3D" parent="." unique_id=509355489 instance=ExtResource("1_mgbqv")]
+[node name="WaitingShed" unique_id=1345717746 instance=ExtResource("1_mgbqv")]
