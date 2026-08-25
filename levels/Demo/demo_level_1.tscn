@@ -17,6 +17,7 @@
 
 [node name="Player" parent="." unique_id=950809192 instance=ExtResource("1_l88ne")]
 transform = Transform3D(-0.9990082, 0, -0.04452598, 0, 1, 0, 0.04452598, 0, -0.9990082, 85.29789, 1.2548523, -10.804772)
+enable_fly = true
 
 [node name="WanderPoints" type="Node3D" parent="." unique_id=1805835612]
 script = ExtResource("5_7e3l5")
@@ -96,3 +97,7 @@ ExtResource("11_qo4u2"): 4,
 ExtResource("12_3r41g"): 1
 })
 lines = Array[String](["We ran ouf of eggs", "Go out and buy", "", "[m]"])
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=966403717]
+transform = Transform3D(1, 0, 0, 0, 0.0031589973, 0.999995, 0, -0.999995, 0.0031589973, 0, 17.844719, 0)
+visible = false
