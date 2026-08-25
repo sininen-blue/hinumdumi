@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dmpo1no0w4r5a"]
 
 [ext_resource type="Script" uid="uid://5e0dbrjrotwx" path="res://ui/transition/transition.gd" id="1_6nlbx"]
+[ext_resource type="Theme" uid="uid://bw650dm3xfbn0" path="res://ui/themes/holloween.tres" id="1_ot0sl"]
 
 [node name="TransitionRoot" type="Control" unique_id=2064848974]
 z_index = -10
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ot0sl")
 script = ExtResource("1_6nlbx")
 
 [node name="Timer" type="Timer" parent="." unique_id=1033749833]
@@ -37,7 +39,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "NIGHT 1"
+text = "Night I"
 
 [node name="MissingLabel" type="Label" parent="." unique_id=2145626678]
 layout_mode = 1
@@ -52,6 +54,6 @@ offset_right = 32.0
 offset_bottom = 56.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "NIGHT 1"
+text = "There are %d missing children"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
