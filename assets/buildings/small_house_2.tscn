@@ -2,10 +2,4 @@
 
 [ext_resource type="PackedScene" uid="uid://cip6hn5dlwtlu" path="res://assets_raw/buildings-new/small-house-2.glb" id="1_hwyo6"]
 
-[node name="SmallHouse2" type="Node3D" unique_id=1657116371]
-
-[node name="NavigationObstacle" type="NavigationObstacle3D" parent="." unique_id=1014353103]
-height = 8.374764
-vertices = PackedVector3Array(-4.088482, 0, -11.351063, -4.088482, 0, 11.351063, 4.088482, 0, 11.351063, 4.088482, 0, -11.351063)
-
-[node name="Model" type="Node3D" parent="." unique_id=1988808129 instance=ExtResource("1_hwyo6")]
+[node name="SmallHouse2" unique_id=1523509820 instance=ExtResource("1_hwyo6")]
