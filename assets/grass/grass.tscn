@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://bl2w5r5iwtag1"]
-
-[ext_resource type="ArrayMesh" uid="uid://cufhmyhf6nwoy" path="res://assets/grass/grass.res" id="1_cw1iy"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" unique_id=887162207]
-mesh = ExtResource("1_cw1iy")
