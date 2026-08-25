@@ -2,11 +2,4 @@
 
 [ext_resource type="PackedScene" uid="uid://b2tqaqw8uib11" path="res://assets_raw/buildings-new/unfinished-building.glb" id="2_r5572"]
 
-[node name="UnfinishedBuilding" type="Node3D" unique_id=2016349544]
-
-[node name="NavigationObstacle" type="NavigationObstacle3D" parent="." unique_id=1231661150]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3099396, 0)
-height = 16.573566
-vertices = PackedVector3Array(-8.364128, 0, -7.098307, -8.386694, 0, 4.541349, -1.0720859, 0, 4.55788, -1.0480095, 0, 7.106224, 8.364128, 0, 7.098308, 8.364128, 0, -7.098307)
-
-[node name="Model" type="Node3D" parent="." unique_id=137467634 instance=ExtResource("2_r5572")]
+[node name="UnfinishedBuilding" unique_id=1589500214 instance=ExtResource("2_r5572")]
