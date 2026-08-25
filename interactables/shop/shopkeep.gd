@@ -110,7 +110,8 @@ func _on_shoppable_area_body_exited(body: Node3D) -> void:
 
 func _check_returns():
 	for return_interact in item_interacts.return_interacts:
-		if PlayerInventory.has_returnable(return_interact.item.origin):
+		var origin: Shop = return_interact.item.origin
+		if is_instance_valid(origin) and PlayerInventory.has_returnable(origin):
 			return_interact.visible = true
 		else:
 			return_interact.visible = false
