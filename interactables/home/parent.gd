@@ -10,11 +10,8 @@ var submitted_items: Array[Item] = []
 @onready var lines: Array[String] = home.lines
 @onready var submit_debounce_timer: Timer = $SubmitDebounceTimer
 @onready var dialogue_component: DialogueComponent = $DialogueComponent
-@onready var animation_player: AnimationPlayer = $mama/AnimationPlayer
-
 
 func _ready() -> void:
-	animation_player.play("idle")
 	home.finished_requirements.connect(_on_home_finished_requirements)
 	PlayerInventory.removed_item.connect(_on_player_inventory_removed_item)
 

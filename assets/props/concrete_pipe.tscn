@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d2bq5vd58ex4a"]
+
+[ext_resource type="PackedScene" uid="uid://brnhpxe68k3mm" path="res://assets_raw/props/concrete_pipe.glb" id="1_dtwqq"]
+
+[node name="concrete_pipe" unique_id=388087711 instance=ExtResource("1_dtwqq")]
+
+[node name="main" parent="." index="0" unique_id=1213005929]
+transform = Transform3D(1.5, 0, 0, 0, 1.4691508, -0.30264854, 0, 0.30264854, 1.4691508, 0, -0.16129601, 0)

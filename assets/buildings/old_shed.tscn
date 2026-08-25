@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ct65loamtys4a"]
+
+[ext_resource type="PackedScene" uid="uid://bx7ym32wbytm7" path="res://assets_raw/buildings-new/old-shed.glb" id="1_suoe2"]
+
+[node name="old-shed" unique_id=1648077612 instance=ExtResource("1_suoe2")]
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." index="13" unique_id=1257356582]
+height = 5.0
+vertices = PackedVector3Array(-2.1333497, 0, 2.1922245, 2.1402762, 0, 2.1368127, 2.1194966, 0, -1.9082395, -2.181835, 0, -1.9428722)
