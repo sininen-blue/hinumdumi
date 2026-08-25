@@ -380,7 +380,7 @@ transform = Transform3D(0.4508153, 0, 0.89261734, 0, 1, 0, -0.89261734, 0, 0.450
 transform = Transform3D(-0.99990565, 0, 0.013735373, 0, 1, 0, -0.013735373, 0, -0.99990565, 36.425, -0.3283366, 46.746346)
 
 [node name="TallHouse2" parent="Terrain3DObjects" unique_id=498463489 instance=ExtResource("15_085pl")]
-transform = Transform3D(-0.99990565, 0, 0.013735373, 0, 1, 0, -0.013735373, 0, -0.99990565, -9.341692, -0.3283366, 108.08592)
+transform = Transform3D(-0.99990565, 0, 0.013735373, 0, 1, 0, -0.013735373, 0, -0.99990565, -9.287146, -0.24999416, 110.54422)
 
 [node name="TallHouse4" parent="Terrain3DObjects" unique_id=537569860 instance=ExtResource("15_085pl")]
 transform = Transform3D(0.04785618, 0, 0.99885434, 0, 1, 0, -0.99885434, 0, 0.04785618, 36.363567, -0.008551121, 120.92754)
@@ -606,6 +606,9 @@ transform = Transform3D(-0.9977555, 0, 0.06697047, 0, 1, 0, -0.06697047, 0, -0.9
 
 [node name="SceneWall18" parent="Terrain3DObjects" unique_id=1847837005 instance=ExtResource("23_boewk")]
 transform = Transform3D(-0.9977555, 0, 0.06697047, 0, 1, 0, -0.06697047, 0, -0.9977555, -25.780045, 0.02616328, 104.382355)
+
+[node name="SceneWall20" parent="Terrain3DObjects" unique_id=202288772 instance=ExtResource("23_boewk")]
+transform = Transform3D(-0.9977555, 0, 0.06697047, 0, 1, 0, -0.06697047, 0, -0.9977555, 5.508362, 0.02616328, 107.24866)
 
 [node name="SceneWall7" parent="Terrain3DObjects" unique_id=2094735076 instance=ExtResource("23_boewk")]
 transform = Transform3D(-0.99992263, 0, 0.012496181, 0, 1, 0, -0.012496181, 0, -0.99992263, 51.051987, 0.42281735, 109.88838)
