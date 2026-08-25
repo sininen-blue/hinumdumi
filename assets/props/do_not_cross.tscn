@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bk7lq77r56tvi"]
+
+[ext_resource type="PackedScene" uid="uid://cqc8qr7v2jiiy" path="res://assets_raw/props/do_not_cross.glb" id="1_3w8ib"]
+
+[node name="do_not_cross" unique_id=2026818372 instance=ExtResource("1_3w8ib")]

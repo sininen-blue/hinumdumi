@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://ct65loamtys4a"]
+
+[ext_resource type="PackedScene" uid="uid://bx7ym32wbytm7" path="res://assets_raw/buildings-new/old-shed.glb" id="1_suoe2"]
+
+[node name="old-shed" unique_id=1648077612 instance=ExtResource("1_suoe2")]
