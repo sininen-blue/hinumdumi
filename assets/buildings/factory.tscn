@@ -2,10 +2,4 @@
 
 [ext_resource type="PackedScene" uid="uid://baihjwg2e80ds" path="res://assets_raw/buildings-new/factory.glb" id="1_jve6m"]
 
-[node name="Factory" type="Node3D" unique_id=550227172]
-
-[node name="NavigationObstacle" type="NavigationObstacle3D" parent="." unique_id=1195946177]
-height = 10.595369
-vertices = PackedVector3Array(-13.300142, 0, -7.147837, -13.300142, 0, 7.147837, 13.300142, 0, 7.147837, 13.300142, 0, -7.147837)
-
-[node name="Model" parent="." unique_id=669889209 instance=ExtResource("1_jve6m")]
+[node name="Factory" unique_id=1083905063 instance=ExtResource("1_jve6m")]
