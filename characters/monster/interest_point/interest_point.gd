@@ -7,6 +7,10 @@ class_name InterestPoint
 @export var weight: float = 0:
 	set = _set_weight
 
+
+var visited_count: int = 0
+
+
 @onready var debug_text: Label3D = $DebugText
 @onready var debug_box: CSGBox3D = $DebugBox
 
@@ -24,4 +28,9 @@ func _set_weight(new_weight: float) -> void:
 
 
 func visit() -> void:
-	pass
+	visited_count += 1
+	base_weight -= 0.1
+	
+	if visited_count >= 5:
+		base_weight = 1
+		visited_count = 0
