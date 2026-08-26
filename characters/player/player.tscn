@@ -38,6 +38,8 @@
 [ext_resource type="AudioStream" uid="uid://dcq4c15dsxx4p" path="res://assets/sounds/player/footsteps/grass_4.wav" id="32_gro5v"]
 [ext_resource type="AudioStream" uid="uid://42a35ddl3blu" path="res://assets/sounds/player/detected_gasp.wav" id="33_o3aog"]
 [ext_resource type="AudioStream" uid="uid://cw2hrvwjoirrj" path="res://assets/sounds/player/undetected_sigh.wav" id="34_5rrwf"]
+[ext_resource type="Script" uid="uid://bmewc1i4wh4kk" path="res://characters/player/player_shaders.gd" id="39_5rrwf"]
+[ext_resource type="Shader" uid="uid://deyscn646xnom" path="res://src/shaders/vignette.gdshader" id="39_o3aog"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_w53g3"]
 radius = 32.0
@@ -766,6 +768,12 @@ shader_parameter/color_quant_steps = 32.0
 shader_parameter/warble_amount = 0.002
 shader_parameter/warble_speed = 1.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5rrwf"]
+shader = ExtResource("39_o3aog")
+shader_parameter/intensity = 0.400000019
+shader_parameter/softness = 0.450000021375
+shader_parameter/vignette_color = Color(0, 0, 0, 1)
+
 [node name="Player" type="CharacterBody3D" unique_id=950809192]
 collision_layer = 2
 script = ExtResource("1_exd8k")
@@ -784,16 +792,6 @@ target_position = Vector3(0, -0.1, 0)
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = ExtResource("9_rpf03")
-
-[node name="DebugLeftHand" type="CSGBox3D" parent="." unique_id=166800245]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8700918, 0.6001506, -0.80180895)
-visible = false
-size = Vector3(0.2, 0.2, 0.7)
-
-[node name="DebugRightHand" type="CSGBox3D" parent="." unique_id=1307978379]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7299082, 0.6001506, -0.80180895)
-visible = false
-size = Vector3(0.2, 0.2, 0.7)
 
 [node name="LeftHandSprite" type="Sprite3D" parent="." unique_id=299933955]
 transform = Transform3D(0.575, 0, 0, 0, -2.5134048e-08, 0.575, 0, -0.575, -2.5134048e-08, 0.75948095, 0.5585932, -0.8552716)
@@ -912,21 +910,21 @@ anchors_preset = 9
 anchor_bottom = 1.0
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Hud/Screen" unique_id=1523044354]
-visible = false
+[node name="Cursor" type="ColorRect" parent="Hud/Screen" unique_id=1523044354]
+custom_minimum_size = Vector2(3, 3)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 1.0
-offset_bottom = 1.0
+offset_left = -1.5
+offset_top = -1.5
+offset_right = 1.5
+offset_bottom = 1.5
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0.49019608)
+color = Color(1, 1, 1, 0.12156863)
 
 [node name="Shader" type="ColorRect" parent="Hud" unique_id=1011110878]
 unique_name_in_owner = true
@@ -1074,6 +1072,28 @@ volume_db = -15.0
 stream = ExtResource("34_5rrwf")
 volume_db = -20.0
 pitch_scale = 0.9
+
+[node name="Shaders" type="CanvasLayer" parent="." unique_id=1485035568 node_paths=PackedStringArray("player")]
+script = ExtResource("39_5rrwf")
+player = NodePath("..")
+
+[node name="ShaderRoot" type="Control" parent="Shaders" unique_id=1461026911]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Vignette" type="ColorRect" parent="Shaders/ShaderRoot" unique_id=198048074]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_5rrwf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="timeout" from="StateMachine/WalkState/StepTimer" to="StateMachine/WalkState" method="_on_step_timer_timeout"]
 [connection signal="timeout" from="StateMachine/RunState/StepTimer" to="StateMachine/RunState" method="_on_step_timer_timeout"]
