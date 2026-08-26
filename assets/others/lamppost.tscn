@@ -242,9 +242,8 @@ mesh = SubResource("BoxMesh_lwwtl")
 
 [node name="LightFlickerEvent" parent="." unique_id=1921605111 node_paths=PackedStringArray("lamppost", "detector") instance=ExtResource("4_kx86t")]
 lamppost = NodePath("..")
-off_chance = 0.1
 detector = NodePath("../PlayerDetector")
-chance = 0.3
+chance = 0.1
 
 [node name="PlayerDetector" type="Area3D" parent="." unique_id=1898206706]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.3938417)
