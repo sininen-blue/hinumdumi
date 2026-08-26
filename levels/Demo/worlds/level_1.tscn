@@ -152,6 +152,9 @@ transform = Transform3D(0.050470978, 0, -0.9987256, 0, 1, 0, 0.9987256, 0, 0.050
 [node name="Lamppost2" parent="Terrain3DObjects" unique_id=1997329669 instance=ExtResource("2_wspg3")]
 transform = Transform3D(-0.6314205, 0, -0.7754407, 0, 1, 0, 0.7754407, 0, -0.6314205, 34.69047, -0.26044285, 11.335719)
 
+[node name="Lamppost18" parent="Terrain3DObjects" unique_id=709269073 instance=ExtResource("2_wspg3")]
+transform = Transform3D(-0.9983709, 0, -0.05705875, 0, 1, 0, 0.05705875, 0, -0.9983709, 56.911823, -0.5523217, 9.456852)
+
 [node name="Lamppost3" parent="Terrain3DObjects" unique_id=1539246419 instance=ExtResource("2_wspg3")]
 transform = Transform3D(0.8397336, 0, 0.54299855, 0, 1, 0, -0.54299855, 0, 0.8397336, 31.145529, -0.24494314, 31.578579)
 
