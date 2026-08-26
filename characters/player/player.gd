@@ -78,7 +78,12 @@ func _ready() -> void:
 		PlayerInventory.money = debug_money
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	var pan_vector = Input.get_vector("pan_left", "pan_right", "pan_up", "pan_down")
+	self.rotation_degrees.y -= pan_vector.x * 100 * delta
+	head.rotation_degrees.x -= pan_vector.y * 100 * delta
+	head.rotation_degrees.x = clamp(head.rotation_degrees.x, -80, 80)
+	
 	is_on_ground = ground_cast.is_colliding()
 
 	if enable_inifite_stamina:
