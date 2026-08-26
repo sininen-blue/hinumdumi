@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dprvl26blyegr"]
+
+[ext_resource type="Script" uid="uid://wwavkm0otqog" path="res://debug_tools/utils/dubug_monster_tracker.gd" id="1_x2vtm"]
+[ext_resource type="PackedScene" uid="uid://0oqor13sxs7t" path="res://debug_tools/utils/debug_pointer.tscn" id="2_fpub3"]
+
+[node name="DubugMonsterTracker" type="Node3D" unique_id=109589402]
+script = ExtResource("1_x2vtm")
+
+[node name="Timer" type="Timer" parent="." unique_id=975601141]
+wait_time = 0.1
+autostart = true
+
+[node name="DebugPointer" parent="." unique_id=2060793412 instance=ExtResource("2_fpub3")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

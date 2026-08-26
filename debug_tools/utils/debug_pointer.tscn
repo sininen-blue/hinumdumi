@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://0oqor13sxs7t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ikuv"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.15686275)
+
+[node name="DebugPointer" type="CSGBox3D" unique_id=2060793412]
+material = SubResource("StandardMaterial3D_0ikuv")
