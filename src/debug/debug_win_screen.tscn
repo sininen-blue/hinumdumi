@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cfbygui8uxdx4"]
 
+[ext_resource type="Theme" uid="uid://bw650dm3xfbn0" path="res://ui/themes/holloween.tres" id="1_ssyl3"]
 [ext_resource type="Script" uid="uid://ciox7m58taop2" path="res://src/debug/debug_death_screen.gd" id="1_x6jf1"]
+[ext_resource type="FontFile" uid="uid://jwqoj3bvw7hg" path="res://assets/fonts/HalloweenGreetings-Regular.otf" id="3_pdy1a"]
 
 [node name="DebugDeathScreen" type="Control" unique_id=1528282808]
 layout_mode = 3
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ssyl3")
 script = ExtResource("1_x6jf1")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=743559292]
@@ -20,35 +23,72 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.12, 0.12, 0.12, 1)
 
-[node name="Label" type="Label" parent="." unique_id=1174834771]
+[node name="Title" type="Label" parent="." unique_id=1174834771]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -51.0
-offset_top = -103.0
-offset_right = 51.0
-offset_bottom = -80.0
+offset_left = -165.0
+offset_top = -180.5
+offset_right = 165.0
+offset_bottom = -110.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "You Have Won"
+theme_override_fonts/font = ExtResource("3_pdy1a")
+theme_override_font_sizes/font_size = 64
+text = "You Have Won !"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=2140917527]
+[node name="Label" type="Label" parent="." unique_id=618490035]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.5
-offset_top = -15.5
-offset_right = 32.5
-offset_bottom = 15.5
+offset_left = -20.0
+offset_top = -17.0
+offset_right = 20.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Restart
-"
+text = "Thank you for playing our demo!
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+If you have any feedback please feel free to reach out"
+horizontal_alignment = 1
+
+[node name="RestartGame" type="Button" parent="." unique_id=910339646]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = 91.0
+offset_right = 81.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart Game"
+
+[node name="RestartLevel" type="Button" parent="." unique_id=2140917527]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.5
+offset_top = 161.0
+offset_right = 76.5
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart Level"
+
+[connection signal="pressed" from="RestartGame" to="." method="_on_restart_game_pressed"]
+[connection signal="pressed" from="RestartLevel" to="." method="_on_restart_level_pressed"]
