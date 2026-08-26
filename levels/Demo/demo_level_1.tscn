@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://xrgcd0g68xws" path="res://interactables/events/sound_player_event/sound_player_event.tscn" id="14_m7mj5"]
 [ext_resource type="AudioStream" uid="uid://lfh7ijo0cx1o" path="res://assets/sounds/drones/drone_1.wav" id="14_qo4u2"]
 [ext_resource type="Script" uid="uid://cgmgljobbqvi3" path="res://systems/player_detector/player_detector.gd" id="15_3r41g"]
+[ext_resource type="AudioStream" uid="uid://dyosumyd8i6io" path="res://assets/sounds/others/dog_bark_sharp.wav" id="16_3r41g"]
+[ext_resource type="AudioStream" uid="uid://bdid6fi2h51f8" path="res://assets/sounds/others/rustle.wav" id="16_qo4u2"]
+[ext_resource type="AudioStream" uid="uid://ctuqwr3qd1v28" path="res://assets/sounds/others/psst.wav" id="18_usmu2"]
 [ext_resource type="PackedScene" uid="uid://dbdp6yu5bgt1b" path="res://characters/monster/monster.tscn" id="68_eutc3"]
 [ext_resource type="Environment" uid="uid://4thbuqoqy2tc" path="res://src/environment.tres" id="81_xlj54"]
 
@@ -167,25 +170,70 @@ ExtResource("12_3r41g"): 1
 })
 lines = Array[String](["We ran ouf of eggs", "Go out and buy", "", "[m]"])
 
-[node name="Moonlihgt" type="DirectionalLight3D" parent="." unique_id=966403717]
-transform = Transform3D(1, 0, 0, 0, 0.49999994, 0.8660254, 0, -0.8660254, 0.49999994, 0, 17.844719, 0)
+[node name="Moonlight" type="DirectionalLight3D" parent="." unique_id=966403717]
+transform = Transform3D(1, 0, 0, 0, -0.11320303, 0.9935718, 0, -0.9935718, -0.11320303, 0, 17.844719, 0)
 light_color = Color(0.55799997, 0.60656667, 0.62, 1)
 light_energy = 0.07
 shadow_enabled = true
 
 [node name="Events" type="Node" parent="." unique_id=1187939089]
 
-[node name="PlayerDetector" type="Area3D" parent="Events" unique_id=808942273]
+[node name="DroneSoundevent" parent="Events" unique_id=1923810190 node_paths=PackedStringArray("detector") instance=ExtResource("14_m7mj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.616833, 5.4929175, -42.170692)
+sound = ExtResource("14_qo4u2")
+detector = NodePath("../DroneDetector")
+chance = 0.4
+
+[node name="DroneDetector" type="Area3D" parent="Events" unique_id=808942273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.360954, 0, 5.3415375)
 script = ExtResource("15_3r41g")
 metadata/_custom_type_script = "uid://cgmgljobbqvi3"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Events/PlayerDetector" unique_id=544066330]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Events/DroneDetector" unique_id=544066330]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7730503, 0)
 shape = SubResource("CylinderShape3D_usmu2")
 
-[node name="SoundPlayerEvent" parent="Events" unique_id=1923810190 node_paths=PackedStringArray("detector") instance=ExtResource("14_m7mj5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.616833, 5.4929175, -42.170692)
-sound = ExtResource("14_qo4u2")
-detector = NodePath("../PlayerDetector")
-chance = 0.4
+[node name="DogSoundEvent" parent="Events" unique_id=1507984447 node_paths=PackedStringArray("detector") instance=ExtResource("14_m7mj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.8396, 0, 40.55258)
+sound = ExtResource("16_3r41g")
+detector = NodePath("../DogDetector")
+chance = 0.3
+
+[node name="DogDetector" type="Area3D" parent="Events" unique_id=766850254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.2931, 0, 40.55258)
+script = ExtResource("15_3r41g")
+metadata/_custom_type_script = "uid://cgmgljobbqvi3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Events/DogDetector" unique_id=1914345065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7730503, 0)
+shape = SubResource("CylinderShape3D_usmu2")
+
+[node name="RustleSoundEvent" parent="Events" unique_id=1455548790 node_paths=PackedStringArray("detector") instance=ExtResource("14_m7mj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.41877, 0, 114.89428)
+sound = ExtResource("16_qo4u2")
+detector = NodePath("../RustleDetector")
+chance = 0.3
+
+[node name="RustleDetector" type="Area3D" parent="Events" unique_id=510673357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.200623, 0, 106.00906)
+script = ExtResource("15_3r41g")
+metadata/_custom_type_script = "uid://cgmgljobbqvi3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Events/RustleDetector" unique_id=1813329804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7730503, 0)
+shape = SubResource("CylinderShape3D_usmu2")
+
+[node name="PsstSoundEvent" parent="Events" unique_id=149918961 node_paths=PackedStringArray("detector") instance=ExtResource("14_m7mj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.81487, 11.145309, 45.543564)
+sound = ExtResource("18_usmu2")
+detector = NodePath("../PsstDetector")
+chance = 0.2
+
+[node name="PsstDetector" type="Area3D" parent="Events" unique_id=1398394414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.114296, -7.6293945e-06, 45.543564)
+script = ExtResource("15_3r41g")
+metadata/_custom_type_script = "uid://cgmgljobbqvi3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Events/PsstDetector" unique_id=1639255815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7730503, 0)
+shape = SubResource("CylinderShape3D_usmu2")

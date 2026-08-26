@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d3thtnjsybkwe"]
+
+[ext_resource type="Script" uid="uid://b1doo3jk55yjb" path="res://debug_tools/utils/debug_tutorial_skip.gd" id="1_mguxl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ctdv5"]
+radius = 3.244221
+
+[node name="DebugTutorialSkip" type="Area3D" unique_id=936764827]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_mguxl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1865268663]
+shape = SubResource("SphereShape3D_ctdv5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

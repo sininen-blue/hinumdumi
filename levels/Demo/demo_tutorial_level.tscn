@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://cibahbmjhia64" path="res://interactables/items/Rice.tres" id="6_fleqs"]
 [ext_resource type="PackedScene" uid="uid://diseukdbgi3s1" path="res://ui/tutorial/talk/talk_to_parent_tutorial.tscn" id="10_xam7x"]
 [ext_resource type="PackedScene" uid="uid://b8ar6ohy7dwh5" path="res://ui/tutorial/buy/buy_item_tutorial.tscn" id="11_qpj2s"]
+[ext_resource type="PackedScene" uid="uid://d3thtnjsybkwe" path="res://debug_tools/utils/debug_tutorial_skip.tscn" id="12_ctdv5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qpj2s"]
 radius = 4.938127
@@ -60,5 +61,8 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BuyItemTutorial/Area3D" unique_id=738620393]
 shape = SubResource("SphereShape3D_qpj2s")
+
+[node name="DebugTutorialSkip" parent="." unique_id=936764827 instance=ExtResource("12_ctdv5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.219894, 0.022491455, -10.953693)
 
 [connection signal="body_entered" from="BuyItemTutorial/Area3D" to="BuyItemTutorial" method="_on_area_3d_body_entered"]
