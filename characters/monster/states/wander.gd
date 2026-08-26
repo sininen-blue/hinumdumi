@@ -85,7 +85,7 @@ func _get_target_point() -> Vector3:
 		if distance < 5:
 			point.weight = 0
 		if point.global_position.distance_to(monster.player.global_position) > distance_threhold:
-			point.weight = 0
+			point.weight = point.weight / 2
 
 		if point.weight > candidate.weight:
 			candidate = point
