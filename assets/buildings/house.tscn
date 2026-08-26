@@ -9,7 +9,7 @@
 size = Vector3(2.7421265, 4.664551, 2.6797485)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rdhl7"]
-size = Vector3(2.1523132, 4.664551, 2.6797485)
+size = Vector3(3.3305511, 4.664551, 4.801529)
 
 [sub_resource type="Animation" id="Animation_c73n5"]
 length = 0.001
@@ -97,7 +97,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EnterArea" unique_id=685843703]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8561678, 0.013427734, 0.067474365)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4452868, 0.013427734, 0.08200836)
 shape = SubResource("BoxShape3D_rdhl7")
 
 [node name="EnterLabel" type="Label3D" parent="." unique_id=148965571]
@@ -116,7 +116,7 @@ font = ExtResource("3_dqpnt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0012608, 0.33829045, -2.203267)
 
 [node name="OutsidePosition" type="Marker3D" parent="." unique_id=1592813193]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.281168, 0.3382902, -2.181617)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.575453, 0.7835038, -2.181617)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1943838868]
 
