@@ -2,7 +2,7 @@ extends PlayerEvent
 
 
 @export var lamppost: Lamppost
-@export_range(0, 1, 0.05, "suffix:%") var off_chance: float = 0.2
+@export_range(0, 1, 0.05, "suffix:%") var off_chance: float = 0.1
 
 
 func _ready() -> void:
