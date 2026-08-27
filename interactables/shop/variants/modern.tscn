@@ -90,7 +90,7 @@ _bundled = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_rplqf"]
 radius = 4.1
 
-[node name="StoreModern" type="Node3D" unique_id=913437893]
+[node name="StoreModern" type="Node3D" unique_id=913437893 groups=["shops"]]
 script = ExtResource("1_63njb")
 shoppableItem = SubResource("PackedScene_2drsn")
 
@@ -111,11 +111,10 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, -0.1)
 shape = SubResource("SphereShape3D_rplqf")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=589207746]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.1, -1.4)
-shadow_enabled = true
-
 [node name="ModernSariSari" parent="." unique_id=1462480663 instance=ExtResource("5_fks2x")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1031139650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.269998, 4.4071665)
 
 [connection signal="body_entered" from="ShoppableArea" to="." method="_on_shoppable_area_body_entered"]
 [connection signal="body_exited" from="ShoppableArea" to="." method="_on_shoppable_area_body_exited"]

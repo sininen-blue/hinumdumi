@@ -31,6 +31,10 @@ window/stretch/aspect="keep_height"
 
 enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 
+[global_group]
+
+shops=""
+
 [input]
 
 move_left={

@@ -90,7 +90,7 @@ _bundled = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_rplqf"]
 radius = 4.1
 
-[node name="StoreNormelita" type="Node3D" unique_id=913437893]
+[node name="StoreNormelita" type="Node3D" unique_id=913437893 groups=["shops"]]
 script = ExtResource("1_0w1d2")
 shoppableItem = SubResource("PackedScene_2drsn")
 
@@ -111,15 +111,14 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, -0.1)
 shape = SubResource("SphereShape3D_rplqf")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=589207746]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.1, -1.4)
-shadow_enabled = true
-
 [node name="NormelitaStore" parent="." unique_id=117462459 instance=ExtResource("6_8tfhm")]
 transform = Transform3D(-1, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, -1, 2.1029565, 0, -2.6815882)
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1952188212]
 vertices = PackedVector3Array(-4.292719, 0, -6.2857647, 8.278812, 0, -5.979142, 8.278812, 0, 3.6488104, -4.5380154, 0, 3.8327842)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1247037499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.220871, 3.7989445, 3.570822)
 
 [connection signal="body_entered" from="ShoppableArea" to="." method="_on_shoppable_area_body_entered"]
 [connection signal="body_exited" from="ShoppableArea" to="." method="_on_shoppable_area_body_exited"]

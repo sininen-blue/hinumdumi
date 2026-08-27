@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bwd570eivx0mj"]
 
+[ext_resource type="PackedScene" uid="uid://ciqpp1hcvx0xi" path="res://debug_tools/randomizer/randomizer.tscn" id="1_fw3y8"]
 [ext_resource type="PackedScene" uid="uid://leixn7ybth70" path="res://characters/player/player.tscn" id="1_l88ne"]
 [ext_resource type="Script" uid="uid://n02j0kwxqqr6" path="res://characters/monster/interest_point/wander_points.gd" id="5_7e3l5"]
 [ext_resource type="PackedScene" uid="uid://diily8l8v5bfh" path="res://levels/Demo/worlds/level_1.tscn" id="6_7e3l5"]
@@ -24,6 +25,10 @@ height = 3.0
 radius = 5.442
 
 [node name="DemoLevel1" type="Node3D" unique_id=1355145291]
+
+[node name="Randomizer" parent="." unique_id=1329849328 node_paths=PackedStringArray("level", "home") instance=ExtResource("1_fw3y8")]
+level = NodePath("../Level1")
+home = NodePath("../Home")
 
 [node name="Player" parent="." unique_id=950809192 instance=ExtResource("1_l88ne")]
 transform = Transform3D(-0.9990082, 0, -0.04452598, 0, 1, 0, 0.04452598, 0, -0.9990082, 84.42439, 1.5524335, -16.52885)
@@ -168,7 +173,7 @@ ExtResource("10_m7mj5"): 1,
 ExtResource("11_qo4u2"): 4,
 ExtResource("12_3r41g"): 1
 })
-lines = Array[String](["We ran ouf of eggs", "Go out and buy", "", "[m]"])
+lines = Array[String](["Go out and buy", "", "[m]"])
 
 [node name="Moonlight" type="DirectionalLight3D" parent="." unique_id=966403717]
 transform = Transform3D(1, 0, 0, 0, -0.11320303, 0.9935718, 0, -0.9935718, -0.11320303, 0, 17.844719, 0)

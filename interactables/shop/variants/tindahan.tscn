@@ -90,7 +90,7 @@ _bundled = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_rplqf"]
 radius = 4.1
 
-[node name="StoreTindahan" type="Node3D" unique_id=913437893]
+[node name="StoreTindahan" type="Node3D" unique_id=913437893 groups=["shops"]]
 script = ExtResource("1_3gecr")
 shoppableItem = SubResource("PackedScene_2drsn")
 
@@ -111,12 +111,11 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, -0.1)
 shape = SubResource("SphereShape3D_rplqf")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=589207746]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.1, -1.4)
-shadow_enabled = true
-
 [node name="Tindahan" parent="." unique_id=1923491395 instance=ExtResource("7_bhfhl")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -1.2970432, 1, 1.718412)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2034825187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61308926, 4.0930653, 4.195864)
 
 [connection signal="body_entered" from="ShoppableArea" to="." method="_on_shoppable_area_body_entered"]
 [connection signal="body_exited" from="ShoppableArea" to="." method="_on_shoppable_area_body_exited"]
