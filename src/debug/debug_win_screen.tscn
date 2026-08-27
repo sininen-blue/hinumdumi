@@ -57,7 +57,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Thank you for playing our demo!
 
-If you have any feedback please feel free to reach out"
+If you have any feedback please feel free to reach out
+
+You get a free sticker"
 horizontal_alignment = 1
 
 [node name="RestartGame" type="Button" parent="." unique_id=910339646]

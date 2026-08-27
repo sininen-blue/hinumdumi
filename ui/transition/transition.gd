@@ -16,7 +16,18 @@ func _ready() -> void:
 	animation_player.play("display")
 	timer.start()
 	title_label.text = "Night [wave]%s[/wave]" % _romanize(night_number)
-	missing_label.text = "There are [shake]%s[/shake] missing children" % _romanize(missing_number)
+	
+	match night_number:
+		1:
+			missing_label.text = "It's like he can [wave]hear[/wave] you run"
+		2:
+			missing_label.text = "Keep close to walls and corridors"
+		3:
+			missing_label.text = "He can't hear you when you sneak"
+		4:
+			missing_label.text = "Don't forgot what mom asked for"
+		_:
+			missing_label.text = "You survived another night"
 
 
 func _on_timer_timeout() -> void:

@@ -11,6 +11,8 @@ extends Node
 @export var has_moved: bool = false
 @export var has_sprinted: bool = false
 
+@export var night: int = 1
+
 
 func reset() -> void:
 	has_returned_req = false
@@ -23,3 +25,7 @@ func reset() -> void:
 	
 	has_moved = false
 	has_sprinted = false
+
+
+func reset_levels() -> void:
+	night = 0

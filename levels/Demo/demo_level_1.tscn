@@ -27,6 +27,8 @@ radius = 5.442
 [node name="DemoLevel1" type="Node3D" unique_id=1355145291]
 
 [node name="Randomizer" parent="." unique_id=1329849328 node_paths=PackedStringArray("level", "home") instance=ExtResource("1_fw3y8")]
+max_items = 1
+min_items = 1
 level = NodePath("../Level1")
 home = NodePath("../Home")
 

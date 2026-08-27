@@ -36,7 +36,7 @@ func _ready() -> void:
 	for item in items.keys():
 		price += item.base_cost * items[item]
 	
-	home.starting_cash = price + 10
+	home.starting_cash = price
 	home.requirements = items
 	
 	for item in items.keys():

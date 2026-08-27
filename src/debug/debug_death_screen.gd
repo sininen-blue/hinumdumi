@@ -12,6 +12,7 @@ func _on_restart_game_pressed() -> void:
 	restart_game.disabled = true
 	PlayerInventory.reset()
 	PlayerStates.reset()
+	PlayerStates.reset_levels()
 	SceneManager.change_scene(load("res://ui/main_menu/main_menu.tscn"))
 
 

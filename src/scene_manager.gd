@@ -29,3 +29,23 @@ func change_scene(target: PackedScene, level_transition: bool = false, night: in
 
 	await get_tree().scene_changed
 	animation_player.play("fade_out")
+
+
+func reload_scene(night: int = 1) -> void:
+	animation_player.play("fade_in")
+
+	await animation_player.animation_finished
+	
+	animation_player.play("fade_out")
+	var transition_instance: LevelTransition = TRANSITION.instantiate()
+	transition_instance.night_number = night
+	add_child(transition_instance)
+	await transition_instance.done_transition
+	animation_player.play("fade_in")
+		
+	await animation_player.animation_finished
+	remove_child(transition_instance)
+	
+	get_tree().reload_current_scene()
+	PlayerStates.night += 1
+	animation_player.play("fade_out")
