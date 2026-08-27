@@ -25,6 +25,7 @@ SceneManager="*uid://cwr6kqpq0bnf8"
 [display]
 
 window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
 
 [editor_plugins]
 

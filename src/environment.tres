@@ -1,7 +1,7 @@
 [gd_resource type="Environment" format=3 uid="uid://4thbuqoqy2tc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nbfxf"]
-sky_top_color = Color(0.111999996, 0.132, 0.16, 1)
+sky_top_color = Color(0.049, 0.057750005, 0.07, 1)
 sky_horizon_color = Color(0.256, 0.4, 0.3952, 1)
 
 [sub_resource type="Sky" id="Sky_4raoo"]
@@ -23,8 +23,8 @@ fog_light_color = Color(0.5096, 0.53732, 0.56, 1)
 fog_light_energy = 0.2
 fog_aerial_perspective = 0.1
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.06
-volumetric_fog_ambient_inject = 0.2
+volumetric_fog_density = 0.07
+volumetric_fog_albedo = Color(0.8, 0.8, 0.8, 1)
 adjustment_enabled = true
 adjustment_brightness = 1.06
 adjustment_saturation = 1.07
