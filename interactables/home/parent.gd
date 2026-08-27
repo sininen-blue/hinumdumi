@@ -24,6 +24,9 @@ func _input(event: InputEvent) -> void:
 		if PlayerStates.left_home == false:
 			PlayerStates.has_talked_to_parent = true
 			init_dialogue()
+		
+		if PlayerStates.has_returned_req == true:
+			_on_submit_debounce_timer_timeout()
 
 
 func init_dialogue() -> void:
@@ -67,6 +70,7 @@ func give_player_money() -> void:
 
 
 func _on_player_inventory_removed_item(item: Item) -> void:
+	PlayerStates.has_returned_req = true
 	submitted_items.append(item)
 	submit_debounce_timer.start()
 

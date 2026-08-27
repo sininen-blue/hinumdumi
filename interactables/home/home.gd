@@ -42,7 +42,7 @@ func _update_debug_text() -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Player:
 		player = body
-		PlayerStates.in_home = false
+		PlayerStates.in_home = true
 
 	if player == null:
 		return
@@ -68,7 +68,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			requirements[req] = 0
 			for i in range(PlayerInventory.inventory[req]):
 				PlayerInventory.remove_item(req)
-
+		
 		if requirements[req] <= 0:
 			requirements.erase(req)
 

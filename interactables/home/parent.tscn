@@ -19,7 +19,7 @@ script = ExtResource("1_ad57i")
 [node name="DialogueComponent" parent="." unique_id=1041026313 instance=ExtResource("2_60d41")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.051171, 0.10131788)
 voices = Array[AudioStream]([ExtResource("3_wp4fk"), ExtResource("4_pa7u6"), ExtResource("5_v8myk"), ExtResource("6_xahfm"), ExtResource("7_ivia5"), ExtResource("8_rkkjs")])
-character_delay = 0.08
+character_delay = 0.03
 line_delay = 1.0
 
 [node name="InteractArea" type="Area3D" parent="." unique_id=677420073]

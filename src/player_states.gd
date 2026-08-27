@@ -1,5 +1,6 @@
 extends Node
 
+@export var has_returned_req: bool = false
 @export var has_talked_to_parent: bool = false
 @export var left_home: bool = false
 @export var first_buy: bool = false
@@ -12,6 +13,7 @@ extends Node
 
 
 func reset() -> void:
+	has_returned_req = false
 	has_talked_to_parent = false
 	left_home = false
 	first_buy = false
