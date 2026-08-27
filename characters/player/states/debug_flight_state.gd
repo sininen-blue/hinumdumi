@@ -26,7 +26,7 @@ func update(_delta: float) -> void:
 	pass
 
 
-func physics_update(delta: float) -> void:
+func physics_update(_delta: float) -> void:
 	print(player.current_speed)
 	if player.direction != Vector3.ZERO:
 		player.current_speed = move_toward(player.current_speed, speed, accel)
