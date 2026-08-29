@@ -85,10 +85,13 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 
 
 func _on_parent_level_complete() -> void:
+	PlayerInventory.reset()
 	PlayerStates.reset() # NOTE: might bight me in the ass
 	
 	if PlayerStates.night == 0:
 		SceneManager.change_scene(next_level, true, next_level_number, next_missing_children)
+		PlayerStates.night = 1
+		return
 			
 	if PlayerStates.night < 2:
 		SceneManager.reload_scene(PlayerStates.night + 1)

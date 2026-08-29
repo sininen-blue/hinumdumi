@@ -10,4 +10,5 @@ func _on_body_entered(body: Node3D) -> void:
 	
 	PlayerInventory.reset()
 	PlayerStates.reset()
+	PlayerStates.night = 1
 	SceneManager.change_scene(DEMO_LEVEL_1, true, 1, 2)

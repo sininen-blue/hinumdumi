@@ -8,6 +8,7 @@ func _ready() -> void:
 	animation_player.play("fade_out")
 
 
+# NOTE: missing children not implement and no longer used
 func change_scene(target: PackedScene, level_transition: bool = false, night: int = 1, missing: int = 1) -> void:
 	animation_player.play("fade_in")
 
