@@ -4,6 +4,10 @@ extends State
 @export var nav: NavigationAgent3D
 @export var speed: float = 2
 @export var distance_threhold: float = 100
+@export var min_noise: float = 0.0
+@export var max_noise: float = 0.2
+@export var distance_weights: Curve = Curve.new()
+@export var min_distance: float = 5.0
 
 var player: Player
 var interest_points: Array[InterestPoint] = []
@@ -15,6 +19,7 @@ var direction: Vector3 = Vector3.ZERO
 @onready var investigate: Node = %Investigate
 
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var timer: Timer = $Timer
 
 
 func _ready() -> void:
@@ -38,6 +43,7 @@ func physics_update(_delta: float) -> void:
 	if PlayerStates.left_home == false or PlayerStates.first_buy == false:
 		return
 	if monster.started == false: # NOTE: ugly, change this at some point
+		timer.start()
 		monster.started = true
 
 	next_path_position = nav.get_next_path_position()
@@ -77,12 +83,13 @@ func _get_target_point() -> Vector3:
 	for point: InterestPoint in interest_points:
 		var distance: float = monster_pos.distance_squared_to(point.global_position)
 		var normalized: float = (distance - closest_distance) / distance_range
-		normalized = 1 - normalized
+		var pre_normal = normalized
+		normalized = distance_weights.sample(normalized)
 
-		var noise: float = randf_range(0, 0.2)
+		var noise: float = randf_range(min_noise, max_noise)
 		point.weight = normalized * point.base_weight * noise
 
-		if distance < 5:
+		if distance < min_distance:
 			point.weight = 0
 		if point.global_position.distance_to(monster.player.global_position) > distance_threhold:
 			point.weight = point.weight / 2

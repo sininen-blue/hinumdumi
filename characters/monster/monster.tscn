@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://btyntbdut57r3" path="res://characters/monster/states/hunt.gd" id="6_s386a"]
 [ext_resource type="Script" uid="uid://vhu87qyiqy08" path="res://characters/monster/states/lunge.gd" id="7_legie"]
 [ext_resource type="Script" uid="uid://da7h67kyyhgfv" path="res://characters/monster/states/swipe.gd" id="8_tyycc"]
+[ext_resource type="Script" uid="uid://csdhvxrv1hca4" path="res://src/utils/point_picker_component.gd" id="9_dapgd"]
 [ext_resource type="Script" uid="uid://oi5ctl585nw7" path="res://characters/monster/footsteps.gd" id="13_pxgw5"]
 [ext_resource type="Script" uid="uid://btlt2brwvxoc6" path="res://characters/monster/jumpscare.gd" id="14_arly5"]
 [ext_resource type="AudioStream" uid="uid://bno8umd8dkv0" path="res://assets/sounds/footsteps/footsteps_heavy_1.wav" id="14_esr8h"]
@@ -31,6 +32,14 @@ radius = 30.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_yrry2"]
 radius = 2.6730735
+
+[sub_resource type="Curve" id="Curve_esr8h"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.6978193, 0.65854824), -0.9341421, -0.9341421, 0, 0, Vector2(1, 0), -3.5257857, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_dapgd"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.6510903, 0.6833811), -1.0550307, -1.0550307, 0, 0, Vector2(1, 0), -3.2958448, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Animation" id="Animation_arly5"]
 resource_name = "Armature|mixamo_com|Layer0"
@@ -895,7 +904,18 @@ monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
 speed = 7.0
 distance_threhold = 40.0
+distance_weights = SubResource("Curve_esr8h")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="PointPickerComponent" type="Node" parent="StateMachine/Wander" unique_id=621947046]
+script = ExtResource("9_dapgd")
+min_distance = null
+max_distance = null
+distance_weights = SubResource("Curve_dapgd")
+metadata/_custom_type_script = "uid://csdhvxrv1hca4"
+
+[node name="Timer" type="Timer" parent="StateMachine/Wander" unique_id=1348011757]
+wait_time = 30.0
 
 [node name="Scanning" type="Node" parent="StateMachine" unique_id=2021815502 node_paths=PackedStringArray("monster")]
 unique_name_in_owner = true
@@ -987,5 +1007,6 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, -0.24534068, 0)
 [connection signal="body_exited" from="DetectArea" to="DetectArea" method="_on_body_exited"]
 [connection signal="body_entered" from="Hitbox" to="StateMachine/Hunt" method="_on_hitbox_body_entered"]
 [connection signal="changed_state" from="StateMachine" to="Footsteps" method="_on_state_machine_changed_state"]
+[connection signal="timeout" from="StateMachine/Wander/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Scanning/ScanTimer" to="StateMachine/Scanning" method="_on_scan_timer_timeout"]
 [connection signal="timeout" from="Footsteps/FootstepTimer" to="Footsteps" method="_on_timer_timeout"]
