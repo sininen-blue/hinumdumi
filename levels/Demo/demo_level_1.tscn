@@ -27,8 +27,6 @@ radius = 5.442
 [node name="DemoLevel1" type="Node3D" unique_id=1355145291]
 
 [node name="Randomizer" parent="." unique_id=1329849328 node_paths=PackedStringArray("level", "home") instance=ExtResource("1_fw3y8")]
-max_items = 1
-min_items = 1
 level = NodePath("../Level1")
 home = NodePath("../Home")
 
@@ -97,13 +95,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.458595, 0, 24.750898)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.94756, 0, 22.102098)
 
 [node name="InterestPoint30" parent="WanderPoints" unique_id=812222039 instance=ExtResource("6_58rwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.105896, 0, 0.53329086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.50426, 0, -5.029479)
 
 [node name="InterestPoint32" parent="WanderPoints" unique_id=1101259618 instance=ExtResource("6_58rwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.01578, -0.05649233, 14.195975)
-
-[node name="InterestPoint16" parent="WanderPoints" unique_id=1223518290 instance=ExtResource("6_58rwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.8231, 0, -8.619455)
 
 [node name="InterestPoint17" parent="WanderPoints" unique_id=1818838896 instance=ExtResource("6_58rwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.444656, 0, 74.1666)
@@ -125,9 +120,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.865303, 0, 37.04359)
 
 [node name="InterestPoint5" parent="WanderPoints" unique_id=737656576 instance=ExtResource("6_58rwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.562912, 0, 15.103396)
-
-[node name="InterestPoint6" parent="WanderPoints" unique_id=259404473 instance=ExtResource("6_58rwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.57776, 0, 4.979212)
 
 [node name="InterestPoint8" parent="WanderPoints" unique_id=520925922 instance=ExtResource("6_58rwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.57947, 0, 41.387794)
