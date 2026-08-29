@@ -909,8 +909,6 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="PointPickerComponent" type="Node" parent="StateMachine/Wander" unique_id=621947046]
 script = ExtResource("9_dapgd")
-min_distance = null
-max_distance = null
 distance_weights = SubResource("Curve_dapgd")
 metadata/_custom_type_script = "uid://csdhvxrv1hca4"
 

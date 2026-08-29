@@ -30,3 +30,7 @@ func _physics_process(delta: float) -> void:
 			target_pos = global_position + -velocity
 		var target_trans = transform.looking_at(target_pos, Vector3.UP)
 		transform.basis = transform.basis.slerp(target_trans.basis, 5 * delta)
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.
