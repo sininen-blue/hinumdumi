@@ -99,6 +99,6 @@ func _on_monster_navigation_agent_navigation_finished() -> void:
 
 
 func detect_player(noise: int) -> void:
-	if noise >= 3:
+	if noise >= Constants.noise_levels.MEDIUM:
 		state_machine.last_known_position = monster.player.global_position
 		state_machine.change_state(investigate)

@@ -14,7 +14,6 @@ var headbob_time: float = 0
 @onready var jump_state: State = %JumpState
 @onready var hide_state: State = %HideState
 @onready var camera_3d: Camera3D = %Camera3D
-@onready var step_timer: Timer = $StepTimer
 
 
 func enter() -> void:
@@ -22,7 +21,6 @@ func enter() -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(camera_3d, "fov", 90, 1)
-	step_timer.start()
 
 
 func exit() -> void:
@@ -30,7 +28,6 @@ func exit() -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(camera_3d, "fov", 75, 1)
-	step_timer.stop()
 
 
 func update(delta: float) -> void:
@@ -63,8 +60,3 @@ func handle_input(event: InputEvent) -> void:
 		state_machine.change_state(crouch_state)
 	if event.is_action_pressed("interact_hide") and player.can_hide:
 		state_machine.change_state(hide_state)
-
-
-func _on_step_timer_timeout() -> void:
-	player.noise_created.emit(2)
-	step_timer.start()

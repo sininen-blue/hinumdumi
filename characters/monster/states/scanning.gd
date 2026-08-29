@@ -36,5 +36,5 @@ func _on_scan_timer_timeout() -> void:
 
 
 func detect_player(noise: int) -> void:
-	if noise >= 2:
+	if noise >= Constants.noise_levels.LOW:
 		state_machine.change_state(investigate)

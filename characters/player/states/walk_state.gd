@@ -16,15 +16,14 @@ var headbob_time: float = 0
 @onready var run_state: State = %RunState
 @onready var hide_state: State = %HideState
 @onready var camera_3d: Camera3D = %Camera3D
-@onready var step_timer: Timer = $StepTimer
 
 
 func enter() -> void:
-	step_timer.start()
+	pass
 
 
 func exit() -> void:
-	step_timer.stop()
+	pass
 
 
 func update(delta: float) -> void:
@@ -54,8 +53,3 @@ func handle_input(event: InputEvent) -> void:
 		state_machine.change_state(run_state)
 	if event.is_action_pressed("interact_hide") and player.can_hide:
 		state_machine.change_state(hide_state)
-
-
-func _on_step_timer_timeout() -> void:
-	player.noise_created.emit(1)
-	step_timer.start()

@@ -8,6 +8,7 @@ var interval: float = 1.0
 var buildup: float = 0.0
 var current_sound: int = 0
 var current_db: float = default_db
+var current_noise_level: Constants.noise_levels
 
 @onready var sound_player_pool_1: AudioStreamPlayer3D = $SoundPlayerPool1
 @onready var sound_player_pool_2: AudioStreamPlayer3D = $SoundPlayerPool2
@@ -34,12 +35,15 @@ func _process(delta: float) -> void:
 		walk_state:
 			interval = 0.6
 			current_db = default_db
+			current_noise_level = Constants.noise_levels.LOW
 		run_state:
 			interval = 0.3
 			current_db = default_db + 2
+			current_noise_level = Constants.noise_levels.MEDIUM
 		crouch_state:
 			interval = 0.8
 			current_db = default_db - 10
+			current_noise_level = Constants.noise_levels.NONE
 	
 	if player.velocity != Vector3.ZERO and player.is_on_ground:
 		buildup += 1 * delta
@@ -56,6 +60,8 @@ func _process(delta: float) -> void:
 				sound_player.pitch_scale = randf_range(0.9, 1.1)
 				sound_player.volume_db = randf_range(current_db-1, current_db+1)
 				sound_player.play()
+				
+				player.noise_created.emit(current_noise_level)
 				break
 		
 		current_sound += 1

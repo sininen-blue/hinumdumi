@@ -42,5 +42,5 @@ func _on_monster_navigation_agent_navigation_finished() -> void:
 
 
 func detect_player(noise: int) -> void:
-	if noise >= 1:
+	if noise >= Constants.noise_levels.LOW:
 		state_machine.change_state(hunt)

@@ -21,6 +21,7 @@ PlayerInventory="*uid://d3rvskq3dbkq4"
 PlayerStates="*uid://cls3pohm4xcw0"
 DebugGameState="*uid://bjmjiaalsgma5"
 SceneManager="*uid://cwr6kqpq0bnf8"
+Constants="*uid://cddqcj5ofby20"
 
 [display]
 
@@ -29,7 +30,7 @@ window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Godot_Color_Grading/addons/Color grading/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
+enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 
 [global_group]
 
