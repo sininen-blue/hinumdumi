@@ -1,5 +1,6 @@
 extends Node
 
+@export var debug_demo_mode: bool = false
 @export var has_returned_req: bool = false
 @export var has_talked_to_parent: bool = false
 @export var left_home: bool = false
@@ -14,7 +15,18 @@ extends Node
 @export var night: int = 0
 
 
-func reset() -> void:
+func _ready() -> void:
+	if debug_demo_mode:
+		demo_mode()
+
+
+
+func demo_mode() -> void:
+	left_home = true
+	first_buy = true
+
+
+func reset() -> void:	
 	has_returned_req = false
 	has_talked_to_parent = false
 	left_home = false
