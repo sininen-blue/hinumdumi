@@ -83,7 +83,6 @@ func _get_target_point() -> Vector3:
 	for point: InterestPoint in interest_points:
 		var distance: float = monster_pos.distance_squared_to(point.global_position)
 		var normalized: float = (distance - closest_distance) / distance_range
-		var pre_normal = normalized
 		normalized = distance_weights.sample(normalized)
 
 		var noise: float = randf_range(min_noise, max_noise)
