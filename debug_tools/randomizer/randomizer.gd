@@ -39,10 +39,16 @@ func _ready() -> void:
 	home.starting_cash = price
 	home.requirements = items
 	
+	# NOTE: current version has possibility of spawning all reqiured
+	# items in one shop, is intended, will be less likely as 
+	# more items get added, the luck is sometiems good
+	for shop: Shop in shops:
+		shop.inventory = {}
+	
 	for item in items.keys():
 		var shop: Shop = shops.pick_random() as Shop
-		shop.inventory = {}
 		shop.inventory[item] = items[item]
+	
 	
 	for shop: Shop in shops:
 		while len(shop.inventory.keys()) < 2:
