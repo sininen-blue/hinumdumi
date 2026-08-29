@@ -24,13 +24,13 @@ height = 2.5
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xm3rn"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_utdx2"]
-radius = 30.0
+radius = 60.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tyycc"]
-radius = 10.0
+radius = 30.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_yrry2"]
-radius = 3.374324
+radius = 2.6730735
 
 [sub_resource type="Animation" id="Animation_arly5"]
 resource_name = "Armature|mixamo_com|Layer0"
@@ -835,6 +835,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 target_position = Vector3(0, 0, -100)
 collision_mask = 3
 script = ExtResource("3_yrry2")
+vision_gain_threshold = 0.4
 wander_distance_threshold = 25.0
 investigate_distance_threshold = 50.0
 
@@ -852,6 +853,7 @@ stream = ExtResource("4_dapgd")
 stream = ExtResource("5_6755d")
 
 [node name="HearingArea" type="Area3D" parent="." unique_id=1517629973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4364548, 0)
 collision_layer = 3
 collision_mask = 2
 monitorable = false
@@ -863,20 +865,23 @@ debug_color = Color(0, 0.5950001, 0.7, 0.24313726)
 debug_fill = false
 
 [node name="DetectArea" type="Area3D" parent="." unique_id=1600706994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4935212, 0)
 collision_layer = 3
 collision_mask = 2
 script = ExtResource("5_yrry2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectArea" unique_id=1601725311]
 shape = SubResource("SphereShape3D_tyycc")
+debug_color = Color(0.59414685, 0.5409233, 0.22143939, 0.41960785)
 
 [node name="Hitbox" type="Area3D" parent="." unique_id=1572355544]
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=743860647]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2718248, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0398226, 0)
 shape = SubResource("SphereShape3D_yrry2")
+debug_color = Color(0.9424516, 0.22148493, 0.25401783, 0.41960785)
 
 [node name="StateMachine" type="Node" parent="." unique_id=630183888 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_legie")
