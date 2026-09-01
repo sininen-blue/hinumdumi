@@ -1,10 +1,21 @@
 extends Node
 class_name Randomizer
 
+const CHIPS = preload("uid://b5d67xvkem2kq")
+const COEK = preload("uid://ecui8hscpakw")
+const COFFEE = preload("uid://kogmu7aon258")
+const CORNED = preload("uid://ohu3qbhjeege")
+const DEFAULT = preload("uid://b8a212c6w7tkt")
 const EGG = preload("uid://bnwb6eo5yt56w")
+const MOUNTAIN_DAW = preload("uid://c5syujc0qyfw6")
+const PAITOS = preload("uid://dmwea0cpy4yi2")
+const PEANUTS = preload("uid://d1gomtwbrkedl")
 const RICE = preload("uid://cibahbmjhia64")
 const SALT = preload("uid://dduxxviuf6umn")
+const SARAP = preload("uid://c5gtg11nuj6co")
+const SARDINES = preload("uid://c3b05jhjamh1w")
 const SOY_SAUCE = preload("uid://dqln4etsscmsq")
+const SPAM = preload("uid://bo66ogt4m5gfv")
 const VINEGAR = preload("uid://bhsq474tgbqxa")
 
 @export var max_items: int = 3
@@ -17,10 +28,21 @@ const VINEGAR = preload("uid://bhsq474tgbqxa")
 
 
 var item_set = [
+	CHIPS,
+	COEK,
+	COFFEE,
+	CORNED,
+	DEFAULT,
 	EGG,
+	MOUNTAIN_DAW,
+	PAITOS,
+	PEANUTS,
 	RICE,
 	SALT,
+	SARAP,
+	SARDINES,
 	SOY_SAUCE,
+	SPAM,
 	VINEGAR,
 ]
 

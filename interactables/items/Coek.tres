@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ecui8hscpakw"]
+
+[ext_resource type="PackedScene" uid="uid://dpnt7bt0gfp5" path="res://src/items/placeholders/coek_placeholder.tscn" id="1_p73b0"]
+[ext_resource type="Script" uid="uid://b6rk0uffidg5l" path="res://src/items/item.gd" id="2_fo5tg"]
+
+[resource]
+script = ExtResource("2_fo5tg")
+name = "Coek"
+singular_description = "bottle of coek"
+plural_description = "bottles of coek"
+model = ExtResource("1_p73b0")
+base_cost = 5.0
+metadata/_custom_type_script = "uid://b6rk0uffidg5l"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dmwea0cpy4yi2"]
+
+[ext_resource type="PackedScene" uid="uid://junlxoxaxvk" path="res://src/items/placeholders/paitos_placeholder.tscn" id="1_k5j40"]
+[ext_resource type="Script" uid="uid://b6rk0uffidg5l" path="res://src/items/item.gd" id="2_ok8ld"]
+
+[resource]
+script = ExtResource("2_ok8ld")
+name = "Paitos"
+singular_description = "bag of paitos"
+plural_description = "bags of paitos"
+model = ExtResource("1_k5j40")
+base_cost = 3.0
+metadata/_custom_type_script = "uid://b6rk0uffidg5l"

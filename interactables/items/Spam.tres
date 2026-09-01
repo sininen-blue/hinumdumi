@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bo66ogt4m5gfv"]
+
+[ext_resource type="PackedScene" uid="uid://cew5kewmdp17k" path="res://src/items/placeholders/spam_placeholder.tscn" id="1_wla3f"]
+[ext_resource type="Script" uid="uid://b6rk0uffidg5l" path="res://src/items/item.gd" id="2_jlmqi"]
+
+[resource]
+script = ExtResource("2_jlmqi")
+name = "Spam"
+singular_description = "can of spam"
+plural_description = "cans of spam"
+model = ExtResource("1_wla3f")
+base_cost = 6.0
+metadata/_custom_type_script = "uid://b6rk0uffidg5l"

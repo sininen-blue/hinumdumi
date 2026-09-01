@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://dt0cafmukkfoy"]
 
-[ext_resource type="Texture2D" uid="uid://c31571frolx72" path="res://assets/item_placeholders/egg.png" id="1_itb38"]
+[ext_resource type="Texture2D" uid="uid://bm0fc2x8cvar3" path="res://assets/item_placeholders/items.png" id="1_itb38"]
 
 [node name="EggPlaceholder" type="Node3D" unique_id=1906190271]
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=662838153]
+pixel_size = 0.03
 billboard = 1
+shaded = true
+texture_filter = 0
 texture = ExtResource("1_itb38")
+region_enabled = true
+region_rect = Rect2(32, 32, 32, 32)

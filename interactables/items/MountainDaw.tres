@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c5syujc0qyfw6"]
+
+[ext_resource type="PackedScene" uid="uid://3hqcp5dhxm11" path="res://src/items/placeholders/daw_placeholder.tscn" id="1_yst5q"]
+[ext_resource type="Script" uid="uid://b6rk0uffidg5l" path="res://src/items/item.gd" id="2_itvgk"]
+
+[resource]
+script = ExtResource("2_itvgk")
+name = "Mountain Daw"
+singular_description = "bottle of mountain daw"
+plural_description = "bottles of mountain daw"
+model = ExtResource("1_yst5q")
+base_cost = 5.0
+metadata/_custom_type_script = "uid://b6rk0uffidg5l"

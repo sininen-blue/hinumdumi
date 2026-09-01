@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c3b05jhjamh1w"]
+
+[ext_resource type="PackedScene" uid="uid://do20q10qkjxrt" path="res://src/items/placeholders/sardines_placeholder.tscn" id="1_jk5rt"]
+[ext_resource type="Script" uid="uid://b6rk0uffidg5l" path="res://src/items/item.gd" id="2_4ymbx"]
+
+[resource]
+script = ExtResource("2_4ymbx")
+name = "Sardines"
+singular_description = "can of sardines"
+plural_description = "cans of sardines "
+model = ExtResource("1_jk5rt")
+base_cost = 3.0
+metadata/_custom_type_script = "uid://b6rk0uffidg5l"

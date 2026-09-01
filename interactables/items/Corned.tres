@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ohu3qbhjeege"]
+
+[ext_resource type="PackedScene" uid="uid://btocypaera5a1" path="res://src/items/placeholders/corned_placeholder.tscn" id="1_s0fph"]
+[ext_resource type="Script" uid="uid://b6rk0uffidg5l" path="res://src/items/item.gd" id="2_t7ea6"]
+
+[resource]
+script = ExtResource("2_t7ea6")
+name = "Corned Beef"
+singular_description = "can of corned beef"
+plural_description = "cans of corned beef"
+model = ExtResource("1_s0fph")
+base_cost = 2.0
+metadata/_custom_type_script = "uid://b6rk0uffidg5l"

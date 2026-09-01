@@ -9,5 +9,5 @@ name = "Rice"
 singular_description = "sack of rice"
 plural_description = "sacks of rice"
 model = ExtResource("1_me5vi")
-base_cost = 5.0
+base_cost = 8.0
 metadata/_custom_type_script = "uid://b6rk0uffidg5l"
