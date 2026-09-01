@@ -33,7 +33,7 @@ radius = 30.0
 radius = 2.6730735
 
 [sub_resource type="Curve" id="Curve_6755d"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.6704545, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5340909, 0.5615213), 2.3332512, 2.3332512, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Animation" id="Animation_arly5"]
