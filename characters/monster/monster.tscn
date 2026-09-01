@@ -13,7 +13,6 @@
 [ext_resource type="Script" uid="uid://btyntbdut57r3" path="res://characters/monster/states/hunt.gd" id="6_s386a"]
 [ext_resource type="Script" uid="uid://vhu87qyiqy08" path="res://characters/monster/states/lunge.gd" id="7_legie"]
 [ext_resource type="Script" uid="uid://da7h67kyyhgfv" path="res://characters/monster/states/swipe.gd" id="8_tyycc"]
-[ext_resource type="Script" path="res://src/utils/point_picker_component.gd" id="9_dapgd"]
 [ext_resource type="Script" uid="uid://oi5ctl585nw7" path="res://characters/monster/footsteps.gd" id="13_pxgw5"]
 [ext_resource type="Script" uid="uid://btlt2brwvxoc6" path="res://characters/monster/jumpscare.gd" id="14_arly5"]
 [ext_resource type="AudioStream" uid="uid://bno8umd8dkv0" path="res://assets/sounds/footsteps/footsteps_heavy_1.wav" id="14_esr8h"]
@@ -34,12 +33,8 @@ radius = 30.0
 radius = 2.6730735
 
 [sub_resource type="Curve" id="Curve_6755d"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(0.65420556, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="Curve" id="Curve_dapgd"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.51401865, 0.52196753), 0.0, 0.0, 0, 0, Vector2(0.53271025, 0.6150908), 1.3440063, 1.3440063, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 4
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.6704545, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Animation" id="Animation_arly5"]
 resource_name = "Armature|mixamo_com|Layer0"
@@ -906,11 +901,6 @@ speed = 9.0
 distance_threhold = 40.0
 distance_weights = SubResource("Curve_6755d")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
-
-[node name="PointPickerComponent" type="Node" parent="StateMachine/Wander" unique_id=621947046]
-script = ExtResource("9_dapgd")
-distance_weights = SubResource("Curve_dapgd")
-metadata/_custom_type_script = "uid://csdhvxrv1hca4"
 
 [node name="Timer" type="Timer" parent="StateMachine/Wander" unique_id=1348011757]
 wait_time = 30.0

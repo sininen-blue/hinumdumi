@@ -43,6 +43,7 @@ func physics_update(_delta: float) -> void:
 	if PlayerStates.left_home == false or PlayerStates.first_buy == false:
 		return
 	if monster.started == false: # NOTE: ugly, change this at some point
+		print("going")
 		timer.start()
 		monster.started = true
 
@@ -85,7 +86,6 @@ func _get_target_point() -> Vector3:
 		var distance: float = monster_pos.distance_squared_to(point.global_position)
 		var normalized: float = (distance - closest_distance) / distance_range
 		normalized = distance_weights.sample(1 - normalized)
-
 		var noise: float = randf_range(min_noise, max_noise)
 		point.weight = normalized * point.base_weight * noise
 

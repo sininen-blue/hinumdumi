@@ -153,9 +153,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.342735, 1.2248304, 120.488
 wander_points = NodePath("../WanderPoints")
 player = NodePath("../Player")
 
-[node name="Camera3D" type="Camera3D" parent="Monster" unique_id=1254874681]
-transform = Transform3D(-1, 0, -8.742278e-08, -3.825504e-08, 0.89917624, 0.43758664, 7.860849e-08, 0.43758664, -0.89917624, 0, 4.60863, 1.9463348)
-
 [node name="Level1" parent="." unique_id=539042850 instance=ExtResource("6_7e3l5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022026062, -0.008386493, -0.009155273)
 
