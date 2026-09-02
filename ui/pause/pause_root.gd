@@ -56,7 +56,7 @@ func load_settings() -> void:
 	sfx_slider.value = config.get_value("audio", "sfx", 100)
 	
 	resolution_slider.value = config.get_value("video", "resolution_scale", 100)
-	fullscreen_toggle.button_pressed = config.get_value("video", "fullscreen", false)
+	fullscreen_toggle.button_pressed = config.get_value("video", "fullscreen", true)
 	
 	mouse_sens_slider.value = config.get_value("controls", "mouse_sensitivity", 0.1)
 	pan_slider.value = config.get_value("controls", "joystick_sensitivity", 100)
@@ -70,7 +70,7 @@ func load_defaults() -> void:
 	config.set_value("audio", "sfx", 100)
 	
 	config.set_value("video", "resolution_scale", 100)
-	config.set_value("video", "fullscreen", false)
+	config.set_value("video", "fullscreen", true)
 	
 	config.set_value("controls", "mouse_sensitivity", 0.1)
 	config.set_value("controls", "joystick_sensitivity", 100)

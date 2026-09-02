@@ -65,7 +65,6 @@ func _ready() -> void:
 	
 	
 	jumpscare_player.play_backwards("RESET")
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 	PlayerInventory.left_hand = left_hand
 	PlayerInventory.right_hand = right_hand

@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bw650dm3xfbn0" path="res://ui/themes/holloween.tres" id="1_yl2sa"]
 [ext_resource type="Script" uid="uid://dvminv0na8s3i" path="res://ui/pause/pause_root.gd" id="2_hqych"]
+[ext_resource type="FontFile" uid="uid://jwqoj3bvw7hg" path="res://assets/fonts/HalloweenGreetings-Regular.otf" id="3_h0ypq"]
 [ext_resource type="PackedScene" uid="uid://deacavirgveyf" path="res://ui/pause/slider_label/slider_label.tscn" id="3_xmfd3"]
 
 [node name="PauseRoot" type="Control" unique_id=393536870]
@@ -39,15 +40,17 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -275.0
-offset_top = -225.0
+offset_top = -239.0
 offset_right = 275.0
-offset_bottom = 225.0
+offset_bottom = 211.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AudioHeader" type="Label" parent="Panel/VBoxContainer" unique_id=118426358]
 layout_mode = 2
-text = "Audio"
+theme_override_fonts/font = ExtResource("3_h0ypq")
+theme_override_font_sizes/font_size = 36
+text = "(AUDIO)"
 vertical_alignment = 2
 
 [node name="Master" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=128268807]
@@ -122,7 +125,9 @@ size_flags_vertical = 4
 [node name="VideoHeader" type="Label" parent="Panel/VBoxContainer" unique_id=714031568]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
-text = "Video"
+theme_override_fonts/font = ExtResource("3_h0ypq")
+theme_override_font_sizes/font_size = 36
+text = "(VIDEO)"
 vertical_alignment = 2
 
 [node name="Fullscreen" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=184408239]
@@ -167,7 +172,9 @@ size_flags_vertical = 4
 [node name="ControlsHeader" type="Label" parent="Panel/VBoxContainer" unique_id=1216055793]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
-text = "Controls"
+theme_override_fonts/font = ExtResource("3_h0ypq")
+theme_override_font_sizes/font_size = 36
+text = "(CONTROLS)"
 vertical_alignment = 2
 
 [node name="MouseSensitivity" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1621379875]
