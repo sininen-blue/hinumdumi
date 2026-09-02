@@ -140,6 +140,7 @@ omni_range = 9.305
 
 [node name="DoorSound" type="AudioStreamPlayer3D" parent="." unique_id=669069314]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4332547, 0, -3.1691632)
+bus = &"Sfx"
 
 [connection signal="body_entered" from="ExitArea" to="." method="_on_exit_area_body_entered"]
 [connection signal="body_exited" from="ExitArea" to="." method="_on_exit_area_body_exited"]

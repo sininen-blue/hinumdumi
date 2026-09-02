@@ -6,3 +6,4 @@
 script = ExtResource("1_bjkgr")
 
 [node name="SoundPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1503026729]
+bus = &"Sfx"

@@ -16,6 +16,7 @@ font = ExtResource("2_ik2bw")
 stream = ExtResource("2_65y1a")
 volume_db = -10.0
 pitch_scale = 0.7
+bus = &"Sfx"
 
 [node name="CharacterTimer" type="Timer" parent="." unique_id=1394526900]
 one_shot = true

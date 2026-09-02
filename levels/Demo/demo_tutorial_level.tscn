@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://diseukdbgi3s1" path="res://ui/tutorial/talk/talk_to_parent_tutorial.tscn" id="10_xam7x"]
 [ext_resource type="PackedScene" uid="uid://b8ar6ohy7dwh5" path="res://ui/tutorial/buy/buy_item_tutorial.tscn" id="11_qpj2s"]
 [ext_resource type="PackedScene" uid="uid://d3thtnjsybkwe" path="res://debug_tools/utils/debug_tutorial_skip.tscn" id="12_ctdv5"]
+[ext_resource type="PackedScene" uid="uid://n7gynv84v2t6" path="res://ui/pause/pause_root.tscn" id="13_y3dsd"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qpj2s"]
 radius = 4.938127
@@ -64,5 +65,11 @@ shape = SubResource("SphereShape3D_qpj2s")
 
 [node name="DebugTutorialSkip" parent="." unique_id=936764827 instance=ExtResource("12_ctdv5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.219894, 0.022491455, -10.953693)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1812172839]
+process_mode = 3
+
+[node name="PauseRoot" parent="CanvasLayer" unique_id=393536870 node_paths=PackedStringArray("player") instance=ExtResource("13_y3dsd")]
+player = NodePath("../../Player")
 
 [connection signal="body_entered" from="BuyItemTutorial/Area3D" to="BuyItemTutorial" method="_on_area_3d_body_entered"]

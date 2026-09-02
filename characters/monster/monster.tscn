@@ -852,9 +852,11 @@ one_shot = true
 
 [node name="Detected" type="AudioStreamPlayer3D" parent="VisionCast" unique_id=1421203469]
 stream = ExtResource("4_dapgd")
+bus = &"Sfx"
 
 [node name="Undetected" type="AudioStreamPlayer3D" parent="VisionCast" unique_id=990904018]
 stream = ExtResource("5_6755d")
+bus = &"Sfx"
 
 [node name="HearingArea" type="Area3D" parent="." unique_id=1517629973]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4364548, 0)
@@ -956,6 +958,7 @@ metadata/_custom_type_script = "uid://dhyugj58epewt"
 stream = ExtResource("14_esr8h")
 attenuation_model = 1
 pitch_scale = 0.8
+bus = &"Sfx"
 script = ExtResource("13_pxgw5")
 state_machine = NodePath("../StateMachine")
 

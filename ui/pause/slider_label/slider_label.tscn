@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://deacavirgveyf"]
+
+[ext_resource type="Script" uid="uid://c815rcgfhlccj" path="res://ui/pause/slider_label/slider_label.gd" id="1_2ylv3"]
+
+[node name="SliderLabel" type="Label" unique_id=2099604391]
+custom_minimum_size = Vector2(80, 0)
+text = "100"
+script = ExtResource("1_2ylv3")

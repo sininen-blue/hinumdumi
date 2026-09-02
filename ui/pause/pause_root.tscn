@@ -1,0 +1,260 @@
+[gd_scene format=3 uid="uid://n7gynv84v2t6"]
+
+[ext_resource type="Theme" uid="uid://bw650dm3xfbn0" path="res://ui/themes/holloween.tres" id="1_yl2sa"]
+[ext_resource type="Script" uid="uid://dvminv0na8s3i" path="res://ui/pause/pause_root.gd" id="2_hqych"]
+[ext_resource type="PackedScene" uid="uid://deacavirgveyf" path="res://ui/pause/slider_label/slider_label.tscn" id="3_xmfd3"]
+
+[node name="PauseRoot" type="Control" unique_id=393536870]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yl2sa")
+script = ExtResource("2_hqych")
+debug = true
+
+[node name="Panel" type="Panel" parent="." unique_id=2144057021]
+custom_minimum_size = Vector2(600, 550)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1757064717]
+custom_minimum_size = Vector2(550, 450)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -225.0
+offset_right = 275.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioHeader" type="Label" parent="Panel/VBoxContainer" unique_id=118426358]
+layout_mode = 2
+text = "Audio"
+vertical_alignment = 2
+
+[node name="Master" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=128268807]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Master" unique_id=173762160]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Master"
+vertical_alignment = 1
+
+[node name="Divider" type="Control" parent="Panel/VBoxContainer/Master" unique_id=1800424177]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SliderLabel" parent="Panel/VBoxContainer/Master" unique_id=2099604391 node_paths=PackedStringArray("slider") instance=ExtResource("3_xmfd3")]
+layout_mode = 2
+slider = NodePath("../MasterSlider")
+
+[node name="MasterSlider" type="HSlider" parent="Panel/VBoxContainer/Master" unique_id=1230568394]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="Music" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=2023988600]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Music" unique_id=154200600]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Music"
+vertical_alignment = 1
+
+[node name="Divider" type="Control" parent="Panel/VBoxContainer/Music" unique_id=858078978]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SliderLabel" parent="Panel/VBoxContainer/Music" unique_id=563384192 node_paths=PackedStringArray("slider") instance=ExtResource("3_xmfd3")]
+layout_mode = 2
+slider = NodePath("../MusicLabel")
+
+[node name="MusicLabel" type="HSlider" parent="Panel/VBoxContainer/Music" unique_id=1814998225]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="SFX" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1033433158]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/SFX" unique_id=1201187852]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "SFX"
+vertical_alignment = 1
+
+[node name="Divider" type="Control" parent="Panel/VBoxContainer/SFX" unique_id=2069820931]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SliderLabel" parent="Panel/VBoxContainer/SFX" unique_id=1762924344 node_paths=PackedStringArray("slider") instance=ExtResource("3_xmfd3")]
+layout_mode = 2
+slider = NodePath("../SFXSlider")
+
+[node name="SFXSlider" type="HSlider" parent="Panel/VBoxContainer/SFX" unique_id=37111637]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="VideoHeader" type="Label" parent="Panel/VBoxContainer" unique_id=714031568]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "Video"
+vertical_alignment = 2
+
+[node name="Fullscreen" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=184408239]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Fullscreen" unique_id=499032550]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Fullscreen"
+vertical_alignment = 1
+
+[node name="Divider" type="Control" parent="Panel/VBoxContainer/Fullscreen" unique_id=797409258]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FullscreenToggle" type="CheckButton" parent="Panel/VBoxContainer/Fullscreen" unique_id=458230647]
+layout_mode = 2
+
+[node name="ResolutionsScale" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1480916635]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/ResolutionsScale" unique_id=1528929517]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Resolution Scale"
+vertical_alignment = 1
+
+[node name="Divider" type="Control" parent="Panel/VBoxContainer/ResolutionsScale" unique_id=933136032]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SliderLabel" parent="Panel/VBoxContainer/ResolutionsScale" unique_id=1390819818 node_paths=PackedStringArray("slider") instance=ExtResource("3_xmfd3")]
+layout_mode = 2
+slider = NodePath("../ResolutionSlider")
+
+[node name="ResolutionSlider" type="HSlider" parent="Panel/VBoxContainer/ResolutionsScale" unique_id=939468760]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="ControlsHeader" type="Label" parent="Panel/VBoxContainer" unique_id=1216055793]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "Controls"
+vertical_alignment = 2
+
+[node name="MouseSensitivity" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1621379875]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MouseSensitivity" unique_id=933823124]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Mouse Sensitivity"
+vertical_alignment = 1
+
+[node name="Divider" type="Control" parent="Panel/VBoxContainer/MouseSensitivity" unique_id=221680591]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SliderLabel" parent="Panel/VBoxContainer/MouseSensitivity" unique_id=1828284868 node_paths=PackedStringArray("slider") instance=ExtResource("3_xmfd3")]
+layout_mode = 2
+slider = NodePath("../MouseSensSlider")
+
+[node name="MouseSensSlider" type="HSlider" parent="Panel/VBoxContainer/MouseSensitivity" unique_id=73943454]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+
+[node name="PanSensitivity" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1379329021]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanSensitivity" unique_id=1211727462]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Joystick Sensitivity"
+vertical_alignment = 1
+
+[node name="Divider" type="Control" parent="Panel/VBoxContainer/PanSensitivity" unique_id=1402744711]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SliderLabel" parent="Panel/VBoxContainer/PanSensitivity" unique_id=273560525 node_paths=PackedStringArray("slider") instance=ExtResource("3_xmfd3")]
+layout_mode = 2
+slider = NodePath("../PanSlider")
+
+[node name="PanSlider" type="HSlider" parent="Panel/VBoxContainer/PanSensitivity" unique_id=1482615616]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+max_value = 500.0
+
+[node name="ResetButton" type="Button" parent="Panel" unique_id=298674983]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -151.0
+offset_top = -60.0
+offset_right = -83.0
+offset_bottom = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Reset"
+
+[node name="OkButton" type="Button" parent="Panel" unique_id=866788284]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -60.0
+offset_right = -26.0
+offset_bottom = -18.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "OK"
+
+[connection signal="value_changed" from="Panel/VBoxContainer/Master/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/Music/MusicLabel" to="." method="_on_music_label_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/SFX/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="toggled" from="Panel/VBoxContainer/Fullscreen/FullscreenToggle" to="." method="_on_fullscreen_toggle_toggled"]
+[connection signal="value_changed" from="Panel/VBoxContainer/ResolutionsScale/ResolutionSlider" to="." method="_on_resolution_slider_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/MouseSensitivity/MouseSensSlider" to="." method="_on_mouse_sens_slider_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/PanSensitivity/PanSlider" to="." method="_on_pan_slider_value_changed"]
+[connection signal="pressed" from="Panel/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="Panel/OkButton" to="." method="_on_ok_button_pressed"]

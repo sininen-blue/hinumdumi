@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://di5ccpypsjut8" path="res://assets/buildings/tindahan.tscn" id="2_i5wg5"]
 [ext_resource type="Texture2D" uid="uid://bdsb5ogr5p644" path="res://assets/textures/grass/rocky_terrain_02_diff_1k.jpg" id="3_3c04x"]
 [ext_resource type="PackedScene" uid="uid://2n4q3u0mloh2" path="res://assets/walls/random_brick_wall.tscn" id="5_6mijq"]
+[ext_resource type="PackedScene" uid="uid://n7gynv84v2t6" path="res://ui/pause/pause_root.tscn" id="8_s4pem"]
 [ext_resource type="PackedScene" uid="uid://xurb2kwpi4xa" path="res://assets_raw/others/Bisaya banana.glb" id="9_4e78x"]
 [ext_resource type="AudioStream" uid="uid://dk03jl053023p" path="res://assets/sounds/music/intro_music.mp3" id="10_4e78x"]
 [ext_resource type="Theme" uid="uid://bw650dm3xfbn0" path="res://ui/themes/holloween.tres" id="10_s4pem"]
@@ -111,6 +112,7 @@ size = Vector3(100, 100, 1)
 material = SubResource("StandardMaterial3D_6mijq")
 
 [node name="MainMenuLayer" type="CanvasLayer" parent="." unique_id=1039457917]
+process_mode = 3
 
 [node name="MainMenuRoot" type="Control" parent="MainMenuLayer" unique_id=1905002078]
 layout_mode = 3
@@ -172,6 +174,24 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Play"
 
+[node name="SettingsButton" type="Button" parent="MainMenuLayer/MainMenuRoot" unique_id=559643683]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = 33.0
+offset_right = 28.5
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+
+[node name="PauseRoot" parent="MainMenuLayer" unique_id=393536870 instance=ExtResource("8_s4pem")]
+visible = false
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=118272801]
 transform = Transform3D(1, 0, 0, 0, 0.9538271, 0.30035624, 0, -0.30035624, 0.9538271, 0, 3.0724473, 6.4)
 current = true
@@ -190,6 +210,7 @@ libraries/ = SubResource("AnimationLibrary_w2r0d")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1739366369]
 stream = ExtResource("10_4e78x")
 volume_db = -5.0
+bus = &"Music"
 parameters/looping = false
 
 [node name="Bisaya banana" parent="." unique_id=1844144340 instance=ExtResource("9_4e78x")]
@@ -226,3 +247,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.37666, -2.434482, 4.841383
 transform = Transform3D(0.9999451, 0, -0.010471783, 0, 1, 0, 0.010471783, 0, 0.9999451, -19.614, -6.162, -4.339)
 
 [connection signal="pressed" from="MainMenuLayer/MainMenuRoot/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainMenuLayer/MainMenuRoot/SettingsButton" to="." method="_on_settings_button_pressed"]

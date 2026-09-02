@@ -5,6 +5,7 @@ signal noise_created(noise_level: float)
 
 @export_category("Camera")
 @export var sensitivity: float = 0.1
+@export var pan_sensitivity: float = 100
 @export_category("Physics")
 @export var mass: float = 5
 @export_category("debug")
@@ -58,6 +59,11 @@ var getting_jumpscared: bool = false
 
 
 func _ready() -> void:
+	var config: ConfigFile = ConfigFile.new()
+	sensitivity = config.get_value("controls", "mouse_sensitivity", 0.1)
+	pan_sensitivity = config.get_value("controls", "joystick_sensitivity", 100)
+	
+	
 	jumpscare_player.play_backwards("RESET")
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
@@ -80,9 +86,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	var pan_vector = Input.get_vector("pan_left", "pan_right", "pan_up", "pan_down")
-	self.rotation_degrees.y -= pan_vector.x * 100 * delta
-	head.rotation_degrees.x -= pan_vector.y * 100 * delta
-	head.rotation_degrees.x = clamp(head.rotation_degrees.x, -80, 80)
+	
+	if pan_vector:
+		self.rotation_degrees.y -= pan_vector.x * pan_sensitivity * delta
+		head.rotation_degrees.x -= pan_vector.y * pan_sensitivity * delta
+		head.rotation_degrees.x = clamp(head.rotation_degrees.x, -80, 80)
 	
 	is_on_ground = ground_cast.is_colliding()
 

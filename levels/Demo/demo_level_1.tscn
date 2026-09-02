@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://dyosumyd8i6io" path="res://assets/sounds/others/dog_bark_sharp.wav" id="16_3r41g"]
 [ext_resource type="AudioStream" uid="uid://bdid6fi2h51f8" path="res://assets/sounds/others/rustle.wav" id="16_qo4u2"]
 [ext_resource type="AudioStream" uid="uid://ctuqwr3qd1v28" path="res://assets/sounds/others/psst.wav" id="18_usmu2"]
+[ext_resource type="PackedScene" uid="uid://n7gynv84v2t6" path="res://ui/pause/pause_root.tscn" id="20_xfb37"]
 [ext_resource type="PackedScene" uid="uid://dbdp6yu5bgt1b" path="res://characters/monster/monster.tscn" id="68_eutc3"]
 [ext_resource type="Environment" uid="uid://4thbuqoqy2tc" path="res://src/environment.tres" id="81_xlj54"]
 
@@ -25,6 +26,7 @@ height = 3.0
 radius = 5.442
 
 [node name="DemoLevel1" type="Node3D" unique_id=1355145291]
+process_mode = 1
 
 [node name="Randomizer" parent="." unique_id=1329849328 node_paths=PackedStringArray("level", "home") instance=ExtResource("1_fw3y8")]
 level = NodePath("../Level1")
@@ -236,3 +238,10 @@ metadata/_custom_type_script = "uid://cgmgljobbqvi3"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Events/PsstDetector" unique_id=1639255815]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7730503, 0)
 shape = SubResource("CylinderShape3D_usmu2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1145861646]
+process_mode = 3
+
+[node name="PauseRoot" parent="CanvasLayer" unique_id=393536870 node_paths=PackedStringArray("player") instance=ExtResource("20_xfb37")]
+visible = false
+player = NodePath("../../Player")

@@ -222,18 +222,22 @@ libraries/ = SubResource("AnimationLibrary_lwwtl")
 
 [node name="FlickerSound" type="AudioStreamPlayer3D" parent="." unique_id=184987898]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.901202, 1.1306808)
+bus = &"Sfx"
 
 [node name="FlickerSound2" type="AudioStreamPlayer3D" parent="." unique_id=1197317336]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.901202, 1.1306808)
 pitch_scale = 0.85
+bus = &"Sfx"
 
 [node name="FlickerSound3" type="AudioStreamPlayer3D" parent="." unique_id=1031279080]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.901202, 1.1306808)
 pitch_scale = 1.3
+bus = &"Sfx"
 
 [node name="FlickerSound4" type="AudioStreamPlayer3D" parent="." unique_id=1488136673]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.901202, 1.1306808)
 pitch_scale = 0.75
+bus = &"Sfx"
 
 [node name="TempBlock" type="MeshInstance3D" parent="." unique_id=1350453058]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027344704, 10.076649, 1.0444064)
