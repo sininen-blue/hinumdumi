@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 		detected.play()
 		player.detected.play() # NOTE: will break things probably at some point
 	
-	if vision_loss >= vision_loss_threshold and state_machine.current_state != investigate:
+	if vision_loss >= vision_loss_threshold and state_machine.current_state == hunt:
 		state_machine.last_known_position = player.global_position
 		state_machine.change_state(investigate)
 		undetected.play()
