@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://btyntbdut57r3" path="res://characters/monster/states/hunt.gd" id="6_s386a"]
 [ext_resource type="Script" uid="uid://vhu87qyiqy08" path="res://characters/monster/states/lunge.gd" id="7_legie"]
 [ext_resource type="Script" uid="uid://da7h67kyyhgfv" path="res://characters/monster/states/swipe.gd" id="8_tyycc"]
+[ext_resource type="AudioStream" uid="uid://dcpykasc3c14h" path="res://assets/sounds/monster/groan.wav" id="11_dapgd"]
 [ext_resource type="Script" uid="uid://oi5ctl585nw7" path="res://characters/monster/footsteps.gd" id="13_pxgw5"]
 [ext_resource type="Script" uid="uid://btlt2brwvxoc6" path="res://characters/monster/jumpscare.gd" id="14_arly5"]
 [ext_resource type="AudioStream" uid="uid://bno8umd8dkv0" path="res://assets/sounds/footsteps/footsteps_heavy_1.wav" id="14_esr8h"]
@@ -899,7 +900,7 @@ unique_name_in_owner = true
 script = ExtResource("3_xm3rn")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
-speed = 9.0
+speed = 5.0
 distance_threhold = 40.0
 distance_weights = SubResource("Curve_6755d")
 metadata/_custom_type_script = "uid://dhyugj58epewt"
@@ -922,15 +923,19 @@ unique_name_in_owner = true
 script = ExtResource("5_utdx2")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
-speed = 5.3
+speed = 6.0
 metadata/_custom_type_script = "uid://dhyugj58epewt"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="StateMachine/Investigate" unique_id=736478518]
+stream = ExtResource("11_dapgd")
+bus = &"Sfx"
 
 [node name="Hunt" type="Node" parent="StateMachine" unique_id=1998318133 node_paths=PackedStringArray("monster", "nav")]
 unique_name_in_owner = true
 script = ExtResource("6_s386a")
 monster = NodePath("../..")
 nav = NodePath("../../MonsterNavigationAgent")
-speed = 9.2
+speed = 8.8
 metadata/_custom_type_script = "uid://dhyugj58epewt"
 
 [node name="Lunge" type="Node" parent="StateMachine" unique_id=2119255039]
