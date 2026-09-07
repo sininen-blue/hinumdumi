@@ -222,8 +222,10 @@ offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("1_gb53a")
+volume_db = -20.0
 autoplay = true
 expand = true
+bus = &"Sfx"
 
 [node name="Shader" type="ColorRect" parent="." unique_id=783884193]
 unique_name_in_owner = true
