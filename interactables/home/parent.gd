@@ -21,15 +21,15 @@ func _input(event: InputEvent) -> void:
 		return
 	
 	if event.is_action_pressed("interact"):
-		if PlayerStates.left_home == false:
-			PlayerStates.has_talked_to_parent = true
+		if PlayerStates.first_buy == false:
 			init_dialogue()
-		
+			
 		if PlayerStates.has_returned_req == true:
 			_on_submit_debounce_timer_timeout()
 
 
 func init_dialogue() -> void:
+	PlayerStates.has_talked_to_parent = true
 	give_player_money()
 
 	for line: String in lines:
