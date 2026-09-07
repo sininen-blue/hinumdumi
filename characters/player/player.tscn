@@ -1048,6 +1048,7 @@ bus = &"Sfx"
 script = ExtResource("29_8v65i")
 player = NodePath("../..")
 sounds = Array[AudioStream]([ExtResource("29_2qgir"), ExtResource("30_o3aog"), ExtResource("31_5rrwf"), ExtResource("32_gro5v")])
+default_db = -25.0
 
 [node name="SoundPlayerPool1" type="AudioStreamPlayer3D" parent="Sounds/Footsteps" unique_id=1989008359]
 bus = &"Sfx"
