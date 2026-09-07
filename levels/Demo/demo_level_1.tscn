@@ -96,9 +96,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.458595, 0, 24.750898)
 [node name="InterestPoint29" parent="WanderPoints" unique_id=623642360 instance=ExtResource("6_58rwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.94756, 0, 22.102098)
 
-[node name="InterestPoint30" parent="WanderPoints" unique_id=812222039 instance=ExtResource("6_58rwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.50426, 0, -5.029479)
-
 [node name="InterestPoint32" parent="WanderPoints" unique_id=1101259618 instance=ExtResource("6_58rwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.01578, -0.05649233, 14.195975)
 
