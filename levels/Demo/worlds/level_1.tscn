@@ -29,7 +29,6 @@
 [ext_resource type="PackedScene" uid="uid://dn1vho050ejq" path="res://interactables/shop/variants/normelita.tscn" id="24_n2it8"]
 [ext_resource type="Script" uid="uid://b6rk0uffidg5l" path="res://src/items/item.gd" id="25_p0e11"]
 [ext_resource type="Resource" uid="uid://dqln4etsscmsq" path="res://interactables/items/Soy Sauce.tres" id="27_cf80n"]
-[ext_resource type="PackedScene" uid="uid://sod21jonlxvm" path="res://assets_raw/props/wood.glb" id="27_xu8n5"]
 [ext_resource type="Resource" uid="uid://dduxxviuf6umn" path="res://interactables/items/Salt.tres" id="28_3bsd8"]
 [ext_resource type="PackedScene" uid="uid://dxboco3m2ytig" path="res://assets_raw/props/barrel-1.glb" id="28_avscp"]
 [ext_resource type="PackedScene" uid="uid://bq411wooxd46p" path="res://interactables/shop/variants/tindahan.tscn" id="29_f1pte"]
@@ -234,7 +233,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.518646, 0, 68.78154)
 transform = Transform3D(-0.27007958, 0, -0.9628381, 0, 1, 0, 0.9628381, 0, -0.27007958, 84.339485, -0.3299017, 22.654743)
 
 [node name="ChoppedWoodHut2" parent="Terrain3DObjects" unique_id=1840515832 instance=ExtResource("10_monjo")]
-transform = Transform3D(-1.0000001, 0, 0, 0, 1, 0, 0, 0, -1.0000001, 14.699994, 0, -34.299995)
+transform = Transform3D(-1.0000001, 0, 0, 0, 1, 0, 0, 0, -1.0000001, 15.319873, 0, -31.64306)
 
 [node name="HousePlywood3" parent="Terrain3DObjects" unique_id=1622317334 instance=ExtResource("5_xu8n5")]
 transform = Transform3D(7.4505806e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 7.4505806e-08, 93.9, -0.11228132, 13.710337)
@@ -306,7 +305,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.292015, 0.057658516, 111.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.809666, -0.23782891, 105.71888)
 
 [node name="BlankHouse2" parent="Terrain3DObjects" unique_id=824841783 instance=ExtResource("16_g57ra")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.046547, 2.9380646, 17.668898)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.046547, 2.7869952, 17.668898)
 
 [node name="Chapel" parent="Terrain3DObjects" unique_id=1992341583 instance=ExtResource("17_f0rn3")]
 transform = Transform3D(0.059477948, 0, 1.2235552, 0, 1.225, 0, -1.2235552, 0, 0.059477948, 82.25755, -0.12008722, 117.8541)
@@ -348,19 +347,19 @@ transform = Transform3D(-0.68137264, 0, -0.73193663, 0, 1, 0, 0.73193663, 0, -0.
 transform = Transform3D(0.04225929, 0, -0.99910665, 0, 1, 0, 0.99910665, 0, 0.04225929, 86.795395, 3.4993436, 79.784225)
 
 [node name="RandomSceneWall13" parent="Terrain3DObjects" unique_id=1894442082 instance=ExtResource("20_s0kb0")]
-transform = Transform3D(0.04225929, 0, -0.99910665, 0, 1, 0, 0.99910665, 0, 0.04225929, 28.876598, 1.6529679, 15.483654)
+transform = Transform3D(0.04225929, 0, -0.99910665, 0, 1, 0, 0.99910665, 0, 0.04225929, 28.876598, 1.5837164, 15.483654)
 
 [node name="RandomSceneWall14" parent="Terrain3DObjects" unique_id=1601249015 instance=ExtResource("20_s0kb0")]
-transform = Transform3D(0.04225929, 0, -0.99910665, 0, 1, 0, 0.99910665, 0, 0.04225929, 28.75257, 0.6971184, 22.17001)
+transform = Transform3D(0.04225929, 0, -0.99910665, 0, 1, 0, 0.99910665, 0, 0.04225929, 28.75257, 0.7174498, 22.17001)
 
 [node name="RandomSceneWall17" parent="Terrain3DObjects" unique_id=1532353380 instance=ExtResource("20_s0kb0")]
-transform = Transform3D(-0.72179645, 0, -0.69210535, 0, 1, 0, 0.69210535, 0, -0.72179645, 26.849463, 0.06451094, 28.007673)
+transform = Transform3D(-0.72179645, 0, -0.69210535, 0, 1, 0, 0.69210535, 0, -0.72179645, 26.849463, 0.084055126, 28.007673)
 
 [node name="RandomSceneWall18" parent="Terrain3DObjects" unique_id=1056415520 instance=ExtResource("20_s0kb0")]
-transform = Transform3D(-0.9919343, 0, -0.126753, 0, 1, 0, 0.126753, 0, -0.9919343, 21.213852, 0.30565774, 30.951982)
+transform = Transform3D(-0.9919343, 0, -0.126753, 0, 1, 0, 0.126753, 0, -0.9919343, 21.213852, 0.36429834, 30.951982)
 
 [node name="RandomSceneWall19" parent="Terrain3DObjects" unique_id=539193914 instance=ExtResource("20_s0kb0")]
-transform = Transform3D(-0.98571825, 0, 0.16840336, 0, 1, 0, -0.16840336, 0, -0.98571825, 13.952555, 1.0962794, 30.967848)
+transform = Transform3D(-0.98571825, 0, 0.16840336, 0, 1, 0, -0.16840336, 0, -0.98571825, 13.952555, 1.0589619, 30.967848)
 
 [node name="RandomSceneWall20" parent="Terrain3DObjects" unique_id=855226939 instance=ExtResource("20_s0kb0")]
 transform = Transform3D(-0.7078716, 0, 0.70634127, 0, 1, 0, -0.70634127, 0, -0.7078716, 8.020724, 0.5144086, 28.27708)
@@ -387,10 +386,10 @@ transform = Transform3D(0.72621477, 0, 0.68746793, 0, 1, 0, -0.68746793, 0, 0.72
 transform = Transform3D(0.98987556, 0, -0.14193782, 0, 1, 0, 0.14193782, 0, 0.98987556, 13.035317, 0.55218726, 3.78629)
 
 [node name="RandomSceneWall25" parent="Terrain3DObjects" unique_id=1111269344 instance=ExtResource("20_s0kb0")]
-transform = Transform3D(0.8848169, 0, -0.46593878, 0, 1, 0, 0.46593878, 0, 0.8848169, 19.880566, 1.0004537, 5.410283)
+transform = Transform3D(0.97739744, 0, -0.21141002, 0, 1, 0, 0.21141002, 0, 0.97739744, 18.653643, 0.50627077, 4.6127462)
 
 [node name="RandomSceneWall26" parent="Terrain3DObjects" unique_id=401944639 instance=ExtResource("20_s0kb0")]
-transform = Transform3D(0.47327358, 0, -0.88091546, 0, 1, 0, 0.88091546, 0, 0.47327358, 27.060379, 2.3744836, 9.171986)
+transform = Transform3D(0.47327358, 0, -0.88091546, 0, 1, 0, 0.88091546, 0, 0.47327358, 27.317902, 1.2466383, 10.9023075)
 
 [node name="RandomSceneWall28" parent="Terrain3DObjects" unique_id=324875901 instance=ExtResource("20_s0kb0")]
 transform = Transform3D(-0.02881153, 0, 0.999585, 0, 1, 0, -0.999585, 0, -0.02881153, 57.92718, -0.360492, -13.119026)
@@ -539,6 +538,9 @@ transform = Transform3D(0.9999918, 0, -0.004049182, 0, 1, 0, 0.004049182, 0, 0.9
 [node name="RandomBrickWall31" parent="Terrain3DObjects" unique_id=716258232 instance=ExtResource("21_aocp8")]
 transform = Transform3D(0.9383061, 0, -0.345806, 0, 1, 0, 0.345806, 0, 0.9383061, 32.844727, -1.8841629, -16.479458)
 
+[node name="RandomBrickWall37" parent="Terrain3DObjects" unique_id=990728576 instance=ExtResource("21_aocp8")]
+transform = Transform3D(0.9999425, 0, -0.010733604, 0, 1, 0, 0.010733604, 0, 0.9999425, 16.77816, -1.8841629, -33.95909)
+
 [node name="RandomBrickWall32" parent="Terrain3DObjects" unique_id=1921223737 instance=ExtResource("21_aocp8")]
 transform = Transform3D(0.9760613, 0, -0.21749601, 0, 1, 0, 0.21749601, 0, 0.9760613, -2.8085518, -1.8841629, -36.937817)
 
@@ -620,12 +622,6 @@ transform = Transform3D(-0.9999952, 0, 0.003106594, 0, 1, 0, -0.003106594, 0, -0
 [node name="BrickWall3" type="Node3D" parent="Terrain3DObjects" unique_id=366115289]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.94395, 3.2440377e-05, 121.2834)
 
-[node name="wood" parent="Terrain3DObjects" unique_id=1926510826 instance=ExtResource("27_xu8n5")]
-transform = Transform3D(-0.32528794, -0.04310331, -0.9446321, 0.9425838, 0.06514177, -0.3275551, 0.075653724, -0.9969448, 0.01943865, 23.63499, 4.551357, 7.02818)
-
-[node name="wood2" parent="Terrain3DObjects" unique_id=1613693710 instance=ExtResource("27_xu8n5")]
-transform = Transform3D(0.12435812, -0.0099089295, -0.9921881, 0.9893491, 0.077480055, 0.123228356, 0.07565373, -0.9969449, 0.019438652, 25.29281, 4.586662, 7.02818)
-
 [node name="barrel-1" parent="Terrain3DObjects" unique_id=2114291927 instance=ExtResource("28_avscp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.073902, -0.051142756, 18.887234)
 
@@ -663,7 +659,7 @@ transform = Transform3D(-0.99978286, 0, 0.020837665, 0, 1, 0, -0.020837665, 0, -
 transform = Transform3D(-0.8766008, 0, -0.48121828, 0, 1, 0, 0.48121828, 0, -0.8766008, 113.42225, 1.8346105, 115.33044)
 
 [node name="old-shed3" parent="Terrain3DObjects" unique_id=1756555019 instance=ExtResource("32_q2eha")]
-transform = Transform3D(0.3864534, 0, -0.9223089, 0, 1, 0, 0.9223089, 0, 0.3864534, 11.182447, 1.0804937, 25.87408)
+transform = Transform3D(0.3864534, 0, -0.9223089, 0, 1, 0, 0.9223089, 0, 0.3864534, 11.182447, 1.043006, 25.87408)
 
 [node name="old-shed4" parent="Terrain3DObjects" unique_id=531502748 instance=ExtResource("32_q2eha")]
 transform = Transform3D(-0.6148634, 0, 0.78863364, 0, 1, 0, -0.78863364, 0, -0.6148634, -9.3463, 0.28803062, -9.497233)
