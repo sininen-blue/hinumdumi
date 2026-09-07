@@ -16,12 +16,19 @@ var direction: Vector3 = Vector3.ZERO
 
 
 func enter() -> void:
+	player = monster.player
 	animation_player.speed_scale = 1.5
 	animation_player.play("Lando Walk/Armature|mixamo_com|Layer0")
 
 
 func exit() -> void:
 	animation_player.speed_scale = 1
+
+
+func update(_delta: float) -> void:
+	if player:
+		var distance: float = monster.global_position.distance_to(player.global_position)
+		player.monster_closeness = distance
 
 
 func physics_update(_delta: float) -> void:

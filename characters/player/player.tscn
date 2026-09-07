@@ -768,11 +768,22 @@ shader_parameter/color_quant_steps = 32.0
 shader_parameter/warble_amount = 0.002
 shader_parameter/warble_speed = 1.0
 
+[sub_resource type="Curve" id="Curve_5rrwf"]
+_limits = [0.0, 0.7, 0.0, 1.0]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(0.521197, 0.36302894), -1.3636627, -1.3636627, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5rrwf"]
 shader = ExtResource("39_o3aog")
 shader_parameter/intensity = 0.400000019
 shader_parameter/softness = 0.450000021375
 shader_parameter/vignette_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gro5v"]
+shader = ExtResource("39_o3aog")
+shader_parameter/intensity = 0.400000019
+shader_parameter/softness = 0.450000021375
+shader_parameter/vignette_color = Color(0.24, 0, 0, 1)
 
 [node name="Player" type="CharacterBody3D" unique_id=950809192]
 collision_layer = 2
@@ -1086,6 +1097,7 @@ bus = &"Sfx"
 [node name="Shaders" type="CanvasLayer" parent="." unique_id=1485035568 node_paths=PackedStringArray("player")]
 script = ExtResource("39_5rrwf")
 player = NodePath("..")
+closeness_intensity = SubResource("Curve_5rrwf")
 
 [node name="ShaderRoot" type="Control" parent="Shaders" unique_id=1461026911]
 layout_mode = 3
@@ -1098,6 +1110,17 @@ grow_vertical = 2
 [node name="Vignette" type="ColorRect" parent="Shaders/ShaderRoot" unique_id=198048074]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_5rrwf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DetectionVignette" type="ColorRect" parent="Shaders/ShaderRoot" unique_id=1528862790]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_gro5v")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

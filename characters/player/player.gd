@@ -34,6 +34,9 @@ var enabled_gravity: bool = true
 var current_speed: float = 0
 var getting_jumpscared: bool = false
 
+var monster_detected: bool = false
+var monster_closeness: float = 9999
+
 @onready var right_hand: Node3D = %RightHand
 @onready var left_hand: Node3D = %LeftHand
 
