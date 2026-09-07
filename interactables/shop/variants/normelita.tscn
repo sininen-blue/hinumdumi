@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dhdb0srr160uw" path="res://src/dialogue_component/dialogue_component.tscn" id="3_a1niv"]
 [ext_resource type="Script" uid="uid://vbhgha4o801k" path="res://interactables/shop/item_interacts.gd" id="4_2dqf3"]
 [ext_resource type="PackedScene" uid="uid://y5r1lgw06mdk" path="res://assets/buildings/normelita_store.tscn" id="6_8tfhm"]
+[ext_resource type="PackedScene" uid="uid://dqgwadmtog0jd" path="res://interactables/shop/shopkeeps/sprite_character/sprite_character.tscn" id="6_fefhm"]
 
 [sub_resource type="GDScript" id="GDScript_ylcqf"]
 script/source = "extends Node3D
@@ -93,13 +94,16 @@ radius = 4.1
 [node name="StoreNormelita" type="Node3D" unique_id=913437893 groups=["shops"]]
 script = ExtResource("1_0w1d2")
 shoppableItem = SubResource("PackedScene_2drsn")
+intro_lines = Array[String](["Why are you out alone at night?"])
+outro_line = Array[String](["Salamat"])
 
 [node name="DialogueComponent" parent="." unique_id=1041026313 instance=ExtResource("3_a1niv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1649572, 2.7711058, -0.27295303)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3592044, 3.269712, 0.3112477)
+character_delay = 0.08
 line_delay = 2.0
 
 [node name="ItemInteracts" type="Node3D" parent="." unique_id=93998991]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66680455, 2.5393167, 0.6662855)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29582173, 2.5393167, 0.87497056)
 script = ExtResource("4_2dqf3")
 
 [node name="ShoppableArea" type="Area3D" parent="." unique_id=1806168609]
@@ -120,5 +124,10 @@ vertices = PackedVector3Array(-4.292719, 0, -6.2857647, 8.278812, 0, -5.979142, 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1247037499]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.220871, 3.7989445, 3.570822)
 
+[node name="SpriteCharacter" parent="." unique_id=1194770037 instance=ExtResource("6_fefhm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.400632, 2.2852113, -0.53244984)
+
+[connection signal="character_said" from="DialogueComponent" to="SpriteCharacter" method="talk"]
+[connection signal="finished_talking" from="DialogueComponent" to="SpriteCharacter" method="idle"]
 [connection signal="body_entered" from="ShoppableArea" to="." method="_on_shoppable_area_body_entered"]
 [connection signal="body_exited" from="ShoppableArea" to="." method="_on_shoppable_area_body_exited"]

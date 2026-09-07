@@ -93,7 +93,8 @@ func _on_shoppable_area_body_entered(body: Node3D) -> void:
 	if body is Player:
 		self.player = body
 
-		dialogue_component.add_line("what are you buying?")
+		for line in intro_lines:
+			dialogue_component.add_line(line)
 		dialogue_component.start_talking()
 		
 		_check_returns()
@@ -104,7 +105,9 @@ func _on_shoppable_area_body_exited(body: Node3D) -> void:
 		self.player = null
 
 		dialogue_component.stop_talking()
-		dialogue_component.add_line("have a good day")
+		
+		for line in outro_line:
+			dialogue_component.add_line(line)
 		dialogue_component.start_talking()
 
 

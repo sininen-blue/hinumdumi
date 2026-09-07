@@ -4,7 +4,12 @@
 [ext_resource type="Script" uid="uid://c7rh18x7usf6y" path="res://interactables/shop/interact_area.gd" id="2_hoe13"]
 [ext_resource type="PackedScene" uid="uid://dhdb0srr160uw" path="res://src/dialogue_component/dialogue_component.tscn" id="3_ifqsa"]
 [ext_resource type="Script" uid="uid://vbhgha4o801k" path="res://interactables/shop/item_interacts.gd" id="4_i4wv7"]
+[ext_resource type="PackedScene" uid="uid://dqgwadmtog0jd" path="res://interactables/shop/shopkeeps/sprite_character/sprite_character.tscn" id="6_j8nr0"]
 [ext_resource type="PackedScene" uid="uid://di5ccpypsjut8" path="res://assets/buildings/tindahan.tscn" id="7_bhfhl"]
+[ext_resource type="Texture2D" uid="uid://bhvy6oeffprob" path="res://assets/characters/zeke/1.png" id="7_je6c3"]
+[ext_resource type="Texture2D" uid="uid://bfpskhh4yelr7" path="res://assets/characters/zeke/2.png" id="8_a33io"]
+[ext_resource type="Texture2D" uid="uid://c2njvm1ad6x2" path="res://assets/characters/zeke/3.png" id="9_g2l5l"]
+[ext_resource type="Texture2D" uid="uid://5ld0aafap0g4" path="res://assets/characters/zeke/4.png" id="10_jgwsq"]
 
 [sub_resource type="GDScript" id="GDScript_ylcqf"]
 script/source = "extends Node3D
@@ -88,14 +93,16 @@ _bundled = {
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rplqf"]
-radius = 4.1
+radius = 4.0
 
 [node name="StoreTindahan" type="Node3D" unique_id=913437893 groups=["shops"]]
 script = ExtResource("1_3gecr")
 shoppableItem = SubResource("PackedScene_2drsn")
+intro_lines = Array[String](["Unsay gi pa-palit sa imo nak?", "Gabii raba kaayo"])
+outro_line = Array[String](["Salamat nak", "Be careful"])
 
 [node name="DialogueComponent" parent="." unique_id=1041026313 instance=ExtResource("3_ifqsa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1772674, 3.3625996, 2.5185974)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1772674, 4.073083, 3.9174078)
 line_delay = 2.0
 
 [node name="ItemInteracts" type="Node3D" parent="." unique_id=93998991]
@@ -108,7 +115,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ShoppableArea" unique_id=939099808]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, -0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7006242, -1.9951401, 0.91507125)
 shape = SubResource("SphereShape3D_rplqf")
 
 [node name="Tindahan" parent="." unique_id=1923491395 instance=ExtResource("7_bhfhl")]
@@ -117,5 +124,12 @@ transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -1.2970432, 1, 1.718412
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2034825187]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61308926, 4.0930653, 4.195864)
 
+[node name="SpriteCharacter" parent="." unique_id=1194770037 instance=ExtResource("6_j8nr0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1405127, 3.2483475, 2.6507802)
+idle_frame = ExtResource("7_je6c3")
+talk_frames = Array[Texture2D]([ExtResource("7_je6c3"), ExtResource("8_a33io"), ExtResource("9_g2l5l"), ExtResource("10_jgwsq")])
+
+[connection signal="character_said" from="DialogueComponent" to="SpriteCharacter" method="talk"]
+[connection signal="finished_talking" from="DialogueComponent" to="SpriteCharacter" method="idle"]
 [connection signal="body_entered" from="ShoppableArea" to="." method="_on_shoppable_area_body_entered"]
 [connection signal="body_exited" from="ShoppableArea" to="." method="_on_shoppable_area_body_exited"]

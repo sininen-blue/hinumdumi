@@ -6,7 +6,8 @@
 [ext_resource type="Resource" uid="uid://cibahbmjhia64" path="res://interactables/items/Rice.tres" id="4_8lys1"]
 [ext_resource type="Resource" uid="uid://dqln4etsscmsq" path="res://interactables/items/Soy Sauce.tres" id="5_esdx5"]
 [ext_resource type="Resource" uid="uid://dduxxviuf6umn" path="res://interactables/items/Salt.tres" id="6_s7thw"]
-[ext_resource type="PackedScene" uid="uid://dqgwadmtog0jd" path="res://interactables/shop/shopkeeps/sprite_character/sprite_character.tscn" id="7_t46qi"]
+[ext_resource type="PackedScene" uid="uid://bq411wooxd46p" path="res://interactables/shop/variants/tindahan.tscn" id="7_8lys1"]
+[ext_resource type="PackedScene" uid="uid://blglq3rmgocvo" path="res://interactables/shop/variants/modern.tscn" id="8_esdx5"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_w7g1p"]
 
@@ -38,5 +39,8 @@ ExtResource("5_esdx5"): 2,
 ExtResource("6_s7thw"): 3
 })
 
-[node name="SpriteCharacter" parent="." unique_id=1194770037 instance=ExtResource("7_t46qi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2122126, 2.070699, -1.372544)
+[node name="StoreTindahan" parent="." unique_id=105829737 instance=ExtResource("7_8lys1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.95224, 0, 2.3680305)
+
+[node name="StoreModern" parent="." unique_id=366167380 instance=ExtResource("8_esdx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.633112, 0, -3.5955086)

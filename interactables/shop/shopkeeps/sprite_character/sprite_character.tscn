@@ -47,7 +47,7 @@ _data = {
 [node name="SpriteCharacter" type="Node3D" unique_id=1194770037]
 script = ExtResource("1_a81sk")
 idle_frame = ExtResource("2_gjxid")
-talk_frames = Array[Texture2D]([ExtResource("3_vcw8h"), ExtResource("4_kn7nk"), ExtResource("5_mv0dw")])
+talk_frames = Array[Texture2D]([ExtResource("2_gjxid"), ExtResource("3_vcw8h"), ExtResource("4_kn7nk"), ExtResource("5_mv0dw")])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=684531874]
 libraries/ = SubResource("AnimationLibrary_kn7nk")
@@ -57,3 +57,8 @@ unique_name_in_owner = true
 pixel_size = 0.0033333
 shaded = true
 texture_filter = 0
+texture = ExtResource("2_gjxid")
+
+[node name="TalkDebounceTimer" type="Timer" parent="." unique_id=560385598]
+wait_time = 0.2
+one_shot = true

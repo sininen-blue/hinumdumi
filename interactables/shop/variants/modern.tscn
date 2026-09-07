@@ -5,6 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://dhdb0srr160uw" path="res://src/dialogue_component/dialogue_component.tscn" id="3_hoacj"]
 [ext_resource type="Script" uid="uid://vbhgha4o801k" path="res://interactables/shop/item_interacts.gd" id="4_7h8de"]
 [ext_resource type="PackedScene" uid="uid://2ek0lrlatgfm" path="res://assets/buildings/modern_sari_sari.tscn" id="5_fks2x"]
+[ext_resource type="PackedScene" uid="uid://dqgwadmtog0jd" path="res://interactables/shop/shopkeeps/sprite_character/sprite_character.tscn" id="6_0xl56"]
+[ext_resource type="Texture2D" uid="uid://d4ck62wh502w6" path="res://assets/characters/alilin/1.png" id="7_0ryci"]
+[ext_resource type="Texture2D" uid="uid://b5h1yxup0lm7l" path="res://assets/characters/alilin/2.png" id="8_6lg85"]
+[ext_resource type="Texture2D" uid="uid://cf328hkurcxe1" path="res://assets/characters/alilin/3.png" id="9_lvvlu"]
+[ext_resource type="Texture2D" uid="uid://byxa0aqnd1pp3" path="res://assets/characters/alilin/4.png" id="10_8kb6k"]
 
 [sub_resource type="GDScript" id="GDScript_ylcqf"]
 script/source = "extends Node3D
@@ -93,9 +98,12 @@ radius = 4.1
 [node name="StoreModern" type="Node3D" unique_id=913437893 groups=["shops"]]
 script = ExtResource("1_63njb")
 shoppableItem = SubResource("PackedScene_2drsn")
+intro_lines = Array[String](["What do you need to buy?"])
+outro_line = Array[String](["Good luck"])
 
 [node name="DialogueComponent" parent="." unique_id=1041026313 instance=ExtResource("3_hoacj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 2.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 3.5531652, 1.6782238)
+character_delay = 0.03
 line_delay = 2.0
 
 [node name="ItemInteracts" type="Node3D" parent="." unique_id=93998991]
@@ -116,5 +124,12 @@ shape = SubResource("SphereShape3D_rplqf")
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1031139650]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.269998, 4.4071665)
 
+[node name="SpriteCharacter" parent="." unique_id=1194770037 instance=ExtResource("6_0xl56")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1735586, 2.3271096, 0.32954478)
+idle_frame = ExtResource("7_0ryci")
+talk_frames = Array[Texture2D]([ExtResource("7_0ryci"), ExtResource("8_6lg85"), ExtResource("9_lvvlu"), ExtResource("10_8kb6k")])
+
+[connection signal="character_said" from="DialogueComponent" to="SpriteCharacter" method="talk"]
+[connection signal="finished_talking" from="DialogueComponent" to="SpriteCharacter" method="idle"]
 [connection signal="body_entered" from="ShoppableArea" to="." method="_on_shoppable_area_body_entered"]
 [connection signal="body_exited" from="ShoppableArea" to="." method="_on_shoppable_area_body_exited"]

@@ -4,6 +4,7 @@ class_name DialogueComponent
 
 signal finished_talking()
 signal started_talking()
+signal character_said()
 signal finished_line(indx: int, line: String)
 
 @export var voices: Array[AudioStream]
@@ -53,6 +54,7 @@ func _reset() -> void:
 
 
 func _on_character_timer_timeout() -> void:
+	character_said.emit()
 	label.text += queue[current_line_index][current_char_index]
 	current_char_index += 1
 
