@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dqgwadmtog0jd"]
+
+[ext_resource type="Script" uid="uid://cc8bk3jyyhyvh" path="res://interactables/shop/shopkeeps/sprite_character/sprite_character.gd" id="1_a81sk"]
+[ext_resource type="Texture2D" uid="uid://c14xrj6ypwhdl" path="res://assets/characters/angela/1.png" id="2_gjxid"]
+[ext_resource type="Texture2D" uid="uid://64d5mwkq1hbo" path="res://assets/characters/angela/2.png" id="3_vcw8h"]
+[ext_resource type="Texture2D" uid="uid://cqnlc5ioxggg8" path="res://assets/characters/angela/3.png" id="4_kn7nk"]
+[ext_resource type="Texture2D" uid="uid://bxea0q5v03xh1" path="res://assets/characters/angela/4.png" id="5_mv0dw"]
+
+[sub_resource type="Animation" id="Animation_gjxid"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vcw8h"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.3333334, 2),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.05, 1.05, 1.05), Vector3(1.06, 1.06, 1.06), Vector3(1.05, 1.05, 1.05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kn7nk"]
+_data = {
+&"RESET": SubResource("Animation_gjxid"),
+&"idle": SubResource("Animation_vcw8h")
+}
+
+[node name="SpriteCharacter" type="Node3D" unique_id=1194770037]
+script = ExtResource("1_a81sk")
+idle_frame = ExtResource("2_gjxid")
+talk_frames = Array[Texture2D]([ExtResource("3_vcw8h"), ExtResource("4_kn7nk"), ExtResource("5_mv0dw")])
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=684531874]
+libraries/ = SubResource("AnimationLibrary_kn7nk")
+
+[node name="Sprite" type="Sprite3D" parent="." unique_id=386142891]
+unique_name_in_owner = true
+pixel_size = 0.0033333
+shaded = true
+texture_filter = 0
