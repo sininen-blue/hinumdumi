@@ -13,9 +13,11 @@ var direction: Vector3 = Vector3.ZERO
 @onready var scanning: Node = %Scanning
 @onready var hunt: Node = %Hunt
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 
 func enter() -> void:
+	audio_stream_player_3d.play()
 	animation_player.speed_scale = 1.2
 	animation_player.play("Lando Walk/Armature|mixamo_com|Layer0")
 	nav.target_position = state_machine.last_known_position
