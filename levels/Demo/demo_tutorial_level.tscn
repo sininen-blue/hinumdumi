@@ -40,7 +40,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.98505, -9.536743e-07, -14.
 next_level_number = 1
 next_missing_children = 2
 next_level = ExtResource("5_fleqs")
-starting_cash = 5
+starting_cash = 8
 requirements = Dictionary[ExtResource("5_h3upu"), int]({
 ExtResource("6_fleqs"): 1
 })
