@@ -93,7 +93,7 @@ func _on_parent_level_complete() -> void:
 		PlayerStates.night = 1
 		return
 			
-	if PlayerStates.night < 2:
+	if PlayerStates.night < 4:
 		SceneManager.reload_scene(PlayerStates.night + 1)
 		return
 	
