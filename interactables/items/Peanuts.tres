@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("2_iwbic")
 name = "Peanuts"
-singular_description = "Peanuts"
-plural_description = "Peanuts"
+singular_description = "bag of peanuts"
+plural_description = "bags of peanuts"
 model = ExtResource("1_2fkcw")
 base_cost = 2.0
 metadata/_custom_type_script = "uid://b6rk0uffidg5l"
