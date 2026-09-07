@@ -10,5 +10,6 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.372172, 9.059817, 1.2038846)
 stream = ExtResource("2_24riy")
 volume_db = -30.0
+max_distance = 20.0
 bus = &"Sfx"
 script = ExtResource("3_8qi6d")
