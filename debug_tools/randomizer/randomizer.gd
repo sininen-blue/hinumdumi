@@ -5,7 +5,6 @@ const CHIPS = preload("uid://b5d67xvkem2kq")
 const COEK = preload("uid://ecui8hscpakw")
 const COFFEE = preload("uid://kogmu7aon258")
 const CORNED = preload("uid://ohu3qbhjeege")
-const DEFAULT = preload("uid://b8a212c6w7tkt")
 const EGG = preload("uid://bnwb6eo5yt56w")
 const MOUNTAIN_DAW = preload("uid://c5syujc0qyfw6")
 const PAITOS = preload("uid://dmwea0cpy4yi2")
@@ -32,7 +31,6 @@ var item_set = [
 	COEK,
 	COFFEE,
 	CORNED,
-	DEFAULT,
 	EGG,
 	MOUNTAIN_DAW,
 	PAITOS,
